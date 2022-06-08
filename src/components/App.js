@@ -1,8 +1,14 @@
+import React from 'react';
+import { CTALink } from './CTALink';
+import btnArrow from '../images/btn-arrow.svg';
+
 function App() {
   return (
     <div>
-      <h1 className="font-balgin text-6xl text-blue-500">Balgin Font</h1>
-      <h2 className="font-sans text-skin-accent">App</h2>
+      <CTALink to="" className="text-skin-muted uppercase font-semibold text-xl bg-skin-button-accent hover:bg-skin-button-accent-hover">
+        Join us
+        <img src={btnArrow} alt="arrow on button" className="inline ml-2 h-6" />
+      </CTALink>
     </div>
   );
 }
