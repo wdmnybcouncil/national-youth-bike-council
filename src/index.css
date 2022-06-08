@@ -4,10 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add the custom font for headings */
 @layer base {
   @font-face {
     font-family: 'Balgin Black';
     font-weight: 700;
+    font-display: swap;
     src: url('./fonts/Balgin-Black.ttf') format('truetype');
+  }
+}
+
+/* Add theme colors */
+@layer base {
+  :root {
+    --color-text-base: #333C44;
+    --color-text-primary: #3F5B74;
+    --color-text-muted: #FFFFFF;
+    --color-text-accent: #F58020;
+
+    --color-fill-base: #FFFFFF;
+    --color-fill-primary: #3F5B74;
+    --color-fill-accent: #F58020;
+
+    --color-button-accent: #F58020;
+    --color-button-accent-hover: #F79546;
   }
 }
