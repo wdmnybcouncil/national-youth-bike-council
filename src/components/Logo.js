@@ -16,10 +16,22 @@ function Logo({ linkTo, logoSrc, logoAlt }) {
   );
 }
 
-Logo.propTypes = {
+const propTypes = {
+  /**
+   * Sets the url where the Logo should point to when clicked
+   */
   linkTo: PropTypes.string.isRequired,
+  /**
+   * Sets the url of the Logo icon
+   */
   logoSrc: PropTypes.string.isRequired,
+  /**
+   * Sets the alt text for the Logo icon
+   */
   logoAlt: PropTypes.string.isRequired,
 };
 
-export { Logo };
+Logo.displayName = "Logo";
+Logo.protoTypes = propTypes;
+
+export default Logo;

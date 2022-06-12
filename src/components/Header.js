@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "./Logo";
+import Logo from "./Logo";
 import CTALink from "./CTALink";
 import Nav from "./Nav";
 import Dropdown from "./Dropdown";
@@ -7,6 +7,12 @@ import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import btnArrow from "../images/btn-arrow.svg";
 import logoIcon from "../images/logoIcon.png";
 
+/**
+ * The **Header** component renders the header of the website.
+ *
+ * @version 1.0.0
+ * @author [Shraddha](https://github.com/5hraddha)
+ */
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -71,4 +77,6 @@ function Header() {
   );
 }
 
-export { Header };
+Header.displayName = "Header";
+
+export default Header;
