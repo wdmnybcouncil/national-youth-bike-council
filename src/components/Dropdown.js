@@ -11,7 +11,7 @@ import { useOnClickOutside } from "../hooks/useOnClickOutside";
  */
 function Dropdown({ label, children }) {
   const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const handleOnDropdownClick = () => setIsDropdownOpen(!isDropdownOpen);
+  const handleDropdownClick = () => setIsDropdownOpen(!isDropdownOpen);
 
   const ref = React.useRef();
   useOnClickOutside(
@@ -20,10 +20,10 @@ function Dropdown({ label, children }) {
   );
 
   return (
-    <div ref={ref} className="relative" onClick={handleOnDropdownClick}>
+    <div ref={ref} className="relative" onClick={handleDropdownClick}>
       <button
         className="focus:shadow-outline mt-2 flex w-full flex-row items-center rounded-lg bg-transparent px-4 py-2 text-left text-lg tracking-wide hover:bg-skin-fill-base hover:text-skin-primary focus:bg-skin-fill-accent focus:text-skin-muted focus:outline-none lg:mt-0 lg:ml-4 lg:inline lg:w-auto"
-        onClick={handleOnDropdownClick}
+        onClick={handleDropdownClick}
       >
         <span>{label}</span>
         <svg
