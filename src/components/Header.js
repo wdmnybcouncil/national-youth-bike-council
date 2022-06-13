@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import CTALink from "./CTALink";
 import Nav from "./Nav";
-import Dropdown from "./Dropdown";
+import Dropdown from "./DropDown";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import btnArrow from "../images/btn-arrow.svg";
 import logoIcon from "../images/icon-logo.png";

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DropdownItem from "./DropdownItem";
-import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import { useOnClickOutside } from "../../hooks/useOnClickOutside";
 
 /**
  * The **Dropdown** component renders each dropdown in the navigation menu.
