@@ -14,8 +14,8 @@ function Footer() {
   return (
     <footer className="w-full bg-skin-fill-primary text-sm text-skin-muted lg:text-base">
       <div className="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-start md:justify-between md:px-6">
-        <div className="flex flex-col gap-2 xs:gap-0 p-4 lg:px-0">
-          <div className="flex flex-col xs:flex-row xs:items-center md:items-start gap-4">
+        <div className="flex flex-col gap-2 p-4 xs:gap-0 lg:px-0">
+          <div className="flex flex-col gap-4 xs:flex-row xs:items-center md:items-start">
             <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
             <h2 className="font-semibold uppercase">National Youth Bike Council</h2>
           </div>
@@ -30,7 +30,7 @@ function Footer() {
             <p>reach out for inquires!</p>
           </div>
         </div>
-        <div className="flex flex-col justify-between p-4 gap-y-10 xs:flex-row xs:gap-y-0 md:gap-x-16 lg:gap-x-24 lg:px-0">
+        <div className="flex flex-col justify-between gap-y-10 p-4 xs:flex-row xs:gap-y-0 md:gap-x-16 lg:gap-x-24 lg:px-0">
           <div className="flex flex-col gap-2">
             <h2 className="font-semibold uppercase">Support # 1</h2>
             <Link to="">Newsletter</Link>
@@ -43,7 +43,7 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-2">
             <h2 className="font-semibold uppercase">Social</h2>
-            <Link to="" className="flex gap-2">
+            <Link to="" className="flex gap-2 decoration-skin-accent underline-offset-4 transition-all hover:underline hover:opacity-90">
               <img src={discordIcon} alt="discord icon" className="h-6 w-6" />
               Discord
             </Link>
@@ -66,6 +66,9 @@ function Footer() {
           </div>
         </div>
       </div>
+      <p className="p-4 text-center text-xs md:p-6">
+        ©{new Date().getFullYear()} by National Youth Bike Council | A 501(c)(3) Organization
+      </p>
     </footer>
   );
 }
