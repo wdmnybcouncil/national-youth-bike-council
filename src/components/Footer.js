@@ -66,9 +66,7 @@ function Footer() {
           </FooterSection>
         </div>
       </div>
-      <p className="p-4 text-center text-xs md:p-6">
-        ©{new Date().getFullYear()} by National Youth Bike Council | A 501(c)(3) Organization
-      </p>
+      <p className="p-4 text-center text-xs md:p-6">©{new Date().getFullYear()} by National Youth Bike Council | A 501(c)(3) Organization</p>
     </footer>
   );
 }

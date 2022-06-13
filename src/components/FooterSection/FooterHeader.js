@@ -8,9 +8,7 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function FooterHeader({ children }) {
-  return (
-    <h2 className="font-semibold uppercase">{children}</h2>
-  );
+  return <h2 className="font-semibold uppercase">{children}</h2>;
 }
 
 const propTypes = {

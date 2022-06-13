@@ -10,9 +10,7 @@ import FooterLink from "./FooterLink";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function FooterSection({ children }) {
-  return (
-    <div className="flex flex-col gap-2">{children}</div>
-  );
+  return <div className="flex flex-col gap-2">{children}</div>;
 }
 
 const propTypes = {
