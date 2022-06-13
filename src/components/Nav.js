@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import NavItem from "./NavItem";
 
 function Nav({ isMenuOpen, children }) {
-  return (
-    <nav className={`${isMenuOpen ? `flex` : `hidden`} flex-grow flex-col pb-4 lg:flex lg:flex-row lg:justify-end lg:pb-0`}>{children}</nav>
-  );
+  return <nav className={`${isMenuOpen ? `flex` : `hidden`} flex-grow flex-col pb-6 lg:flex lg:flex-row lg:justify-end lg:pb-0`}>{children}</nav>;
 }
 
 const propTypes = {

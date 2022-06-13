@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
  */
 function Logo({ linkTo, logoSrc, logoAlt }) {
   return (
-    <Link to={linkTo} className="focus:shadow-outline focus:outline-none">
-      <img src={logoSrc} alt={logoAlt} className="w-16" />
+    <Link to={linkTo} className="focus:shadow-outline shrink-0 focus:outline-none">
+      <img src={logoSrc} alt={logoAlt} className="w-12 lg:w-16" />
     </Link>
   );
 }

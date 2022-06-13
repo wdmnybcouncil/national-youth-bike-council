@@ -12,7 +12,7 @@ function DropdownItem({ linkTo, children }) {
   return (
     <Link
       to={linkTo}
-      className="focus:shadow-outline mt-2 block rounded-lg bg-transparent px-4 py-2 text-lg tracking-wide hover:bg-gray-200 hover:text-skin-primary focus:bg-gray-200 focus:text-skin-primary focus:outline-none lg:mt-0"
+      className="focus:shadow-outline mt-2 block rounded-lg bg-transparent px-4 py-2 tracking-wide hover:bg-gray-200 hover:text-skin-primary focus:bg-gray-200 focus:text-skin-primary focus:outline-none lg:mt-0"
     >
       {children}
     </Link>
