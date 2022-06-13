@@ -13,7 +13,7 @@ function MailTo({ email, subject = "", body = "", children }) {
   if (body) params += `${subject ? "&" : ""}body=${encodeURIComponent(body)}`;
 
   return (
-    <a href={`mailto:${email}${params}`} className="inline-block decoration-skin-accent underline-offset-2 transition-all hover:underline">
+    <a href={`mailto:${email}${params}`} className="inline-block decoration-skin-accent underline-offset-2 transition-all hover:underline hover:opacity-90">
       {children}
     </a>
   );
