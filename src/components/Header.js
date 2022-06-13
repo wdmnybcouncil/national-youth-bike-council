@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import Dropdown from "./Dropdown";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import btnArrow from "../images/btn-arrow.svg";
-import logoIcon from "../images/logoIcon.png";
+import logoIcon from "../images/icon-logo.png";
 
 /**
  * The **Header** component renders the header of the website.
@@ -25,9 +25,9 @@ function Header() {
   );
 
   return (
-    <div ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
+    <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
       <div className="mx-auto flex max-w-screen-xl flex-col px-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
-        <div className="flex flex-row items-center justify-between p-4">
+        <div className="flex flex-row items-center justify-between p-4 lg:px-0">
           <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
           <button className="focus:shadow-outline rounded-lg focus:outline-none lg:hidden" onClick={handleMenuClick}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="h-8 w-8">
@@ -73,7 +73,7 @@ function Header() {
           </CTALink>
         </Nav>
       </div>
-    </div >
+    </header>
   );
 }
 
