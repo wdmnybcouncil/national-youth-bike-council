@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import MailTo from "./MailTo";
+import FooterSection from "./FooterSection";
 import logoIcon from "../images/icon-logo.png";
 import mailIcon from "../images/icon-mail.svg";
 import discordIcon from "../images/icon-discord.svg";
@@ -31,39 +31,39 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col justify-between gap-y-10 p-4 xs:flex-row xs:gap-y-0 md:gap-x-16 lg:gap-x-24 lg:px-0">
-          <div className="flex flex-col gap-2">
-            <h2 className="font-semibold uppercase">Support # 1</h2>
-            <Link to="">Newsletter</Link>
-            <Link to="">Donate</Link>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h2 className="font-semibold uppercase">Support</h2>
-            <Link to="">Newsletter</Link>
-            <Link to="">Donate</Link>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h2 className="font-semibold uppercase">Social</h2>
-            <Link to="" className="flex gap-2 decoration-skin-accent underline-offset-4 transition-all hover:underline hover:opacity-90">
+          <FooterSection>
+            <FooterSection.Header>Support # 1</FooterSection.Header>
+            <FooterSection.Link linkTo="">Newsletter</FooterSection.Link>
+            <FooterSection.Link linkTo="">Donate</FooterSection.Link>
+          </FooterSection>
+          <FooterSection>
+            <FooterSection.Header>Support # 2</FooterSection.Header>
+            <FooterSection.Link linkTo="">Newsletter</FooterSection.Link>
+            <FooterSection.Link linkTo="">Donate</FooterSection.Link>
+          </FooterSection>
+          <FooterSection>
+            <FooterSection.Header>Social</FooterSection.Header>
+            <FooterSection.Link linkTo="">
               <img src={discordIcon} alt="discord icon" className="h-6 w-6" />
               Discord
-            </Link>
-            <Link to="" className="flex gap-2">
+            </FooterSection.Link>
+            <FooterSection.Link linkTo="">
               <img src={instagramIcon} alt="instagram icon" className="h-6 w-6" />
               Instagram
-            </Link>
-            <Link to="" className="flex gap-2">
+            </FooterSection.Link>
+            <FooterSection.Link linkTo="">
               <img src={twitterIcon} alt="twitter icon" className="h-6 w-6" />
               Twitter
-            </Link>
-            <Link to="" className="flex gap-2">
+            </FooterSection.Link>
+            <FooterSection.Link linkTo="">
               <img src={facebookIcon} alt="facebook icon" className="h-6 w-6" />
               Facebook
-            </Link>
-            <Link to="" className="flex gap-2">
+            </FooterSection.Link>
+            <FooterSection.Link linkTo="">
               <img src={youtubeIcon} alt="facebook icon" className="h-6 w-6" />
               Youtube
-            </Link>
-          </div>
+            </FooterSection.Link>
+          </FooterSection>
         </div>
       </div>
       <p className="p-4 text-center text-xs md:p-6">
