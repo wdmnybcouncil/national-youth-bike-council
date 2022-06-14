@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <main className="flex-grow">Main</main>
+      <main className="flex-grow">
+        Main
+      </main>
       <Footer />
     </div>
   );
