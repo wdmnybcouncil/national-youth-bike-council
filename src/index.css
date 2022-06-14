@@ -17,16 +17,18 @@
 /* Add theme colors */
 @layer base {
   :root {
-    --color-text-base: #333c44;
-    --color-text-primary: #3f5b74;
-    --color-text-muted: #ffffff;
-    --color-text-accent: #f58020;
+    --color-text-base: rgba(51, 60, 68, 1);
+    --color-text-primary: rgba(63, 91, 116, 1);
+    --color-text-muted: rgba(255, 255, 255, 1);
+    --color-text-accent: rgba(245, 128, 32, 1);
 
-    --color-fill-base: #ffffff;
-    --color-fill-primary: #3f5b74;
-    --color-fill-accent: #f58020;
+    --color-fill-base: rgba(255, 255, 255, 1);
+    --color-fill-primary: rgba(63, 91, 116, 1);
+    --color-fill-accent: rgba(245, 128, 32, 1);
 
-    --color-button-accent: #f58020;
-    --color-button-accent-hover: #f68b33;
+    --color-fill-card-accent: rgba(245, 128, 32, 0.1);
+
+    --color-button-accent: rgba(245, 128, 32, 1);
+    --color-button-accent-hover: rgba(246, 139, 51, 1);
   }
 }

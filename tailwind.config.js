@@ -30,6 +30,7 @@ module.exports = {
           "fill-base": "var(--color-fill-base)",
           "fill-primary": "var(--color-fill-primary)",
           "fill-accent": "var(--color-fill-accent)",
+          "fill-card-accent": "var(--color-fill-card-accent)",
           "button-accent": "var(--color-button-accent)",
           "button-accent-hover": "var(--color-button-accent-hover)",
         },
