@@ -9,9 +9,7 @@ import PropTypes from "prop-types";
  */
 
 function SectionImg({ src, alt, className }) {
-  return (
-    <img src={src} alt={alt} className={`max-w-full ${className}`} />
-  );
+  return <img src={src} alt={alt} className={`max-w-full ${className}`} />;
 }
 
 const propTypes = {
