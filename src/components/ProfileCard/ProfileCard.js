@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ProfileCardTitle from "./ProfileCardTitle";
 import ProfileCardSubtitle from "./ProfileCardSubtitle";
 import ProfileCardText from "./ProfileCardText";
-import ProfileImage from "./ProfileImage";
+import ProfileCardImg from "./ProfileCardImg";
 
 /**
  * The **ProfileCard** component renders a card for user profile in the webpage
@@ -26,5 +26,5 @@ export default Object.assign(ProfileCard, {
   Title: ProfileCardTitle,
   Subtitle: ProfileCardSubtitle,
   Text: ProfileCardText,
-  Img: ProfileImage,
+  Img: ProfileCardImg,
 });
