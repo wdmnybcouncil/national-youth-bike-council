@@ -4,6 +4,7 @@ import ProfileCardTitle from "./ProfileCardTitle";
 import ProfileCardSubtitle from "./ProfileCardSubtitle";
 import ProfileCardText from "./ProfileCardText";
 import ProfileCardImg from "./ProfileCardImg";
+import ProfileCardLocation from "./ProfileCardLocation";
 
 /**
  * The **ProfileCard** component renders a card for user profile in the webpage
@@ -27,4 +28,5 @@ export default Object.assign(ProfileCard, {
   Subtitle: ProfileCardSubtitle,
   Text: ProfileCardText,
   Img: ProfileCardImg,
+  Location: ProfileCardLocation,
 });
