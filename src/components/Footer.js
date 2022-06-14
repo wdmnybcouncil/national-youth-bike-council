@@ -13,8 +13,8 @@ import youtubeIcon from "../images/icon-youtube.svg";
 function Footer() {
   return (
     <footer className="w-full bg-skin-fill-primary text-sm text-skin-muted lg:text-base">
-      <div className="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-start md:justify-between md:px-6">
-        <div className="flex flex-col gap-2 p-4 xs:gap-0 lg:px-0">
+      <div className="mx-auto flex max-w-screen-xl flex-col gap-y-10 px-8 py-6 md:flex-row md:items-start md:justify-between md:gap-y-0 md:px-10">
+        <div className="flex flex-col gap-2 xs:gap-0">
           <div className="flex flex-col gap-4 xs:flex-row xs:items-center md:items-start">
             <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
             <h2 className="font-semibold uppercase">National Youth Bike Council</h2>
@@ -30,7 +30,7 @@ function Footer() {
             <p>reach out for inquires!</p>
           </div>
         </div>
-        <div className="flex flex-col justify-between gap-y-10 p-4 xs:flex-row xs:gap-y-0 md:gap-x-16 lg:gap-x-24 lg:px-0">
+        <div className="flex flex-col justify-between gap-y-10 xs:flex-row xs:gap-y-0 md:gap-x-16 lg:gap-x-24">
           <FooterSection>
             <FooterSection.Header>Support # 1</FooterSection.Header>
             <FooterSection.Link linkTo="">Newsletter</FooterSection.Link>
@@ -66,7 +66,7 @@ function Footer() {
           </FooterSection>
         </div>
       </div>
-      <p className="p-4 text-center text-xs md:p-6">©{new Date().getFullYear()} by National Youth Bike Council | A 501(c)(3) Organization</p>
+      <p className="px-8 pb-6 text-center text-xs md:px-10">©{new Date().getFullYear()} by National Youth Bike Council | A 501(c)(3) Organization</p>
     </footer>
   );
 }

@@ -12,7 +12,7 @@ function NavItem({ linkTo, children }) {
   return (
     <Link
       to={linkTo}
-      className="focus:shadow-outline mt-2 rounded-lg bg-transparent px-4 py-2 tracking-wide hover:bg-skin-fill-base hover:text-skin-primary focus:bg-skin-fill-accent focus:text-skin-muted focus:outline-none lg:mt-0 lg:ml-4 lg:text-lg"
+      className="mt-2 rounded-lg bg-transparent px-4 py-2 text-sm tracking-wide hover:bg-skin-fill-base hover:text-skin-primary focus:bg-skin-fill-accent focus:text-skin-muted focus:outline-none lg:mt-0 lg:ml-4 lg:text-base"
     >
       {children}
     </Link>
