@@ -4,8 +4,8 @@ import CTALink from "./CTALink";
 import Nav from "./Nav";
 import Dropdown from "./DropDown";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
-import btnArrow from "../images/btn-arrow.svg";
-import logoIcon from "../images/icon-logo.png";
+import btnArrow from "../assets/images/btn-arrow.svg";
+import logoIcon from "../assets/images/icon-logo.png";
 
 /**
  * The **Header** component renders the header of the website.

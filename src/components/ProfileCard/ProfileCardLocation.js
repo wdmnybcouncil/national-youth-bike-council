@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  */
 function ProfileCardLocation({ children }) {
   return (
-    <p className="relative mt-2 text-sm before:absolute before:-top-0.5 before:-left-6 before:h-6 before:w-6 before:bg-[url('./images/icon-location.svg')] before:bg-contain before:bg-no-repeat">
+    <p className="relative mt-2 text-sm before:absolute before:-top-0.5 before:-left-6 before:h-6 before:w-6 before:bg-[url('./assets/images/icon-location.svg')] before:bg-contain before:bg-no-repeat">
       {children}
     </p>
   );

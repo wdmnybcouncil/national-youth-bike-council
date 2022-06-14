@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Section from "./Section";
 import ProfileCard from "./ProfileCard";
-import profileImgLot from "../images/council-members/lot.jpeg";
+import profileImgLot from "../assets/images/council-members/lot.jpeg";
 
 function App() {
   return (

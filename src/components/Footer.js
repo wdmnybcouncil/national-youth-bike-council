@@ -2,13 +2,13 @@ import React from "react";
 import Logo from "./Logo";
 import MailTo from "./MailTo";
 import FooterSection from "./FooterSection";
-import logoIcon from "../images/icon-logo.png";
-import mailIcon from "../images/icon-mail.svg";
-import discordIcon from "../images/icon-discord.svg";
-import instagramIcon from "../images/icon-instagram.svg";
-import twitterIcon from "../images/icon-twitter.svg";
-import facebookIcon from "../images/icon-facebook.svg";
-import youtubeIcon from "../images/icon-youtube.svg";
+import logoIcon from "../assets/images/icon-logo.png";
+import mailIcon from "../assets/images/icon-mail.svg";
+import discordIcon from "../assets/images/social/icon-discord.svg";
+import instagramIcon from "../assets/images/social/icon-instagram.svg";
+import twitterIcon from "../assets/images/social/icon-twitter.svg";
+import facebookIcon from "../assets/images/social/icon-facebook.svg";
+import youtubeIcon from "../assets/images/social/icon-youtube.svg";
 
 function Footer() {
   return (
