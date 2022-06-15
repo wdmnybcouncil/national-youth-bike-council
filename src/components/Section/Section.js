@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SectionHeading from "./SectionHeading";
 import SectionText from "./SectionText";
+import SectionHashtags from "./SectionHashtags";
 import SectionImg from "./SectionImg";
 
 /**
@@ -28,5 +29,6 @@ Section.propTypes = propTypes;
 export default Object.assign(Section, {
   Heading: SectionHeading,
   Text: SectionText,
+  Hashtags: SectionHashtags,
   Img: SectionImg,
 });
