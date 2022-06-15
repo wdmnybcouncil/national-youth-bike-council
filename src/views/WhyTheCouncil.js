@@ -44,7 +44,18 @@ function WhyTheCouncil({ data }) {
 
   return (
     <>
+      <section className="my-10 w-full bg-skin-fill-card-accent text-skin-base">
+        <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
+          <h2 className="mb-4 w-full font-balgin text-2xl capitalize text-skin-accent md:pb-2 md:text-4xl tracking-wider">In Two Sentences</h2>
+          <p className="max-w-3xl"><span className="font-semibold">Community, Health, Education</span> and <span className="font-semibold">Leadership</span> is the second way to say <span className="font-semibold">“National Youth Bike Council”</span>. Young people within the council have the opportunity to develop hard skills, leadership skills, and a healthy lifestyle.</p>
+        </div>
+      </section>
       {renderSections()}
+      <section className="my-10 w-full bg-skin-fill-card-accent text-skin-base">
+        <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
+          <p className="max-w-3xl">@ us with any of these Hashtags!</p>
+        </div>
+      </section>
     </>
   );
 }
