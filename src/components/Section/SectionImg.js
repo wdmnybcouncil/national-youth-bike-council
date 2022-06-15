@@ -9,11 +9,13 @@ import PropTypes from "prop-types";
  */
 
 function SectionImg({ src, alt, className }) {
-  return <img src={src} alt={alt} className={`max-w-full ${className}`} />;
+  return <img src={src} alt={alt} className={`max-h-96 max-w-full rounded-md border-4 border-skin-accent ${className}`} />;
 }
 
 const propTypes = {
-  children: PropTypes.any.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 SectionImg.displayName = "SectionImg";
