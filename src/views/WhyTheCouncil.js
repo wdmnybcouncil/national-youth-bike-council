@@ -9,22 +9,11 @@ import Section from "../components/Section";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function WhyTheCouncil({ data }) {
-  const renderSectionTexts = (texts) => (
-    texts.map((text, index) => (
-      <Section.Text key={`${index}-${text.substring(0, 10)}`}>
-        {text}
-      </Section.Text>)
-    )
-  )
+  const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
 
-  const renderSections = () => (
+  const renderSections = () =>
     data.map((section, index) => {
-      const {
-        heading,
-        text,
-        hashtags,
-        img,
-      } = section;
+      const { heading, text, hashtags, img } = section;
       return (
         // Sections - Community, Health, Education, Leadership
         <Section key={`${index}-${heading}`}>
@@ -40,16 +29,19 @@ function WhyTheCouncil({ data }) {
           </div>
         </Section>
       );
-    })
-  )
+    });
 
   return (
     <>
       {/* Section # 1 - Why the National Youth Bike Council? */}
       <section className="mb-10 w-full bg-skin-fill-card-accent text-skin-base">
         <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
-          <h2 className="mb-4 w-full font-balgin text-2xl capitalize text-skin-accent md:pb-2 md:text-4xl tracking-wider">In Two Sentences</h2>
-          <p className="max-w-3xl"><span className="font-semibold">Community, Health, Education</span> and <span className="font-semibold">Leadership</span> is the second way to say <span className="font-semibold">“National Youth Bike Council”</span>. Young people within the council have the opportunity to develop hard skills, leadership skills, and a healthy lifestyle.</p>
+          <h2 className="mb-4 w-full font-balgin text-2xl capitalize tracking-wider text-skin-accent md:pb-2 md:text-4xl">In Two Sentences</h2>
+          <p className="max-w-3xl">
+            <span className="font-semibold">Community, Health, Education</span> and <span className="font-semibold">Leadership</span> is the second way to say{" "}
+            <span className="font-semibold">“National Youth Bike Council”</span>. Young people within the council have the opportunity to develop hard skills,
+            leadership skills, and a healthy lifestyle.
+          </p>
         </div>
       </section>
       {renderSections()}

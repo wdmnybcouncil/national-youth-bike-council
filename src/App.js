@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -17,15 +17,12 @@ import data from "./constants/data";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function App() {
-  const {
-    members,
-    whyTheCouncil,
-  } = data;
+  const { members, whyTheCouncil } = data;
 
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <main className="flex-grow my-10">
+      <main className="my-10 flex-grow">
         <Routes>
           <Route path="/why-the-council" element={<WhyTheCouncil data={whyTheCouncil} />} />
           <Route path="/council-members" element={<CouncilMembers data={members} />} />
