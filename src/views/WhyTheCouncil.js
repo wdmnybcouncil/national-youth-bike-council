@@ -8,11 +8,11 @@ import Section from "../components/Section";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function WhyTheCouncil({ data }) {
+function WhyTheCouncil({ whyTheCouncilView }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
 
   const renderSections = () =>
-    data.map((section, index) => {
+    whyTheCouncilView.map((section, index) => {
       const { heading, text, hashtags, img } = section;
       return (
         // Sections - Community, Health, Education, Leadership
@@ -23,8 +23,8 @@ function WhyTheCouncil({ data }) {
               {renderSectionTexts(text)}
               <Section.Hashtags>{hashtags}</Section.Hashtags>
             </div>
-            <div className="col-span-2 place-self-center sm:justify-self-end">
-              <Section.Img src={img.src} alt={img.alt} className="object-cover object-center" />
+            <div className="col-span-2 row-start-1 sm:row-auto place-self-center sm:justify-self-end">
+              <Section.Img src={img.src} alt={img.alt} className="object-cover object-center rounded-md border-4 border-skin-accent" />
             </div>
           </div>
         </Section>
@@ -56,7 +56,7 @@ function WhyTheCouncil({ data }) {
 }
 
 const propTypes = {
-  data: PropTypes.array.isRequired,
+  whyTheCouncilView: PropTypes.array.isRequired,
 };
 
 WhyTheCouncil.displayName = "WhyTheCouncil";
