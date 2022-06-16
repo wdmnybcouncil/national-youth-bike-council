@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 /**
  * The **NavItem** component renders each item in the Nav component.
@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
  */
 function NavItem({ linkTo, children }) {
   return (
-    <Link
+    <NavLink
       to={linkTo}
       className="mt-2 rounded-lg bg-transparent px-4 py-2 text-sm tracking-wide hover:bg-skin-fill-base hover:text-skin-primary focus:bg-skin-fill-accent focus:text-skin-muted focus:outline-none lg:mt-0 lg:ml-4 lg:text-base"
     >
       {children}
-    </Link>
+    </NavLink>
   );
 }
 
