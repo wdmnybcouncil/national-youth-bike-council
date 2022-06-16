@@ -12,11 +12,12 @@ import ProfileCardLocation from "./ProfileCardLocation";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function ProfileCard({ children }) {
-  return <article className="relative mt-24 flex max-w-sm flex-col items-center gap-1 rounded-2xl bg-skin-fill-card-accent p-6 lg:p-8">{children}</article>;
+function ProfileCard({ className = "", children }) {
+  return <article className={`relative mt-24 flex max-w-sm flex-col items-center gap-1 rounded-2xl bg-skin-fill-card-accent p-6 lg:p-8 border border-transparent hover:cursor-pointer hover:border-skin-accent transition group ${className}`}>{children}</article>;
 }
 
 const propTypes = {
+  className: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
 
