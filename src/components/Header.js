@@ -53,7 +53,7 @@ function Header() {
             <Dropdown.Item linkTo="#">How It Started</Dropdown.Item>
             <Dropdown.Item linkTo="#">Where are we?</Dropdown.Item>
             <Dropdown.Item linkTo="/why-the-council">Why the Council?</Dropdown.Item>
-            <Dropdown.Item linkTo="#">Council Members</Dropdown.Item>
+            <Dropdown.Item linkTo="/council-members">Council Members</Dropdown.Item>
             <Dropdown.Item linkTo="#">Advisors</Dropdown.Item>
             <Dropdown.Item linkTo="#">Board Members</Dropdown.Item>
             <Dropdown.Item linkTo="#">Partners & Sponsorships</Dropdown.Item>
