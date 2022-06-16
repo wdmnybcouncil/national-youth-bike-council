@@ -7,8 +7,8 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HashRouter basename="/national-youth-bike-council">
+    <HashRouter>
       <App />
     </HashRouter>
-  </React.StrictMode>
+  </React.StrictMode >
 );

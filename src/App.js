@@ -34,7 +34,7 @@ function App() {
       <Header />
       <main className="my-10 flex-grow">
         <Routes>
-          <Route path="" element={(() => <></>)()} />
+          <Route path="/*" element={(() => <></>)()} />
           <Route path="why-the-council" element={<WhyTheCouncil whyTheCouncilView={whyTheCouncilView} />} />
           <Route path="council-members" element={<CouncilMembers councilMembers={councilMembers} alumniMembers={alumniMembers} />} />
           <Route path="advisors" element={<Advisors advisorsView={advisorsView} advisorMembers={advisorMembers} />} />
