@@ -1,9 +1,3 @@
-// Images for WhyTheCouncil view
-import communityImage from "../assets/images/why-the-council/community.png";
-import healthImage from "../assets/images/why-the-council/health.png";
-import educationImage from "../assets/images/why-the-council/education.png";
-import leadershipImage from "../assets/images/why-the-council/leadership.png";
-
 // Images for members
 import joshuaProfileImage from "../assets/images/members/joshua.png";
 import zoeProfileImage from "../assets/images/members/zoe.png";
@@ -17,6 +11,15 @@ import dhrutiProfileImage from "../assets/images/members/dhruti.png";
 import adivaProfileImage from "../assets/images/members/adiva.png";
 import noahProfileImage from "../assets/images/members/noah.png";
 import alumni1ProfileImage from "../assets/images/members/agae.png";
+
+// Images for WhyTheCouncil view
+import communityImage from "../assets/images/why-the-council/community.png";
+import healthImage from "../assets/images/why-the-council/health.png";
+import educationImage from "../assets/images/why-the-council/education.png";
+import leadershipImage from "../assets/images/why-the-council/leadership.png";
+
+// Images for Advisors view
+import advisorsImage from "../assets/images/advisors/advisors.png";
 
 const data = {
   members: [
@@ -125,7 +128,7 @@ const data = {
       middleName: "",
       lastName: "Kwapick",
       img: mitchellProfileImage,
-      roles: ["Social Media and Outreach Assistant"],
+      roles: ["Social Media and Outreach Assistant", "Advisor"],
       location: "Wisconsin, USA",
       story: {
         brief: "",
@@ -140,7 +143,7 @@ const data = {
       middleName: "",
       lastName: "Shah",
       img: dhrutiProfileImage,
-      roles: ["Marketing & Strategizing"],
+      roles: ["Marketing & Strategizing", "Advisor"],
       location: "New Jersey, USA",
       story: {
         brief: "",
@@ -191,7 +194,7 @@ const data = {
       },
     },
   ],
-  whyTheCouncil: [
+  whyTheCouncilView: [
     {
       heading: "Community",
       text: [
@@ -237,6 +240,32 @@ const data = {
         alt: "national youth council leadership",
       },
     },
+  ],
+  advisorsView: [
+    {
+      heading: "Who are Advisors?",
+      text: ["Advisors are hobbyist, professionals, or volunteers that are dedicated to specific tasks that help keep the council members focused on annual projects and not administrative duties.",
+        "We appreciate our advisors that volunteer their time to help toward the overall purpose of the council. As a Council we grow, and with the addition of advisors, we grow as young adults to tackle real-world problems around increasing youth leadership, voice, and their interest in cycling."],
+      img: {
+        src: advisorsImage,
+        alt: "illustration showing four people talking",
+      }
+    },
+    {
+      heading: "Meet the Advisors",
+    },
+    {
+      heading: "How to Become an Advisor",
+      text: ["These are the areas of expertise we are currently looking for help in:"],
+      areasOfExpertise: [
+        "Legal Assistance",
+        "Branding Manager",
+        "Social Media and Outreach",
+        "Education Specialist / Curriculum building",
+        "Research & Finance Specialist",
+        "Technical Assistance (website / emailing list / suites)",
+      ],
+    }
   ],
 };
 
