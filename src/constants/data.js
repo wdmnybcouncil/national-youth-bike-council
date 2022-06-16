@@ -24,8 +24,8 @@ const data = {
       firstName: "Joshua",
       middleName: "",
       lastName: "Funches",
-      image: joshuaProfileImage,
-      roles: ["President", "Co-Founder"],
+      img: joshuaProfileImage,
+      roles: ["President", "Co-Founder", "Council Member"],
       location: "Pennsylvania, USA",
       story: {
         brief: "",
@@ -36,7 +36,7 @@ const data = {
       firstName: "Zoe",
       middleName: "",
       lastName: "Mitchell",
-      image: zoeProfileImage,
+      img: zoeProfileImage,
       roles: ["Treasurer", "Council Member"],
       location: "Washington, USA",
       story: {
@@ -48,7 +48,7 @@ const data = {
       firstName: "Luly",
       middleName: "",
       lastName: "K",
-      image: lulyProfileImage,
+      img: lulyProfileImage,
       roles: ["Social Media Coordinator", "Council Member"],
       location: "Pennsylvania, USA",
       story: {
@@ -60,7 +60,7 @@ const data = {
       firstName: "Job",
       middleName: "",
       lastName: "F",
-      image: jobProfileImage,
+      img: jobProfileImage,
       roles: ["Council Member"],
       location: "Pennsylvania, USA",
       story: {
@@ -72,7 +72,7 @@ const data = {
       firstName: "Marc",
       middleName: "",
       lastName: "D. II",
-      image: marcProfileImage,
+      img: marcProfileImage,
       roles: ["Council Member"],
       location: "Pennsylvania, USA",
       story: {
@@ -84,7 +84,7 @@ const data = {
       firstName: "Lot",
       middleName: "",
       lastName: "F.",
-      image: lotProfileImage,
+      img: lotProfileImage,
       roles: ["Council Member"],
       location: "Pennsylvania, USA",
       story: {
@@ -96,7 +96,7 @@ const data = {
       firstName: "Bria",
       middleName: "",
       lastName: "B.",
-      image: briaProfileImage,
+      img: briaProfileImage,
       roles: ["Council Member"],
       location: "Georgia, USA",
       story: {
@@ -108,7 +108,7 @@ const data = {
       firstName: "Mitchell",
       middleName: "",
       lastName: "Kwapick",
-      image: mitchellProfileImage,
+      img: mitchellProfileImage,
       roles: ["Social Media and Outreach Assistant"],
       location: "Wisconsin, USA",
       story: {
@@ -121,7 +121,7 @@ const data = {
       firstName: "Dhruti",
       middleName: "",
       lastName: "Shah",
-      image: dhrutiProfileImage,
+      img: dhrutiProfileImage,
       roles: ["Marketing & Strategizing"],
       location: "New Jersey, USA",
       story: {
@@ -134,7 +134,7 @@ const data = {
       firstName: "Adiva",
       middleName: "",
       lastName: "A.",
-      image: adivaProfileImage,
+      img: adivaProfileImage,
       roles: ["Alumni", "Co-Founder"],
       location: "",
       story: {
@@ -146,7 +146,7 @@ const data = {
       firstName: "Noah",
       middleName: "",
       lastName: "S.",
-      image: noahProfileImage,
+      img: noahProfileImage,
       roles: ["Alumni", "Co-Founder"],
       location: "",
       story: {
@@ -158,7 +158,7 @@ const data = {
       firstName: "",
       middleName: "",
       lastName: "",
-      image: alumni1ProfileImage,
+      img: alumni1ProfileImage,
       roles: ["Alumni"],
       location: "",
       story: {
