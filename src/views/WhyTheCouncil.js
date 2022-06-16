@@ -26,6 +26,7 @@ function WhyTheCouncil({ data }) {
         img,
       } = section;
       return (
+        // Sections - Community, Health, Education, Leadership
         <Section key={`${index}-${heading}`}>
           <Section.Heading>{heading}</Section.Heading>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
@@ -44,14 +45,16 @@ function WhyTheCouncil({ data }) {
 
   return (
     <>
-      <section className="my-10 w-full bg-skin-fill-card-accent text-skin-base">
+      {/* Section # 1 - Why the National Youth Bike Council? */}
+      <section className="mb-10 w-full bg-skin-fill-card-accent text-skin-base">
         <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
           <h2 className="mb-4 w-full font-balgin text-2xl capitalize text-skin-accent md:pb-2 md:text-4xl tracking-wider">In Two Sentences</h2>
           <p className="max-w-3xl"><span className="font-semibold">Community, Health, Education</span> and <span className="font-semibold">Leadership</span> is the second way to say <span className="font-semibold">“National Youth Bike Council”</span>. Young people within the council have the opportunity to develop hard skills, leadership skills, and a healthy lifestyle.</p>
         </div>
       </section>
       {renderSections()}
-      <section className="my-10 w-full bg-skin-fill-card-accent text-skin-base">
+      {/* Section # 6 - Instruction to tag National Youth Bike Council on social media */}
+      <section className="mt-10 w-full bg-skin-fill-card-accent text-skin-base">
         <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
           <p className="max-w-3xl">@ us with any of these Hashtags!</p>
         </div>
