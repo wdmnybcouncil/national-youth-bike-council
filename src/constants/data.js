@@ -244,12 +244,14 @@ const data = {
   advisorsView: [
     {
       heading: "Who are Advisors?",
-      text: ["Advisors are hobbyist, professionals, or volunteers that are dedicated to specific tasks that help keep the council members focused on annual projects and not administrative duties.",
-        "We appreciate our advisors that volunteer their time to help toward the overall purpose of the council. As a Council we grow, and with the addition of advisors, we grow as young adults to tackle real-world problems around increasing youth leadership, voice, and their interest in cycling."],
+      text: [
+        "Advisors are hobbyist, professionals, or volunteers that are dedicated to specific tasks that help keep the council members focused on annual projects and not administrative duties.",
+        "We appreciate our advisors that volunteer their time to help toward the overall purpose of the council. As a Council we grow, and with the addition of advisors, we grow as young adults to tackle real-world problems around increasing youth leadership, voice, and their interest in cycling.",
+      ],
       img: {
         src: advisorsImage,
         alt: "illustration showing four people talking",
-      }
+      },
     },
     {
       heading: "Meet the Advisors",
@@ -265,7 +267,7 @@ const data = {
         "Research & Finance Specialist",
         "Technical Assistance (website / emailing list / suites)",
       ],
-    }
+    },
   ],
 };
 

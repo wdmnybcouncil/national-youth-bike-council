@@ -23,8 +23,8 @@ function WhyTheCouncil({ whyTheCouncilView }) {
               {renderSectionTexts(text)}
               <Section.Hashtags>{hashtags}</Section.Hashtags>
             </div>
-            <div className="col-span-2 row-start-1 sm:row-auto place-self-center sm:justify-self-end">
-              <Section.Img src={img.src} alt={img.alt} className="object-cover object-center rounded-md border-4 border-skin-accent" />
+            <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
+              <Section.Img src={img.src} alt={img.alt} className="rounded-md border-4 border-skin-accent object-cover object-center" />
             </div>
           </div>
         </Section>

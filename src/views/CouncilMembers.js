@@ -10,7 +10,7 @@ import ProfileCard from "../components/ProfileCard";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function CouncilMembers({ councilMembers = [], alumniMembers = [] }) {
-  const renderCouncilMemberCards = () => (
+  const renderCouncilMemberCards = () =>
     councilMembers.map((member) => {
       const { firstName, lastName, img, roles, location } = member;
       return (
@@ -21,14 +21,12 @@ function CouncilMembers({ councilMembers = [], alumniMembers = [] }) {
           <ProfileCard.Location>{location}</ProfileCard.Location>
         </ProfileCard>
       );
-    })
-  )
+    });
 
-  const renderAlumniCards = () => (
+  const renderAlumniCards = () =>
     alumniMembers.map(({ img }, index) => (
       <img key={index} src={img} alt="alumni profile" className="h-40 w-40 max-w-full rounded-full border-4 border-skin-accent object-cover object-center" />
-    ))
-  )
+    ));
 
   return (
     <>

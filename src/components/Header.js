@@ -73,7 +73,7 @@ function Header() {
           </CTALink>
         </Nav>
       </div>
-    </header >
+    </header>
   );
 }
 

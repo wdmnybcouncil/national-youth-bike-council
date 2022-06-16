@@ -9,9 +9,7 @@ import ListItem from "./ListItem";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function List({ children }) {
-  return (
-    <ul className="list-inside list-disc marker:text-skin-accent marker:text-xl">{children}</ul>
-  );
+  return <ul className="list-inside list-disc marker:text-xl marker:text-skin-accent">{children}</ul>;
 }
 
 const propTypes = {

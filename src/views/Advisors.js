@@ -16,7 +16,7 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
   const renderListItems = (list) => list.map((item) => <List.Item key={item}>{item}</List.Item>);
 
-  const renderAdvisorMemberCards = () => (
+  const renderAdvisorMemberCards = () =>
     advisorMembers.map((member) => {
       const { firstName, lastName, img, roles, location } = member;
       return (
@@ -27,8 +27,7 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
           <ProfileCard.Location>{location}</ProfileCard.Location>
         </ProfileCard>
       );
-    })
-  )
+    });
 
   return (
     <>
@@ -36,10 +35,8 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
       <Section>
         <Section.Heading>{advisorsView[0].heading}</Section.Heading>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
-          <div className="col-span-2 flex flex-col gap-8">
-            {renderSectionTexts(advisorsView[0].text)}
-          </div>
-          <div className="col-span-2 row-start-1 sm:row-auto place-self-center sm:justify-self-end">
+          <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(advisorsView[0].text)}</div>
+          <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
             <Section.Img src={advisorsView[0].img.src} alt={advisorsView[0].img.alt} className="object-cover object-center" />
           </div>
         </div>
@@ -54,10 +51,13 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
         <Section.Heading>{advisorsView[2].heading}</Section.Heading>
         <div className="flex flex-col">
           {renderSectionTexts(advisorsView[2].text)}
-          <List>
-            {renderListItems(advisorsView[2].areasOfExpertise)}
-          </List>
-          <a href="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing" target="_blank" rel="noreferrer" className="mt-4 flex gap- 2 underline-offset-4 transition-all underline hover:decoration-skin-accent hover:opacity-90">
+          <List>{renderListItems(advisorsView[2].areasOfExpertise)}</List>
+          <a
+            href="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90"
+          >
             Click here to see full descriptions
           </a>
           <CTALink linkTo="" className="mt-4 self-center xs:self-start">
@@ -66,7 +66,8 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
           </CTALink>
         </div>
       </Section>
-    </>);
+    </>
+  );
 }
 
 const propTypes = {

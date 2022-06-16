@@ -8,9 +8,7 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function ListItem({ children }) {
-  return (
-    <li>{children}</li>
-  );
+  return <li>{children}</li>;
 }
 
 const propTypes = {
