@@ -54,7 +54,7 @@ function Header() {
             <Dropdown.Item linkTo="#">Where are we?</Dropdown.Item>
             <Dropdown.Item linkTo="/why-the-council">Why the Council?</Dropdown.Item>
             <Dropdown.Item linkTo="/council-members">Council Members</Dropdown.Item>
-            <Dropdown.Item linkTo="#">Advisors</Dropdown.Item>
+            <Dropdown.Item linkTo="/advisors">Advisors</Dropdown.Item>
             <Dropdown.Item linkTo="#">Board Members</Dropdown.Item>
             <Dropdown.Item linkTo="#">Partners & Sponsorships</Dropdown.Item>
           </Dropdown>
@@ -67,13 +67,13 @@ function Header() {
           <Dropdown label="Resources">
             <Dropdown.Item linkTo="#">Resources & Safety</Dropdown.Item>
           </Dropdown>
-          <CTALink linkTo="">
+          <CTALink linkTo="" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
             Join us
             <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
           </CTALink>
         </Nav>
       </div>
-    </header>
+    </header >
   );
 }
 
