@@ -6,6 +6,7 @@ import jobProfileImage from "../assets/images/members/job.png";
 import marcProfileImage from "../assets/images/members/marc-d-ii.png";
 import lotProfileImage from "../assets/images/members/lot.png";
 import briaProfileImage from "../assets/images/members/bria.png";
+import katProfileImage from "../assets/images/members/kat.png";
 import mitchellProfileImage from "../assets/images/members/mitchell.png";
 import dhrutiProfileImage from "../assets/images/members/dhruti.png";
 import adivaProfileImage from "../assets/images/members/adiva.png";
@@ -21,6 +22,9 @@ import leadershipImage from "../assets/images/why-the-council/leadership.png";
 // Images for Advisors view
 import advisorsImage from "../assets/images/advisors/advisors.png";
 
+// Images for Board Members view
+import boardMembersImage from "../assets/images/board-members/board-members.png";
+
 const data = {
   members: [
     {
@@ -28,7 +32,7 @@ const data = {
       middleName: "",
       lastName: "Funches",
       img: joshuaProfileImage,
-      roles: ["President", "Co-Founder", "Council Member"],
+      roles: ["President", "Co-Founder", "Council Member", "Board Member"],
       location: "Pennsylvania, USA",
       story: {
         brief: "",
@@ -42,7 +46,7 @@ const data = {
       middleName: "",
       lastName: "Mitchell",
       img: zoeProfileImage,
-      roles: ["Treasurer", "Council Member"],
+      roles: ["Treasurer", "Council Member", "Board Member"],
       location: "Washington, USA",
       story: {
         brief:
@@ -120,6 +124,20 @@ const data = {
         brief: "",
         detail: [
           "Bria is a second year at the University of Virginia, intending on majoring in finance. She founded the Atlanta Students Advocating for Pedestrians, formerly Grady Pedestrian Safety Coalition, group to advocate for the safety of pedestrians and cyclists across Atlanta. Specifically, the streets that are in the Atlanta Public Schools’ district. Outside of school and the club, she likes to spend time with friends and listen to live music.",
+        ],
+      },
+    },
+    {
+      firstName: "Kat",
+      middleName: "",
+      lastName: "Andrus",
+      img: katProfileImage,
+      roles: ["Board Member"],
+      location: "Kansas, USA",
+      story: {
+        brief: "",
+        detail: [
+          "Kat Andrus manages all aspects of the Youth Cycling Coalition. She has a background in youth programming and education as a former elementary and middle school teacher but is first and foremost a passionate advocate for social equity. She is proud to serve in her advisory role with the Council as she is dedicated to helping youth discover their full potential using the bike as a gateway.Kat firmly believes in the bike as a solution to a large majority of the worlds’ problems and can’t imagine her life without it.Personally, she most often utilizes a bike as a commuter or for scenic bike packing trips.Kat is also a bilingual hobby welder and avid gardener who loves to adventure in the outdoors.Lawrence, KS is her home base and she can be reached at kat@peopleforbikes.org.",
         ],
       },
     },
@@ -267,6 +285,20 @@ const data = {
         "Research & Finance Specialist",
         "Technical Assistance (website / emailing list / suites)",
       ],
+    },
+  ],
+  boardMembersView: [
+    {
+      heading: "Meet the Board Members",
+    },
+    {
+      heading: "How to Become a Board Member",
+      text: ["If you're looking to help young people on a national scale, then you've come to the right place. As a board member you will be part of the efforts in business development, funding, partnerships, and at times project execution. Easily, this becomes a team effort and works directly to the success of the Council. Together, the board keeps the youth council members focused on council member duties while the board focuses on the organizational duties.",
+        "Email info@nybcouncil.com with the title \"Welcome to the board\" and in the body please let us know your interest in joining and include your passion for bikes or youth!"],
+      img: {
+        src: boardMembersImage,
+        alt: "illustration showing three people standing",
+      }
     },
   ],
 };

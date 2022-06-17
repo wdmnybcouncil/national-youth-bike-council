@@ -22,7 +22,7 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
       return (
         <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full">
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
-          <ProfileCard.Title>{`${firstName} ${lastName.substring(0, 1)}.`}</ProfileCard.Title>
+          <ProfileCard.Title>{`${firstName} ${lastName}`}</ProfileCard.Title>
           <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>
           <ProfileCard.Location>{location}</ProfileCard.Location>
         </ProfileCard>
@@ -46,7 +46,7 @@ function Advisors({ advisorsView, advisorMembers = [] }) {
         <Section.Heading>{advisorsView[1].heading}</Section.Heading>
         <div className="flex flex-wrap gap-6">{advisorMembers.length && renderAdvisorMemberCards()}</div>
       </Section>
-      {/* Section # 3 - How to Become  */}
+      {/* Section # 3 - How to Become an Advisor  */}
       <Section>
         <Section.Heading>{advisorsView[2].heading}</Section.Heading>
         <div className="flex flex-col">
