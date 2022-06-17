@@ -2,7 +2,7 @@
 
 ## About the Project
 
-**National Youth Bike Council** aims to provide an active learning space for young cyclists to boost youth voice in the bicycle industry through peer leadership. The organization already has a multipage [website](https://www.nybcouncil.com/) made using Wix but is looking to set up a new website using a Content Management System (CMS). The ask is to create a simple web design along with flexible & organized interface to manage the content.
+**National Youth Bike Council** aims to provide an active learning space for young cyclists to boost youth voice in the bicycle industry through peer leadership. The organization already has a multipage [website](https://www.nybcouncil.com/) but is looking to set up a new website using a Content Management System (CMS). The ask is to create a simple web design along with flexible & organized interface to manage the content.
 
 ## Features of the App
 
@@ -36,5 +36,6 @@ The website is still under construction. But, as of now the follwing routes are 
 1. [Why The Council](https://5hraddha.github.io/national-youth-bike-council/#/why-the-council)
 2. [Council Members](https://5hraddha.github.io/national-youth-bike-council/#/council-members)
 3. [Advisors](https://5hraddha.github.io/national-youth-bike-council/#/advisors)
+4. [Board Members](https://5hraddha.github.io/national-youth-bike-council/#/board-members)
 
 Visit the live website - [here](https://5hraddha.github.io/national-youth-bike-council/).
