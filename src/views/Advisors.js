@@ -12,15 +12,20 @@ import btnArrow from "../assets/images/btn-arrow.svg";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function Advisors({ advisorsView, advisorMembers = [] }) {
+function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
   const renderListItems = (list) => list.map((item) => <List.Item key={item}>{item}</List.Item>);
 
   const renderAdvisorMemberCards = () =>
     advisorMembers.map((member) => {
-      const { firstName, lastName, img, roles, location } = member;
+      const { firstName, lastName, img, roles, location, story } = member;
+      const userProfile = {
+        userName: `${firstName} ${lastName}`,
+        userImg: img,
+        userStory: story.detail,
+      };
       return (
-        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full">
+        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${firstName} ${lastName}`}</ProfileCard.Title>
           <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>

@@ -9,12 +9,17 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function CouncilMembers({ councilMembers = [], alumniMembers = [] }) {
+function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }) {
   const renderCouncilMemberCards = () =>
     councilMembers.map((member) => {
-      const { firstName, lastName, img, roles, location } = member;
+      const { firstName, lastName, img, roles, location, story } = member;
+      const userProfile = {
+        userName: `${firstName} ${lastName.substring(0, 1)}.`,
+        userImg: img,
+        userStory: story.detail,
+      };
       return (
-        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full">
+        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${firstName} ${lastName.substring(0, 1)}.`}</ProfileCard.Title>
           <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>

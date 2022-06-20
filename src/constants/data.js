@@ -293,12 +293,14 @@ const data = {
     },
     {
       heading: "How to Become a Board Member",
-      text: ["If you're looking to help young people on a national scale, then you've come to the right place. As a board member you will be part of the efforts in business development, funding, partnerships, and at times project execution. Easily, this becomes a team effort and works directly to the success of the Council. Together, the board keeps the youth council members focused on council member duties while the board focuses on the organizational duties.",
-        "Email info@nybcouncil.com with the title \"Welcome to the board\" and in the body please let us know your interest in joining and include your passion for bikes or youth!"],
+      text: [
+        "If you're looking to help young people on a national scale, then you've come to the right place. As a board member you will be part of the efforts in business development, funding, partnerships, and at times project execution. Easily, this becomes a team effort and works directly to the success of the Council. Together, the board keeps the youth council members focused on council member duties while the board focuses on the organizational duties.",
+        'Email info@nybcouncil.com with the title "Welcome to the board" and in the body please let us know your interest in joining and include your passion for bikes or youth!',
+      ],
       img: {
         src: boardMembersImage,
         alt: "illustration showing three people standing",
-      }
+      },
     },
   ],
 };
