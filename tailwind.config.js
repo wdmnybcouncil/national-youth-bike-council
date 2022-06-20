@@ -28,6 +28,7 @@ module.exports = {
       backgroundColor: {
         skin: {
           "fill-base": "var(--color-fill-base)",
+          "fill-base-transparent": "var(--color-fill-base-transparent)",
           "fill-primary": "var(--color-fill-primary)",
           "fill-accent": "var(--color-fill-accent)",
           "fill-card-accent": "var(--color-fill-card-accent)",

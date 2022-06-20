@@ -9,13 +9,18 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function BoardMembers({ boardMembersView, boardMembers = [] }) {
+function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
   const renderBoardMemberCards = () =>
     boardMembers.map((member) => {
-      const { firstName, lastName, img, roles, location } = member;
+      const { firstName, lastName, img, roles, location, story } = member;
+      const userProfile = {
+        userName: `${firstName} ${lastName.substring(0, 1)}.`,
+        userImg: img,
+        userStory: story.detail,
+      };
       return (
-        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full">
+        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${firstName} ${lastName.substring(0, 1)}.`}</ProfileCard.Title>
           <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>
@@ -48,6 +53,7 @@ function BoardMembers({ boardMembersView, boardMembers = [] }) {
 const propTypes = {
   boardMembersView: PropTypes.array.isRequired,
   boardMembers: PropTypes.array.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 BoardMembers.displayName = "BoardMembers";
