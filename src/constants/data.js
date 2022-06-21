@@ -232,129 +232,6 @@ const data = {
       },
     },
   ],
-  partners: [
-    {
-      img: {
-        src: austinYouthFitnessImage,
-        alt: "Austin Youth Fitness Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: bicycleCoalitionImage,
-        alt: "Bicycle Coalition Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: bikeWorksImage,
-        alt: "Bike Works Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: bikesNotBombsImage,
-        alt: "Bikes Not Bombs Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: ghisalloCycleInitiativeImage,
-        alt: "Ghisallo Cycle Initiative Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: leagueOfAmericanBicyclistsImage,
-        alt: "League Of American Bicyclists Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: projectGreenSchoolsImage,
-        alt: "Project Green Schools Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: theNewWheelImage,
-        alt: "The New Wheel Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: youthBikeAmericaImage,
-        alt: "Youth Bike America Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: youthBikeSummitImage,
-        alt: "Youth Bike Summit Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: "",
-        alt: "",
-      },
-      text: "Atlanta Students Advocating for Pedestrians (ASAP)",
-    },
-  ],
-  sponsorships: [
-    {
-      img: {
-        src: investInWomenEntImage,
-        alt: "Invest in Women Entrepreneurs Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: peopleForBikesImage,
-        alt: "People For Bikes Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: qualityBikeProductsImage,
-        alt: "Quality Bike Products Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: skysTheLimitImage,
-        alt: "Skys The Limit Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: sramImage,
-        alt: "SRAM Logo",
-      },
-      text: "",
-    },
-    {
-      img: {
-        src: usaCyclingImage,
-        alt: "USA Cycling Logo",
-      },
-      text: "",
-    },
-  ],
   whyTheCouncilView: [
     {
       heading: "Community",
@@ -445,6 +322,137 @@ const data = {
         alt: "illustration showing three people standing",
       },
     },
+  ],
+  sponsorshipsView: [
+    {
+      heading: "Partners",
+      partners: [
+        {
+          img: {
+            src: austinYouthFitnessImage,
+            alt: "Austin Youth Fitness Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bicycleCoalitionImage,
+            alt: "Bicycle Coalition Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bikeWorksImage,
+            alt: "Bike Works Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bikesNotBombsImage,
+            alt: "Bikes Not Bombs Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: ghisalloCycleInitiativeImage,
+            alt: "Ghisallo Cycle Initiative Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: leagueOfAmericanBicyclistsImage,
+            alt: "League Of American Bicyclists Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: projectGreenSchoolsImage,
+            alt: "Project Green Schools Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: theNewWheelImage,
+            alt: "The New Wheel Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: youthBikeAmericaImage,
+            alt: "Youth Bike America Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: youthBikeSummitImage,
+            alt: "Youth Bike Summit Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: "",
+            alt: "",
+          },
+          text: "Atlanta Students Advocating for Pedestrians (ASAP)",
+        },
+      ],
+    },
+    {
+      heading: "Grants - Sponsorships - Awards",
+      sponsorships: [
+        {
+          img: {
+            src: investInWomenEntImage,
+            alt: "Invest in Women Entrepreneurs Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: peopleForBikesImage,
+            alt: "People For Bikes Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: qualityBikeProductsImage,
+            alt: "Quality Bike Products Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: skysTheLimitImage,
+            alt: "Skys The Limit Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: sramImage,
+            alt: "SRAM Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: usaCyclingImage,
+            alt: "USA Cycling Logo",
+          },
+          text: "",
+        },
+      ],
+    }
   ],
 };
 

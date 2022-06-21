@@ -27,7 +27,7 @@ function App() {
   const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const { members, partners, sponsorships, whyTheCouncilView, advisorsView, boardMembersView } = data;
+  const { members, whyTheCouncilView, advisorsView, boardMembersView, sponsorshipsView } = data;
 
   // Filter out current Council Members from the list of all the members
   const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
@@ -114,8 +114,7 @@ function App() {
   };
 
   const propsForSponsorshipsView = {
-    partners,
-    sponsorships,
+    sponsorshipsView,
   };
 
   // ********************************************************************************************* //
