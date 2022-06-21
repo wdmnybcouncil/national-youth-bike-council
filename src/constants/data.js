@@ -279,6 +279,14 @@ const data = {
       },
     },
   ],
+  councilMembersView: [
+    {
+      heading: "Meet the Council Members"
+    },
+    {
+      heading: "Alumni"
+    },
+  ],
   advisorsView: [
     {
       heading: "Who are Advisors?",

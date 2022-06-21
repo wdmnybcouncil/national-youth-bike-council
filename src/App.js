@@ -27,7 +27,7 @@ function App() {
   const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const { members, whyTheCouncilView, advisorsView, boardMembersView, sponsorshipsView } = data;
+  const { members, whyTheCouncilView, councilMembersView, advisorsView, boardMembersView, sponsorshipsView } = data;
 
   // Filter out current Council Members from the list of all the members
   const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
@@ -96,6 +96,7 @@ function App() {
   };
 
   const propsForCouncilMembersView = {
+    councilMembersView,
     councilMembers,
     alumniMembers,
     onCardClick: handleProfileCardClick,
