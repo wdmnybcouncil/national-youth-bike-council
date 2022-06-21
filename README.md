@@ -38,5 +38,6 @@ The website is still under construction. But, as of now the follwing routes are 
 3. [Advisors](https://5hraddha.github.io/national-youth-bike-council/#/advisors)
 4. [Board Members](https://5hraddha.github.io/national-youth-bike-council/#/board-members)
 5. [Partners & Sponsorships](https://5hraddha.github.io/national-youth-bike-council/#/sponsorships)
+6. [Where Are We](https://5hraddha.github.io/national-youth-bike-council/#/where-are-we)
 
 Visit the live website - [here](https://5hraddha.github.io/national-youth-bike-council/).
