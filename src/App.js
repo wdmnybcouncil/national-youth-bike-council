@@ -1,14 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+// Import components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 
+// Import views
 import WhyTheCouncil from "./views/WhyTheCouncil";
 import CouncilMembers from "./views/CouncilMembers";
 import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
+import Sponsorships from "./views/Sponsorships";
 
 // Import data to pass on to the components
 import data from "./constants/data";
@@ -24,7 +27,7 @@ function App() {
   const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const { members, whyTheCouncilView, advisorsView, boardMembersView } = data;
+  const { members, whyTheCouncilView, councilMembersView, advisorsView, boardMembersView, sponsorshipsView } = data;
 
   // Filter out current Council Members from the list of all the members
   const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
@@ -93,21 +96,26 @@ function App() {
   };
 
   const propsForCouncilMembersView = {
+    councilMembersView,
     councilMembers,
     alumniMembers,
     onCardClick: handleProfileCardClick,
   };
 
-  const propsForAdvisors = {
+  const propsForAdvisorsView = {
     advisorsView,
     advisorMembers,
     onCardClick: handleProfileCardClick,
   };
 
-  const propsForBoardMembers = {
+  const propsForBoardMembersView = {
     boardMembersView,
     boardMembers,
     onCardClick: handleProfileCardClick,
+  };
+
+  const propsForSponsorshipsView = {
+    sponsorshipsView,
   };
 
   // ********************************************************************************************* //
@@ -128,8 +136,9 @@ function App() {
           />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
           <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
-          <Route path="advisors" element={<Advisors {...propsForAdvisors} />} />
-          <Route path="board-members" element={<BoardMembers {...propsForBoardMembers} />} />
+          <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
+          <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
+          <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
         </Routes>
       </main>
       <Footer />

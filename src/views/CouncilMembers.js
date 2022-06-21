@@ -9,7 +9,7 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }) {
+function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers = [], onCardClick }) {
   const renderCouncilMemberCards = () =>
     councilMembers.map((member) => {
       const { firstName, lastName, img, roles, location, story } = member;
@@ -37,12 +37,12 @@ function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }
     <>
       {/* Section # 1 - Meet the Council Members */}
       <Section>
-        <Section.Heading>Meet the Council Members</Section.Heading>
+        <Section.Heading>{councilMembersView[0].heading}</Section.Heading>
         <div className="flex flex-wrap gap-6">{councilMembers.length && renderCouncilMemberCards()}</div>
       </Section>
       {/* Section # 2 - Alumni */}
       <Section>
-        <Section.Heading>Alumni</Section.Heading>
+        <Section.Heading>{councilMembersView[1].heading}</Section.Heading>
         <div className="flex flex-wrap justify-center gap-8 md:justify-evenly md:gap-0">{alumniMembers && renderAlumniCards()}</div>
       </Section>
     </>
@@ -50,8 +50,10 @@ function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }
 }
 
 const propTypes = {
+  councilMembersView: PropTypes.array.isRequired,
   councilMembers: PropTypes.array.isRequired,
   alumniMembers: PropTypes.array.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 CouncilMembers.displayName = "CouncilMembers";

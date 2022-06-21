@@ -25,6 +25,26 @@ import advisorsImage from "../assets/images/advisors/advisors.png";
 // Images for Board Members view
 import boardMembersImage from "../assets/images/board-members/board-members.png";
 
+// Images for Partners
+import austinYouthFitnessImage from "../assets/images/partners/austin-youth-fitnesss.png";
+import bicycleCoalitionImage from "../assets/images/partners/bicycle-coalition.png";
+import bikeWorksImage from "../assets/images/partners/bike-works.png";
+import bikesNotBombsImage from "../assets/images/partners/bikes-not-bombs.png";
+import ghisalloCycleInitiativeImage from "../assets/images/partners/ghisallo-cycle-initiative.png";
+import leagueOfAmericanBicyclistsImage from "../assets/images/partners/league-of-american-bicyclists.png";
+import projectGreenSchoolsImage from "../assets/images/partners/project-green-schools.png";
+import theNewWheelImage from "../assets/images/partners/the-new-wheel.png";
+import youthBikeAmericaImage from "../assets/images/partners/youth-bike-america.png";
+import youthBikeSummitImage from "../assets/images/partners/youth-bike-summit.png";
+
+// Images for Sponsorships
+import investInWomenEntImage from "../assets/images/sponsorships/invest-in-women-entrepreneurs.png";
+import peopleForBikesImage from "../assets/images/sponsorships/people-for-bikes.png";
+import qualityBikeProductsImage from "../assets/images/sponsorships/quality-bike-products.png";
+import skysTheLimitImage from "../assets/images/sponsorships/skys-the-limit.png";
+import sramImage from "../assets/images/sponsorships/sram.png";
+import usaCyclingImage from "../assets/images/sponsorships/usa-cycling.png";
+
 const data = {
   members: [
     {
@@ -259,6 +279,14 @@ const data = {
       },
     },
   ],
+  councilMembersView: [
+    {
+      heading: "Meet the Council Members",
+    },
+    {
+      heading: "Alumni",
+    },
+  ],
   advisorsView: [
     {
       heading: "Who are Advisors?",
@@ -301,6 +329,137 @@ const data = {
         src: boardMembersImage,
         alt: "illustration showing three people standing",
       },
+    },
+  ],
+  sponsorshipsView: [
+    {
+      heading: "Partners",
+      partners: [
+        {
+          img: {
+            src: austinYouthFitnessImage,
+            alt: "Austin Youth Fitness Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bicycleCoalitionImage,
+            alt: "Bicycle Coalition Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bikeWorksImage,
+            alt: "Bike Works Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: bikesNotBombsImage,
+            alt: "Bikes Not Bombs Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: ghisalloCycleInitiativeImage,
+            alt: "Ghisallo Cycle Initiative Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: leagueOfAmericanBicyclistsImage,
+            alt: "League Of American Bicyclists Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: projectGreenSchoolsImage,
+            alt: "Project Green Schools Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: theNewWheelImage,
+            alt: "The New Wheel Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: youthBikeAmericaImage,
+            alt: "Youth Bike America Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: youthBikeSummitImage,
+            alt: "Youth Bike Summit Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: "",
+            alt: "",
+          },
+          text: "Atlanta Students Advocating for Pedestrians (ASAP)",
+        },
+      ],
+    },
+    {
+      heading: "Grants - Sponsorships - Awards",
+      sponsorships: [
+        {
+          img: {
+            src: investInWomenEntImage,
+            alt: "Invest in Women Entrepreneurs Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: peopleForBikesImage,
+            alt: "People For Bikes Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: qualityBikeProductsImage,
+            alt: "Quality Bike Products Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: skysTheLimitImage,
+            alt: "Skys The Limit Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: sramImage,
+            alt: "SRAM Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: usaCyclingImage,
+            alt: "USA Cycling Logo",
+          },
+          text: "",
+        },
+      ],
     },
   ],
 };
