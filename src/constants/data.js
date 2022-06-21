@@ -13,6 +13,9 @@ import adivaProfileImage from "../assets/images/members/adiva.png";
 import noahProfileImage from "../assets/images/members/noah.png";
 import alumni1ProfileImage from "../assets/images/members/agae.png";
 
+// Images for HowItStarted view
+import howItStartedImage from "../assets/images/how-it-started/how-it-started.png";
+
 // Images for WhyTheCouncil view
 import communityImage from "../assets/images/why-the-council/community.png";
 import healthImage from "../assets/images/why-the-council/health.png";
@@ -231,6 +234,23 @@ const data = {
         detail: [""],
       },
     },
+  ],
+  howItStartedView: [
+    {
+      heading: "How It Started",
+      text: [
+        "The National Youth Bike Council officially started in January of 2017, by a group of Philadelphia youth motivated by the idea of connecting young people across the nation as leaders in the cycling community. Following an annual youth bike Summit, they went home and this began the creation of the Council! ",
+        "After going back home from the Youth Bike Summit in 2016... the three youth below started to tackle the idea of a National Youth Bike Council. There was no question about if we wanted a Council, there was only a question of could we accomplish creating the council?",
+        "​In 2017, it was Joshua and Adiva who were a part of the Youth Council at Neighborhood Bike Works in Philadelphia and Noah from the Youth Advisory Council at Bike Works from Seattle. It started small in a group chat, then grew to an emailing list, and then to recruiting and looking for youth leaders from other locations. ",
+      ],
+      img: {
+        src: howItStartedImage,
+        alt: "the starting crew of the council"
+      }
+    },
+    {
+      heading: "Starting Crew of 2017",
+    }
   ],
   whereAreWeView: [
     {

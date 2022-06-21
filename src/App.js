@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 
 // Import views
+import HowItStarted from "./views/HowItStarted";
 import WhereAreWe from "./views/WhereAreWe";
 import WhyTheCouncil from "./views/WhyTheCouncil";
 import CouncilMembers from "./views/CouncilMembers";
@@ -30,6 +31,7 @@ function App() {
 
   const {
     members,
+    howItStartedView,
     whereAreWeView,
     whyTheCouncilView,
     councilMembersView,
@@ -37,6 +39,9 @@ function App() {
     boardMembersView,
     sponsorshipsView
   } = data;
+
+  // Filter out all the members of the starting crew from the list of all the members
+  const startingCrewMembers = members.filter((item) => item.roles.includes("Co-Founder"));
 
   // Filter out current Council Members from the list of all the members
   const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
@@ -100,6 +105,12 @@ function App() {
     userProfile: selectedUserProfile,
   };
 
+  const propsForHowItStartedView = {
+    howItStartedView,
+    startingCrewMembers,
+    onCardClick: handleProfileCardClick,
+  }
+
   const propsForWhereAreWeView = {
     whereAreWeView,
   };
@@ -147,6 +158,7 @@ function App() {
               <></>
             ))()}
           />
+          <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
           <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
