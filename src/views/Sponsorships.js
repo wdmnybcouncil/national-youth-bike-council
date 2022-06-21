@@ -19,30 +19,26 @@ function Sponsorships({ sponsorshipsView }) {
           return null;
         }
         return (
-          <p key={text} className="p-4 bg-skin-fill-accent text-skin-muted font-semibold text-lg text-center md:text-xl tracking-wide">{text}</p>
+          <p key={text} className="bg-skin-fill-accent p-4 text-center text-lg font-semibold tracking-wide text-skin-muted md:text-xl">
+            {text}
+          </p>
         );
       }
-      return (
-        <img key={img.alt} src={img.src} alt={img.alt} className="max-w-full max-h-28 object-cover object-center" />
-      );
+      return <img key={img.alt} src={img.src} alt={img.alt} className="max-h-28 max-w-full object-cover object-center" />;
     });
-  }
+  };
 
   return (
     <>
       {/* Section # 1 - Partner */}
       <Section>
         <Section.Heading>{sponsorshipsView[0].heading}</Section.Heading>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 place-items-center">
-          {partners.length && renderImages(partners)}
-        </div>
+        <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">{partners.length && renderImages(partners)}</div>
       </Section>
       {/* Section # 2 - Grants - Sponsorships - Awards */}
       <Section>
         <Section.Heading>{sponsorshipsView[1].heading}</Section.Heading>
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 place-items-center">
-          {sponsorships.length && renderImages(sponsorships)}
-        </div>
+        <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">{sponsorships.length && renderImages(sponsorships)}</div>
       </Section>
     </>
   );

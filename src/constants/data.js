@@ -281,10 +281,10 @@ const data = {
   ],
   councilMembersView: [
     {
-      heading: "Meet the Council Members"
+      heading: "Meet the Council Members",
     },
     {
-      heading: "Alumni"
+      heading: "Alumni",
     },
   ],
   advisorsView: [
@@ -460,7 +460,7 @@ const data = {
           text: "",
         },
       ],
-    }
+    },
   ],
 };
 
