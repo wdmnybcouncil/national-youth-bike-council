@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 
 // Import views
+import WhereAreWe from "./views/WhereAreWe";
 import WhyTheCouncil from "./views/WhyTheCouncil";
 import CouncilMembers from "./views/CouncilMembers";
 import Advisors from "./views/Advisors";
@@ -27,7 +28,15 @@ function App() {
   const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-  const { members, whyTheCouncilView, councilMembersView, advisorsView, boardMembersView, sponsorshipsView } = data;
+  const {
+    members,
+    whereAreWeView,
+    whyTheCouncilView,
+    councilMembersView,
+    advisorsView,
+    boardMembersView,
+    sponsorshipsView
+  } = data;
 
   // Filter out current Council Members from the list of all the members
   const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
@@ -91,6 +100,10 @@ function App() {
     userProfile: selectedUserProfile,
   };
 
+  const propsForWhereAreWeView = {
+    whereAreWeView,
+  };
+
   const propsForWhyTheCouncilView = {
     whyTheCouncilView,
   };
@@ -134,6 +147,7 @@ function App() {
               <></>
             ))()}
           />
+          <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
           <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
           <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />

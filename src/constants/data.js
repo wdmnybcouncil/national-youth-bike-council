@@ -232,6 +232,18 @@ const data = {
       },
     },
   ],
+  whereAreWeView: [
+    {
+      heading: "Where are we?",
+      mapMarkers: [
+        // Markers coordinates: [longitude, latitude]
+        { markerOffset: -15, name: "Atlanta", coordinates: [-84.3880, 33.7490] },
+        { markerOffset: 25, name: "Philadelphia, PA", coordinates: [-75.1652, 39.9526] },
+        { markerOffset: -15, name: "State College, PA", coordinates: [-77.8599, 40.7982] },
+        { markerOffset: -15, name: "Seattle, WA", coordinates: [-122.3352, 47.6080] },
+      ],
+    },
+  ],
   whyTheCouncilView: [
     {
       heading: "Community",
