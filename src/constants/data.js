@@ -40,13 +40,18 @@ import theNewWheelImage from "../assets/images/partners/the-new-wheel.png";
 import youthBikeAmericaImage from "../assets/images/partners/youth-bike-america.png";
 import youthBikeSummitImage from "../assets/images/partners/youth-bike-summit.png";
 
-// Images for Sponsorships
+// Images for Sponsorships view
 import investInWomenEntImage from "../assets/images/sponsorships/invest-in-women-entrepreneurs.png";
 import peopleForBikesImage from "../assets/images/sponsorships/people-for-bikes.png";
 import qualityBikeProductsImage from "../assets/images/sponsorships/quality-bike-products.png";
 import skysTheLimitImage from "../assets/images/sponsorships/skys-the-limit.png";
 import sramImage from "../assets/images/sponsorships/sram.png";
 import usaCyclingImage from "../assets/images/sponsorships/usa-cycling.png";
+
+// Images for Media Coverage view
+import youthVoiceIsImpImage from "../assets/images/media-coverage/youth-voice-is-important.png";
+import growingTheBusinessImage from "../assets/images/media-coverage/growing-the-business.png";
+import acceptedIntoPbeBikeCouncilImage from "../assets/images/media-coverage/accepted-into-pbe-bike-council.png";
 
 const data = {
   members: [
@@ -490,6 +495,73 @@ const data = {
             alt: "USA Cycling Logo",
           },
           text: "",
+        },
+      ],
+    },
+  ],
+  mediaCoverageView: [
+    {
+      heading: "Media Coverage",
+      posts: [
+        {
+          title: "Youth Voice is Important",
+          date: "February 28, 2022",
+          author: "",
+          text: {
+            brief: "Great things happen when you get young adults passionate about health, community, youth leadership, and education together in the same room!",
+            detail: "",
+          },
+          img: {
+            src: youthVoiceIsImpImage,
+            alt: "group click of the entire team of the council",
+          },
+          links: {
+            post: "",
+            article: "https://www.peopleforbikes.org/news/centering-youth-voices-in-bike-advocacy",
+            video: "https://www.youtube.com/watch?v=L1W9BUprVC8",
+          }
+        },
+        {
+          title: "Growing The Business",
+          date: "February 10, 2022",
+          author: "",
+          text: {
+            brief: `Leadership opportunities present themselves. Not only this about creating leaders, it's by-product is also about creating the next generations leaders.
+
+            Joshua got invited to speak about the work of the council with the Chamber of Commerce!`,
+            detail: "",
+          },
+          img: {
+            src: growingTheBusinessImage,
+            alt: "US Chamber of Commerce Foundation featuring Joshua Funches & Dr. Tashion Macon",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=cMJHLwm-2pk",
+          }
+        },
+        {
+          title: "Accepted Into PBE Bike Squad!",
+          date: "January 8, 2022",
+          author: "",
+          text: {
+            brief: `Welcoming the youngest member the Philly Bike Expo Squad!
+
+            Luly now brings the National Youth Bike Council spirit to the table in Philadelphia to a whole new level. 
+
+            Huge Congratulations!`,
+            detail: "",
+          },
+          img: {
+            src: acceptedIntoPbeBikeCouncilImage,
+            alt: "Luly on her bike",
+          },
+          links: {
+            post: "https://www.instagram.com/p/CYen2T9uR2r/",
+            article: "",
+            video: "",
+          }
         },
       ],
     },

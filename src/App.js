@@ -14,6 +14,7 @@ import CouncilMembers from "./views/CouncilMembers";
 import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
+import MediaCoverage from "./views/MediaCoverage";
 
 // Import data to pass on to the components
 import data from "./constants/data";
@@ -37,7 +38,8 @@ function App() {
     councilMembersView,
     advisorsView,
     boardMembersView,
-    sponsorshipsView
+    sponsorshipsView,
+    mediaCoverageView,
   } = data;
 
   // Filter out all the members of the starting crew from the list of all the members
@@ -142,6 +144,10 @@ function App() {
     sponsorshipsView,
   };
 
+  const propsForMediaCoverageView = {
+    mediaCoverageView,
+  };
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -154,9 +160,7 @@ function App() {
         <Routes>
           <Route
             path="/*"
-            element={(() => (
-              <></>
-            ))()}
+            element={(() => <></>)()}
           />
           <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
@@ -165,6 +169,7 @@ function App() {
           <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
           <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
           <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
+          <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
         </Routes>
       </main>
       <Footer />
