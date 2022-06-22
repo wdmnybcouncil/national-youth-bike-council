@@ -4,6 +4,7 @@ import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
 import List from "../components/List/List";
 import CTALink from "../components/CTALink";
+import PageLink from "../components/PageLink";
 import btnArrow from "../assets/images/btn-arrow.svg";
 
 /**
@@ -57,14 +58,9 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
         <div className="flex flex-col">
           {renderSectionTexts(advisorsView[2].text)}
           <List>{renderListItems(advisorsView[2].areasOfExpertise)}</List>
-          <a
-            href="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
-            className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90"
-          >
+          <PageLink type="external" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
             Click here to see full descriptions
-          </a>
+          </PageLink>
           <CTALink linkTo="" className="mt-4 self-center xs:self-start">
             Join us
             <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
