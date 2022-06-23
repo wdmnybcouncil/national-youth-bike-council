@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  */
 
 function PostImg({ src, alt, className }) {
-  return <img src={src} alt={alt} className={`max-h-96 max-w-full rounded-md border-4 border-skin-accent ${className}`} />;
+  return <img src={src} alt={alt} className={`max-h-80 max-w-full rounded-md border-4 border-skin-accent ${className}`} />;
 }
 
 const propTypes = {
