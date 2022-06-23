@@ -62,7 +62,21 @@ import springBackOnBikesImage from "../assets/images/media-coverage/2021/spring-
 import bikeSideChatLabImage from "../assets/images/media-coverage/2021/bike-side-chat-lab.png";
 import deiMicroGrantImage from "../assets/images/media-coverage/2021/dei-micro-grant.png";
 import briaAtOutrideImage from "../assets/images/media-coverage/2021/bria-at-outride.png";
+import rideForYouthLeadershipImage from "../assets/images/media-coverage/2021/ride-for-youth-leadership.png";
+import specializedStudentLeadershipAwardImage from "../assets/images/media-coverage/2021/specialized-student-athelete-leadership-award.png";
+import summerChatsImage from "../assets/images/media-coverage/2021/summer-chats-2021.png";
 
+// 2020
+import naturalBenefitsOfNybcImage from "../assets/images/media-coverage/2020/natural-benefits-of-nybc.png";
+import bikeTalkWithJoshuaImage from "../assets/images/media-coverage/2020/bike-talk-with-joshua-funches.png";
+import marcBriaCollegeImage from "../assets/images/media-coverage/2020/marc-bria-college.png";
+import lotGraduatingImage from "../assets/images/media-coverage/2020/lot-graduating.png";
+import brandNewLookImage from "../assets/images/media-coverage/2020/brand-new-look.png";
+
+//2019
+import phillyBikeExpoImage from "../assets/images/media-coverage/2019/philly-bike-expo.png";
+import adivaAndZoeImage from "../assets/images/media-coverage/2019/adiva-and-zoe.png";
+import nybcSpringRideImage from "../assets/images/media-coverage/2019/nybc-spring-ride.png"
 
 const data = {
   members: [
@@ -574,83 +588,106 @@ const data = {
             video: "",
           }
         },
+        //2021
         {
-          title: "New Advisors to the Team",
-          date: "January 14, 2021",
+          title: "Specialized Student-Athlete Leadership Award",
+          date: "",
           author: "",
           text: {
-            brief: `They have been working behind the scenes and are here to stay! We are welcoming three new advisors to the team.
-
-            Advisors are committed individuals that work alongside the Council, giving us professional insight and perspective. See more below.`,
+            brief: `Luly has been nominated among her peers from across the nation for being recognized for her outstanding leadership, academic performance and volunteerism in the 2020 nominated list of student athletics published by the National Interscholastic Cycling Association (NICA).`,
             detail: "",
           },
           img: {
-            src: newAdvisorsToTheTeamImage,
-            alt: "new advisors to the team",
+            src: specializedStudentLeadershipAwardImage,
+            alt: "luly riding her bike",
           },
           links: {
-            post: "https://www.instagram.com/p/CKCwke_lt5i/",
-            article: "",
+            post: "",
+            article: "https://nationalmtb.org/nica-honors-its-2020-award-recipients/",
             video: "",
           }
         },
         {
-          title: "Emerging Leader of The Year Award 2021",
-          date: "March 2, 2021",
+          title: "Ensuring A Voice For Youth Across The U.S.",
+          date: "October 29, 2021",
           author: "",
           text: {
-            brief: `Awarded by the League of American Bicyclists at the National Bike Summit. Joshua has been nominated the emerging Leader of the Year.
+            brief: `During the Summer of 2020 we spent time just chatting with our youth peers across the U.S.
 
-            This award is a special accolade for a young person who is new to the bicycling movement and has demonstrated exceptional and inspiring bicycle advocacy.`,
+            What's your favorite place to ride? What do you want to see next in the bicycling space? What can national groups do to help? And many more questions.
+
+            See what they said!`,
             detail: "",
           },
           img: {
-            src: emergingLeaderOfTheYearImage,
-            alt: "joshua with national youth bike council flag",
-          },
-          links: {
-            post: "https://bicyclecoalition.org/joshua-funches-is-the-emerging-leader-of-the-year/#:~:text=OUR%202021%20AWARD%20GOES%20TO%20JOSHUA%20FUNCHES%20OF%20THE%20NATIONAL%20YOUTH%20BIKE%20COUNCIL",
-            article: "https://www.bikeleague.org/content/presenting-our-2021-award-winners",
-            video: "",
-          }
-        },
-        {
-          title: "Presence at the National Bike Summit",
-          date: "March 15, 2021",
-          author: "",
-          text: {
-            brief: `We show up, lead, make an example and show out.
-
-            At this year's Bike Summit we worked with the Youth Bike Summit to put on a "Youth Session" where we held bike conversations specifically for youth to have a voice in the room.`,
-            detail: "",
-          },
-          img: {
-            src: presenceAtNationalBikeSummitImage,
-            alt: "virtual meeting of the members",
+            src: summerChatsImage,
+            alt: "team members joining for summer chats online",
           },
           links: {
             post: "",
             article: "",
-            video: "https://www.youtube.com/watch?v=e2Kbw7B_cp0",
+            video: "https://www.youtube.com/watch?v=L1W9BUprVC8",
           }
         },
         {
-          title: "Spring Back On Bikes",
-          date: "May 24, 2021",
+          title: "Ride For Youth Leadership",
+          date: "August 12, 2021",
           author: "",
           text: {
-            brief: `With support from local bike shops, we set out to making bicycling more accessible to our peers. 
+            brief: `In the Name of the National Youth Bike Council, we rode for Youth Leadership promotion and for community awareness.
 
-            This year we piloted Spring Back On Bikes in Philadelphia and Atlanta in partnership with Atlanta Students Advocating for Pedestrians.`,
+            This ride was lead by San Francisco Bicycle Coalition and hosted by Council Member Joshua.
+
+            This ride put the youth participants directly in contact with the national community.`,
             detail: "",
           },
           img: {
-            src: springBackOnBikesImage,
-            alt: "a boy wearing a helmet and riding a bike",
+            src: rideForYouthLeadershipImage,
+            alt: "the team posing for ride for youth leadership",
           },
           links: {
             post: "",
-            article: "https://www.peopleforbikes.org/news/spring-back-on-bikes-is-increasing-youth-ridership",
+            article: "https://sfbike.org/news/riding-for-youth-leadership-and-community-resilience/",
+            video: "https://www.youtube.com/watch?v=pcc_800RpVY",
+          }
+        },
+        {
+          title: "Outride Research Summit",
+          date: "August 9, 2021",
+          author: "",
+          text: {
+            brief: `Starting at 38:00 in the link below, Council member Bria brings the council to the Outride Research Summit!
+
+            Outride funds youth-bike-programming directly and we believe it's important for an event made to benefit youth has youth voice in it!`,
+            detail: "",
+          },
+          img: {
+            src: briaAtOutrideImage,
+            alt: "bria speaking at outride research summit on youtube",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=DLhITWL_Bos",
+          }
+        },
+        {
+          title: "USA Cycling Awards DEI Micro-Grant ",
+          date: "July 30, 2021",
+          author: "",
+          text: {
+            brief: `The USA Cycling Diversity & Inclusion grant seeks to empower groups, organizations and programs that champion diversity, equity and inclusion in the American cycling community.
+
+            USA Cycling is proud to award the National Youth Bike Council with the DEI Micro-Grant!`,
+            detail: "",
+          },
+          img: {
+            src: deiMicroGrantImage,
+            alt: "DEI micro grant",
+          },
+          links: {
+            post: "",
+            article: "https://usacycling.org/article/usa-cycling-awards-grant-to-the-national-youth-bike-council",
             video: "",
           }
         },
@@ -675,43 +712,245 @@ const data = {
           }
         },
         {
-          title: "USA Cycling Awards DEI Micro-Grant ",
-          date: "July 30, 2021",
+          title: "Spring Back On Bikes",
+          date: "May 24, 2021",
           author: "",
           text: {
-            brief: `The USA Cycling Diversity & Inclusion grant seeks to empower groups, organizations and programs that champion diversity, equity and inclusion in the American cycling community.
+            brief: `With support from local bike shops, we set out to making bicycling more accessible to our peers. 
 
-            USA Cycling is proud to award the National Youth Bike Council with the DEI Micro-Grant!`,
+            This year we piloted Spring Back On Bikes in Philadelphia and Atlanta in partnership with Atlanta Students Advocating for Pedestrians.`,
             detail: "",
           },
           img: {
-            src: deiMicroGrantImage,
-            alt: "DEI micro grant",
+            src: springBackOnBikesImage,
+            alt: "a boy wearing a helmet and riding a bike",
           },
           links: {
             post: "",
-            article: "https://usacycling.org/article/usa-cycling-awards-grant-to-the-national-youth-bike-council",
+            article: "https://www.peopleforbikes.org/news/spring-back-on-bikes-is-increasing-youth-ridership",
             video: "",
           }
         },
         {
-          title: "Outride Research Summit",
-          date: "August 9, 2021",
+          title: "Presence at the National Bike Summit",
+          date: "March 15, 2021",
           author: "",
           text: {
-            brief: `Starting at 38:00 in the link below, Council member Bria brings the council to the Outride Research Summit!
+            brief: `We show up, lead, make an example and show out.
 
-            Outride funds youth-bike-programming directly and we believe it's important for an event made to benefit youth has youth voice in it!`,
+            At this year's Bike Summit we worked with the Youth Bike Summit to put on a "Youth Session" where we held bike conversations specifically for youth to have a voice in the room.`,
             detail: "",
           },
           img: {
-            src: briaAtOutrideImage,
-            alt: "bria speaking at outride research summit on youtube",
+            src: presenceAtNationalBikeSummitImage,
+            alt: "virtual meeting of the members",
           },
           links: {
             post: "",
             article: "",
-            video: "https://www.youtube.com/watch?v=DLhITWL_Bos",
+            video: "https://www.youtube.com/watch?v=e2Kbw7B_cp0",
+          }
+        },
+        {
+          title: "Emerging Leader of The Year Award 2021",
+          date: "March 2, 2021",
+          author: "",
+          text: {
+            brief: `Awarded by the League of American Bicyclists at the National Bike Summit. Joshua has been nominated the emerging Leader of the Year.
+
+            This award is a special accolade for a young person who is new to the bicycling movement and has demonstrated exceptional and inspiring bicycle advocacy.`,
+            detail: "",
+          },
+          img: {
+            src: emergingLeaderOfTheYearImage,
+            alt: "joshua with national youth bike council flag",
+          },
+          links: {
+            post: "https://bicyclecoalition.org/joshua-funches-is-the-emerging-leader-of-the-year/#:~:text=OUR%202021%20AWARD%20GOES%20TO%20JOSHUA%20FUNCHES%20OF%20THE%20NATIONAL%20YOUTH%20BIKE%20COUNCIL",
+            article: "https://www.bikeleague.org/content/presenting-our-2021-award-winners",
+            video: "",
+          }
+        },
+        {
+          title: "New Advisors to the Team",
+          date: "January 14, 2021",
+          author: "",
+          text: {
+            brief: `They have been working behind the scenes and are here to stay! We are welcoming three new advisors to the team.
+
+            Advisors are committed individuals that work alongside the Council, giving us professional insight and perspective. See more below.`,
+            detail: "",
+          },
+          img: {
+            src: newAdvisorsToTheTeamImage,
+            alt: "new advisors to the team",
+          },
+          links: {
+            post: "https://www.instagram.com/p/CKCwke_lt5i/",
+            article: "",
+            video: "",
+          }
+        },
+        //2020
+        {
+          title: "Hear Youth on: National Youth Bike Council Natural Benefits",
+          date: "October 8, 2020",
+          author: "",
+          text: {
+            brief: `In LESS than an hour Joshua is able to have a round table style discussion with other community members and entrepreneurs who are wondering what cycling has to do with Business. ​
+
+            Spolier: A LOT!`,
+            detail: "",
+          },
+          img: {
+            src: naturalBenefitsOfNybcImage,
+            alt: "poster of joshua funches",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=nnaaEH_by3g&t=2179s",
+          }
+        },
+        {
+          title: "Are you listening? What have you heard?",
+          date: "June 10, 2020",
+          author: "",
+          text: {
+            brief: `Many thanks to Bicycle Coalition Greater Philadelphia (Randy LoBasso) for having us in these trying times as we speak up and speak out about youth cyclist and how we are being effected. ​
+            Way to go!
+
+            Elevate youth voice!`,
+            detail: "",
+          },
+          img: {
+            src: bikeTalkWithJoshuaImage,
+            alt: "Joshua Funches with Randy LoBasso",
+          },
+          links: {
+            post: "https://twitter.com/bcgp/status/1270759630629634048",
+            article: "",
+            video: "",
+          }
+        },
+        {
+          title: "We Are Proud And Confident",
+          date: "May 5, 2020",
+          author: "",
+          text: {
+            brief: `To Marc and Bria: not only do you have have a diploma and college in mind, but you also have the support and cheers from the Council! Congratulations!
+            ​
+            We support your passion for cycling and community advocacy and we wish you success with your post-secondary education.`,
+            detail: "",
+          },
+          img: {
+            src: marcBriaCollegeImage,
+            alt: "Marc and Bria",
+          },
+          links: {
+            post: "https://www.facebook.com/Nybcouncil/photos/a.502610546760110/1121170901570735/?type=3&theater",
+            article: "",
+            video: "",
+          }
+        },
+        {
+          title: "We Are Proud And Confident 2.0",
+          date: "",
+          author: "",
+          text: {
+            brief: `Lot is an up and coming leader, an exceptional Council member, and now, today, a Graduate of High School! ​
+
+            Please join us in congratulating Lot in his post secondary education! We'll continue to support him as he goes forth and shows others what youth cyclist look like and are capable of!`,
+            detail: "",
+          },
+          img: {
+            src: lotGraduatingImage,
+            alt: "lot getting graduated",
+          },
+          links: {
+            // same link as above - incorrect one
+            post: "https://www.facebook.com/Nybcouncil/photos/a.502610546760110/1121170901570735/?type=3&theater",
+            article: "",
+            video: "",
+          }
+        },
+        {
+          title: "Brand New Look: Council Jersey Release",
+          date: "March 3, 2020",
+          author: "",
+          text: {
+            brief: `As we advance in our biking career, so of course, we must advance our wardrobe as well.
+
+            We are releasing this new look that promotes visibility and a slick design.`,
+            detail: "",
+          },
+          img: {
+            src: brandNewLookImage,
+            alt: "new jersey of national youth bike council",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=lygQfM-j1IE",
+          }
+        },
+        //2019
+        {
+          title: "Philadelphia Bike Expo",
+          date: "November 16, 2019",
+          author: "",
+          text: {
+            brief: `There is ton of thanks here for the event and the work of the Council members. The Council volunteered at this year's PBE 2019. The turn out was fantastic and the event itself was inspiring and outstanding!
+
+            Shout out to us for being active in our communities.`,
+            detail: "",
+          },
+          img: {
+            src: phillyBikeExpoImage,
+            alt: "team participating in philadelphia bike expo",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://youtu.be/QOXysK0pAS4",
+          }
+        },
+        {
+          title: "Wow Congratulations! Adiva and Zoe",
+          date: "September 2, 2019",
+          author: "",
+          text: {
+            brief: `Join us in wishing two of our dominating members a successfully experience in college: Adiva and Zoe!`,
+            detail: "",
+          },
+          img: {
+            src: adivaAndZoeImage,
+            alt: "advia and zoe hugging each other",
+          },
+          links: {
+            post: "https://www.facebook.com/488423764845455/posts/917257191962108?sfns=mo",
+            article: "",
+            video: "",
+          }
+        },
+        {
+          title: "National Youth Bike Council Spring Ride",
+          date: "May 29, 2019",
+          author: "",
+          text: {
+            brief: `Hosted a ride in the neighborhood, left from Please Touch Museum and headed to the Ace Adams Field for a little game to wrap up the ride. Read on what made the ride so special.
+
+            Hint: First NYBC Ride in Philadelphia!`,
+            detail: "",
+          },
+          img: {
+            src: nybcSpringRideImage,
+            alt: "team particapting in spring ride",
+          },
+          links: {
+            post: "http://planphilly.com/articles/2019/05/29/this-philly-teen-bike-crew-is-all-about-safety",
+            article: "",
+            video: "",
           }
         },
       ],
