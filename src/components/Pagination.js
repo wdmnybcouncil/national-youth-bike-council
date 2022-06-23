@@ -55,7 +55,7 @@ function Pagination(props) {
         }
 
         return (
-          <li key={pageNumber} className={`box-border my-auto mx-1 px-1 h-[24px] w-[24px] text-center flex items-center justify-center text-sm font-semibold rounded-full leading-5 hover:bg-skin-fill-card-accent hover:text-skin-primary hover:cursor-pointer focus:bg-skin-fill-card-accent focus:text-skin-primary focus:cursor-pointer sm:h-10 sm:w-10 sm:px-3 ${pageNumber === currentPage ? `bg-skin-fill-accent text-skin-muted` : `text-skin-primary`}`} onClick={() => onPageChange(pageNumber)}>
+          <li key={pageNumber} className={`box-border my-auto mx-1 px-1 h-[24px] w-[24px] text-center flex items-center justify-center text-sm font-semibold rounded-full leading-5 hover:bg-skin-fill-card-accent hover:text-skin-accent hover:cursor-pointer focus:bg-skin-fill-card-accent focus:text-skin-accent focus:cursor-pointer sm:h-10 sm:w-10 sm:px-3 ${pageNumber === currentPage ? `bg-skin-fill-accent text-skin-muted` : `text-skin-primary`}`} onClick={() => onPageChange(pageNumber)}>
             {pageNumber}
           </li>
         );
