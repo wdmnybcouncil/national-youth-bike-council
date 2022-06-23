@@ -42,7 +42,7 @@ function Pagination(props) {
 
   return (
     <ul className={`mt-6 flex justify-center w-full list-none ${className}`}>
-      <li key="previous" className={`box-border my-auto mx-1 h-[24px] w-[24px] flex items-center justify-center text-center text-skin-accent text-sm leading-5 rounded-full border border-skin-accent transition hover:bg-skin-fill-accent hover:text-skin-muted hover:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted focus:cursor-pointer sm:h-12 sm:w-12 sm:font-semibold sm:text-lg ${currentPage === 1 && `pointer-events-none border-gray-300 text-gray-300`}`} onClick={onPrevious}>
+      <li key="previous" className={`box-border my-auto mx-1 h-[24px] w-[24px] flex items-center justify-center text-center text-skin-accent text-sm leading-5 rounded-full bg-skin-fill-card-accent transition hover:bg-skin-fill-accent hover:text-skin-muted hover:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted focus:cursor-pointer sm:h-12 sm:w-12 sm:font-semibold sm:text-lg ${currentPage === 1 && `pointer-events-none bg-gray-100 text-gray-400`}`} onClick={onPrevious}>
         &#60;
       </li>
 
@@ -61,7 +61,7 @@ function Pagination(props) {
         );
       })}
 
-      <li key="next" className={`box-border my-auto mx-1 h-[24px] w-[24px] flex items-center justify-center text-center text-skin-accent text-sm leading-5 rounded-full border border-skin-accent transition hover:bg-skin-fill-accent hover:text-skin-muted hover:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted focus:cursor-pointer sm:h-12 sm:w-12 sm:font-semibold sm:text-lg ${currentPage === lastPage && `pointer-events-none border-gray-300 text-gray-300`}`} onClick={onNext}>
+      <li key="next" className={`box-border my-auto mx-1 h-[24px] w-[24px] flex items-center justify-center text-center text-skin-accent text-sm leading-5 rounded-full bg-skin-fill-card-accent transition hover:bg-skin-fill-accent hover:text-skin-muted hover:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted focus:cursor-pointer sm:h-12 sm:w-12 sm:font-semibold sm:text-lg ${currentPage === lastPage && `pointer-events-none bg-gray-100 text-gray-400`}`} onClick={onNext}>
         &#62;
       </li>
     </ul>
