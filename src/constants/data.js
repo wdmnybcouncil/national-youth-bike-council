@@ -49,9 +49,20 @@ import sramImage from "../assets/images/sponsorships/sram.png";
 import usaCyclingImage from "../assets/images/sponsorships/usa-cycling.png";
 
 // Images for Media Coverage view
-import youthVoiceIsImpImage from "../assets/images/media-coverage/youth-voice-is-important.png";
-import growingTheBusinessImage from "../assets/images/media-coverage/growing-the-business.png";
-import acceptedIntoPbeBikeCouncilImage from "../assets/images/media-coverage/accepted-into-pbe-bike-council.png";
+// 2022
+import youthVoiceIsImpImage from "../assets/images/media-coverage/2022/youth-voice-is-important.png";
+import growingTheBusinessImage from "../assets/images/media-coverage/2022/growing-the-business.png";
+import acceptedIntoPbeBikeCouncilImage from "../assets/images/media-coverage/2022/accepted-into-pbe-bike-council.png";
+
+// 2021
+import newAdvisorsToTheTeamImage from "../assets/images/media-coverage/2021/new-advisors-to-the-team.png";
+import emergingLeaderOfTheYearImage from "../assets/images/media-coverage/2021/emerging-leader-of-the-year.png";
+import presenceAtNationalBikeSummitImage from "../assets/images/media-coverage/2021/presence-at-national-bike-summit.png";
+import springBackOnBikesImage from "../assets/images/media-coverage/2021/spring-back-on-bikes.png";
+import bikeSideChatLabImage from "../assets/images/media-coverage/2021/bike-side-chat-lab.png";
+import deiMicroGrantImage from "../assets/images/media-coverage/2021/dei-micro-grant.png";
+import briaAtOutrideImage from "../assets/images/media-coverage/2021/bria-at-outride.png";
+
 
 const data = {
   members: [
@@ -561,6 +572,146 @@ const data = {
             post: "https://www.instagram.com/p/CYen2T9uR2r/",
             article: "",
             video: "",
+          }
+        },
+        {
+          title: "New Advisors to the Team",
+          date: "January 14, 2021",
+          author: "",
+          text: {
+            brief: `They have been working behind the scenes and are here to stay! We are welcoming three new advisors to the team.
+
+            Advisors are committed individuals that work alongside the Council, giving us professional insight and perspective. See more below.`,
+            detail: "",
+          },
+          img: {
+            src: newAdvisorsToTheTeamImage,
+            alt: "new advisors to the team",
+          },
+          links: {
+            post: "https://www.instagram.com/p/CKCwke_lt5i/",
+            article: "",
+            video: "",
+          }
+        },
+        {
+          title: "Emerging Leader of The Year Award 2021",
+          date: "March 2, 2021",
+          author: "",
+          text: {
+            brief: `Awarded by the League of American Bicyclists at the National Bike Summit. Joshua has been nominated the emerging Leader of the Year.
+
+            This award is a special accolade for a young person who is new to the bicycling movement and has demonstrated exceptional and inspiring bicycle advocacy.`,
+            detail: "",
+          },
+          img: {
+            src: emergingLeaderOfTheYearImage,
+            alt: "joshua with national youth bike council flag",
+          },
+          links: {
+            post: "https://bicyclecoalition.org/joshua-funches-is-the-emerging-leader-of-the-year/#:~:text=OUR%202021%20AWARD%20GOES%20TO%20JOSHUA%20FUNCHES%20OF%20THE%20NATIONAL%20YOUTH%20BIKE%20COUNCIL",
+            article: "https://www.bikeleague.org/content/presenting-our-2021-award-winners",
+            video: "",
+          }
+        },
+        {
+          title: "Presence at the National Bike Summit",
+          date: "March 15, 2021",
+          author: "",
+          text: {
+            brief: `We show up, lead, make an example and show out.
+
+            At this year's Bike Summit we worked with the Youth Bike Summit to put on a "Youth Session" where we held bike conversations specifically for youth to have a voice in the room.`,
+            detail: "",
+          },
+          img: {
+            src: presenceAtNationalBikeSummitImage,
+            alt: "virtual meeting of the members",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=e2Kbw7B_cp0",
+          }
+        },
+        {
+          title: "Spring Back On Bikes",
+          date: "May 24, 2021",
+          author: "",
+          text: {
+            brief: `With support from local bike shops, we set out to making bicycling more accessible to our peers. 
+
+            This year we piloted Spring Back On Bikes in Philadelphia and Atlanta in partnership with Atlanta Students Advocating for Pedestrians.`,
+            detail: "",
+          },
+          img: {
+            src: springBackOnBikesImage,
+            alt: "a boy wearing a helmet and riding a bike",
+          },
+          links: {
+            post: "",
+            article: "https://www.peopleforbikes.org/news/spring-back-on-bikes-is-increasing-youth-ridership",
+            video: "",
+          }
+        },
+        {
+          title: "Bike-Side Chat 2021 With LAB",
+          date: "June 3, 2021",
+          author: "",
+          text: {
+            brief: `The League of American Bicyclists (LAB) annual Bike-Side chat got a chance to drop-in with Joshua. Where he spoke about the Council, how he got into bicycle advocacy and his passion for bikes.
+
+            As a bonus, they even spoke about the unsure things and where Joshua sees himself going post-Council!`,
+            detail: "",
+          },
+          img: {
+            src: bikeSideChatLabImage,
+            alt: "joshua talking on youtube",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=-Rz-EvG-DvM",
+          }
+        },
+        {
+          title: "USA Cycling Awards DEI Micro-Grant ",
+          date: "July 30, 2021",
+          author: "",
+          text: {
+            brief: `The USA Cycling Diversity & Inclusion grant seeks to empower groups, organizations and programs that champion diversity, equity and inclusion in the American cycling community.
+
+            USA Cycling is proud to award the National Youth Bike Council with the DEI Micro-Grant!`,
+            detail: "",
+          },
+          img: {
+            src: deiMicroGrantImage,
+            alt: "DEI micro grant",
+          },
+          links: {
+            post: "",
+            article: "https://usacycling.org/article/usa-cycling-awards-grant-to-the-national-youth-bike-council",
+            video: "",
+          }
+        },
+        {
+          title: "Outride Research Summit",
+          date: "August 9, 2021",
+          author: "",
+          text: {
+            brief: `Starting at 38:00 in the link below, Council member Bria brings the council to the Outride Research Summit!
+
+            Outride funds youth-bike-programming directly and we believe it's important for an event made to benefit youth has youth voice in it!`,
+            detail: "",
+          },
+          img: {
+            src: briaAtOutrideImage,
+            alt: "bria speaking at outride research summit on youtube",
+          },
+          links: {
+            post: "",
+            article: "",
+            video: "https://www.youtube.com/watch?v=DLhITWL_Bos",
           }
         },
       ],
