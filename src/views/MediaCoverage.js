@@ -13,7 +13,7 @@ import Pagination from "../components/Pagination";
  */
 function MediaCoverage({ mediaCoverageView }) {
   //Settings for Pagination
-  let pageSize = 1;
+  let pageSize = 3;
   const data = mediaCoverageView[0].posts;
   const [currentPage, setCurrentPage] = React.useState(1);
 
