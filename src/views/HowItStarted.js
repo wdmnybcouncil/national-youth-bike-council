@@ -37,7 +37,11 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
           <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(howItStartedView[0].text)}</div>
           <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-            <Section.Img src={howItStartedView[0].img.src} alt={howItStartedView[0].img.alt} className="rounded-md border-4 border-skin-accent object-cover object-center" />
+            <Section.Img
+              src={howItStartedView[0].img.src}
+              alt={howItStartedView[0].img.alt}
+              className="rounded-md border-4 border-skin-accent object-cover object-center"
+            />
           </div>
         </div>
       </Section>
@@ -46,7 +50,8 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
         <Section.Heading>{howItStartedView[1].heading}</Section.Heading>
         <div className="flex flex-wrap gap-6">{howItStartedView.length && renderMembersCards()}</div>
       </Section>
-    </>);
+    </>
+  );
 }
 
 const propTypes = {
