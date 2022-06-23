@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Section from "../components/Section";
 import Post from "../components/Post/Post";
 import PageLink from "../components/PageLink";
-import postImage from "../assets/images/media-coverage/youth-voice-is-important.png";
 
 /**
  * The **MediaCoverage** component renders the view that shows all the media coverage posts.
