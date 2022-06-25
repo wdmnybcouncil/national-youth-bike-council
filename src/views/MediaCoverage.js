@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Section from "../components/Section";
+import FilterButton from "../components/FilterButton";
 import Post from "../components/Post/Post";
 import PageLink from "../components/PageLink";
 import Pagination from "../components/Pagination";
@@ -12,16 +13,43 @@ import Pagination from "../components/Pagination";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function MediaCoverage({ mediaCoverageView }) {
+  const allPosts = mediaCoverageView[0].posts;
+
+  //Settings for Filtering Posts
+  const [postsToShow, setPostsToShow] = React.useState(allPosts);
+  const [selectedFilterCategory, setSelectedFilterCategory] = React.useState("All");
+  const filterTagsForPosts = ["All", ...new Set(allPosts.map(_ => _.category))];
+
+  const handleFilterPosts = (selectedCategory) => {
+    let newPostsToShow;
+    if (selectedCategory !== "All") {
+      newPostsToShow = allPosts.filter(_ => _.category === selectedCategory);
+    } else {
+      newPostsToShow = allPosts;
+    }
+    setSelectedFilterCategory(selectedCategory);
+    setPostsToShow(newPostsToShow);
+  }
+
   //Settings for Pagination
   let pageSize = 3;
-  const data = mediaCoverageView[0].posts;
   const [currentPage, setCurrentPage] = React.useState(1);
 
   const currentViewPosts = React.useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
-    return data.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, data, pageSize]);
+    return postsToShow.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, postsToShow, pageSize]);
+
+  // Helper functions to render fiter butons, links and posts
+  const renderFilterButtons = () => {
+    return filterTagsForPosts.map((filterTag) =>
+      <FilterButton
+        key={filterTag}
+        filterCategory={filterTag}
+        selectedFilterCategory={selectedFilterCategory}
+        handleFilterPosts={handleFilterPosts} />);
+  }
 
   const renderPostLinks = (links) => {
     return (
@@ -67,8 +95,11 @@ function MediaCoverage({ mediaCoverageView }) {
     <>
       <Section>
         <Section.Heading>{mediaCoverageView[0].heading}</Section.Heading>
+        <div className="mb-4 flex flex-wrap gap-4 justify-center items-center md:justify-start">
+          {renderFilterButtons()}
+        </div>
         <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
-        <Pagination currentPage={currentPage} totalCount={data.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
+        <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
       </Section>
     </>
   );

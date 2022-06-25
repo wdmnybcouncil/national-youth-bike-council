@@ -532,6 +532,7 @@ const data = {
           title: "Youth Voice is Important",
           date: "February 28, 2022",
           author: "",
+          category: "2022",
           text: {
             brief: "Great things happen when you get young adults passionate about health, community, youth leadership, and education together in the same room!",
             detail: "",
@@ -544,12 +545,13 @@ const data = {
             post: "",
             article: "https://www.peopleforbikes.org/news/centering-youth-voices-in-bike-advocacy",
             video: "https://www.youtube.com/watch?v=L1W9BUprVC8",
-          }
+          },
         },
         {
           title: "Growing The Business",
           date: "February 10, 2022",
           author: "",
+          category: "2022",
           text: {
             brief: `Leadership opportunities present themselves. Not only this about creating leaders, it's by-product is also about creating the next generations leaders.
 
@@ -564,12 +566,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=cMJHLwm-2pk",
-          }
+          },
         },
         {
           title: "Accepted Into PBE Bike Squad!",
           date: "January 8, 2022",
           author: "",
+          category: "2022",
           text: {
             brief: `Welcoming the youngest member the Philly Bike Expo Squad!
 
@@ -586,13 +589,14 @@ const data = {
             post: "https://www.instagram.com/p/CYen2T9uR2r/",
             article: "",
             video: "",
-          }
+          },
         },
         //2021
         {
           title: "Specialized Student-Athlete Leadership Award",
           date: "",
           author: "",
+          category: "2021",
           text: {
             brief: `Luly has been nominated among her peers from across the nation for being recognized for her outstanding leadership, academic performance and volunteerism in the 2020 nominated list of student athletics published by the National Interscholastic Cycling Association (NICA).`,
             detail: "",
@@ -605,12 +609,13 @@ const data = {
             post: "",
             article: "https://nationalmtb.org/nica-honors-its-2020-award-recipients/",
             video: "",
-          }
+          },
         },
         {
           title: "Ensuring A Voice For Youth Across The U.S.",
           date: "October 29, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `During the Summer of 2020 we spent time just chatting with our youth peers across the U.S.
 
@@ -627,12 +632,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=L1W9BUprVC8",
-          }
+          },
         },
         {
           title: "Ride For Youth Leadership",
           date: "August 12, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `In the Name of the National Youth Bike Council, we rode for Youth Leadership promotion and for community awareness.
 
@@ -649,12 +655,13 @@ const data = {
             post: "",
             article: "https://sfbike.org/news/riding-for-youth-leadership-and-community-resilience/",
             video: "https://www.youtube.com/watch?v=pcc_800RpVY",
-          }
+          },
         },
         {
           title: "Outride Research Summit",
           date: "August 9, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `Starting at 38:00 in the link below, Council member Bria brings the council to the Outride Research Summit!
 
@@ -669,12 +676,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=DLhITWL_Bos",
-          }
+          },
         },
         {
           title: "USA Cycling Awards DEI Micro-Grant ",
           date: "July 30, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `The USA Cycling Diversity & Inclusion grant seeks to empower groups, organizations and programs that champion diversity, equity and inclusion in the American cycling community.
 
@@ -689,12 +697,13 @@ const data = {
             post: "",
             article: "https://usacycling.org/article/usa-cycling-awards-grant-to-the-national-youth-bike-council",
             video: "",
-          }
+          },
         },
         {
           title: "Bike-Side Chat 2021 With LAB",
           date: "June 3, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `The League of American Bicyclists (LAB) annual Bike-Side chat got a chance to drop-in with Joshua. Where he spoke about the Council, how he got into bicycle advocacy and his passion for bikes.
 
@@ -709,12 +718,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=-Rz-EvG-DvM",
-          }
+          },
         },
         {
           title: "Spring Back On Bikes",
           date: "May 24, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `With support from local bike shops, we set out to making bicycling more accessible to our peers. 
 
@@ -729,12 +739,13 @@ const data = {
             post: "",
             article: "https://www.peopleforbikes.org/news/spring-back-on-bikes-is-increasing-youth-ridership",
             video: "",
-          }
+          },
         },
         {
           title: "Presence at the National Bike Summit",
           date: "March 15, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `We show up, lead, make an example and show out.
 
@@ -749,12 +760,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=e2Kbw7B_cp0",
-          }
+          },
         },
         {
           title: "Emerging Leader of The Year Award 2021",
           date: "March 2, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `Awarded by the League of American Bicyclists at the National Bike Summit. Joshua has been nominated the emerging Leader of the Year.
 
@@ -769,12 +781,13 @@ const data = {
             post: "https://bicyclecoalition.org/joshua-funches-is-the-emerging-leader-of-the-year/#:~:text=OUR%202021%20AWARD%20GOES%20TO%20JOSHUA%20FUNCHES%20OF%20THE%20NATIONAL%20YOUTH%20BIKE%20COUNCIL",
             article: "https://www.bikeleague.org/content/presenting-our-2021-award-winners",
             video: "",
-          }
+          },
         },
         {
           title: "New Advisors to the Team",
           date: "January 14, 2021",
           author: "",
+          category: "2021",
           text: {
             brief: `They have been working behind the scenes and are here to stay! We are welcoming three new advisors to the team.
 
@@ -789,13 +802,14 @@ const data = {
             post: "https://www.instagram.com/p/CKCwke_lt5i/",
             article: "",
             video: "",
-          }
+          },
         },
         //2020
         {
           title: "Hear Youth on: National Youth Bike Council Natural Benefits",
           date: "October 8, 2020",
           author: "",
+          category: "2020",
           text: {
             brief: `In LESS than an hour Joshua is able to have a round table style discussion with other community members and entrepreneurs who are wondering what cycling has to do with Business. ​
 
@@ -810,12 +824,13 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=nnaaEH_by3g&t=2179s",
-          }
+          },
         },
         {
           title: "Are you listening? What have you heard?",
           date: "June 10, 2020",
           author: "",
+          category: "2020",
           text: {
             brief: `Many thanks to Bicycle Coalition Greater Philadelphia (Randy LoBasso) for having us in these trying times as we speak up and speak out about youth cyclist and how we are being effected. ​
             Way to go!
@@ -831,12 +846,13 @@ const data = {
             post: "https://twitter.com/bcgp/status/1270759630629634048",
             article: "",
             video: "",
-          }
+          },
         },
         {
           title: "We Are Proud And Confident",
           date: "May 5, 2020",
           author: "",
+          category: "2020",
           text: {
             brief: `To Marc and Bria: not only do you have have a diploma and college in mind, but you also have the support and cheers from the Council! Congratulations!
             ​
@@ -851,12 +867,13 @@ const data = {
             post: "https://www.facebook.com/Nybcouncil/photos/a.502610546760110/1121170901570735/?type=3&theater",
             article: "",
             video: "",
-          }
+          },
         },
         {
           title: "We Are Proud And Confident 2.0",
           date: "",
           author: "",
+          category: "2020",
           text: {
             brief: `Lot is an up and coming leader, an exceptional Council member, and now, today, a Graduate of High School! ​
 
@@ -872,12 +889,13 @@ const data = {
             post: "https://www.facebook.com/Nybcouncil/photos/a.502610546760110/1121170901570735/?type=3&theater",
             article: "",
             video: "",
-          }
+          },
         },
         {
           title: "Brand New Look: Council Jersey Release",
           date: "March 3, 2020",
           author: "",
+          category: "2020",
           text: {
             brief: `As we advance in our biking career, so of course, we must advance our wardrobe as well.
 
@@ -892,13 +910,14 @@ const data = {
             post: "",
             article: "",
             video: "https://www.youtube.com/watch?v=lygQfM-j1IE",
-          }
+          },
         },
         //2019
         {
           title: "Philadelphia Bike Expo",
           date: "November 16, 2019",
           author: "",
+          category: "2019",
           text: {
             brief: `There is ton of thanks here for the event and the work of the Council members. The Council volunteered at this year's PBE 2019. The turn out was fantastic and the event itself was inspiring and outstanding!
 
@@ -913,12 +932,13 @@ const data = {
             post: "",
             article: "",
             video: "https://youtu.be/QOXysK0pAS4",
-          }
+          },
         },
         {
           title: "Wow Congratulations! Adiva and Zoe",
           date: "September 2, 2019",
           author: "",
+          category: "2019",
           text: {
             brief: `Join us in wishing two of our dominating members a successfully experience in college: Adiva and Zoe!`,
             detail: "",
@@ -931,12 +951,13 @@ const data = {
             post: "https://www.facebook.com/488423764845455/posts/917257191962108?sfns=mo",
             article: "",
             video: "",
-          }
+          },
         },
         {
           title: "National Youth Bike Council Spring Ride",
           date: "May 29, 2019",
           author: "",
+          category: "2019",
           text: {
             brief: `Hosted a ride in the neighborhood, left from Please Touch Museum and headed to the Ace Adams Field for a little game to wrap up the ride. Read on what made the ride so special.
 
@@ -951,7 +972,7 @@ const data = {
             post: "http://planphilly.com/articles/2019/05/29/this-philly-teen-bike-crew-is-all-about-safety",
             article: "",
             video: "",
-          }
+          },
         },
       ],
     },
