@@ -53,7 +53,7 @@ function CouncilBlogs({ councilBlogsView }) {
 
   const renderPosts = (posts) =>
     posts.map((post) => {
-      const { title, date, text, img } = post;
+      const { title, date, author, text, img } = post;
       return (
         <Post key={title}>
           <div className="col-span-2 place-self-center lg:row-auto">
@@ -61,7 +61,7 @@ function CouncilBlogs({ councilBlogsView }) {
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{title}</Post.Title>
-            <Post.Subtitle>{date}</Post.Subtitle>
+            <Post.Subtitle>{`${date} | ${author}`}</Post.Subtitle>
             <Post.Text>{text.brief}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">
               <PageLink type="internal" linkTo="">
