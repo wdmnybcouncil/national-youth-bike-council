@@ -15,6 +15,7 @@ import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
 import MediaCoverage from "./views/MediaCoverage";
+import CouncilBlogs from "./views/CouncilBlogs";
 
 // Import data to pass on to the components
 import data from "./constants/data";
@@ -40,6 +41,7 @@ function App() {
     boardMembersView,
     sponsorshipsView,
     mediaCoverageView,
+    councilBlogsView,
   } = data;
 
   // Filter out all the members of the starting crew from the list of all the members
@@ -148,6 +150,10 @@ function App() {
     mediaCoverageView,
   };
 
+  const propsForCouncilBlogsView = {
+    councilBlogsView,
+  }
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -170,6 +176,7 @@ function App() {
           <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
           <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
           <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
+          <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
         </Routes>
       </main>
       <Footer />

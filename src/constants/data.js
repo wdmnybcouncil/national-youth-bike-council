@@ -78,6 +78,12 @@ import phillyBikeExpoImage from "../assets/images/media-coverage/2019/philly-bik
 import adivaAndZoeImage from "../assets/images/media-coverage/2019/adiva-and-zoe.png";
 import nybcSpringRideImage from "../assets/images/media-coverage/2019/nybc-spring-ride.png"
 
+// Images for Council Blogs
+// 2022
+import expandingTheAppealOfUrbanCyclingImage from "../assets/images/council-blogs/2022/expanding-the-appeal-of-urban-cycling.png";
+import springThingsImage from "../assets/images/council-blogs/2022/spring-things.png";
+import developingLeadersOfTomorrowImage from "../assets/images/council-blogs/2022/developing-leaders-of-tomorrow.png";
+
 const data = {
   members: [
     {
@@ -972,6 +978,59 @@ const data = {
             post: "http://planphilly.com/articles/2019/05/29/this-philly-teen-bike-crew-is-all-about-safety",
             article: "",
             video: "",
+          },
+        },
+      ],
+    },
+  ],
+  councilBlogsView: [
+    {
+      heading: "Council Blogs",
+      posts: [
+        {
+          title: "What It Feels Like To Be New To The Bicycle Space",
+          date: "May, 2022",
+          author: "National Youth Bike Council",
+          category: "2022",
+          text: {
+            brief: `We usually try to spotlight youth ages 24 or younger, but Raven, who is currently employed with the League of American Bicyclists, is a recent 25-year-old and the youngest staff member on the daily team. In addition, Raven is also fairly new to the bicycle advocacy space and, believe it or not, she got a chance to participate in her first lobbying session through the National Bike Summit!`,
+            detail: "",
+          },
+          img: {
+            src: expandingTheAppealOfUrbanCyclingImage,
+            alt: "raven in expanding the appeal of urban cycling session",
+          },
+        },
+        {
+          title: "Cross Youth Leaders With Bicycles - This Is What You Get",
+          date: "April, 2022",
+          author: "National Youth Bike Council",
+          category: "2022",
+          text: {
+            brief: `Age is just a number? That is something that Council members Lot, Joshua, and Job will stand by once again, in reference to leadership, as they lead their peers in the Philadelphia region into fun bicycle activities this year.
+
+            Independence Youth Cycling along with two other organizations partnered with the National Youth Bike Council to host Spring Things.`,
+            detail: "",
+          },
+          img: {
+            src: springThingsImage,
+            alt: "lot, joshua, job and maris",
+          },
+        },
+        {
+          title: "Developing Leaders of Tomorrow",
+          date: "February, 2022",
+          author: "Dhruti Shah",
+          category: "2022",
+          text: {
+            brief: `National Youth Bike Council is a youth-led non-profit organization established in 2017 with a mission to provide an active learning space for young cyclists to boost youth voice in the bicycle industry through peer leadership.
+
+            Joshua Funches, the founder of National Youth Bike Council was inspired to start the Council in Philadelphia to allow opportunities for youth to learn real life skills, build confidence, offer a sense of community support and belonging through team building events.`,
+            detail: "",
+          },
+          img: {
+            src: developingLeadersOfTomorrowImage,
+            alt: "developing leaders of tomorrow",
           },
         },
       ],

@@ -61,7 +61,7 @@ function Header() {
           <Nav.Item linkTo="#">Projects</Nav.Item>
           <Dropdown label="Council Press">
             <Dropdown.Item linkTo="/media-coverage">Media Coverage</Dropdown.Item>
-            <Dropdown.Item linkTo="#">Council Blogs</Dropdown.Item>
+            <Dropdown.Item linkTo="/council-blogs">Council Blogs</Dropdown.Item>
             <Dropdown.Item linkTo="#">Newsletter</Dropdown.Item>
           </Dropdown>
           <Dropdown label="Resources">
