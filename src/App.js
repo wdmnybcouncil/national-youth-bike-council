@@ -184,8 +184,10 @@ function App() {
           <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
           <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
           <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
+          <Route path="projects" element={<ProjectsView />} />
           <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
           <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
+          <Route path="resources-safety" element={<ResourcesSafetyView />} />
           <Route path="join-us" element={<JoinUsView {...propsForJoinUsView} />} />
         </Routes>
       </main>
