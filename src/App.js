@@ -16,6 +16,7 @@ import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
 import MediaCoverage from "./views/MediaCoverage";
 import CouncilBlogs from "./views/CouncilBlogs";
+import JoinUsView from "./views/JoinUsView";
 
 // Import data to pass on to the components
 import data from "./constants/data";
@@ -42,6 +43,7 @@ function App() {
     sponsorshipsView,
     mediaCoverageView,
     councilBlogsView,
+    joinUsView,
   } = data;
 
   // Filter out all the members of the starting crew from the list of all the members
@@ -154,9 +156,14 @@ function App() {
     councilBlogsView,
   }
 
+  const propsForJoinUsView = {
+    joinUsView,
+  }
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
+
 
   return (
     <div className="flex h-screen flex-col">
@@ -166,7 +173,11 @@ function App() {
         <Routes>
           <Route
             path="/*"
-            element={(() => <></>)()}
+            element={(() => {
+              return (
+                <></>
+              )
+            })()}
           />
           <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
@@ -177,6 +188,7 @@ function App() {
           <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
           <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
           <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
+          <Route path="join-us" element={<JoinUsView {...propsForJoinUsView} />} />
         </Routes>
       </main>
       <Footer />
