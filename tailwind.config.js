@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         skin: {
           accent: "var(--color-text-accent)",
+          primary: "var(--color-text-primary)",
         },
       },
       textColor: {
