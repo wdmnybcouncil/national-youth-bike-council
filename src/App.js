@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 
 // Import views
+import HomeView from "./views/HomeView";
+import PageNotFoundView from "./views/PageNotFoundView";
 import HowItStarted from "./views/HowItStarted";
 import WhereAreWe from "./views/WhereAreWe";
 import WhyTheCouncil from "./views/WhyTheCouncil";
@@ -14,8 +16,10 @@ import CouncilMembers from "./views/CouncilMembers";
 import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
+import ProjectsView from "./views/ProjectsView";
 import MediaCoverage from "./views/MediaCoverage";
 import CouncilBlogs from "./views/CouncilBlogs";
+import ResourcesSafetyView from "./views/ResourcesSafetyView";
 import JoinUsView from "./views/JoinUsView";
 
 // Import data to pass on to the components
@@ -171,14 +175,8 @@ function App() {
       <Modal {...propsForModal} />
       <main className="my-10 flex-grow">
         <Routes>
-          <Route
-            path="/*"
-            element={(() => {
-              return (
-                <></>
-              )
-            })()}
-          />
+          <Route path="*" element={<PageNotFoundView />} />
+          <Route path="/" element={<HomeView />} />
           <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
