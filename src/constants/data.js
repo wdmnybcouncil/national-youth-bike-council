@@ -1036,6 +1036,191 @@ const data = {
       ],
     },
   ],
+  joinUsView: [
+    {
+      heading: "Which one are you?",
+      text: "We have three different roles where you can fit in. Read on to figure out - which one are you?",
+      subSections: [
+        {
+          heading: "Supporter",
+          text: "Those who support our social media efforts",
+        },
+        {
+          heading: "Advisor",
+          text: "Dedicated resources or dedicated adult assistance that commit to helping the council in a particular area of expertise",
+        },
+        {
+          heading: "Member",
+          text: "Youth between the ages 13-24 that are the council and a part of achieving the mission!",
+        },
+      ],
+    },
+    {
+      heading: "Benefits",
+      text: "There are several benefits of the roles we have in the council:",
+      subSections: [
+        {
+          heading: "Member",
+          benefits: [
+            "Have a chance to access member only sponsorships and awards",
+            "You are part of the bigger picture",
+            "Receive training and resources to become a team player",
+            "And more",
+          ],
+        },
+        {
+          heading: "Advisor",
+          benefits: [
+            "Directly assisting in functions of the council",
+            "Build their professional opportunities with other advisors across the nation",
+            "Receives our Advisor Starter Pack with goodies",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Frequently Asked Questions",
+      faqSections: [
+        {
+          heading: "Member",
+          faqs: [
+            {
+              heading: "Members",
+              content: `You are a young person between the ages 13-24 that represents the council and is an active part of achieving the mission. You seek to learn new things and grow through real world experiences. You're curious and wanting to be a part of the national youth-bike community.
+
+              Council members are either joining the community or coming from the community that the Council is building. They help lead the community in which we collectively grow together.`,
+            },
+            {
+              heading: "Requirements & Benefits",
+              content: `All Members apart of the council: 
+              1. are between ages 13 to 24 
+              2. uphold the mission, standards, and values of the Council: community, health, education, and leadership
+              3. normally have 3-4 hours a month available to the council (e.g. social media contributions, participating in meetings, and developing our annual projects)
+              4. have a Discord or become familiar with Discord
+              5. check out the benefits above`,
+            },
+            {
+              heading: "Enrollement Process",
+              content: `
+              1. Fill out the form. 
+              2. You will receive an email from info@nybcouncil.com.
+              3. If, you pass the intro process, you will start your council journey`,
+            },
+          ],
+        },
+        {
+          heading: "Membership FAQs",
+          faqs: [
+            {
+              heading: '"I am not 18, do I need parent/ guardian permission to be a council member ?"',
+              content: `Yes, anyone under 18 must have their parent/guardian read the liability disclaimer and submit the form with the six-digit code at the end of the liability disclaimer. The disclaimer and code will be at the end of the sign up form if you choose member on the second section.`,
+            },
+            {
+              heading: "How do I join the council Discord?",
+              content: `You will have to create a Discord account if you do not already have one or just click here to join.`,
+            },
+            {
+              heading: "How many hours a week do council members usually spend on the Council?",
+              content: `This depends on the member’s schedule. However, the average is 1 hour a week.`,
+            },
+            {
+              heading: "Can I be a youth council member and an advisor at the same time?",
+              content: `Yes. The goal of advisors is to help keep the council members focused on annual projects for the communities. At the same time, the advisors responsibilities are also normally great resume builders and therefore council members can either shadow or take on additional roles that may normally be allocated to an advisor (like helping run the social media).`,
+            },
+          ],
+        },
+        {
+          heading: "Advisors",
+          faqs: [
+            {
+              heading: "What is an Advisor?",
+              content: `You are a hobbyist or professional of any age looking to volunteer your time over a period of months at a time. This makes your volunteer time dedicated to a particular area of the council. You're also comfortable working alongside other advisors if necessary and don't mind learning new things.
+
+              Some things an advisor may do (depending on the role) are:
+              - make fundraising suggestions
+              - help us run our social media
+              - help us understand marketing
+              - create blogs for us`,
+            },
+            {
+              heading: "Requirements & Benefits",
+              content: `All Advisors apart of the council: 
+              1. are able to work in groups or alongside other advisors 
+              2. uphold the mission, standards, and values of the Council: community, health, education, and leadership
+              3. have around 4 hours a month available to the council
+              4. are self-motivated and have great communication skills
+              5. have experience in some form with one of the open advisor spots.
+              6. check out the benefits above`,
+            },
+            {
+              heading: "Enrollement Process",
+              content: `1. Fill out the form 
+              2. You will receive an email from info@nybcouncil.com
+              3. You may be required to do a background check or submit timely ones you currently have
+              4. Your onboarding will start shortly after`,
+            },
+          ],
+        },
+        {
+          heading: "Advisors FAQs",
+          faqs: [
+            {
+              heading: "What kind of advising can I do?",
+              content: `We have a list of current places we are looking for your expertise in. 
+              Some things an advisor may do (depending on the role) are:
+              - make updates to our website for us
+              - make fundraising suggestions
+              - research for grants for us
+              - help us run our social media
+              - help us understand marketing 
+              - create blogs for us
+              - provide us social media analytics in an understandable format
+              - help maintain our Discord
+              - mentor the council`,
+            },
+            {
+              heading: "What's the difference between an Advisor and a Supporter?",
+              content: `Becoming an Advisor may lead to being promoted across our social media or uploaded to our website, so confirming a level of dedication and strong communication is necessary. To become a supporter, it's as simple as voicing what you think of our work on social media or at events whenever you see us Council members! Additionally supporters and advisors normally sign up for our newsletter.`,
+            },
+          ],
+        },
+        {
+          heading: "Supporter",
+          faqs: [
+            {
+              heading: "What is a Supporter?",
+              content: `You're a part of the community in empowering, being a part of, or educating youth cyclists. Our supporters are of any age, either don't know, want to learn, or already know how to ride a bicycle. Our community members often enjoy extending the freedom of mobility beyond bicycles. 
+
+              Community members, especially the youth leaders and youth cyclists, can engage in the council's annual projects without having to become a council member. It's up to the council members to help our community be proactive in their communities through our annual projects and help lead you through!`,
+            },
+          ],
+        },
+        {
+          heading: " Supporter FAQs",
+          faqs: [
+            {
+              heading: "I have a skill that I think can help the Council but I am only able to commit a small amount of my time. Can I still support the council?",
+              content: `Of course! We value all kinds of help. If you have a skill that you want to share with us but have a very busy schedule, becoming a supporter might be the best way to join in on the efforts.`,
+            },
+            {
+              heading: "How do I know if I am a supporter?",
+              content: `Supporters normally stay up to date with the Council's work, trying to find ways to empower our work - or even get involved!
+
+              Here are ways you can stay up to date with our work:
+              - sign up for the newsletter
+              - follow our social medias 
+              - join our Discord`,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Join the Efforts",
+      text: "Are you excited and willing to be part of our team? Please, fill up the form by clicking the link below:",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link",
+    },
+  ],
 };
 
 export default data;

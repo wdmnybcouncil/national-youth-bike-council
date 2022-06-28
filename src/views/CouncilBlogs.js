@@ -48,7 +48,7 @@ function CouncilBlogs({ councilBlogsView }) {
         key={filterTag}
         filterCategory={filterTag}
         selectedFilterCategory={selectedFilterCategory}
-        handleFilterPosts={handleFilterPosts} />);
+        handleFilter={handleFilterPosts} />);
   }
 
   const renderPosts = (posts) =>
