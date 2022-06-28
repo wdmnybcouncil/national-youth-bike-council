@@ -48,7 +48,7 @@ function MediaCoverage({ mediaCoverageView }) {
         key={filterTag}
         filterCategory={filterTag}
         selectedFilterCategory={selectedFilterCategory}
-        handleFilterPosts={handleFilterPosts} />);
+        handleFilter={handleFilterPosts} />);
   }
 
   const renderPostLinks = (links) => {
