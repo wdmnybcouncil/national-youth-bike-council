@@ -42,5 +42,6 @@ The website is still under construction. But, as of now the follwing routes are 
 7. [How It Started](https://5hraddha.github.io/national-youth-bike-council/#/how-it-started)
 8. [Media Coverage](https://5hraddha.github.io/national-youth-bike-council/#/media-coverage)
 9. [Council Blogs](https://5hraddha.github.io/national-youth-bike-council/#/council-blogs)
+10. [Join Us](https://5hraddha.github.io/national-youth-bike-council/#/join-us)
 
 Visit the live website - [here](https://5hraddha.github.io/national-youth-bike-council/).
