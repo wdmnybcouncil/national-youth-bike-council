@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 
 // Import views
-import HomeView from "./views/HomeView";
-import PageNotFoundView from "./views/PageNotFoundView";
+import Home from "./views/Home";
+import PageNotFound from "./views/PageNotFound";
 import HowItStarted from "./views/HowItStarted";
 import WhereAreWe from "./views/WhereAreWe";
 import WhyTheCouncil from "./views/WhyTheCouncil";
@@ -16,11 +16,11 @@ import CouncilMembers from "./views/CouncilMembers";
 import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
-import ProjectsView from "./views/ProjectsView";
+import Projects from "./views/Projects";
 import MediaCoverage from "./views/MediaCoverage";
 import CouncilBlogs from "./views/CouncilBlogs";
-import ResourcesSafetyView from "./views/ResourcesSafetyView";
-import JoinUsView from "./views/JoinUsView";
+import ResourcesSafety from "./views/ResourcesSafety";
+import JoinUs from "./views/JoinUs";
 
 // Import data to pass on to the components
 import data from "./constants/data";
@@ -47,6 +47,7 @@ function App() {
     sponsorshipsView,
     mediaCoverageView,
     councilBlogsView,
+    resourcesSafetyView,
     joinUsView,
   } = data;
 
@@ -164,6 +165,10 @@ function App() {
     joinUsView,
   }
 
+  const propsForResourcesSafetyView = {
+    resourcesSafetyView,
+  }
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -175,8 +180,8 @@ function App() {
       <Modal {...propsForModal} />
       <main className="my-10 flex-grow">
         <Routes>
-          <Route path="*" element={<PageNotFoundView />} />
-          <Route path="/" element={<HomeView />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/" element={<Home />} />
           <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
@@ -184,11 +189,11 @@ function App() {
           <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
           <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
           <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
-          <Route path="projects" element={<ProjectsView />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
           <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
-          <Route path="resources-safety" element={<ResourcesSafetyView />} />
-          <Route path="join-us" element={<JoinUsView {...propsForJoinUsView} />} />
+          <Route path="resources-safety" element={<ResourcesSafety {...propsForResourcesSafetyView} />} />
+          <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
         </Routes>
       </main>
       <Footer />

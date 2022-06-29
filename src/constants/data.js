@@ -84,6 +84,12 @@ import expandingTheAppealOfUrbanCyclingImage from "../assets/images/council-blog
 import springThingsImage from "../assets/images/council-blogs/2022/spring-things.png";
 import developingLeadersOfTomorrowImage from "../assets/images/council-blogs/2022/developing-leaders-of-tomorrow.png";
 
+// Images for Resources Safety view
+import resourcesImage from "../assets/images/resources-safety/resources.png";
+import safetyImage from "../assets/images/resources-safety/safety.png";
+import contributionToCommunityImage from "../assets/images/resources-safety/community.png";
+import wordImage from "../assets/images/resources-safety/word.png";
+
 const data = {
   members: [
     {
@@ -1034,6 +1040,56 @@ const data = {
           },
         },
       ],
+    },
+  ],
+  resourcesSafetyView: [
+    {
+      heading: "Resources",
+      text: [
+        `We love help! That is why we have Council resources. Our resources lend aid at their convenience and still reap the benefits. Want to contribute too? Start by subscribing to our newsletter below, joining our Discord, or following our social media for chances to pitch in!`,
+        `You can always email us: info@nybcouncil.com, all help is appreciated!`,
+        `Tangible donations go through consideration before being taken. Here is our donations logistics form.`,
+      ],
+      img: {
+        src: resourcesImage,
+        alt: "resources on webpage",
+      },
+    },
+    {
+      heading: "Safety",
+      text: [
+        `As a group of youth leaders and aspiring youth leaders we act in the interest of safety first.`,
+        `We are committed to creating a youth-friendly space and require such from all council members who join.`,
+        `This is also required of our resources and advisors while aiding on any projects initiated by the council.`,
+      ],
+      img: {
+        src: safetyImage,
+        alt: "safety first written on yellow colored board",
+      },
+    },
+    {
+      heading: "Contribution to Community",
+      text: [
+        `We definitely want to make this a two way bike lane so we try our best to offer support for those of them that offer support to us. Just contact us: info@nybcouncil.com!`,
+        `If you are a youth-bike group looking for guidance on how to strengthen your efforts, contact us!`,
+        `If you have an event that you need youth-bike volunteers at in one of our cities (or virtually), contact us!`,
+        `And at all times, we supply you with great youth cycling role models.`,
+      ],
+      img: {
+        src: contributionToCommunityImage,
+        alt: "community facees in heart",
+      },
+    },
+    {
+      heading: "Word of Mouth",
+      text: [
+        `Do you know of a youth leader that would be interested in being a Council member? Refer them to us!`,
+        `Think of two people you know that would say yes to youth cycling: spread the word of the Council to them. Then keep an eye on our social media to stay engaged! You help make the difference to all the youth in the council and all the youth that follow us!.`,
+      ],
+      img: {
+        src: wordImage,
+        alt: "people speaking with each other",
+      },
     },
   ],
   joinUsView: [
