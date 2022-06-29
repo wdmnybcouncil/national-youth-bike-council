@@ -58,14 +58,14 @@ function Header() {
             <Dropdown.Item linkTo="/board-members">Board Members</Dropdown.Item>
             <Dropdown.Item linkTo="/sponsorships">Partners & Sponsorships</Dropdown.Item>
           </Dropdown>
-          <Nav.Item linkTo="#">Projects</Nav.Item>
+          <Nav.Item linkTo="/projects">Projects</Nav.Item>
           <Dropdown label="Council Press">
             <Dropdown.Item linkTo="/media-coverage">Media Coverage</Dropdown.Item>
             <Dropdown.Item linkTo="/council-blogs">Council Blogs</Dropdown.Item>
             <Dropdown.Item linkTo="#">Newsletter</Dropdown.Item>
           </Dropdown>
           <Dropdown label="Resources">
-            <Dropdown.Item linkTo="#">Resources & Safety</Dropdown.Item>
+            <Dropdown.Item linkTo="/resources-safety">Resources & Safety</Dropdown.Item>
           </Dropdown>
           <CTALink linkTo="/join-us" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
             Join us

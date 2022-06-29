@@ -7,12 +7,12 @@ import Accordion from "../components/Accordion";
 import PageLink from "../components/PageLink";
 
 /**
- * The **JoinUsView** component renders the view that all the details about joining the council.
+ * The **JoinUs** component renders the view that all the details about joining the council.
  *
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function JoinUsView({ joinUsView }) {
+function JoinUs({ joinUsView }) {
   const allFaqs = joinUsView[2].faqSections;
 
   //Settings for Filtering Faqs
@@ -115,7 +115,7 @@ const propTypes = {
   joinUsView: PropTypes.array.isRequired,
 }
 
-JoinUsView.displayName = "JoinUsView";
-JoinUsView.propTypes = propTypes;
+JoinUs.displayName = "JoinUs";
+JoinUs.propTypes = propTypes;
 
-export default JoinUsView;
+export default JoinUs;
