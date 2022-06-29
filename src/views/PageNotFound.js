@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../components/Section";
 import PageLink from "../components/PageLink";
 
-function PageNotFoundView() {
+function PageNotFound() {
   return (
     <Section>
       <div className="flex flex-col justify-center items-center gap-6">
@@ -19,6 +19,6 @@ function PageNotFoundView() {
   );
 }
 
-PageNotFoundView.displayName = "PageNotFoundView";
+PageNotFound.displayName = "PageNotFound";
 
-export default PageNotFoundView;
+export default PageNotFound;
