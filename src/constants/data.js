@@ -76,7 +76,7 @@ import brandNewLookImage from "../assets/images/media-coverage/2020/brand-new-lo
 //2019
 import phillyBikeExpoImage from "../assets/images/media-coverage/2019/philly-bike-expo.png";
 import adivaAndZoeImage from "../assets/images/media-coverage/2019/adiva-and-zoe.png";
-import nybcSpringRideImage from "../assets/images/media-coverage/2019/nybc-spring-ride.png"
+import nybcSpringRideImage from "../assets/images/media-coverage/2019/nybc-spring-ride.png";
 
 // Images for Council Blogs
 // 2022
@@ -89,6 +89,9 @@ import resourcesImage from "../assets/images/resources-safety/resources.png";
 import safetyImage from "../assets/images/resources-safety/safety.png";
 import contributionToCommunityImage from "../assets/images/resources-safety/community.png";
 import wordImage from "../assets/images/resources-safety/word.png";
+
+// Images for Home view
+import missionImage from "../assets/images/home/mission.png";
 
 const data = {
   members: [
@@ -277,6 +280,70 @@ const data = {
       },
     },
   ],
+  homeView: [
+    {
+      heading: "Our Mission",
+      text: [
+        "To provide an active learning space for young cyclists to boost youth voice in the bicycle space through peer leadership.",
+        "We noticed a huge lack of representation, leadership, voice and direct-path opportunities for youth in the bicycle industry. Our members express the concern of there not being many youth in the space nation-wide or spaces for youth by youth. These are some of the factors that directly affect youth-ridership decline in the US.",
+      ],
+      img: {
+        src: missionImage,
+        alt: "mission",
+      },
+    },
+    {
+      heading: "Our Supporters",
+      text: ["We thank you! Your support aids in spreading the message of youth-leadership through bicycles to more communities"],
+      sponsorships: [
+        {
+          img: {
+            src: investInWomenEntImage,
+            alt: "Invest in Women Entrepreneurs Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: peopleForBikesImage,
+            alt: "People For Bikes Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: qualityBikeProductsImage,
+            alt: "Quality Bike Products Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: skysTheLimitImage,
+            alt: "Skys The Limit Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: sramImage,
+            alt: "SRAM Logo",
+          },
+          text: "",
+        },
+        {
+          img: {
+            src: usaCyclingImage,
+            alt: "USA Cycling Logo",
+          },
+          text: "",
+        },
+      ],
+    },
+    {
+      heading: "Our Voices",
+    },
+  ],
   howItStartedView: [
     {
       heading: "How It Started",
@@ -287,22 +354,22 @@ const data = {
       ],
       img: {
         src: howItStartedImage,
-        alt: "the starting crew of the council"
-      }
+        alt: "the starting crew of the council",
+      },
     },
     {
       heading: "Starting Crew of 2017",
-    }
+    },
   ],
   whereAreWeView: [
     {
       heading: "Where are we?",
       mapMarkers: [
         // Markers coordinates: [longitude, latitude]
-        { markerOffset: -15, name: "Atlanta", coordinates: [-84.3880, 33.7490] },
+        { markerOffset: -15, name: "Atlanta", coordinates: [-84.388, 33.749] },
         { markerOffset: 25, name: "Philadelphia, PA", coordinates: [-75.1652, 39.9526] },
         { markerOffset: -15, name: "State College, PA", coordinates: [-77.8599, 40.7982] },
-        { markerOffset: -15, name: "Seattle, WA", coordinates: [-122.3352, 47.6080] },
+        { markerOffset: -15, name: "Seattle, WA", coordinates: [-122.3352, 47.608] },
       ],
     },
   ],
@@ -546,7 +613,8 @@ const data = {
           author: "",
           category: "2022",
           text: {
-            brief: "Great things happen when you get young adults passionate about health, community, youth leadership, and education together in the same room!",
+            brief:
+              "Great things happen when you get young adults passionate about health, community, youth leadership, and education together in the same room!",
             detail: "",
           },
           img: {
@@ -1255,7 +1323,8 @@ const data = {
           heading: " Supporter FAQs",
           faqs: [
             {
-              heading: "I have a skill that I think can help the Council but I am only able to commit a small amount of my time. Can I still support the council?",
+              heading:
+                "I have a skill that I think can help the Council but I am only able to commit a small amount of my time. Can I still support the council?",
               content: `Of course! We value all kinds of help. If you have a skill that you want to share with us but have a very busy schedule, becoming a supporter might be the best way to join in on the efforts.`,
             },
             {
