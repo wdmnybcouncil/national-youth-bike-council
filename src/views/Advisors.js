@@ -58,7 +58,7 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
         <div className="flex flex-col">
           {renderSectionTexts(advisorsView[2].text)}
           <List>{renderListItems(advisorsView[2].areasOfExpertise)}</List>
-          <PageLink type="external" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
+          <PageLink type="external" className="mt-4" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
             Click here to see full descriptions
           </PageLink>
           <CTALink type="internal" linkTo="/join-us" className="mt-4 self-center xs:self-start">

@@ -52,17 +52,17 @@ function MediaCoverage({ mediaCoverageView }) {
     return (
       <>
         {links.post && (
-          <PageLink type="external" linkTo={links.post}>
+          <PageLink type="external" className="mt-4" linkTo={links.post}>
             Post
           </PageLink>
         )}
         {links.article && (
-          <PageLink type="external" linkTo={links.article}>
+          <PageLink type="external" className="mt-4" linkTo={links.article}>
             Article
           </PageLink>
         )}
         {links.video && (
-          <PageLink type="external" linkTo={links.video}>
+          <PageLink type="external" className="mt-4" linkTo={links.video}>
             Video
           </PageLink>
         )}

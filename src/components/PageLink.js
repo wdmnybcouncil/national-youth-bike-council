@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function PageLink({ type, linkTo, className = "", children }) {
   if (type === "internal") {
     return (
-      <Link to={linkTo} className={`gap-2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}>
+      <Link to={linkTo} className={`gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}>
         {children}
       </Link>
     );
@@ -22,7 +22,7 @@ function PageLink({ type, linkTo, className = "", children }) {
         href={linkTo}
         target="_blank"
         rel="noreferrer"
-        className={`gap-2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}
+        className={`gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}
       >
         {children}
       </a>
