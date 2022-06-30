@@ -6,6 +6,12 @@ import ProfileCard from "../components/ProfileCard";
 import headerImage from "../assets/images/home/nybc-header.png";
 import btnArrow from "../assets/images/btn-arrow.svg";
 
+/**
+ * The **Home** component renders the view for the home route.
+ *
+ * @version 1.0.0
+ * @author [Shraddha](https://github.com/5hraddha)
+ */
 function Home({ homeView, homeViewMembers = [], onCardClick }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
 
