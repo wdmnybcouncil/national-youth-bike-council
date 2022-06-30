@@ -61,7 +61,7 @@ function CouncilBlogs({ councilBlogsView }) {
             <Post.Subtitle>{date}</Post.Subtitle>
             <Post.Text>{text.brief}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">
-              <PageLink type="internal" linkTo="">
+              <PageLink type="internal" linkTo="" className="mt-4">
                 Show More
               </PageLink>
             </div>

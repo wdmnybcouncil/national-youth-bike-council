@@ -97,7 +97,7 @@ function JoinUs({ joinUsView }) {
       <Section>
         <Section.Heading>{joinUsView[3].heading}</Section.Heading>
         <Section.Text>{joinUsView[3].text}</Section.Text>
-        <PageLink type="external" linkTo={joinUsView[3].link}>
+        <PageLink type="external" className="mt-4" linkTo={joinUsView[3].link}>
           Join the Efforts
         </PageLink>
       </Section>

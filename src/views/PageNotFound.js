@@ -12,7 +12,7 @@ function PageNotFound() {
             <h2 className="relative w-full text-center font-balgin text-2xl tracking-wider text-skin-primary md:text-4xl">Page Not Found</h2>
             <p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
             <div className="flex items-center justify-center">
-              <PageLink type="internal" linkTo="/">
+              <PageLink type="internal" className="mt-4" linkTo="/">
                 Go to Home
               </PageLink>
             </div>
