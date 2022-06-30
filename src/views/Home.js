@@ -63,7 +63,7 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
                 We are a <span className="font-semibold">youth-led non-profit</span> that creates a space for our peers to feel empowered and have the tools,
                 leadership skills, and youth role models necessary to be leaders in their own community.
               </p>
-              <CTALink linkTo="/join-us">
+              <CTALink type="internal" linkTo="/join-us">
                 Join us
                 <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
               </CTALink>

@@ -67,7 +67,7 @@ function Header() {
           <Dropdown label="Resources">
             <Dropdown.Item type="internal" linkTo="/resources-safety">Resources & Safety</Dropdown.Item>
           </Dropdown>
-          <CTALink linkTo="/join-us" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
+          <CTALink type="internal" linkTo="/join-us" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
             Join us
             <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
           </CTALink>
