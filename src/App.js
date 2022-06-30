@@ -38,6 +38,7 @@ function App() {
 
   const {
     members,
+    homeView,
     howItStartedView,
     whereAreWeView,
     whyTheCouncilView,
@@ -50,6 +51,9 @@ function App() {
     resourcesSafetyView,
     joinUsView,
   } = data;
+
+  // Filter out all the members to be shown on the home page
+  const homeViewMembers = ["Zoe", "Lot", "Luly"].map((memberName) => members.filter((item) => item.firstName === memberName)[0]);
 
   // Filter out all the members of the starting crew from the list of all the members
   const startingCrewMembers = members.filter((item) => item.roles.includes("Co-Founder"));
@@ -116,11 +120,17 @@ function App() {
     userProfile: selectedUserProfile,
   };
 
+  const propsForHomeView = {
+    homeView,
+    homeViewMembers,
+    onCardClick: handleProfileCardClick,
+  };
+
   const propsForHowItStartedView = {
     howItStartedView,
     startingCrewMembers,
     onCardClick: handleProfileCardClick,
-  }
+  };
 
   const propsForWhereAreWeView = {
     whereAreWeView,
@@ -159,29 +169,28 @@ function App() {
 
   const propsForCouncilBlogsView = {
     councilBlogsView,
-  }
+  };
 
   const propsForJoinUsView = {
     joinUsView,
-  }
+  };
 
   const propsForResourcesSafetyView = {
     resourcesSafetyView,
-  }
+  };
 
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
 
-
   return (
     <div className="flex h-screen flex-col">
       <Header />
       <Modal {...propsForModal} />
-      <main className="my-10 flex-grow">
+      <main className="flex-grow">
         <Routes>
           <Route path="*" element={<PageNotFound />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home {...propsForHomeView} />} />
           <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
           <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
           <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />

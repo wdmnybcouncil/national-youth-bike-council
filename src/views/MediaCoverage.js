@@ -18,18 +18,18 @@ function MediaCoverage({ mediaCoverageView }) {
   //Settings for Filtering Posts
   const [postsToShow, setPostsToShow] = React.useState(allPosts);
   const [selectedFilterCategory, setSelectedFilterCategory] = React.useState("All");
-  const filterTagsForPosts = ["All", ...new Set(allPosts.map(_ => _.category))];
+  const filterTagsForPosts = ["All", ...new Set(allPosts.map((_) => _.category))];
 
   const handleFilterPosts = (selectedCategory) => {
     let newPostsToShow;
     if (selectedCategory !== "All") {
-      newPostsToShow = allPosts.filter(_ => _.category === selectedCategory);
+      newPostsToShow = allPosts.filter((_) => _.category === selectedCategory);
     } else {
       newPostsToShow = allPosts;
     }
     setSelectedFilterCategory(selectedCategory);
     setPostsToShow(newPostsToShow);
-  }
+  };
 
   //Settings for Pagination
   let pageSize = 3;
@@ -43,13 +43,10 @@ function MediaCoverage({ mediaCoverageView }) {
 
   // Helper functions to render fiter butons, links and posts
   const renderFilterButtons = () => {
-    return filterTagsForPosts.map((filterTag) =>
-      <FilterButton
-        key={filterTag}
-        filterCategory={filterTag}
-        selectedFilterCategory={selectedFilterCategory}
-        handleFilter={handleFilterPosts} />);
-  }
+    return filterTagsForPosts.map((filterTag) => (
+      <FilterButton key={filterTag} filterCategory={filterTag} selectedFilterCategory={selectedFilterCategory} handleFilter={handleFilterPosts} />
+    ));
+  };
 
   const renderPostLinks = (links) => {
     return (
@@ -92,16 +89,14 @@ function MediaCoverage({ mediaCoverageView }) {
     });
 
   return (
-    <>
+    <div className="my-8">
       <Section>
         <Section.Heading>{mediaCoverageView[0].heading}</Section.Heading>
-        <div className="mb-4 flex flex-wrap gap-4 justify-center items-center md:justify-start">
-          {renderFilterButtons()}
-        </div>
+        <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
         <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
         <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
       </Section>
-    </>
+    </div>
   );
 }
 

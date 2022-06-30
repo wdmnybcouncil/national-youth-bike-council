@@ -29,7 +29,7 @@ function Sponsorships({ sponsorshipsView }) {
   };
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - Partner */}
       <Section>
         <Section.Heading>{sponsorshipsView[0].heading}</Section.Heading>
@@ -40,7 +40,7 @@ function Sponsorships({ sponsorshipsView }) {
         <Section.Heading>{sponsorshipsView[1].heading}</Section.Heading>
         <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">{sponsorships.length && renderImages(sponsorships)}</div>
       </Section>
-    </>
+    </div>
   );
 }
 

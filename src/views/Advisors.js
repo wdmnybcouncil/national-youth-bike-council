@@ -36,7 +36,7 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
     });
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - Who are Advisors? */}
       <Section>
         <Section.Heading>{advisorsView[0].heading}</Section.Heading>
@@ -67,7 +67,7 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
           </CTALink>
         </div>
       </Section>
-    </>
+    </div>
   );
 }
 

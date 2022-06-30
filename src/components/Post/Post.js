@@ -13,7 +13,9 @@ import PostImg from "./PostImg";
  */
 function Post({ className, children }) {
   return (
-    <div className={`relative grid min-h-[400px] max-w-full grid-cols-2 gap-8 rounded-2xl bg-skin-fill-card-accent p-6 lg:grid-cols-4 md:gap-16 md:p-8 ${className}`}>
+    <div
+      className={`relative grid min-h-[400px] max-w-full grid-cols-2 gap-8 rounded-2xl bg-skin-fill-card-accent p-6 md:gap-16 md:p-8 lg:grid-cols-4 ${className}`}
+    >
       {children}
     </div>
   );

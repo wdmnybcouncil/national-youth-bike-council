@@ -32,7 +32,7 @@ function WhyTheCouncil({ whyTheCouncilView }) {
     });
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - Why the National Youth Bike Council? */}
       <section className="mb-10 w-full bg-skin-fill-card-accent text-skin-base">
         <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
@@ -51,7 +51,7 @@ function WhyTheCouncil({ whyTheCouncilView }) {
           <p className="max-w-3xl">@ us with any of these Hashtags!</p>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

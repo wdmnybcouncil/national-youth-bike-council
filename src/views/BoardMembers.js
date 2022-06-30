@@ -30,7 +30,7 @@ function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
     });
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - Meet the Board Members */}
       <Section>
         <Section.Heading>{boardMembersView[0].heading}</Section.Heading>
@@ -46,7 +46,7 @@ function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
           </div>
         </div>
       </Section>
-    </>
+    </div>
   );
 }
 

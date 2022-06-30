@@ -30,7 +30,7 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
     });
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - How It Started */}
       <Section>
         <Section.Heading>{howItStartedView[0].heading}</Section.Heading>
@@ -50,7 +50,7 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
         <Section.Heading>{howItStartedView[1].heading}</Section.Heading>
         <div className="flex flex-wrap gap-6">{howItStartedView.length && renderMembersCards()}</div>
       </Section>
-    </>
+    </div>
   );
 }
 
