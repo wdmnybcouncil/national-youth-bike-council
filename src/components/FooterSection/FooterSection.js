@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import FooterHeader from "./FooterHeader";
-import FooterLink from "./FooterLink";
 
 /**
  * The **FooterSection** component renders a section in the footer
@@ -25,5 +24,4 @@ FooterSection.propTypes = propTypes;
 
 export default Object.assign(FooterSection, {
   Header: FooterHeader,
-  Link: FooterLink,
 });

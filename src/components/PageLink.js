@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function PageLink({ type, linkTo, children }) {
+function PageLink({ type, linkTo, className = "", children }) {
   if (type === "internal") {
     return (
-      <Link to={linkTo} className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
+      <Link to={linkTo} className={`gap-2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}>
         {children}
       </Link>
     );
@@ -22,7 +22,7 @@ function PageLink({ type, linkTo, children }) {
         href={linkTo}
         target="_blank"
         rel="noreferrer"
-        className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90"
+        className={`gap-2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}
       >
         {children}
       </a>
@@ -41,6 +41,7 @@ const propTypes = {
    * Sets the url where the PageLink should point to when clicked
    */
   linkTo: PropTypes.string.isRequired,
+  className: PropTypes.string,
   /**
    * Sets the content or text of the PageLink
    */

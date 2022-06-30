@@ -61,7 +61,7 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
           <PageLink type="external" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
             Click here to see full descriptions
           </PageLink>
-          <CTALink linkTo="/join-us" className="mt-4 self-center xs:self-start">
+          <CTALink type="internal" linkTo="/join-us" className="mt-4 self-center xs:self-start">
             Join us
             <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
           </CTALink>
