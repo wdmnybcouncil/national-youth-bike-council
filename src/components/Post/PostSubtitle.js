@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function PostSubtitle({ children }) {
-  return <p className="text-sm font-semibold text-center lg:text-left">{children}</p>;
+  return <p className="text-center text-sm font-semibold lg:text-left">{children}</p>;
 }
 
 const propTypes = {

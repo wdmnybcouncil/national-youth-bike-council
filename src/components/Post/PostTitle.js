@@ -8,7 +8,11 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function PostTitle({ children }) {
-  return <h3 className="relative mb-1 w-full border-b border-skin-accent pb-1 font-balgin text-xl tracking-wider md:text-2xl text-center lg:text-left">{children}</h3>;
+  return (
+    <h3 className="relative mb-1 w-full border-b border-skin-accent pb-1 text-center font-balgin text-xl tracking-wider md:text-2xl lg:text-left">
+      {children}
+    </h3>
+  );
 }
 
 const propTypes = {

@@ -9,20 +9,20 @@ import { Link } from "react-router-dom";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function PageLink({ type, linkTo, children }) {
-  if (type === 'internal') {
+  if (type === "internal") {
     return (
-      <Link to={linkTo} className="flex gap- 2 mt-4 underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
+      <Link to={linkTo} className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
         {children}
       </Link>
     );
   }
-  if (type === 'external') {
+  if (type === "external") {
     return (
       <a
         href={linkTo}
         target="_blank"
         rel="noreferrer"
-        className="flex gap- 2 mt-4 underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90"
+        className="gap- 2 mt-4 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90"
       >
         {children}
       </a>
@@ -34,9 +34,9 @@ function PageLink({ type, linkTo, children }) {
 
 const propTypes = {
   /**
-  * Defines the type of the link: whether it is linking to an external page or internal page
-  */
-  type: PropTypes.oneOf(['external', 'internal']).isRequired,
+   * Defines the type of the link: whether it is linking to an external page or internal page
+   */
+  type: PropTypes.oneOf(["external", "internal"]).isRequired,
   /**
    * Sets the url where the PageLink should point to when clicked
    */
