@@ -34,7 +34,7 @@ function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers
     ));
 
   return (
-    <>
+    <div className="my-8">
       {/* Section # 1 - Meet the Council Members */}
       <Section>
         <Section.Heading>{councilMembersView[0].heading}</Section.Heading>
@@ -45,7 +45,7 @@ function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers
         <Section.Heading>{councilMembersView[1].heading}</Section.Heading>
         <div className="flex flex-wrap justify-center gap-8 md:justify-evenly md:gap-0">{alumniMembers && renderAlumniCards()}</div>
       </Section>
-    </>
+    </div>
   );
 }
 

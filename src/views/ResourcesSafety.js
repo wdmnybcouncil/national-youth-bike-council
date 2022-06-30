@@ -19,22 +19,16 @@ function ResourcesSafety({ resourcesSafetyView }) {
         <Section key={`${index}-${heading}`}>
           <Section.Heading>{heading}</Section.Heading>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
-            <div className="col-span-2 flex flex-col gap-8">
-              {renderSectionTexts(text)}
-            </div>
+            <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(text)}</div>
             <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
               <Section.Img src={img.src} alt={img.alt} className="object-cover object-center" />
             </div>
           </div>
         </Section>
-      )
-    })
+      );
+    });
 
-  return (
-    <>
-      {renderSections()}
-    </>
-  );
+  return <div className="my-8">{renderSections()}</div>;
 }
 
 const propTypes = {
