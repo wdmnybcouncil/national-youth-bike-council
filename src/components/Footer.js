@@ -11,13 +11,13 @@ function Footer({ footer }) {
     return links.map((link) => {
       if (link.title === "Donate") {
         return (
-          <CTALink type={link.type} linkTo={link.url}>
+          <CTALink key={link.title} type={link.type} linkTo={link.url}>
             {link.title}
           </CTALink>
         );
       } else {
         return (
-          <PageLink type={link.type} linkTo={link.url} className="mt-0 bg-skin-fill-primary text-sm text-skin-muted lg:text-base no-underline hover:underline">
+          <PageLink key={link.title} type={link.type} linkTo={link.url} className="mt-0 bg-skin-fill-primary text-sm text-skin-muted lg:text-base no-underline hover:underline">
             {link.icon ? <img src={link.icon.src} alt={link.icon.alt} className="h-6 w-6" /> : null}
             {link.title}
           </PageLink>
