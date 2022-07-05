@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import CurrentMenuStateContext from "../../contexts/CurrentMenuStateContext";
 
 /**
  * The **DropdownItem** component renders each item in the Dropdown.
@@ -9,10 +10,15 @@ import { Link } from "react-router-dom";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function DropdownItem({ type, linkTo, children }) {
+  const setIsMenuOpen = React.useContext(CurrentMenuStateContext);
+
+  const handleDropdownItemClick = () => setIsMenuOpen(false);
+
   if (type === "internal") {
     return (
       <Link
         to={linkTo}
+        onClick={handleDropdownItemClick}
         className="mt-2 block rounded-lg bg-transparent px-4 py-2 text-sm tracking-wide hover:bg-gray-200 hover:text-skin-primary focus:bg-gray-200 focus:text-skin-primary focus:outline-none lg:mt-0 lg:text-base"
       >
         {children}
@@ -25,6 +31,7 @@ function DropdownItem({ type, linkTo, children }) {
         href={linkTo}
         target="_blank"
         rel="noreferrer"
+        onClick={handleDropdownItemClick}
         className="mt-2 block rounded-lg bg-transparent px-4 py-2 text-sm tracking-wide hover:bg-gray-200 hover:text-skin-primary focus:bg-gray-200 focus:text-skin-primary focus:outline-none lg:mt-0 lg:text-base"
       >
         {children}
