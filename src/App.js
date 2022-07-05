@@ -50,6 +50,7 @@ function App() {
     councilBlogsView,
     resourcesSafetyView,
     joinUsView,
+    footer,
   } = data;
 
   // Filter out all the members to be shown on the home page
@@ -179,6 +180,10 @@ function App() {
     resourcesSafetyView,
   };
 
+  const propsForFooter = {
+    footer,
+  };
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -205,7 +210,7 @@ function App() {
           <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
         </Routes>
       </main>
-      <Footer />
+      <Footer {...propsForFooter} />
     </div>
   );
 }

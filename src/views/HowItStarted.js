@@ -14,7 +14,7 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
 
   const renderMembersCards = () =>
     startingCrewMembers.map((member) => {
-      const { firstName, lastName, img, roles, story } = member;
+      const { firstName, lastName, img, story } = member;
       const userProfile = {
         userName: `${firstName} ${lastName.substring(0, 1)}.`,
         userImg: img,
@@ -24,7 +24,6 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
         <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${firstName} ${lastName}`}</ProfileCard.Title>
-          <ProfileCard.Subtitle>{roles[1]}</ProfileCard.Subtitle>
         </ProfileCard>
       );
     });

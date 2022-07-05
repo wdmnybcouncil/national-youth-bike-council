@@ -29,6 +29,7 @@ function CouncilBlogs({ councilBlogsView }) {
     }
     setSelectedFilterCategory(selectedCategory);
     setPostsToShow(newPostsToShow);
+    setCurrentPage(1);
   };
 
   //Settings for Pagination

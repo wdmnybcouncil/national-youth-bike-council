@@ -93,6 +93,14 @@ import wordImage from "../assets/images/resources-safety/word.png";
 // Images for Home view
 import missionImage from "../assets/images/home/mission.png";
 
+// Images for Footer
+import mailIcon from "../assets/images/icon-mail.svg";
+import discordIcon from "../assets/images/social/icon-discord.svg";
+import instagramIcon from "../assets/images/social/icon-instagram.svg";
+import twitterIcon from "../assets/images/social/icon-twitter.svg";
+import facebookIcon from "../assets/images/social/icon-facebook.svg";
+import youtubeIcon from "../assets/images/social/icon-youtube.svg";
+
 const data = {
   members: [
     {
@@ -363,7 +371,7 @@ const data = {
   ],
   whereAreWeView: [
     {
-      heading: "Where are we?",
+      heading: "Where are we",
       mapMarkers: [
         // Markers coordinates: [longitude, latitude]
         { markerOffset: -15, name: "Atlanta", coordinates: [-84.388, 33.749] },
@@ -379,7 +387,7 @@ const data = {
       text: [
         "Local bicycle communities are one of the main reasons that council members join our cause. These are the communities we ride in, the communities we advocate for, and the communities we seek a better youth-led future for.",
       ],
-      hashtags: "#CommunityEngagement #CyclingAwareness #HelpingPeopleBeyondTheIndividual #CyclingAdvocacy #CommunityCycling",
+      hashtags: ['#CommunityEngagement', '#CyclingAwareness', '#HelpingPeopleBeyondTheIndividual', '#CyclingAdvocacy', '#CommunityCycling'],
       img: {
         src: communityImage,
         alt: "national youth council community",
@@ -390,7 +398,7 @@ const data = {
       text: [
         "We encourage a healthy mindset through healthy habits to promote mental well-being while on our bikes. It benefits us by boosting our positivity, clearing our minds, and sets a motivating mood for community engagement.",
       ],
-      hashtags: "#Biking #Mentality #Mood #Relaxing #Engaging #Fun #Positivity #ChooseCycling #HealthyMindset",
+      hashtags: ['#Biking', '#Mentality', '#Mood', '#Relaxing', '#Engaging', '#Fun', '#Positivity', '#ChooseCycling', '#HealthyMindset'],
       img: {
         src: healthImage,
         alt: "national youth council health",
@@ -401,7 +409,7 @@ const data = {
       text: [
         "We believe that youth have the advantage of starting early which is why we foster youth development, education, and safety with all seriousness. We teach teamwork, emotional intelligence, cycling education and much more!",
       ],
-      hashtags: "#YouthDevelopment #BicycleSafety #EmotionalIntelligence #Curiosity #Teamwork #CycleEarly",
+      hashtags: ['#YouthDevelopment', '#BicycleSafety', '#EmotionalIntelligence', '#Curiosity', '#Teamwork', '#CycleEarly'],
       img: {
         src: educationImage,
         alt: "national youth council education",
@@ -413,7 +421,7 @@ const data = {
         "The council cultivates youth leaders by providing realistic leadership experiences and making the outcomes of our annual projects into learning lessons. Youth cyclists then exhibit leadership qualities while on the road or in the council, enhancing their ability to make quality decisions. Responsibility is developed in all of our members and is vital to staying healthy, building community, building leaders, and educating our peers.",
       ],
       hashtags:
-        "#YouthLeader #RoleModel #YouthAction #YouthLeadership #PeerToPeer #TimeManagement #Dedication #Passion #CyclingGoals #YouthDevelopment #KnowingYourStrengths",
+        ['#YouthLeader', '#RoleModel', '#YouthAction', '#YouthLeadership', '#PeerToPeer', '#TimeManagement', '#Dedication', '#Passion', '#CyclingGoals', '#YouthDevelopment', '#KnowingYourStrengths'],
       img: {
         src: leadershipImage,
         alt: "national youth council leadership",
@@ -430,7 +438,7 @@ const data = {
   ],
   advisorsView: [
     {
-      heading: "Who are Advisors?",
+      heading: "Who are Advisors",
       text: [
         "Advisors are hobbyist, professionals, or volunteers that are dedicated to specific tasks that help keep the council members focused on annual projects and not administrative duties.",
         "We appreciate our advisors that volunteer their time to help toward the overall purpose of the council. As a Council we grow, and with the addition of advisors, we grow as young adults to tackle real-world problems around increasing youth leadership, voice, and their interest in cycling.",
@@ -1162,7 +1170,7 @@ const data = {
   ],
   joinUsView: [
     {
-      heading: "Which one are you?",
+      heading: "Which one are you",
       text: "We have three different roles where you can fit in. Read on to figure out - which one are you?",
       subSections: [
         {
@@ -1344,6 +1352,105 @@ const data = {
       heading: "Join the Efforts",
       text: "Are you excited and willing to be part of our team? Please, fill up the form by clicking the link below:",
       link: "https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link",
+    },
+  ],
+  footer: [
+    {
+      heading: "National Youth Bike Council",
+      email: {
+        address: "info@nybcouncil.com",
+        subject: "Enquiry about the council membership",
+        body: "Hi Team!",
+        icon: {
+          src: mailIcon,
+          alt: "mail icon for email address",
+        },
+      },
+    },
+    {
+      heading: "About Us",
+      links: [
+        {
+          title: "How It Started",
+          type: "internal",
+          url: "/how-it-started",
+        },
+        {
+          title: "Where are we?",
+          type: "internal",
+          url: "/where-are-we",
+        },
+        {
+          title: "Why the Council?",
+          type: "internal",
+          url: "/why-the-council",
+        },
+      ],
+    },
+    {
+      heading: "Support",
+      links: [
+        {
+          title: "Newsletter",
+          type: "external",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link",
+        },
+        {
+          title: "Donate",
+          type: "external",
+          url: "https://www.paypal.com/donate/?hosted_button_id=NMZD8JZX7UZ28",
+        },
+      ],
+    },
+    {
+      heading: "Social",
+      links: [
+        {
+          title: "Discord",
+          type: "external",
+          url: "https://discord.gg/2jnVUXUkHk",
+          icon: {
+            src: discordIcon,
+            alt: "discord icon in white color",
+          },
+        },
+        {
+          title: "Instagram",
+          type: "external",
+          url: "https://www.instagram.com/nationalyouthbike/?hl=en",
+          icon: {
+            src: instagramIcon,
+            alt: "instagram icon in white color",
+          },
+        },
+        {
+          title: "Twitter",
+          type: "external",
+          url: "https://twitter.com/National_ybc",
+          icon: {
+            src: twitterIcon,
+            alt: "twitter icon in white color",
+          },
+        },
+        {
+          title: "Facebook",
+          type: "external",
+          url: "https://www.facebook.com/Nybcouncil/",
+          icon: {
+            src: facebookIcon,
+            alt: "facebook icon in white color",
+          },
+        },
+        {
+          title: "YouTube",
+          type: "external",
+          url: "https://www.youtube.com/channel/UC6J-nXvkVU4LyEFf73_mR2Q",
+          icon: {
+            src: youtubeIcon,
+            alt: "youtube icon in white color",
+          },
+        },
+      ],
     },
   ],
 };
