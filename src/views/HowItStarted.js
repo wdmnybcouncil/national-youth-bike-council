@@ -14,7 +14,7 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
 
   const renderMembersCards = () =>
     startingCrewMembers.map((member) => {
-      const { firstName, lastName, img, roles, story } = member;
+      const { firstName, lastName, img, story } = member;
       const userProfile = {
         userName: `${firstName} ${lastName.substring(0, 1)}.`,
         userImg: img,
