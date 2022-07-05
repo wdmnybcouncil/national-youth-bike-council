@@ -24,7 +24,6 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
         <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${firstName} ${lastName}`}</ProfileCard.Title>
-          <ProfileCard.Subtitle>{roles[1]}</ProfileCard.Subtitle>
         </ProfileCard>
       );
     });
