@@ -51,8 +51,8 @@ function Header() {
         <Nav isMenuOpen={isMenuOpen}>
           <Dropdown label="About Us">
             <Dropdown.Item type="internal" linkTo="/how-it-started">How It Started</Dropdown.Item>
-            <Dropdown.Item type="internal" linkTo="/where-are-we">Where are we?</Dropdown.Item>
-            <Dropdown.Item type="internal" linkTo="/why-the-council">Why the Council?</Dropdown.Item>
+            <Dropdown.Item type="internal" linkTo="/where-are-we">Where Are We</Dropdown.Item>
+            <Dropdown.Item type="internal" linkTo="/why-the-council">Why The Council</Dropdown.Item>
             <Dropdown.Item type="internal" linkTo="/council-members">Council Members</Dropdown.Item>
             <Dropdown.Item type="internal" linkTo="/advisors">Advisors</Dropdown.Item>
             <Dropdown.Item type="internal" linkTo="/board-members">Board Members</Dropdown.Item>

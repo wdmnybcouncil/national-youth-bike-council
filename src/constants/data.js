@@ -371,7 +371,7 @@ const data = {
   ],
   whereAreWeView: [
     {
-      heading: "Where are we?",
+      heading: "Where are we",
       mapMarkers: [
         // Markers coordinates: [longitude, latitude]
         { markerOffset: -15, name: "Atlanta", coordinates: [-84.388, 33.749] },
@@ -438,7 +438,7 @@ const data = {
   ],
   advisorsView: [
     {
-      heading: "Who are Advisors?",
+      heading: "Who are Advisors",
       text: [
         "Advisors are hobbyist, professionals, or volunteers that are dedicated to specific tasks that help keep the council members focused on annual projects and not administrative duties.",
         "We appreciate our advisors that volunteer their time to help toward the overall purpose of the council. As a Council we grow, and with the addition of advisors, we grow as young adults to tackle real-world problems around increasing youth leadership, voice, and their interest in cycling.",
@@ -1170,7 +1170,7 @@ const data = {
   ],
   joinUsView: [
     {
-      heading: "Which one are you?",
+      heading: "Which one are you",
       text: "We have three different roles where you can fit in. Read on to figure out - which one are you?",
       subSections: [
         {
