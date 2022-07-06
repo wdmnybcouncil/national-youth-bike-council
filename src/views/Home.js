@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 import Section from "../components/Section";
 import CTALink from "../components/CTALink";
 import ProfileCard from "../components/ProfileCard";
+import AnimatedHeroTitle from "../components/AnimatedHeroTitle";
 import headerImage from "../assets/images/home/nybc-header.png";
 import btnArrow from "../assets/images/btn-arrow.svg";
 import {
+  heroImageAnimationVariants,
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
 } from "../utils/animationVariants";
@@ -80,9 +82,7 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
         <div className="mx-auto flex w-full max-w-screen-xl px-8 py-8 md:px-10 md:py-20">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:gap-16">
             <div className="col-span-2 flex flex-col items-center gap-8 place-self-center sm:items-start">
-              <h1 className="w-full max-w-screen-md bg-gradient-to-l from-orange-600 to-skin-accent bg-clip-text text-center font-balgin text-4xl tracking-wider text-transparent drop-shadow sm:text-left lg:text-6xl">
-                National Youth Bike Council
-              </h1>
+              <AnimatedHeroTitle>National Youth Bike Council</AnimatedHeroTitle>
               <p className="max-w-screen-sm text-center text-skin-primary sm:text-left">
                 We are a <span className="font-semibold">youth-led non-profit</span> that creates a space for our peers to feel empowered and have the tools,
                 leadership skills, and youth role models necessary to be leaders in their own community.
@@ -93,7 +93,14 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
               </CTALink>
             </div>
             <div className="col-span-2 place-self-center sm:row-auto sm:justify-self-end">
-              <img src={headerImage} alt="hero" className="w-full max-w-screen-sm object-contain object-center" />
+              <motion.img
+                src={headerImage}
+                alt="hero"
+                className="w-full max-w-screen-sm object-contain object-center"
+                variants={heroImageAnimationVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }} />
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import CurrentMenuStateContext from "../contexts/CurrentMenuStateContext";
 import btnArrow from "../assets/images/btn-arrow.svg";
 import logoIcon from "../assets/images/icon-logo.png";
 
+
 /**
  * The **Header** component renders the header of the website.
  *
@@ -44,7 +45,8 @@ function Header() {
 
   return (
     <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
-      <div className="mx-auto flex max-w-screen-xl flex-col px-8 py-6 md:px-10 lg:flex-row lg:items-center lg:justify-between">
+      <div
+        className="mx-auto flex max-w-screen-xl flex-col px-8 py-6 md:px-10 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-row items-center justify-between">
           <Logo linkTo="/" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
           <button className="focus:shadow-outline rounded-lg focus:outline-none lg:hidden" onClick={handleMenuClick}>
