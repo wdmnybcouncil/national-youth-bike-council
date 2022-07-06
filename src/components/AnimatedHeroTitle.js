@@ -40,7 +40,9 @@ function AnimatedHeroTitle({ children }) {
   );
 }
 
-const propTypes = {}
+const propTypes = {
+  children: PropTypes.any.isRequired,
+}
 
 AnimatedHeroTitle.displayName = "AnimatedHeroTitle";
 AnimatedHeroTitle.propTypes = propTypes;
