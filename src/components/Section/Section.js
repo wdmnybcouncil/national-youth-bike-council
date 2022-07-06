@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import SectionText from "./SectionText";
 import SectionHashtags from "./SectionHashtags";
 import SectionImg from "./SectionImg";
+import { sectionAnimationVariants } from "../../utils/animationVariants";
 
 /**
  * The **Section** component renders a section in the webpage
@@ -13,9 +15,14 @@ import SectionImg from "./SectionImg";
  */
 function Section({ children }) {
   return (
-    <section className="w-full bg-skin-fill-base text-skin-base">
+    <motion.section
+      className="w-full bg-skin-fill-base text-skin-base"
+      variants={sectionAnimationVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}>
       <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">{children}</div>
-    </section>
+    </motion.section>
   );
 }
 

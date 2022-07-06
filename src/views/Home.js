@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from 'framer-motion';
 import Section from "../components/Section";
 import CTALink from "../components/CTALink";
 import ProfileCard from "../components/ProfileCard";
 import headerImage from "../assets/images/home/nybc-header.png";
 import btnArrow from "../assets/images/btn-arrow.svg";
+import { sectionAnimationVariants } from "../utils/animationVariants";
 
 /**
  * The **Home** component renders the view for the home route.
@@ -52,7 +54,12 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
   return (
     <div className="my-8">
       {/* Section # 1 - Hero */}
-      <div className="w-full">
+      <motion.div
+        className="w-full"
+        variants={sectionAnimationVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}>
         <div className="mx-auto flex w-full max-w-screen-xl px-8 py-8 md:px-10 md:py-20">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:gap-16">
             <div className="col-span-2 flex flex-col items-center gap-8 place-self-center sm:items-start">
@@ -73,7 +80,7 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Section # 2 - Mission */}
       <Section>
@@ -100,7 +107,7 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
         <Section.Heading>{homeView[2].heading}</Section.Heading>
         <div className="flex flex-wrap gap-6">{homeViewMembers.length && renderMemberCards()}</div>
       </Section>
-    </div>
+    </div >
   );
 }
 
