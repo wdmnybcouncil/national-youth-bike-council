@@ -31,20 +31,5 @@ You can view the product specification document [here](https://www.figma.com/fil
 
 ## Live Demo
 
-The website is still under construction. But, as of now the follwing routes are working -
-
-1. [Why The Council](https://5hraddha.github.io/national-youth-bike-council/#/why-the-council)
-2. [Council Members](https://5hraddha.github.io/national-youth-bike-council/#/council-members)
-3. [Advisors](https://5hraddha.github.io/national-youth-bike-council/#/advisors)
-4. [Board Members](https://5hraddha.github.io/national-youth-bike-council/#/board-members)
-5. [Partners & Sponsorships](https://5hraddha.github.io/national-youth-bike-council/#/sponsorships)
-6. [Where Are We](https://5hraddha.github.io/national-youth-bike-council/#/where-are-we)
-7. [How It Started](https://5hraddha.github.io/national-youth-bike-council/#/how-it-started)
-8. [Media Coverage](https://5hraddha.github.io/national-youth-bike-council/#/media-coverage)
-9. [Council Blogs](https://5hraddha.github.io/national-youth-bike-council/#/council-blogs)
-10. [Join Us](https://5hraddha.github.io/national-youth-bike-council/#/join-us)
-11. [Resource & Safety](https://5hraddha.github.io/national-youth-bike-council/#/resources-safety)
-12. [Page Not Found (for non-existing routes)](https://5hraddha.github.io/national-youth-bike-council/#/1234)
-13. [Home Page](https://5hraddha.github.io/national-youth-bike-council/#/)
-
-Visit the live website - [here](https://5hraddha.github.io/national-youth-bike-council/).
+The website is still under construction.  
+Visit the live website - [here](https://nybc.netlify.app/).
