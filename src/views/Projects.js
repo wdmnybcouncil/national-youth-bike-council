@@ -6,7 +6,7 @@ function Projects() {
   return (
     <div className="my-8" aria-label="projects page">
       <Section>
-        <SectionText>This page is under construction.</SectionText>
+        <SectionText>This page is under construction. Visit later.</SectionText>
       </Section>
     </div>
   );
