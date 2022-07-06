@@ -6,7 +6,10 @@ import CTALink from "../components/CTALink";
 import ProfileCard from "../components/ProfileCard";
 import headerImage from "../assets/images/home/nybc-header.png";
 import btnArrow from "../assets/images/btn-arrow.svg";
-import { sectionAnimationVariants } from "../utils/animationVariants";
+import {
+  sectionAnimationVariants,
+  partnersImagesAnimationVariants,
+} from "../utils/animationVariants";
 
 /**
  * The **Home** component renders the view for the home route.
@@ -24,12 +27,26 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
           return null;
         }
         return (
-          <p key={text} className="bg-skin-fill-accent p-4 text-center text-lg font-semibold tracking-wide text-skin-muted md:text-xl">
+          <motion.p
+            key={text}
+            className="bg-skin-fill-accent p-4 text-center text-lg font-semibold tracking-wide text-skin-muted md:text-xl"
+            variants={partnersImagesAnimationVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}>
             {text}
-          </p>
+          </motion.p>
         );
       }
-      return <img key={img.alt} src={img.src} alt={img.alt} className="max-h-20 max-w-[250px] object-cover object-center" />;
+      return <motion.img
+        key={img.alt}
+        src={img.src}
+        alt={img.alt}
+        className="max-h-20 max-w-[250px] object-cover object-center"
+        variants={partnersImagesAnimationVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }} />;
     });
   };
 
