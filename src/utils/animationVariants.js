@@ -31,7 +31,23 @@ const partnersImagesAnimationVariants = {
   },
 }
 
+const postAnimationVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "easeOut",
+      duration: 1,
+    },
+  },
+}
+
 export {
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
+  postAnimationVariants,
 };
