@@ -36,7 +36,7 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
     });
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="advisor page">
       {/* Section # 1 - Who are Advisors? */}
       <Section>
         <Section.Heading>{advisorsView[0].heading}</Section.Heading>

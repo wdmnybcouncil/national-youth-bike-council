@@ -29,7 +29,7 @@ function ResourcesSafety({ resourcesSafetyView }) {
   }
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="resources page">
       <Section>
         {/* Section # 1 - Resources */}
         {renderSection(resourcesSafetyView[0])}

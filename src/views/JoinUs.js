@@ -61,7 +61,7 @@ function JoinUs({ joinUsView }) {
   const renderListItems = (list) => list.map((item) => <List.Item key={item}>{item}</List.Item>);
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="join us page">
       <Section>
         <Section.Heading>{joinUsView[0].heading}</Section.Heading>
         <Section.Text>{joinUsView[0].text}</Section.Text>

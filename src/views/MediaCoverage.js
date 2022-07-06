@@ -90,7 +90,7 @@ function MediaCoverage({ mediaCoverageView }) {
     });
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="media coverage page">
       <Section>
         <Section.Heading>{mediaCoverageView[0].heading}</Section.Heading>
         <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>

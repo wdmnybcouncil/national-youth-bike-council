@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // Import components
 import Header from "./components/Header";
@@ -190,35 +191,44 @@ function App() {
   // ********************************************************************************************* //
 
   return (
-    <div className="flex h-screen flex-col">
-      <Header />
-      <AnimatePresence
-        initial={false}
-        exitBeforeEnter={true}
-        onExitComplete={() => null}
-      >
-        {isModalOpen && <Modal {...propsForModal} />}
-      </AnimatePresence>
-      <main className="flex-grow">
-        <Routes>
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="/" element={<Home {...propsForHomeView} />} />
-          <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
-          <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
-          <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
-          <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
-          <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
-          <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
-          <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
-          <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
-          <Route path="resources-safety" element={<ResourcesSafety {...propsForResourcesSafetyView} />} />
-          <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
-        </Routes>
-      </main>
-      <Footer {...propsForFooter} />
-    </div>
+    <HelmetProvider>
+      <div className="flex h-screen flex-col">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>National Youth Bike Council</title>
+          <meta name="description" content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community." />
+          <meta name="keywords" content="national youth bike council, youth, bike, bicycle, leadership, learning, joshua funches, joshua" />
+          <meta name="author" content="Shraddha" />
+        </Helmet>
+        <Header />
+        <AnimatePresence
+          initial={false}
+          exitBeforeEnter={true}
+          onExitComplete={() => null}
+        >
+          {isModalOpen && <Modal {...propsForModal} />}
+        </AnimatePresence>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="*" element={<PageNotFound />} />
+            <Route path="/" element={<Home {...propsForHomeView} />} />
+            <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
+            <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
+            <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
+            <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
+            <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
+            <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
+            <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
+            <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
+            <Route path="resources-safety" element={<ResourcesSafety {...propsForResourcesSafetyView} />} />
+            <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
+          </Routes>
+        </main>
+        <Footer {...propsForFooter} />
+      </div>
+    </HelmetProvider>
   );
 }
 

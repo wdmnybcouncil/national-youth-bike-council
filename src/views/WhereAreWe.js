@@ -14,7 +14,7 @@ import geoUrl from "../constants/usa-map";
 function WhereAreWe({ whereAreWeView }) {
   const [content, setContent] = React.useState("");
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="where are we page">
       <Section>
         <Section.Heading>{whereAreWeView[0].heading}</Section.Heading>
         <div className="flex items-center justify-center">
