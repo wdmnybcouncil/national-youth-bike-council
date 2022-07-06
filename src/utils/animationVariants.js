@@ -1,3 +1,63 @@
+const navBarAnimationVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-20",
+    scaleY: 0.8,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scaleY: 1,
+    transition: {
+      type: "spring",
+      stiffness: 125,
+      mass: 0.2,
+      damping: 20,
+    }
+  }
+}
+
+const heroLetterContainerAnimationVariants = {
+  hidden: { transition: { staggerChildren: 0.015 } },
+  visible: { transition: { staggerChildren: 0.05 } }
+}
+
+const heroLetterAnimationVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 200
+    }
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      damping: 12,
+      stiffness: 200
+    }
+  }
+}
+
+const heroImageAnimationVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "easeOut",
+      duration: 1,
+    },
+  },
+}
+
 const sectionAnimationVariants = {
   hidden: {
     opacity: 0,
@@ -17,16 +77,14 @@ const sectionAnimationVariants = {
 const partnersImagesAnimationVariants = {
   hidden: {
     opacity: 0,
-    scale: 0,
+    scale: 0.8
   },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
-      type: "spring",
-      stiffness: 50,
-      mass: 0.2,
-      damping: 20,
+      type: "easeOut",
+      duration: 1,
     },
   },
 }
@@ -69,7 +127,6 @@ const modalAnimationVariants = {
   visible: {
     y: "0",
     opacity: 1,
-    opacity: 0,
     transition: {
       duration: 1,
       type: "spring",
@@ -83,30 +140,14 @@ const modalAnimationVariants = {
   },
 }
 
-const navBarAnimationVariants = {
-  hidden: {
-    opacity: 0,
-    y: "-20",
-    scaleY: 0.8,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scaleY: 1,
-    transition: {
-      type: "spring",
-      stiffness: 125,
-      mass: 0.2,
-      damping: 20,
-    }
-  }
-}
-
 export {
+  heroLetterContainerAnimationVariants,
+  heroLetterAnimationVariants,
+  heroImageAnimationVariants,
+  navBarAnimationVariants,
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
   postAnimationVariants,
   modalBackdropAnimationVariants,
   modalAnimationVariants,
-  navBarAnimationVariants,
 };
