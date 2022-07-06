@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import PostTitle from "./PostTitle";
 import PostSubtitle from "./PostSubtitle";
 import PostText from "./PostText";
 import PostImg from "./PostImg";
+import { postAnimationVariants } from "../../utils/animationVariants";
 
 /**
  * The **Post** component renders a media coverage or blog post in the webpage
@@ -13,11 +15,15 @@ import PostImg from "./PostImg";
  */
 function Post({ className, children }) {
   return (
-    <div
+    <motion.div
       className={`relative grid min-h-[400px] max-w-full grid-cols-2 gap-8 rounded-2xl bg-skin-fill-card-accent p-6 md:gap-16 md:p-8 lg:grid-cols-4 ${className}`}
+      variants={postAnimationVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
 

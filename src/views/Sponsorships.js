@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import Section from "../components/Section";
+import { partnersImagesAnimationVariants } from "../utils/animationVariants";
 
 /**
  * The **Sponsorships** component renders the view that all the partners, grants, sponsorships and awards of the council.
@@ -19,12 +21,27 @@ function Sponsorships({ sponsorshipsView }) {
           return null;
         }
         return (
-          <p key={text} className="bg-skin-fill-accent p-4 text-center text-lg font-semibold tracking-wide text-skin-muted md:text-xl">
+          <motion.p
+            key={text}
+            className="bg-skin-fill-accent p-4 text-center text-lg font-semibold tracking-wide text-skin-muted md:text-xl"
+            variants={partnersImagesAnimationVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}>
             {text}
-          </p>
+          </motion.p>
         );
       }
-      return <img key={img.alt} src={img.src} alt={img.alt} className="max-h-28 max-w-full object-cover object-center" />;
+      return <motion.img
+        key={img.alt}
+        src={img.src}
+        alt={img.alt}
+        className="max-h-28 max-w-full object-cover object-center"
+        variants={partnersImagesAnimationVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      />;
     });
   };
 
