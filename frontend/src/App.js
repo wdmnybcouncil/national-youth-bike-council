@@ -235,7 +235,6 @@ function App() {
           {isModalOpen && <Modal {...propsForModal} />}
         </AnimatePresence>
         <main className="flex-grow">
-          <p>Test</p>
           <Routes>
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home {...propsForHomeView} />} />
