@@ -69,6 +69,7 @@ const modalAnimationVariants = {
   visible: {
     y: "0",
     opacity: 1,
+    opacity: 0,
     transition: {
       duration: 1,
       type: "spring",
@@ -82,10 +83,30 @@ const modalAnimationVariants = {
   },
 }
 
+const navBarAnimationVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-20",
+    scaleY: 0.8,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scaleY: 1,
+    transition: {
+      type: "spring",
+      stiffness: 125,
+      mass: 0.2,
+      damping: 20,
+    }
+  }
+}
+
 export {
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
   postAnimationVariants,
   modalBackdropAnimationVariants,
   modalAnimationVariants,
+  navBarAnimationVariants,
 };

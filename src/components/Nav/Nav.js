@@ -1,9 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import NavItem from "./NavItem";
+import { navBarAnimationVariants } from "../../utils/animationVariants";
 
 function Nav({ isMenuOpen, children }) {
-  return <nav className={`${isMenuOpen ? `flex` : `hidden`} flex-grow flex-col pb-6 lg:flex lg:flex-row lg:justify-end lg:pb-0`}>{children}</nav>;
+  return <motion.nav
+    className={`${isMenuOpen ? `flex` : `hidden`} flex-grow flex-col pb-6 lg:flex lg:flex-row lg:justify-end lg:pb-0`}
+    variants={navBarAnimationVariants}
+    initial="hidden"
+    whileInView="visible">
+    {children}
+  </motion.nav >;
 }
 
 const propTypes = {
