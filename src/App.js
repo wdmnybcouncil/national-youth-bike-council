@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 // Import components
 import Header from "./components/Header";
@@ -191,7 +192,13 @@ function App() {
   return (
     <div className="flex h-screen flex-col">
       <Header />
-      <Modal {...propsForModal} />
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter={true}
+        onExitComplete={() => null}
+      >
+        {isModalOpen && <Modal {...propsForModal} />}
+      </AnimatePresence>
       <main className="flex-grow">
         <Routes>
           <Route path="*" element={<PageNotFound />} />

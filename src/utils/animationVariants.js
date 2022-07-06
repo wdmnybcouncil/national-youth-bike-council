@@ -46,8 +46,46 @@ const postAnimationVariants = {
   },
 }
 
+const modalBackdropAnimationVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+}
+
+const modalAnimationVariants = {
+  hidden: {
+    y: "100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+      damping: 25,
+      stiffness: 500,
+    },
+  },
+  exit: {
+    y: "100vh",
+    opacity: 0,
+  },
+}
+
 export {
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
   postAnimationVariants,
+  modalBackdropAnimationVariants,
+  modalAnimationVariants,
 };

@@ -1,6 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Modal.css";
+import { motion } from "framer-motion";
+import {
+  modalBackdropAnimationVariants,
+  modalAnimationVariants,
+} from "../../utils/animationVariants";
 
 /**
  * The **Modal** component renders a modal in the website
@@ -10,13 +14,21 @@ import "./Modal.css";
  */
 function Modal({ isOpen, onClose, userProfile }) {
   const { userName, userImg, userStory } = userProfile;
+
   return (
-    <div
-      className={`fixed top-0 left-0 z-[999] flex h-screen w-full items-center justify-center bg-skin-fill-base-transparent transition-all ${
-        isOpen ? `modal_opened` : `modal`
-      }`}
+    <motion.div
+      className={`fixed top-0 left-0 z-[999] flex h-screen w-full items-center justify-center bg-skin-fill-base-transparent transition-all ${isOpen ? `modal_opened` : `modal`
+        }`}
+      onClick={onClose}
+      variants={modalBackdropAnimationVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
     >
-      <div className="relative m-0 box-border flex max-h-screen w-72 flex-col gap-6 overflow-y-auto rounded-2xl border border-skin-accent bg-skin-fill-card-accent p-8 xs:w-96 md:w-[620px]">
+      <motion.div
+        className="relative m-0 box-border flex max-h-screen w-72 flex-col gap-6 overflow-y-auto rounded-2xl border border-skin-accent bg-skin-fill-card-accent p-8 xs:w-96 md:w-[620px]"
+        onClick={(e) => e.stopPropagation()}
+        variants={modalAnimationVariants}>
         <div className="flex flex-col items-center justify-center gap-4">
           <img src={userImg} alt={userName} className="h-40 w-40 max-w-full rounded-full border-4 border-skin-accent" />
           <h3 className="text-center font-balgin text-2xl font-semibold capitalize leading-8 tracking-wider text-skin-primary md:text-4xl">{userName}</h3>
@@ -28,8 +40,8 @@ function Modal({ isOpen, onClose, userProfile }) {
           className="absolute top-6 right-6 bg-transparent bg-[url('./assets/images/icon-close.svg')] bg-cover bg-no-repeat p-4 transition-all hover:opacity-90"
           onClick={onClose}
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
