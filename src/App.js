@@ -199,6 +199,32 @@ function App() {
           <meta name="description" content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community." />
           <meta name="keywords" content="national youth bike council, youth, bike, bicycle, leadership, learning, joshua funches, joshua" />
           <meta name="author" content="Shraddha" />
+          {/* Google / Search Engine Tags */}
+          <meta itemprop="name" content="National Youth Bike Council" />
+          <meta
+            itemprop="description"
+            content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community."
+          />
+          <meta
+            itemprop="image"
+            content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png"
+          />
+          {/* Twitter card meta tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
+          <meta name="twitter:title" content="National Youth Bike Council" />
+          <meta name="twitter:creator" content="@senorTeNecesito" />
+          <meta name="twitter:site" content="@National_ybc" />
+          <meta
+            name="twitter:description"
+            content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community."
+          />
+          {/* Facebook card meta tags */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="www.nybcouncil.com/" />
+          <meta property="og:title" content="National Youth Bike Council" />
+          <meta property="og:description" content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community." />
+          <meta property="og:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
         </Helmet>
         <Header />
         <AnimatePresence
