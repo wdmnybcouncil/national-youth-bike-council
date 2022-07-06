@@ -71,7 +71,7 @@ function Home({ homeView, homeViewMembers = [], onCardClick }) {
     });
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="home page">
       {/* Section # 1 - Hero */}
       <motion.div
         className="w-full"

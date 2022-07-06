@@ -46,7 +46,7 @@ function Sponsorships({ sponsorshipsView }) {
   };
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="sponsorships and partners page">
       {/* Section # 1 - Partner */}
       <Section>
         <Section.Heading>{sponsorshipsView[0].heading}</Section.Heading>

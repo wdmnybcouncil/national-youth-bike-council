@@ -29,7 +29,7 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
     });
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="how it started page">
       {/* Section # 1 - How It Started */}
       <Section>
         <Section.Heading>{howItStartedView[0].heading}</Section.Heading>

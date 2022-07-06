@@ -34,7 +34,7 @@ function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers
     ));
 
   return (
-    <div className="my-8">
+    <div className="my-8" aria-label="council members page">
       {/* Section # 1 - Meet the Council Members */}
       <Section>
         <Section.Heading>{councilMembersView[0].heading}</Section.Heading>
