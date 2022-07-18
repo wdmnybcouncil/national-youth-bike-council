@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "middle_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "roles": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
