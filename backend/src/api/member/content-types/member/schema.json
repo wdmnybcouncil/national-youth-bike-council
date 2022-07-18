@@ -28,6 +28,25 @@
     "roles": {
       "type": "json",
       "required": true
+    },
+    "profile_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "default": "USA",
+      "minLength": 1
+    },
+    "story_in_brief": {
+      "type": "richtext"
+    },
+    "story_in_detail": {
+      "type": "richtext"
     }
   }
 }
