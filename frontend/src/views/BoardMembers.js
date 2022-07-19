@@ -13,16 +13,17 @@ function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
   const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
   const renderBoardMemberCards = () =>
     boardMembers.map((member) => {
-      const { firstName, lastName, img, roles, location, story } = member;
+      const { first_name, last_name, profile_image, roles, location, story_in_detail } = member.attributes;
+      const img = profile_image.data.attributes.url;
       const userProfile = {
-        userName: `${firstName} ${lastName.substring(0, 1)}.`,
+        userName: `${first_name} ${last_name.substring(0, 1)}.`,
         userImg: img,
-        userStory: story.detail,
+        userStory: story_in_detail,
       };
       return (
-        <ProfileCard key={`${firstName}-${lastName}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
-          <ProfileCard.Img src={img} alt={`${firstName} ${lastName}'s profile`} className="object-cover object-center" />
-          <ProfileCard.Title>{`${firstName} ${lastName.substring(0, 1)}.`}</ProfileCard.Title>
+        <ProfileCard key={`${first_name}-${last_name}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
+          <ProfileCard.Img src={img} alt={`${first_name} ${last_name}'s profile`} className="object-cover object-center" />
+          <ProfileCard.Title>{`${first_name} ${last_name.substring(0, 1)}.`}</ProfileCard.Title>
           <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>
           <ProfileCard.Location>{location}</ProfileCard.Location>
         </ProfileCard>

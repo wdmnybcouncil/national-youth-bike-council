@@ -24,6 +24,8 @@ import CouncilBlogs from "./views/CouncilBlogs";
 import ResourcesSafety from "./views/ResourcesSafety";
 import JoinUs from "./views/JoinUs";
 
+import api from "./utils/api";
+
 // Import data to pass on to the components
 import data from "./constants/data";
 
@@ -37,9 +39,14 @@ function App() {
   // Component States
   const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [startingCrewMembers, setStartingCrewMembers] = React.useState([]);
+  const [councilMembers, setCouncilMembers] = React.useState([]);
+  const [alumniMembers, setAlumniMembers] = React.useState([]);
+  const [advisorMembers, setAdvisorMembers] = React.useState([]);
+  const [boardMembers, setBoardMembers] = React.useState([]);
+  const [homeViewMembers, setHomeViewMembers] = React.useState([]);
 
   const {
-    members,
     homeView,
     howItStartedView,
     whereAreWeView,
@@ -55,23 +62,55 @@ function App() {
     footer,
   } = data;
 
+  // ********************************************************************************************* //
+  //                                          API Calls                                            //
+  // ********************************************************************************************* //
+  React.useEffect(() => {
+    api.getFoundingMembers()
+      .then(members => setStartingCrewMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getCouncilMembers()
+      .then(members => setCouncilMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getAlumniMembers()
+      .then(members => setAlumniMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getAdvisorMembers()
+      .then(members => setAdvisorMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getBoardMembers()
+      .then(members => setBoardMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getHomeViewMembers()
+      .then(members => setHomeViewMembers(members.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
+
   // Filter out all the members to be shown on the home page
-  const homeViewMembers = ["Zoe", "Lot", "Luly"].map((memberName) => members.filter((item) => item.firstName === memberName)[0]);
-
-  // Filter out all the members of the starting crew from the list of all the members
-  const startingCrewMembers = members.filter((item) => item.roles.includes("Co-Founder"));
-
-  // Filter out current Council Members from the list of all the members
-  const councilMembers = members.filter((item) => item.roles.includes("Council Member"));
-
-  // Filter out Alumni from the list of all the members
-  const alumniMembers = members.filter((item) => item.roles.includes("Alumni"));
-
-  // Filter out Advisors from the list of all the members
-  const advisorMembers = members.filter((item) => item.roles.includes("Advisor"));
-
-  // Filter out Board Members from the list of all the members
-  const boardMembers = members.filter((item) => item.roles.includes("Board Member"));
+  // const homeViewMembers = ["Zoe", "Lot", "Luly"].map((memberName) => members.filter((item) => item.firstName === memberName)[0]);
 
   // ********************************************************************************************* //
   //                 Handle mouse click or Esc key down event on Modal                             //
