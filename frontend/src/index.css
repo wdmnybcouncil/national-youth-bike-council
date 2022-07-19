@@ -36,3 +36,19 @@
     --color-button-accent-hover: rgba(246, 139, 51, 1);
   }
 }
+
+/* Add global styles for Markdown */
+.markdown {
+  white-space: pre-wrap;
+}
+
+.markdown a {
+  display: inline-block;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  transition: all .3s ease-in-out;
+}
+
+.markdown a:hover {
+  border-bottom: 1px solid rgba(245, 128, 32, 1);
+  opacity: .9;
+}

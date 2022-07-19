@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import {
   modalBackdropAnimationVariants,
@@ -33,9 +34,9 @@ function Modal({ isOpen, onClose, userProfile }) {
           <img src={userImg} alt={userName} className="h-40 w-40 max-w-full rounded-full border-4 border-skin-accent" />
           <h3 className="text-center font-balgin text-2xl font-semibold capitalize leading-8 tracking-wider text-skin-primary md:text-4xl">{userName}</h3>
         </div>
-        <p className="relative before:absolute before:top-0 before:-left-5 before:h-4 before:w-4 before:bg-[url('./assets/images/icon-quotes.svg')] before:bg-contain before:bg-no-repeat">
-          {userStory}
-        </p>
+        <div className="relative before:absolute before:top-0 before:-left-5 before:h-4 before:w-4 before:bg-[url('./assets/images/icon-quotes.svg')] before:bg-contain before:bg-no-repeat">
+          <ReactMarkdown className="markdown">{userStory}</ReactMarkdown>
+        </div>
         <button
           className="absolute top-6 right-6 bg-transparent bg-[url('./assets/images/icon-close.svg')] bg-cover bg-no-repeat p-4 transition-all hover:opacity-90"
           onClick={onClose}
