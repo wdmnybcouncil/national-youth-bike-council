@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "why_the_council_pages",
+  "info": {
+    "singularName": "why-the-council-page",
+    "pluralName": "why-the-council-pages",
+    "displayName": "WhyTheCouncilPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_hashtags": {
+      "type": "json"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

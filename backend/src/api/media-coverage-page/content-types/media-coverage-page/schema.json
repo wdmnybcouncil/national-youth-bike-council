@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_coverage_pages",
+  "info": {
+    "singularName": "media-coverage-page",
+    "pluralName": "media-coverage-pages",
+    "displayName": "MediaCoveragePage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

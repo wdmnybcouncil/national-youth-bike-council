@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "how_it_started_pages",
+  "info": {
+    "singularName": "how-it-started-page",
+    "pluralName": "how-it-started-pages",
+    "displayName": "HowItStartedPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

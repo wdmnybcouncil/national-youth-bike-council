@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "advisors_pages",
+  "info": {
+    "singularName": "advisors-page",
+    "pluralName": "advisors-pages",
+    "displayName": "AdvisorsPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

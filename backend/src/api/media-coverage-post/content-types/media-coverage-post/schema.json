@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_coverage_posts",
+  "info": {
+    "singularName": "media-coverage-post",
+    "pluralName": "media-coverage-posts",
+    "displayName": "MediaCoveragePost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post_title": {
+      "type": "string",
+      "required": true
+    },
+    "post_date": {
+      "type": "date"
+    },
+    "post_author": {
+      "type": "string",
+      "required": false
+    },
+    "post_category": {
+      "type": "string",
+      "required": true
+    },
+    "post_text": {
+      "type": "richtext"
+    },
+    "post_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "post_links": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.links"
+    }
+  }
+}

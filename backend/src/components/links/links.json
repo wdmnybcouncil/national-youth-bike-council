@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "displayName": "links",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "social_media_post": {
+      "type": "string"
+    },
+    "article": {
+      "type": "string"
+    },
+    "video": {
+      "type": "string"
+    }
+  }
+}

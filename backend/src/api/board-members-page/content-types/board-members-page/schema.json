@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "board_members_pages",
+  "info": {
+    "singularName": "board-members-page",
+    "pluralName": "board-members-pages",
+    "displayName": "BoardMembersPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

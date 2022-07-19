@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsorships_pages",
+  "info": {
+    "singularName": "sponsorships-page",
+    "pluralName": "sponsorships-pages",
+    "displayName": "SponsorshipsPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

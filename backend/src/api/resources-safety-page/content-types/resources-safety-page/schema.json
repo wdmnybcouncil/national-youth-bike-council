@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resources_safety_pages",
+  "info": {
+    "singularName": "resources-safety-page",
+    "pluralName": "resources-safety-pages",
+    "displayName": "ResourcesSafetyPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

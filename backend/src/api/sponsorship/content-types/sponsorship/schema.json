@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sponsorships",
+  "info": {
+    "singularName": "sponsorship",
+    "pluralName": "sponsorships",
+    "displayName": "Sponsorship",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sponsor_name": {
+      "type": "string"
+    },
+    "sponsor_logo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

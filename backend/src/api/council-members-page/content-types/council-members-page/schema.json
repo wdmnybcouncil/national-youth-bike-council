@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "council_members_pages",
+  "info": {
+    "singularName": "council-members-page",
+    "pluralName": "council-members-pages",
+    "displayName": "CouncilMembersPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
