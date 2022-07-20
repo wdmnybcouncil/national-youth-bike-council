@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "where_are_we_pages",
+  "info": {
+    "singularName": "where-are-we-page",
+    "pluralName": "where-are-we-pages",
+    "displayName": "WhereAreWePage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

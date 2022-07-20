@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "map_place_markers",
+  "info": {
+    "singularName": "map-place-marker",
+    "pluralName": "map-place-markers",
+    "displayName": "MapPlaceMarker"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "place_name": {
+      "type": "string",
+      "required": true
+    },
+    "place_longitude": {
+      "type": "string",
+      "required": true
+    },
+    "place_latitude": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "council_blog_pages",
+  "info": {
+    "singularName": "council-blog-page",
+    "pluralName": "council-blog-pages",
+    "displayName": "CouncilBlogPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
