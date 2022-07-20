@@ -166,6 +166,63 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the sponsers of the council.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getSponsers = () => {
+    const query = qs.stringify({
+      populate: {
+        "sponsor_logo": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/sponsorships?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the partners of the council.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getPartners = () => {
+    const query = qs.stringify({
+      populate: {
+        "partner_logo": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/partners?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the text contents to show on the Home view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getHomeViewTextContents = () => {
+    const query = qs.stringify({
+      populate: {
+        "section_image": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/home-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =

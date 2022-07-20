@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 
 /**
  * The **SectionText** component renders the text of a section in the webpage.
@@ -8,7 +9,7 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function SectionText({ children }) {
-  return <p>{children}</p>;
+  return <ReactMarkdown className="markdown">{children}</ReactMarkdown>;
 }
 
 const propTypes = {

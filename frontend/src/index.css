@@ -19,17 +19,13 @@
   :root {
     --color-text-base: rgba(51, 60, 68, 1);
     --color-text-primary: rgba(63, 91, 116, 1);
-    /* --color-text-primary: rgba(0, 63, 90, .8); */
     --color-text-muted: rgba(255, 255, 255, 1);
     --color-text-accent: rgba(245, 128, 32, 1);
 
     --color-fill-base: rgba(255, 255, 255, 1);
     --color-fill-base-transparent: rgba(255, 255, 255, 0.9);
     --color-fill-primary: rgba(63, 91, 116, 1);
-    /* --color-fill-primary: rgba(0, 63, 90, 1); */
     --color-fill-accent: rgba(245, 128, 32, 1);
-
-    /* --color-fill-card-accent: rgba(245, 128, 32, 0.1); */
     --color-fill-card-accent: rgba(250, 235, 222, 1);
 
     --color-button-accent: rgba(245, 128, 32, 1);
@@ -39,6 +35,7 @@
 
 /* Add global styles for Markdown */
 .markdown {
+  color: rgba(51, 60, 68, 1);
   white-space: pre-wrap;
 }
 

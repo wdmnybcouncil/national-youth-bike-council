@@ -45,9 +45,11 @@ function App() {
   const [advisorMembers, setAdvisorMembers] = React.useState([]);
   const [boardMembers, setBoardMembers] = React.useState([]);
   const [homeViewMembers, setHomeViewMembers] = React.useState([]);
+  const [sponsors, setSponsors] = React.useState([]);
+  const [partners, setPartners] = React.useState([]);
+  const [homeViewTextContent, setHomeViewTextContent] = React.useState([]);
 
   const {
-    homeView,
     howItStartedView,
     whereAreWeView,
     whyTheCouncilView,
@@ -107,10 +109,28 @@ function App() {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
       });
-  }, []);
 
-  // Filter out all the members to be shown on the home page
-  // const homeViewMembers = ["Zoe", "Lot", "Luly"].map((memberName) => members.filter((item) => item.firstName === memberName)[0]);
+    api.getSponsers()
+      .then(sponsors => setSponsors(sponsors.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getPartners()
+      .then(partners => setPartners(partners.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+
+    api.getHomeViewTextContents()
+      .then(response => setHomeViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
 
   // ********************************************************************************************* //
   //                 Handle mouse click or Esc key down event on Modal                             //
@@ -163,8 +183,9 @@ function App() {
   };
 
   const propsForHomeView = {
-    homeView,
+    homeViewTextContent,
     homeViewMembers,
+    sponsors,
     onCardClick: handleProfileCardClick,
   };
 
