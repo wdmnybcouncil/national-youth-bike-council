@@ -49,13 +49,11 @@ function App() {
   const [partners, setPartners] = React.useState([]);
 
   const {
-    howItStartedView,
     whereAreWeView,
     whyTheCouncilView,
     councilMembersView,
     advisorsView,
     boardMembersView,
-    sponsorshipsView,
     mediaCoverageView,
     councilBlogsView,
     resourcesSafetyView,
@@ -181,7 +179,6 @@ function App() {
   };
 
   const propsForHowItStartedView = {
-    howItStartedView,
     startingCrewMembers,
     onCardClick: handleProfileCardClick,
   };

@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
+import api from "../utils/api";
 
 /**
  * The **HowItStarted** component renders the view that tells how the council was started.
@@ -9,8 +10,18 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick }) {
-  const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
+function HowItStarted({ startingCrewMembers = [], onCardClick }) {
+  const [howItStartedViewTextContent, setHowItStartedViewTextContent] = React.useState([]);
+
+  // Get the text contents of the page
+  React.useEffect(() => {
+    api.getHowItStartedViewTextContents()
+      .then(response => setHowItStartedViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
 
   const renderMembersCards = () =>
     startingCrewMembers.map((member) => {
@@ -30,32 +41,45 @@ function HowItStarted({ howItStartedView, startingCrewMembers = [], onCardClick 
     });
 
   return (
-    <div className="my-8" aria-label="how it started page">
-      {/* Section # 1 - How It Started */}
-      <Section>
-        <Section.Heading>{howItStartedView[0].heading}</Section.Heading>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
-          <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(howItStartedView[0].text)}</div>
-          <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-            <Section.Img
-              src={howItStartedView[0].img.src}
-              alt={howItStartedView[0].img.alt}
-              className="rounded-md border-4 border-skin-accent object-cover object-center"
-            />
+    <>
+      {howItStartedViewTextContent.length
+        ? (
+          <div className="my-8" aria-label="how it started page">
+            {/* Section # 1 - How It Started */}
+            <Section>
+              <Section.Heading>
+                {howItStartedViewTextContent[0].attributes.section_heading}
+              </Section.Heading>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
+                <div className="col-span-2">
+                  <Section.Text>{howItStartedViewTextContent[0].attributes.section_text}</Section.Text>
+                </div>
+                <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
+                  <Section.Img
+                    src={howItStartedViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
+                    alt={howItStartedViewTextContent[0].attributes.section_image.alternate_text}
+                    className="rounded-md border-4 border-skin-accent object-cover object-center"
+                  />
+                </div>
+              </div>
+            </Section>
+            {/* Section # 2 - Meet the Advisors */}
+            <Section>
+              <Section.Heading>
+                {howItStartedViewTextContent[1].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-wrap gap-6">
+                {howItStartedViewTextContent.length ? renderMembersCards() : null}
+              </div>
+            </Section>
           </div>
-        </div>
-      </Section>
-      {/* Section # 2 - Meet the Advisors */}
-      <Section>
-        <Section.Heading>{howItStartedView[1].heading}</Section.Heading>
-        <div className="flex flex-wrap gap-6">{howItStartedView.length && renderMembersCards()}</div>
-      </Section>
-    </div>
+        )
+        : null}
+    </>
   );
 }
 
 const propTypes = {
-  howItStartedView: PropTypes.array.isRequired,
   startingCrewMembers: PropTypes.array.isRequired,
   onCardClick: PropTypes.func.isRequired,
 };
