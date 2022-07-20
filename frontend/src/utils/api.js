@@ -223,6 +223,17 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the text contents to show on the Sponsorships view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getSponsorshipsViewTextContents = () => {
+    return fetch(`${this._baseUrl}/sponsorships-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =

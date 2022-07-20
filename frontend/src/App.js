@@ -214,7 +214,8 @@ function App() {
   };
 
   const propsForSponsorshipsView = {
-    sponsorshipsView,
+    sponsors,
+    partners,
   };
 
   const propsForMediaCoverageView = {
