@@ -49,7 +49,6 @@ function App() {
   const [partners, setPartners] = React.useState([]);
 
   const {
-    whereAreWeView,
     whyTheCouncilView,
     councilMembersView,
     advisorsView,
@@ -183,10 +182,6 @@ function App() {
     onCardClick: handleProfileCardClick,
   };
 
-  const propsForWhereAreWeView = {
-    whereAreWeView,
-  };
-
   const propsForWhyTheCouncilView = {
     whyTheCouncilView,
   };
@@ -288,7 +283,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home {...propsForHomeView} />} />
             <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
-            <Route path="where-are-we" element={<WhereAreWe {...propsForWhereAreWeView} />} />
+            <Route path="where-are-we" element={<WhereAreWe />} />
             <Route path="why-the-council" element={<WhyTheCouncil {...propsForWhyTheCouncilView} />} />
             <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
             <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />

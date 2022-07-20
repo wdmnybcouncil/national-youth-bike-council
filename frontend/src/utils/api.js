@@ -244,6 +244,29 @@ class Api {
   }
 
   /**
+   * Get all the text contents to show on the Where Are We view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getWhereAreWeViewTextContents = () => {
+    return fetch(`${this._baseUrl}/where-are-we-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the place markers to show on the USA map.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getPlaceMarkers = () => {
+    return fetch(`${this._baseUrl}/map-place-markers`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+
+  /**
    * Get all the text contents to show on the Sponsorships view.
    * @return {Promise} The Promise of the Fetch API call.
    */
