@@ -47,7 +47,6 @@ function App() {
   const [homeViewMembers, setHomeViewMembers] = React.useState([]);
   const [sponsors, setSponsors] = React.useState([]);
   const [partners, setPartners] = React.useState([]);
-  const [homeViewTextContent, setHomeViewTextContent] = React.useState([]);
 
   const {
     howItStartedView,
@@ -123,13 +122,6 @@ function App() {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
       });
-
-    api.getHomeViewTextContents()
-      .then(response => setHomeViewTextContent(response.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
   }, []);
 
   // ********************************************************************************************* //
@@ -183,7 +175,6 @@ function App() {
   };
 
   const propsForHomeView = {
-    homeViewTextContent,
     homeViewMembers,
     sponsors,
     onCardClick: handleProfileCardClick,

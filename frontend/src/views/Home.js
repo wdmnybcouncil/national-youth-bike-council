@@ -12,6 +12,7 @@ import {
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
 } from "../utils/animationVariants";
+import api from "../utils/api";
 
 /**
  * The **Home** component renders the view for the home route.
@@ -19,7 +20,18 @@ import {
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function Home({ homeViewTextContent, homeViewMembers = [], sponsors = [], onCardClick }) {
+function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
+  const [homeViewTextContent, setHomeViewTextContent] = React.useState([]);
+
+  // Get the text contents of the page
+  React.useEffect(() => {
+    api.getHomeViewTextContents()
+      .then(response => setHomeViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
 
   const renderImages = (arr) => {
     return arr.map((item) => {
@@ -157,7 +169,6 @@ function Home({ homeViewTextContent, homeViewMembers = [], sponsors = [], onCard
 }
 
 const propTypes = {
-  homeViewTextContent: PropTypes.array.isRequired,
   homeViewMembers: PropTypes.array.isRequired,
   sponsors: PropTypes.array.isRequired,
   onCardClick: PropTypes.func.isRequired,
