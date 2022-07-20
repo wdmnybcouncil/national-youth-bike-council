@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
+import api from "../utils/api";
 
 /**
  * The **CouncilMembers** component renders the view that lists all the members of the council.
@@ -9,7 +10,19 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers = [], onCardClick }) {
+function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }) {
+  const [councilMembersViewTextContent, setCouncilMembersViewTextContent] = React.useState([]);
+
+  // Get the text contents of the page
+  React.useEffect(() => {
+    api.getCouncilMembersViewTextContents()
+      .then(response => setCouncilMembersViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
+
   const renderCouncilMemberCards = () =>
     councilMembers.map((member) => {
       const { first_name, last_name, profile_image, roles, location, story_in_detail } = member.attributes;
@@ -38,23 +51,40 @@ function CouncilMembers({ councilMembersView, councilMembers = [], alumniMembers
     });
 
   return (
-    <div className="my-8" aria-label="council members page">
-      {/* Section # 1 - Meet the Council Members */}
-      <Section>
-        <Section.Heading>{councilMembersView[0].heading}</Section.Heading>
-        <div className="flex flex-wrap gap-6">{councilMembers.length && renderCouncilMemberCards()}</div>
-      </Section>
-      {/* Section # 2 - Alumni */}
-      <Section>
-        <Section.Heading>{councilMembersView[1].heading}</Section.Heading>
-        <div className="flex flex-wrap justify-center gap-8 md:justify-evenly md:gap-0">{alumniMembers && renderAlumniCards()}</div>
-      </Section>
-    </div>
+    <>
+      {councilMembersViewTextContent.length
+        ? (
+          <div className="my-8" aria-label="council members page">
+            {/* Section # 1 - Meet the Council Members */}
+            <Section>
+              <Section.Heading>
+                {councilMembersViewTextContent[0].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-wrap gap-6">
+                {councilMembers.length
+                  ? renderCouncilMemberCards()
+                  : null}
+              </div>
+            </Section>
+            {/* Section # 2 - Alumni */}
+            <Section>
+              <Section.Heading>
+                {councilMembersViewTextContent[1].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-wrap justify-center gap-8 md:justify-evenly md:gap-0">
+                {alumniMembers.length
+                  ? renderAlumniCards()
+                  : null}
+              </div>
+            </Section>
+          </div>
+        )
+        : null}
+    </>
   );
 }
 
 const propTypes = {
-  councilMembersView: PropTypes.array.isRequired,
   councilMembers: PropTypes.array.isRequired,
   alumniMembers: PropTypes.array.isRequired,
   onCardClick: PropTypes.func.isRequired,

@@ -286,6 +286,17 @@ class Api {
   }
 
   /**
+   * Get all the text contents to show on the Council Members view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getCouncilMembersViewTextContents = () => {
+    return fetch(`${this._baseUrl}/council-members-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
    * Get all the text contents to show on the Sponsorships view.
    * @return {Promise} The Promise of the Fetch API call.
    */

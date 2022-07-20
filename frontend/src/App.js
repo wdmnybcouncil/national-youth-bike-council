@@ -182,7 +182,6 @@ function App() {
   };
 
   const propsForCouncilMembersView = {
-    councilMembersView,
     councilMembers,
     alumniMembers,
     onCardClick: handleProfileCardClick,
