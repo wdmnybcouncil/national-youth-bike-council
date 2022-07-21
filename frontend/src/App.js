@@ -49,7 +49,6 @@ function App() {
   const [partners, setPartners] = React.useState([]);
 
   const {
-    councilBlogsView,
     joinUsView,
     footer,
   } = data;
@@ -197,10 +196,6 @@ function App() {
     partners,
   };
 
-  const propsForCouncilBlogsView = {
-    councilBlogsView,
-  };
-
   const propsForJoinUsView = {
     joinUsView,
   };
@@ -270,7 +265,7 @@ function App() {
             <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
             <Route path="projects" element={<Projects />} />
             <Route path="media-coverage" element={<MediaCoverage />} />
-            <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
+            <Route path="council-blogs" element={<CouncilBlogs />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
           </Routes>

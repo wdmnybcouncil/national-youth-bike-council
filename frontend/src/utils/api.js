@@ -376,6 +376,35 @@ class Api {
   }
 
   /**
+   * Get all the text contents to show on the Council Blogs view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getCouncilBlogsViewTextContents = () => {
+    return fetch(`${this._baseUrl}/council-blog-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+ * Get all the posts related to media coverage.
+ * @return {Promise} The Promise of the Fetch API call.
+ */
+  getCouncilBlogPosts = () => {
+    const query = qs.stringify({
+      sort: ['id:desc'],
+      populate: [
+        "post_cover_image.image_file",
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/council-blog-posts?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
    * Get all the text contents to show on the Resources Safety view.
    * @return {Promise} The Promise of the Fetch API call.
    */
