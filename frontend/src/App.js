@@ -51,7 +51,6 @@ function App() {
   const {
     mediaCoverageView,
     councilBlogsView,
-    resourcesSafetyView,
     joinUsView,
     footer,
   } = data;
@@ -211,10 +210,6 @@ function App() {
     joinUsView,
   };
 
-  const propsForResourcesSafetyView = {
-    resourcesSafetyView,
-  };
-
   const propsForFooter = {
     footer,
   };
@@ -281,7 +276,7 @@ function App() {
             <Route path="projects" element={<Projects />} />
             <Route path="media-coverage" element={<MediaCoverage {...propsForMediaCoverageView} />} />
             <Route path="council-blogs" element={<CouncilBlogs {...propsForCouncilBlogsView} />} />
-            <Route path="resources-safety" element={<ResourcesSafety {...propsForResourcesSafetyView} />} />
+            <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
           </Routes>
         </main>

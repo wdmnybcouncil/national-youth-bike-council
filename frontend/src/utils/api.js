@@ -344,6 +344,25 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the text contents to show on the Resources Safety view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getResourcesSafetyViewTextContents = () => {
+    const query = qs.stringify({
+      populate: {
+        "section_image": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/resources-safety-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =
