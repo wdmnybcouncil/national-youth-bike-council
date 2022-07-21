@@ -32,7 +32,7 @@ function WhyTheCouncil() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
             <div className="col-span-2 flex flex-col gap-8">
               <Section.Text>{section_text}</Section.Text>
-              <Section.Hashtags>{section_hashtags}</Section.Hashtags>
+              <Section.Tags>{section_hashtags}</Section.Tags>
             </div>
             <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
               <Section.Img src={image_file.data.attributes.url} alt={alternate_text} className="rounded-md border-4 border-skin-accent object-cover object-center" />

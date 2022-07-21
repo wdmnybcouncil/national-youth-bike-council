@@ -41,6 +41,9 @@
       "repeatable": false,
       "component": "image.image",
       "required": true
+    },
+    "post_tags": {
+      "type": "json"
     }
   }
 }

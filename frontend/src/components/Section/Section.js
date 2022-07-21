@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import SectionText from "./SectionText";
-import SectionHashtags from "./SectionHashtags";
+import SectionTags from "./SectionTags";
 import SectionImg from "./SectionImg";
 import { sectionAnimationVariants } from "../../utils/animationVariants";
 
@@ -36,6 +36,6 @@ Section.propTypes = propTypes;
 export default Object.assign(Section, {
   Heading: SectionHeading,
   Text: SectionText,
-  Hashtags: SectionHashtags,
+  Tags: SectionTags,
   Img: SectionImg,
 });

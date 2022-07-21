@@ -387,12 +387,34 @@ class Api {
   }
 
   /**
- * Get all the posts related to media coverage.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get all the posts related to council blogs.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getCouncilBlogPosts = () => {
     const query = qs.stringify({
       sort: ['id:desc'],
+      populate: [
+        "post_cover_image.image_file",
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/council-blog-posts?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+ * Get a single post from council blogs.
+ * @return {Promise} The Promise of the Fetch API call.
+ */
+  getCouncilBlogPost = () => {
+    const query = qs.stringify({
+      filters: {
+        id: {
+          $eq: '2',
+        },
+      },
       populate: [
         "post_cover_image.image_file",
       ],

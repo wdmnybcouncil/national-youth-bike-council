@@ -23,6 +23,7 @@ import MediaCoverage from "./views/MediaCoverage";
 import CouncilBlogs from "./views/CouncilBlogs";
 import ResourcesSafety from "./views/ResourcesSafety";
 import JoinUs from "./views/JoinUs";
+import CouncilBlog from "./views/CouncilBlog";
 
 import api from "./utils/api";
 
@@ -268,6 +269,7 @@ function App() {
             <Route path="council-blogs" element={<CouncilBlogs />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
+            <Route path="blog" element={<CouncilBlog />} />
           </Routes>
         </main>
         <Footer {...propsForFooter} />

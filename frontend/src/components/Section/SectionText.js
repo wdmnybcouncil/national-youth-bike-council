@@ -8,11 +8,12 @@ import ReactMarkdown from "react-markdown";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function SectionText({ children }) {
-  return <ReactMarkdown className="markdown">{children}</ReactMarkdown>;
+function SectionText({ className, children }) {
+  return <ReactMarkdown className={`markdown ${className}`}>{children}</ReactMarkdown>;
 }
 
 const propTypes = {
+  className: PropTypes.any,
   children: PropTypes.any.isRequired,
 };
 

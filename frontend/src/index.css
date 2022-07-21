@@ -60,3 +60,13 @@
 .markdown ul>li::marker {
   color: rgba(245, 128, 32, 1);
 }
+
+.markdown img {
+  padding: 20px 0;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  max-height: 420px;
+  border-top: 2px solid rgba(250, 235, 222, 1);
+  border-bottom: 2px solid rgba(250, 235, 222, 1);
+}
