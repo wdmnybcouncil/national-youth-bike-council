@@ -49,7 +49,6 @@ function App() {
   const [partners, setPartners] = React.useState([]);
 
   const {
-    boardMembersView,
     mediaCoverageView,
     councilBlogsView,
     resourcesSafetyView,
@@ -191,7 +190,6 @@ function App() {
   };
 
   const propsForBoardMembersView = {
-    boardMembersView,
     boardMembers,
     onCardClick: handleProfileCardClick,
   };

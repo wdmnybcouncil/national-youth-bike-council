@@ -316,6 +316,25 @@ class Api {
   }
 
   /**
+   * Get all the text contents to show on the Board Members view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getBoardMembersViewTextContents = () => {
+    const query = qs.stringify({
+      populate: {
+        "section_image": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/board-members-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
    * Get all the text contents to show on the Sponsorships view.
    * @return {Promise} The Promise of the Fetch API call.
    */

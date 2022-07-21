@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
+import api from "../utils/api";
 
 /**
  * The **BoardMembers** component renders the view that lists all the board members of the council.
@@ -9,8 +10,19 @@ import ProfileCard from "../components/ProfileCard";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
-  const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
+function BoardMembers({ boardMembers = [], onCardClick }) {
+  const [boardMembersViewTextContent, setBoardMembersViewTextContent] = React.useState([]);
+
+  // Get the text contents of the page
+  React.useEffect(() => {
+    api.getBoardMembersViewTextContents()
+      .then(response => setBoardMembersViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
+
   const renderBoardMemberCards = () =>
     boardMembers.map((member) => {
       const { first_name, last_name, profile_image, roles, location, story_in_detail } = member.attributes;
@@ -31,28 +43,46 @@ function BoardMembers({ boardMembersView, boardMembers = [], onCardClick }) {
     });
 
   return (
-    <div className="my-8" aria-label="board members page">
-      {/* Section # 1 - Meet the Board Members */}
-      <Section>
-        <Section.Heading>{boardMembersView[0].heading}</Section.Heading>
-        <div className="flex flex-wrap gap-6">{boardMembers.length && renderBoardMemberCards()}</div>
-      </Section>
-      {/* Section # 2 - How to Become a Board Member  */}
-      <Section>
-        <Section.Heading>{boardMembersView[1].heading}</Section.Heading>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
-          <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(boardMembersView[1].text)}</div>
-          <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-            <Section.Img src={boardMembersView[1].img.src} alt={boardMembersView[1].img.alt} className="object-cover object-center" />
+    <>
+      {boardMembersViewTextContent.length
+        ? (
+          <div className="my-8" aria-label="board members page">
+            {/* Section # 1 - Meet the Board Members */}
+            <Section>
+              <Section.Heading>
+                {boardMembersViewTextContent[0].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-wrap gap-6">
+                {boardMembers.length
+                  ? renderBoardMemberCards()
+                  : null}
+              </div>
+            </Section>
+            {/* Section # 2 - How to Become a Board Member  */}
+            <Section>
+              <Section.Heading>
+                {boardMembersViewTextContent[1].attributes.section_heading}
+              </Section.Heading>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
+                <div className="col-span-2">
+                  <Section.Text>{boardMembersViewTextContent[1].attributes.section_text}</Section.Text>
+                </div>
+                <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
+                  <Section.Img
+                    src={boardMembersViewTextContent[1].attributes.section_image.image_file.data.attributes.url}
+                    alt={boardMembersViewTextContent[1].attributes.section_image.alternate_text}
+                    className="object-cover object-center" />
+                </div>
+              </div>
+            </Section>
           </div>
-        </div>
-      </Section>
-    </div>
+        )
+        : null}
+    </>
   );
 }
 
 const propTypes = {
-  boardMembersView: PropTypes.array.isRequired,
   boardMembers: PropTypes.array.isRequired,
   onCardClick: PropTypes.func.isRequired,
 };
