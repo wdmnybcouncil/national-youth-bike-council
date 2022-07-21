@@ -346,6 +346,36 @@ class Api {
   }
 
   /**
+   * Get all the text contents to show on the Media Coverage view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getMediaCoverageViewTextContents = () => {
+    return fetch(`${this._baseUrl}/media-coverage-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the posts related to media coverage.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getMediaCoveragePosts = () => {
+    const query = qs.stringify({
+      sort: ['id:desc'],
+      populate: [
+        "post_image.image_file",
+        "post_links"
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/media-coverage-posts?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
    * Get all the text contents to show on the Resources Safety view.
    * @return {Promise} The Promise of the Fetch API call.
    */

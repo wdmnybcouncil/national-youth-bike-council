@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 
 /**
  * The **PostText** component renders a text for post in the webpage
@@ -8,7 +9,7 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function PostText({ children }) {
-  return <p className="my-4 flex-grow whitespace-pre-line text-sm">{children}</p>;
+  return <ReactMarkdown className="markdown my-4 flex-grow text-sm">{children}</ReactMarkdown>;
 }
 
 const propTypes = {
