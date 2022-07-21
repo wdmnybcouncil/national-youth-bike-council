@@ -49,3 +49,14 @@
   border-bottom: 1px solid rgba(245, 128, 32, 1);
   opacity: .9;
 }
+
+.markdown ul {
+  margin-left: 20px;
+  color: rgba(51, 60, 68, 1);
+  white-space: normal;
+  list-style-type: disc;
+}
+
+.markdown ul>li::marker {
+  color: rgba(245, 128, 32, 1);
+}

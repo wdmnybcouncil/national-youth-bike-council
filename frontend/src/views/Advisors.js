@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
-import List from "../components/List/List";
 import CTALink from "../components/CTALink";
 import PageLink from "../components/PageLink";
 import btnArrow from "../assets/images/btn-arrow.svg";
+import api from "../utils/api";
 
 /**
  * The **Advisors** component renders the view that tells about the role of advisors in the council.
@@ -13,9 +13,19 @@ import btnArrow from "../assets/images/btn-arrow.svg";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
-  const renderSectionTexts = (texts) => texts.map((text, index) => <Section.Text key={`${index}-${text.substring(0, 10)}`}>{text}</Section.Text>);
-  const renderListItems = (list) => list.map((item) => <List.Item key={item}>{item}</List.Item>);
+function Advisors({ advisorMembers = [], onCardClick }) {
+  const [advisorsViewTextContent, setAdvisorsViewTextContent] = React.useState([]);
+
+  // Get the text contents of the page
+  React.useEffect(() => {
+    api.getAdvisorsViewTextContents()
+      .then(response => setAdvisorsViewTextContent(response.data))
+      .catch(err => {
+        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log(err);
+      });
+  }, []);
+
 
   const renderAdvisorMemberCards = () =>
     advisorMembers.map((member) => {
@@ -37,44 +47,64 @@ function Advisors({ advisorsView, advisorMembers = [], onCardClick }) {
     });
 
   return (
-    <div className="my-8" aria-label="advisor page">
-      {/* Section # 1 - Who are Advisors? */}
-      <Section>
-        <Section.Heading>{advisorsView[0].heading}</Section.Heading>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
-          <div className="col-span-2 flex flex-col gap-8">{renderSectionTexts(advisorsView[0].text)}</div>
-          <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-            <Section.Img src={advisorsView[0].img.src} alt={advisorsView[0].img.alt} className="object-cover object-center" />
+    <>
+      {advisorsViewTextContent.length
+        ? (
+          <div className="my-8" aria-label="advisor page">
+            {/* Section # 1 - Who are Advisors? */}
+            <Section>
+              <Section.Heading>
+                {advisorsViewTextContent[0].attributes.section_heading}
+              </Section.Heading>
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
+                <div className="col-span-2">
+                  <Section.Text>{advisorsViewTextContent[0].attributes.section_text}</Section.Text>
+                </div>
+                <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
+                  <Section.Img
+                    src={advisorsViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
+                    alt={advisorsViewTextContent[0].attributes.section_image.alternate_text}
+                    className="object-cover object-center" />
+                </div>
+              </div>
+            </Section>
+            {/* Section # 2 - Meet the Advisors */}
+            <Section>
+              <Section.Heading>
+                {advisorsViewTextContent[1].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-wrap gap-6">
+                {advisorMembers.length
+                  ? renderAdvisorMemberCards()
+                  : null}
+              </div>
+            </Section>
+            {/* Section # 3 - How to Become an Advisor  */}
+            <Section>
+              <Section.Heading>
+                {advisorsViewTextContent[2].attributes.section_heading}
+              </Section.Heading>
+              <div className="flex flex-col">
+                <Section.Text>{advisorsViewTextContent[2].attributes.section_text}</Section.Text>
+                <PageLink type="external" className="mt-4" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
+                  Click here to see full descriptions
+                </PageLink>
+                <CTALink type="internal" linkTo="/join-us" className="mt-4 self-center xs:self-start">
+                  Join us
+                  <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
+                </CTALink>
+              </div>
+            </Section>
           </div>
-        </div>
-      </Section>
-      {/* Section # 2 - Meet the Advisors */}
-      <Section>
-        <Section.Heading>{advisorsView[1].heading}</Section.Heading>
-        <div className="flex flex-wrap gap-6">{advisorMembers.length && renderAdvisorMemberCards()}</div>
-      </Section>
-      {/* Section # 3 - How to Become an Advisor  */}
-      <Section>
-        <Section.Heading>{advisorsView[2].heading}</Section.Heading>
-        <div className="flex flex-col">
-          {renderSectionTexts(advisorsView[2].text)}
-          <List>{renderListItems(advisorsView[2].areasOfExpertise)}</List>
-          <PageLink type="external" className="mt-4" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
-            Click here to see full descriptions
-          </PageLink>
-          <CTALink type="internal" linkTo="/join-us" className="mt-4 self-center xs:self-start">
-            Join us
-            <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
-          </CTALink>
-        </div>
-      </Section>
-    </div>
+        )
+        : null}
+    </>
   );
 }
 
 const propTypes = {
-  advisorsView: PropTypes.array.isRequired,
   advisorMembers: PropTypes.array.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 Advisors.displayName = "Advisors";

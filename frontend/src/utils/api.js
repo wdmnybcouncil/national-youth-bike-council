@@ -267,9 +267,9 @@ class Api {
 
 
   /**
- * Get all the text contents to show on the Why The Council view.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get all the text contents to show on the Why The Council view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getWhyTheCouncilViewTextContents = () => {
     const query = qs.stringify({
       populate: {
@@ -291,6 +291,25 @@ class Api {
    */
   getCouncilMembersViewTextContents = () => {
     return fetch(`${this._baseUrl}/council-members-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the text contents to show on the Advisors view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getAdvisorsViewTextContents = () => {
+    const query = qs.stringify({
+      populate: {
+        "section_image": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/advisors-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
