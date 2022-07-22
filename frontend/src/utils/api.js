@@ -427,6 +427,57 @@ class Api {
   }
 
   /**
+ * Get all the text contents to show on the Projects view.
+ * @return {Promise} The Promise of the Fetch API call.
+ */
+  getProjectsViewTextContents = () => {
+    return fetch(`${this._baseUrl}/projects-pages`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the posts related to projects.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getProjectsPosts = () => {
+    const query = qs.stringify({
+      sort: ['id:desc'],
+      populate: [
+        "project_cover_image.image_file",
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/projects?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+ * Get a single post from projects.
+ * @return {Promise} The Promise of the Fetch API call.
+ */
+  getProjectPost = (projectTitle) => {
+    const query = qs.stringify({
+      filters: {
+        "project_title": {
+          $eq: projectTitle,
+        },
+      },
+      populate: [
+        "project_cover_image.image_file",
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/projects?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
    * Get all the text contents to show on the Resources Safety view.
    * @return {Promise} The Promise of the Fetch API call.
    */

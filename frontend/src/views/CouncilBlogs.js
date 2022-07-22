@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Section from "../components/Section";
 import FilterButton from "../components/FilterButton";
 import Post from "../components/Post/Post";
@@ -114,7 +114,6 @@ function CouncilBlogs() {
               <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
               <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
             </Section>
-            <Outlet />
           </div>
         )
         : null}

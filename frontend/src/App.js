@@ -18,11 +18,12 @@ import Advisors from "./views/Advisors";
 import BoardMembers from "./views/BoardMembers";
 import Sponsorships from "./views/Sponsorships";
 import Projects from "./views/Projects";
+import Project from "./views/Project";
 import MediaCoverage from "./views/MediaCoverage";
 import CouncilBlogs from "./views/CouncilBlogs";
+import CouncilBlog from "./views/CouncilBlog";
 import ResourcesSafety from "./views/ResourcesSafety";
 import JoinUs from "./views/JoinUs";
-import CouncilBlog from "./views/CouncilBlog";
 
 import api from "./utils/api";
 
@@ -223,6 +224,7 @@ function App() {
             <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
             <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="projects/:projectTitle" element={<Project />} />
             <Route path="media-coverage" element={<MediaCoverage />} />
             <Route path="council-blogs" element={<CouncilBlogs />} />
             <Route path="council-blogs/:blogTitle" element={<CouncilBlog />} />

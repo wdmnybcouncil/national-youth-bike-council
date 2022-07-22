@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project_title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "project_announcement": {
+      "type": "richtext"
+    },
+    "project_category": {
+      "type": "string",
+      "required": true
+    },
+    "project_cover_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    },
+    "project_announcement_brief": {
+      "type": "richtext"
+    },
+    "project_status": {
+      "type": "enumeration",
+      "enum": [
+        "Completed",
+        "In Progress"
+      ],
+      "default": "In Progress",
+      "required": true
+    }
+  }
+}
