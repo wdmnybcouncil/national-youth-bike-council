@@ -1,12 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Import components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Modal from "./components/Modal";
+import Layout from "./components/Layout";
 
 // Import views
 import Home from "./views/Home";
@@ -49,10 +48,7 @@ function App() {
   const [sponsors, setSponsors] = React.useState([]);
   const [partners, setPartners] = React.useState([]);
 
-  const {
-    joinUsView,
-    footer,
-  } = data;
+  const { joinUsView } = data;
 
   // ********************************************************************************************* //
   //                                          API Calls                                            //
@@ -201,10 +197,6 @@ function App() {
     joinUsView,
   };
 
-  const propsForFooter = {
-    footer,
-  };
-
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -212,40 +204,6 @@ function App() {
   return (
     <HelmetProvider>
       <div className="flex h-screen flex-col">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>National Youth Bike Council | Community for youth empowerment</title>
-          <meta name="description" content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community." />
-          <meta name="keywords" content="national youth bike council, youth, bike, bicycle, leadership, learning, joshua funches, joshua" />
-          <meta name="author" content="Shraddha | https://github.com/5hraddha" />
-          {/* Google / Search Engine Tags */}
-          <meta itemprop="name" content="National Youth Bike Council | Community for youth empowerment" />
-          <meta
-            itemprop="description"
-            content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community."
-          />
-          <meta
-            itemprop="image"
-            content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png"
-          />
-          {/* Twitter card meta tags */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
-          <meta name="twitter:title" content="National Youth Bike Council | Community for youth empowerment" />
-          <meta name="twitter:creator" content="@senorTeNecesito" />
-          <meta name="twitter:site" content="@National_ybc" />
-          <meta
-            name="twitter:description"
-            content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community."
-          />
-          {/* Facebook card meta tags */}
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="www.nybcouncil.com" />
-          <meta property="og:title" content="National Youth Bike Council | Community for youth empowerment" />
-          <meta property="og:description" content="A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community." />
-          <meta property="og:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
-        </Helmet>
-        <Header />
         <AnimatePresence
           initial={false}
           exitBeforeEnter={true}
@@ -253,8 +211,8 @@ function App() {
         >
           {isModalOpen && <Modal {...propsForModal} />}
         </AnimatePresence>
-        <main className="flex-grow">
-          <Routes>
+        <Routes>
+          <Route element={<Layout />}>
             <Route path="*" element={<PageNotFound />} />
             <Route path="/" element={<Home {...propsForHomeView} />} />
             <Route path="how-it-started" element={<HowItStarted {...propsForHowItStartedView} />} />
@@ -267,12 +225,11 @@ function App() {
             <Route path="projects" element={<Projects />} />
             <Route path="media-coverage" element={<MediaCoverage />} />
             <Route path="council-blogs" element={<CouncilBlogs />} />
+            <Route path="council-blogs/:blogTitle" element={<CouncilBlog />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
-            <Route path="blog" element={<CouncilBlog />} />
-          </Routes>
-        </main>
-        <Footer {...propsForFooter} />
+          </Route>
+        </Routes>
       </div>
     </HelmetProvider>
   );

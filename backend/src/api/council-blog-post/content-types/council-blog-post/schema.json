@@ -14,7 +14,8 @@
   "attributes": {
     "post_title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "post_date": {
       "type": "date",

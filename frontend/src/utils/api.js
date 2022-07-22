@@ -408,11 +408,11 @@ class Api {
  * Get a single post from council blogs.
  * @return {Promise} The Promise of the Fetch API call.
  */
-  getCouncilBlogPost = () => {
+  getCouncilBlogPost = (blogTitle) => {
     const query = qs.stringify({
       filters: {
-        id: {
-          $eq: '2',
+        "post_title": {
+          $eq: blogTitle,
         },
       },
       populate: [

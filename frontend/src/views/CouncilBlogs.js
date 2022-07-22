@@ -1,8 +1,8 @@
 import React from "react";
+import { Link, Outlet } from "react-router-dom";
 import Section from "../components/Section";
 import FilterButton from "../components/FilterButton";
 import Post from "../components/Post/Post";
-import PageLink from "../components/PageLink";
 import Pagination from "../components/Pagination";
 import api from "../utils/api";
 
@@ -79,7 +79,7 @@ function CouncilBlogs() {
 
   const renderPosts = (posts) =>
     posts.map((post) => {
-      const { post_title, post_date, post_author, post_text_brief, post_text_detail, post_cover_image } = post.attributes;
+      const { post_title, post_date, post_author, post_text_brief, post_cover_image } = post.attributes;
       const { image_file, alternate_text } = post_cover_image;
 
       return (
@@ -92,9 +92,9 @@ function CouncilBlogs() {
             <Post.Subtitle>{`${post_date ? renderDate(post_date) : ''} | ${post_author}`}</Post.Subtitle>
             <Post.Text>{post_text_brief}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">
-              <PageLink type="internal" linkTo="" className="mt-4">
+              <Link to={`/council-blogs/${post_title}`} className="mt-4 gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
                 Show More
-              </PageLink>
+              </Link>
             </div>
           </div>
         </Post>
@@ -114,6 +114,7 @@ function CouncilBlogs() {
               <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
               <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
             </Section>
+            <Outlet />
           </div>
         )
         : null}
