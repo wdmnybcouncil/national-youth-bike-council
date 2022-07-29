@@ -230,6 +230,7 @@ function App() {
             <Route path="council-blogs/:blogTitle" element={<CouncilBlog />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
+            <Route path="join-the-council" element={<JoinUs {...propsForJoinUsView} />} />
           </Route>
         </Routes>
       </div>

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Section from "../components/Section";
 import ProfileCard from "../components/ProfileCard";
 import CTALink from "../components/CTALink";
-import PageLink from "../components/PageLink";
 import btnArrow from "../assets/images/btn-arrow.svg";
 import api from "../utils/api";
 
@@ -58,13 +57,21 @@ function Advisors({ advisorMembers = [], onCardClick }) {
               </Section.Heading>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
                 <div className="col-span-2">
-                  <Section.Text>{advisorsViewTextContent[0].attributes.section_text}</Section.Text>
+                  {(advisorsViewTextContent[0].attributes.section_text)
+                    ? (<Section.Text>{advisorsViewTextContent[0].attributes.section_text}</Section.Text>)
+                    : null
+                  }
                 </div>
                 <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-                  <Section.Img
-                    src={advisorsViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
-                    alt={advisorsViewTextContent[0].attributes.section_image.alternate_text}
-                    className="object-cover object-center" />
+                  {(advisorsViewTextContent[0].attributes.section_image)
+                    ? (
+                      <Section.Img
+                        src={advisorsViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
+                        alt={advisorsViewTextContent[0].attributes.section_image.alternate_text}
+                        className="object-cover object-center" />
+                    )
+                    : null
+                  }
                 </div>
               </div>
             </Section>
@@ -76,7 +83,8 @@ function Advisors({ advisorMembers = [], onCardClick }) {
               <div className="flex flex-wrap gap-6">
                 {advisorMembers.length
                   ? renderAdvisorMemberCards()
-                  : null}
+                  : null
+                }
               </div>
             </Section>
             {/* Section # 3 - How to Become an Advisor  */}
@@ -85,10 +93,10 @@ function Advisors({ advisorMembers = [], onCardClick }) {
                 {advisorsViewTextContent[2].attributes.section_heading}
               </Section.Heading>
               <div className="flex flex-col">
-                <Section.Text>{advisorsViewTextContent[2].attributes.section_text}</Section.Text>
-                <PageLink type="external" className="mt-4" linkTo="https://docs.google.com/document/d/1IY-epyZT0j91pbPX4uls_dMo76dzlP_4E_0Anj56d3Y/edit?usp=sharing">
-                  Click here to see full descriptions
-                </PageLink>
+                {(advisorsViewTextContent[2].attributes.section_text)
+                  ? (<Section.Text>{advisorsViewTextContent[2].attributes.section_text}</Section.Text>)
+                  : null
+                }
                 <CTALink type="internal" linkTo="/join-us" className="mt-4 self-center xs:self-start">
                   Join us
                   <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />

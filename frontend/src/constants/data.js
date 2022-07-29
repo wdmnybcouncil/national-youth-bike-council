@@ -1168,6 +1168,7 @@ const data = {
       },
     },
   ],
+  //have to do
   joinUsView: [
     {
       heading: "Which one are you",
@@ -1354,6 +1355,7 @@ const data = {
       link: "https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link",
     },
   ],
+  //have to do
   footer: [
     {
       heading: "National Youth Bike Council",

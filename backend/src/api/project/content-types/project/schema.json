@@ -18,7 +18,8 @@
       "unique": true
     },
     "project_announcement": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "project_category": {
       "type": "string",
@@ -27,10 +28,12 @@
     "project_cover_image": {
       "type": "component",
       "repeatable": false,
-      "component": "image.image"
+      "component": "image.image",
+      "required": true
     },
     "project_announcement_brief": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "project_status": {
       "type": "enumeration",

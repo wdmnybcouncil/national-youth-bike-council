@@ -130,13 +130,21 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
               </Section.Heading>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
                 <div className="col-span-2">
-                  <Section.Text>{homeViewTextContent[0].attributes.section_text}</Section.Text>
+                  {(homeViewTextContent[0].attributes.section_text)
+                    ? (<Section.Text>{homeViewTextContent[0].attributes.section_text}</Section.Text>)
+                    : null
+                  }
                 </div>
                 <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-                  <Section.Img
-                    src={homeViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
-                    alt={homeViewTextContent[0].attributes.section_image.alternate_text}
-                    className="rounded-md border-4 border-skin-accent object-cover object-center" />
+                  {(homeViewTextContent[0].attributes.section_image)
+                    ? (
+                      <Section.Img
+                        src={homeViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
+                        alt={homeViewTextContent[0].attributes.section_image.alternate_text}
+                        className="rounded-md border-4 border-skin-accent object-cover object-center" />
+                    )
+                    : null
+                  }
                 </div>
               </div>
             </Section>
@@ -147,7 +155,10 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
                 {homeViewTextContent[1].attributes.section_heading}
               </Section.Heading>
               <div className="col-span-2">
-                <Section.Text>{homeViewTextContent[1].attributes.section_text}</Section.Text>
+                {(homeViewTextContent[1].attributes.section_text)
+                  ? (<Section.Text>{homeViewTextContent[1].attributes.section_text}</Section.Text>)
+                  : null
+                }
               </div>
               <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
                 {sponsors.length ? renderImages(sponsors) : null}
@@ -159,7 +170,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
               <Section.Heading>
                 {homeViewTextContent[2].attributes.section_heading}
               </Section.Heading>
-              <div className="flex flex-wrap gap-6">{homeViewMembers.length && renderMemberCards()}</div>
+              <div className="flex flex-wrap gap-6">{homeViewMembers.length ? renderMemberCards() : null}</div>
             </Section>
           </div>
         )

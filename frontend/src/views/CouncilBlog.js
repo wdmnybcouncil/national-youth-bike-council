@@ -69,9 +69,14 @@ function CouncilBlog() {
                 <Section.Heading>{blogPost[0].attributes.post_title}</Section.Heading>
                 <div className="flex flex-col gap-4">
                   <Section.Text className="text-sm">
-                    {`${blogPost[0].attributes.post_date ? renderDate(blogPost[0].attributes.post_date) : ''} | ${blogPost[0].attributes.post_author}`}
+                    {
+                      `${blogPost[0].attributes.post_date ? renderDate(blogPost[0].attributes.post_date) : ''} ${blogPost[0].attributes.post_author ? `| ${blogPost[0].attributes.post_author}` : ``}`}
                   </Section.Text>
-                  <Section.Tags>{blogPost[0].attributes.post_tags}</Section.Tags>
+                  {
+                    (blogPost[0].attributes.post_tags.length)
+                      ? (<Section.Tags>{blogPost[0].attributes.post_tags}</Section.Tags>)
+                      : null
+                  }
                   <Section.Img
                     src={blogPost[0].attributes.post_cover_image.image_file.data.attributes.url}
                     alt={blogPost[0].attributes.post_cover_image.alternate_text}

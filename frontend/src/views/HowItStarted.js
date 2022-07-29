@@ -52,14 +52,24 @@ function HowItStarted({ startingCrewMembers = [], onCardClick }) {
               </Section.Heading>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
                 <div className="col-span-2">
-                  <Section.Text>{howItStartedViewTextContent[0].attributes.section_text}</Section.Text>
+                  {
+                    (howItStartedViewTextContent[0].attributes.section_text)
+                      ? (<Section.Text>{howItStartedViewTextContent[0].attributes.section_text}</Section.Text>)
+                      : null
+                  }
                 </div>
                 <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-                  <Section.Img
-                    src={howItStartedViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
-                    alt={howItStartedViewTextContent[0].attributes.section_image.alternate_text}
-                    className="rounded-md border-4 border-skin-accent object-cover object-center"
-                  />
+                  {
+                    (howItStartedViewTextContent[0].attributes.section_image)
+                      ? (
+                        <Section.Img
+                          src={howItStartedViewTextContent[0].attributes.section_image.image_file.data.attributes.url}
+                          alt={howItStartedViewTextContent[0].attributes.section_image.alternate_text}
+                          className="rounded-md border-4 border-skin-accent object-cover object-center"
+                        />
+                      )
+                      : null
+                  }
                 </div>
               </div>
             </Section>

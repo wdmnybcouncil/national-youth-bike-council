@@ -105,7 +105,7 @@ function Projects() {
                 {projectsViewTextContent[0].attributes.section_heading}
               </Section.Heading>
               <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
-              <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
+              <div className="flex flex-col gap-10">{(currentViewPosts.length) ? renderPosts(currentViewPosts) : null}</div>
               <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
             </Section>
           </div>

@@ -38,7 +38,7 @@ function Modal({ isOpen, onClose, userProfile }) {
           <ReactMarkdown className="markdown">{userStory}</ReactMarkdown>
         </div>
         <button
-          className="absolute top-6 right-6 bg-transparent bg-[url('./assets/images/icon-close.svg')] bg-cover bg-no-repeat p-4 transition-all hover:opacity-90"
+          className="absolute top-6 right-6 bg-transparent bg-[url('./assets/images/icon-close.svg')] bg-cover bg-no-repeat p-4 transition-all hover:opacity-80"
           onClick={onClose}
         />
       </motion.div>

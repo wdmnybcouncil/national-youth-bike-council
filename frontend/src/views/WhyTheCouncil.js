@@ -24,18 +24,24 @@ function WhyTheCouncil() {
   const renderSections = () =>
     whyTheCouncilViewTextContent.map((section) => {
       const { section_heading, section_text, section_hashtags, section_image } = section.attributes;
-      const { alternate_text, image_file } = section_image;
       return (
         // Sections - Community, Health, Education, Leadership
         <Section key={section_heading}>
           <Section.Heading>{section_heading}</Section.Heading>
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
             <div className="col-span-2 flex flex-col gap-8">
-              <Section.Text>{section_text}</Section.Text>
-              <Section.Tags>{section_hashtags}</Section.Tags>
+              {(section_text) ? <Section.Text>{section_text}</Section.Text> : null}
+              {(section_hashtags) ? <Section.Tags>{section_hashtags}</Section.Tags> : null}
             </div>
             <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-              <Section.Img src={image_file.data.attributes.url} alt={alternate_text} className="rounded-md border-4 border-skin-accent object-cover object-center" />
+              {(section_image)
+                ? (
+                  <Section.Img
+                    src={section_image.image_file.data.attributes.url}
+                    alt={section_image.alternate_text}
+                    className="rounded-md border-4 border-skin-accent object-cover object-center" />
+                )
+                : null}
             </div>
           </div>
         </Section>

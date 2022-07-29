@@ -55,7 +55,8 @@ function BoardMembers({ boardMembers = [], onCardClick }) {
               <div className="flex flex-wrap gap-6">
                 {boardMembers.length
                   ? renderBoardMemberCards()
-                  : null}
+                  : null
+                }
               </div>
             </Section>
             {/* Section # 2 - How to Become a Board Member  */}
@@ -65,13 +66,23 @@ function BoardMembers({ boardMembers = [], onCardClick }) {
               </Section.Heading>
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 md:gap-16">
                 <div className="col-span-2">
-                  <Section.Text>{boardMembersViewTextContent[1].attributes.section_text}</Section.Text>
+                  {
+                    (boardMembersViewTextContent[1].attributes.section_text)
+                      ? (<Section.Text>{boardMembersViewTextContent[1].attributes.section_text}</Section.Text>)
+                      : null
+                  }
                 </div>
                 <div className="col-span-2 row-start-1 place-self-center sm:row-auto sm:justify-self-end">
-                  <Section.Img
-                    src={boardMembersViewTextContent[1].attributes.section_image.image_file.data.attributes.url}
-                    alt={boardMembersViewTextContent[1].attributes.section_image.alternate_text}
-                    className="object-cover object-center" />
+                  {
+                    (boardMembersViewTextContent[1].attributes.section_image)
+                      ? (
+                        <Section.Img
+                          src={boardMembersViewTextContent[1].attributes.section_image.image_file.data.attributes.url}
+                          alt={boardMembersViewTextContent[1].attributes.section_image.alternate_text}
+                          className="object-cover object-center" />
+                      )
+                      : null
+                  }
                 </div>
               </div>
             </Section>

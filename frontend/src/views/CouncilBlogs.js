@@ -44,7 +44,7 @@ function CouncilBlogs() {
   const handleFilterPosts = (selectedCategory) => {
     let newPostsToShow;
     if (selectedCategory !== "All") {
-      newPostsToShow = councilBlogPosts.filter((_) => _.atrributes.post_category === selectedCategory);
+      newPostsToShow = councilBlogPosts.filter((_) => _.attributes.post_category === selectedCategory);
     } else {
       newPostsToShow = councilBlogPosts;
     }
@@ -89,7 +89,7 @@ function CouncilBlogs() {
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{post_title}</Post.Title>
-            <Post.Subtitle>{`${post_date ? renderDate(post_date) : ''} | ${post_author}`}</Post.Subtitle>
+            <Post.Subtitle>{`${post_date ? renderDate(post_date) : ''} ${post_author ? `| ${post_author}` : ``}`}</Post.Subtitle>
             <Post.Text>{post_text_brief}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">
               <Link to={`/council-blogs/${post_title}`} className="mt-4 gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
@@ -111,7 +111,7 @@ function CouncilBlogs() {
                 {councilBlogsViewTextContent[0].attributes.section_heading}
               </Section.Heading>
               <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
-              <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
+              <div className="flex flex-col gap-10">{(currentViewPosts.length) ? renderPosts(currentViewPosts) : null}</div>
               <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
             </Section>
           </div>

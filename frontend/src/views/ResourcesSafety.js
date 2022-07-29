@@ -53,6 +53,9 @@ function ResourcesSafety() {
             <Section>
               {/* Section # 1 - Resources */}
               {renderSection(resourcesSafetyViewTextContent[0])}
+              <CTALink type="external" linkTo="https://docs.google.com/forms/d/e/1FAIpQLSdDT9g_BE_74NJzbmh2s9M8CCrg0aU_TCUze4-FCPNkEcZx-Q/viewform" className="mt-4 self-center xs:self-start">
+                Donate
+              </CTALink>
             </Section>
             <Section>
               {/* Section # 2 - Safety */}
@@ -65,9 +68,6 @@ function ResourcesSafety() {
             <Section>
               {/* Section # 4 - Word of Mouth */}
               {renderSection(resourcesSafetyViewTextContent[3])}
-              <CTALink type="external" linkTo="https://docs.google.com/forms/d/e/1FAIpQLSdDT9g_BE_74NJzbmh2s9M8CCrg0aU_TCUze4-FCPNkEcZx-Q/viewform" className="mt-4 self-center xs:self-start">
-                Donate
-              </CTALink>
             </Section>
           </div>
         )

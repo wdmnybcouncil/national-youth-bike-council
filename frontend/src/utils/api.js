@@ -211,6 +211,7 @@ class Api {
    */
   getHomeViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],
@@ -230,6 +231,7 @@ class Api {
  */
   getHowItStartedViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],
@@ -248,7 +250,11 @@ class Api {
    * @return {Promise} The Promise of the Fetch API call.
    */
   getWhereAreWeViewTextContents = () => {
-    return fetch(`${this._baseUrl}/where-are-we-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/where-are-we-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -272,6 +278,7 @@ class Api {
    */
   getWhyTheCouncilViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],
@@ -290,7 +297,11 @@ class Api {
    * @return {Promise} The Promise of the Fetch API call.
    */
   getCouncilMembersViewTextContents = () => {
-    return fetch(`${this._baseUrl}/council-members-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/council-members-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -302,6 +313,7 @@ class Api {
    */
   getAdvisorsViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],
@@ -321,6 +333,7 @@ class Api {
    */
   getBoardMembersViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],
@@ -339,7 +352,11 @@ class Api {
    * @return {Promise} The Promise of the Fetch API call.
    */
   getSponsorshipsViewTextContents = () => {
-    return fetch(`${this._baseUrl}/sponsorships-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/sponsorships-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -350,7 +367,11 @@ class Api {
    * @return {Promise} The Promise of the Fetch API call.
    */
   getMediaCoverageViewTextContents = () => {
-    return fetch(`${this._baseUrl}/media-coverage-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/media-coverage-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -362,7 +383,7 @@ class Api {
    */
   getMediaCoveragePosts = () => {
     const query = qs.stringify({
-      sort: ['id:desc'],
+      sort: ['post_category:desc', 'createdAt:desc'],
       populate: [
         "post_image.image_file",
         "post_links"
@@ -380,7 +401,11 @@ class Api {
    * @return {Promise} The Promise of the Fetch API call.
    */
   getCouncilBlogsViewTextContents = () => {
-    return fetch(`${this._baseUrl}/council-blog-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/council-blog-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -392,7 +417,7 @@ class Api {
    */
   getCouncilBlogPosts = () => {
     const query = qs.stringify({
-      sort: ['id:desc'],
+      sort: ['post_category:desc', 'createdAt:desc'],
       populate: [
         "post_cover_image.image_file",
       ],
@@ -431,7 +456,11 @@ class Api {
  * @return {Promise} The Promise of the Fetch API call.
  */
   getProjectsViewTextContents = () => {
-    return fetch(`${this._baseUrl}/projects-pages`, {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/projects-pages?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);
@@ -443,7 +472,7 @@ class Api {
    */
   getProjectsPosts = () => {
     const query = qs.stringify({
-      sort: ['id:desc'],
+      sort: ['project_category:desc', 'createdAt:desc'],
       populate: [
         "project_cover_image.image_file",
       ],
@@ -483,6 +512,7 @@ class Api {
    */
   getResourcesSafetyViewTextContents = () => {
     const query = qs.stringify({
+      sort: ['id'],
       populate: {
         "section_image": {
           populate: ["image_file"],

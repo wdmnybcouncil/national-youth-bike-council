@@ -28,17 +28,20 @@
       "required": true
     },
     "post_text": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "post_image": {
       "type": "component",
       "repeatable": false,
-      "component": "image.image"
+      "component": "image.image",
+      "required": true
     },
     "post_links": {
       "type": "component",
       "repeatable": false,
-      "component": "links.links"
+      "component": "links.links",
+      "required": true
     }
   }
 }

@@ -9,7 +9,7 @@ import ReactMarkdown from "react-markdown";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function SectionText({ className, children }) {
-  return <ReactMarkdown className={`markdown ${className}`}>{children}</ReactMarkdown>;
+  return <ReactMarkdown linkTarget="_blank" className={`markdown ${className}`}>{children}</ReactMarkdown>;
 }
 
 const propTypes = {
