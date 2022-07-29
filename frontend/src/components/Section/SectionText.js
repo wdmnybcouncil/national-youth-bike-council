@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 /**
  * The **SectionText** component renders the text of a section in the webpage.
@@ -9,7 +10,7 @@ import ReactMarkdown from "react-markdown";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function SectionText({ className, children }) {
-  return <ReactMarkdown linkTarget="_blank" className={`markdown ${className}`}>{children}</ReactMarkdown>;
+  return <ReactMarkdown linkTarget="_blank" rehypePlugins={[rehypeRaw]} className={`markdown ${className}`}>{children}</ReactMarkdown>;
 }
 
 const propTypes = {
