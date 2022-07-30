@@ -24,16 +24,16 @@ function Projects() {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getProjectsViewTextContents()
-      .then(response => setProjectsViewTextContent(response.data))
+      .then(({ data }) => setProjectsViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
       });
 
     api.getProjectsPosts()
-      .then(response => {
-        setProjectsPosts(response.data);
-        setPostsToShow(response.data);
+      .then(({ data }) => {
+        setProjectsPosts(data);
+        setPostsToShow(data);
       })
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");

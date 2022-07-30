@@ -16,7 +16,7 @@ function CouncilMembers({ councilMembers = [], alumniMembers = [], onCardClick }
   // Get the text contents of the page
   React.useEffect(() => {
     api.getCouncilMembersViewTextContents()
-      .then(response => setCouncilMembersViewTextContent(response.data))
+      .then(({ data }) => setCouncilMembersViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

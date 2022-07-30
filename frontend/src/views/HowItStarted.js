@@ -16,7 +16,7 @@ function HowItStarted({ startingCrewMembers = [], onCardClick }) {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getHowItStartedViewTextContents()
-      .then(response => setHowItStartedViewTextContent(response.data))
+      .then(({ data }) => setHowItStartedViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

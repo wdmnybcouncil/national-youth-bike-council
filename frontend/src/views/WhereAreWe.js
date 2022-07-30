@@ -19,7 +19,7 @@ function WhereAreWe() {
   React.useEffect(() => {
     // Get all the places to be shown on the USA map
     api.getPlaceMarkers()
-      .then(response => setPlaceMarkers(response.data))
+      .then(({ data }) => setPlaceMarkers(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

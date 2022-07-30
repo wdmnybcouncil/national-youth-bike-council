@@ -14,7 +14,7 @@ function WhyTheCouncil() {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getWhyTheCouncilViewTextContents()
-      .then(response => setWhyTheCouncilViewTextContent(response.data))
+      .then(({ data }) => setWhyTheCouncilViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

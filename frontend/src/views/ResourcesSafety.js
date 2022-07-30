@@ -15,7 +15,7 @@ function ResourcesSafety() {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getResourcesSafetyViewTextContents()
-      .then(response => setResourcesSafetyViewTextContent(response.data))
+      .then(({ data }) => setResourcesSafetyViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

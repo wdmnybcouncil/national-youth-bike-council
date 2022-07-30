@@ -18,7 +18,7 @@ function Project() {
 
   React.useEffect(() => {
     api.getProjectPost(projectTitle)
-      .then(response => setProjectPost(response.data))
+      .then(({ data }) => setProjectPost(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

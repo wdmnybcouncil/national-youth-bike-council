@@ -26,7 +26,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getHomeViewTextContents()
-      .then(response => setHomeViewTextContent(response.data))
+      .then(({ data }) => setHomeViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

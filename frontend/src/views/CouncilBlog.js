@@ -18,7 +18,7 @@ function CouncilBlog() {
 
   React.useEffect(() => {
     api.getCouncilBlogPost(blogTitle)
-      .then(response => setBlogPost(response.data))
+      .then(({ data }) => setBlogPost(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

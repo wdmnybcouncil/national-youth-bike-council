@@ -24,16 +24,16 @@ function CouncilBlogs() {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getCouncilBlogsViewTextContents()
-      .then(response => setCouncilBlogsViewTextContent(response.data))
+      .then(({ data }) => setCouncilBlogsViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
       });
 
     api.getCouncilBlogPosts()
-      .then(response => {
-        setCouncilBlogPosts(response.data);
-        setPostsToShow(response.data);
+      .then(({ data }) => {
+        setCouncilBlogPosts(data);
+        setPostsToShow(data);
       })
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");

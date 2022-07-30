@@ -16,7 +16,7 @@ function BoardMembers({ boardMembers = [], onCardClick }) {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getBoardMembersViewTextContents()
-      .then(response => setBoardMembersViewTextContent(response.data))
+      .then(({ data }) => setBoardMembersViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);

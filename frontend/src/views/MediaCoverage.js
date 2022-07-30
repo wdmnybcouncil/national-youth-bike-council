@@ -24,16 +24,16 @@ function MediaCoverage() {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getMediaCoverageViewTextContents()
-      .then(response => setMediaCoverageViewTextContent(response.data))
+      .then(({ data }) => setMediaCoverageViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
       });
 
     api.getMediaCoveragePosts()
-      .then(response => {
-        setMediaCoveragePosts(response.data);
-        setPostsToShow(response.data);
+      .then(({ data }) => {
+        setMediaCoveragePosts(data);
+        setPostsToShow(data);
       })
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");

@@ -17,7 +17,7 @@ function Sponsorships({ sponsors, partners }) {
   // Get the text contents of the page
   React.useEffect(() => {
     api.getSponsorshipsViewTextContents()
-      .then(response => setSponsorshipsViewTextContent(response.data))
+      .then(({ data }) => setSponsorshipsViewTextContent(data))
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
