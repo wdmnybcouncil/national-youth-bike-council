@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "join_us_pages",
+  "info": {
+    "singularName": "join-us-page",
+    "pluralName": "join-us-pages",
+    "displayName": "JoinUsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "join_us_roles",
+  "info": {
+    "singularName": "join-us-role",
+    "pluralName": "join-us-roles",
+    "displayName": "JoinUsRole"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role_title": {
+      "type": "string",
+      "required": true
+    },
+    "role_description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

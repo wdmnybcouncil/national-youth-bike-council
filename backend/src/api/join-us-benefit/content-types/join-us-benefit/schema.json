@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "join_us_benefits",
+  "info": {
+    "singularName": "join-us-benefit",
+    "pluralName": "join-us-benefits",
+    "displayName": "JoinUsBenefit"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role_title": {
+      "type": "string",
+      "required": true
+    },
+    "role_benefits": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
