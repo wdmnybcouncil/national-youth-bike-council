@@ -52,7 +52,7 @@ const data = {
         {
           title: "Donate",
           type: "external",
-          url: "https://www.paypal.com/donate/?hosted_button_id=NMZD8JZX7UZ28",
+          url: "https://www.paypal.com/donate/?hosted_button_id=VDGNBSXHUMJAW",
         },
       ],
     },
