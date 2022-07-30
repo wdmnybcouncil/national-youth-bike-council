@@ -525,6 +525,69 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the text contents to show on the Join Us view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getJoinUsViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/join-us-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the benefits of joining the council to show on the Join Us view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getJoinUsBenefits = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/join-us-benefits?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the roles in the council to show on the Join Us view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getJoinUsRoles = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/join-us-roles?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the faqs to show on the Join Us view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getFaqs = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: [
+        "faq_list",
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/faqs?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =

@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 /**
  * The **Accordion** component renders each Accordion in the page.
@@ -21,7 +23,12 @@ function Accordion({ title, content }) {
           {isActive ? "-" : "+"}
         </p>
       </button>
-      {isActive && <p className="p-4">{content}</p>}
+      {/* {isActive && <p className="p-4">{content}</p>} */}
+      {isActive && (
+        <ReactMarkdown linkTarget="_blank" rehypePlugins={[rehypeRaw]} className={`markdown p-4`}>
+          {content}
+        </ReactMarkdown>
+      )}
     </div>
   );
 }

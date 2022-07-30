@@ -50,6 +50,13 @@
   opacity: .9;
 }
 
+.markdown ol {
+  margin-left: 20px;
+  color: rgba(51, 60, 68, 1);
+  white-space: normal;
+  list-style-type: decimal;
+}
+
 .markdown ul {
   margin-left: 20px;
   color: rgba(51, 60, 68, 1);

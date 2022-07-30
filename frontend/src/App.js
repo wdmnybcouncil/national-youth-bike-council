@@ -27,9 +27,6 @@ import JoinUs from "./views/JoinUs";
 
 import api from "./utils/api";
 
-// Import data to pass on to the components
-import data from "./constants/data";
-
 /**
  * The main React **App** component.
  *
@@ -48,8 +45,6 @@ function App() {
   const [homeViewMembers, setHomeViewMembers] = React.useState([]);
   const [sponsors, setSponsors] = React.useState([]);
   const [partners, setPartners] = React.useState([]);
-
-  const { joinUsView } = data;
 
   // ********************************************************************************************* //
   //                                          API Calls                                            //
@@ -194,10 +189,6 @@ function App() {
     partners,
   };
 
-  const propsForJoinUsView = {
-    joinUsView,
-  };
-
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -229,8 +220,8 @@ function App() {
             <Route path="council-blogs" element={<CouncilBlogs />} />
             <Route path="council-blogs/:blogTitle" element={<CouncilBlog />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
-            <Route path="join-us" element={<JoinUs {...propsForJoinUsView} />} />
-            <Route path="join-the-council" element={<JoinUs {...propsForJoinUsView} />} />
+            <Route path="join-us" element={<JoinUs />} />
+            <Route path="join-the-council" element={<JoinUs />} />
           </Route>
         </Routes>
       </div>
