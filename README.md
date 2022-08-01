@@ -1,7 +1,7 @@
 <p align="center">
   <div style="display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap;">
     <a href="https://www.nybcouncil.com/" target="_blank">
-    <img src="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/frontend/src/assets/images/icon-logo.png" alt="awesome container company logo" style="width: 100%; max-width: 20px;" />
+    <img src="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/frontend/src/assets/images/icon-logo.png" alt="awesome container company logo" style="height: 60px;" />
   </a>
     <h1 style="text-align: center;">National Youth Bike Council</h1>
   </div>
