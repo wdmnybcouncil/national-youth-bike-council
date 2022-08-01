@@ -19,11 +19,12 @@
 ## Features of the App
 
 1. Responsive webpage
-2. A single page web app with mutliple views
+2. A single-page web app with multiple views
 3. Subtle animations on page scroll
-4. Custom designed components for blogs posts, dropdowns and pagination.
-5. Content management by integrating the web app with Strapi, to give flexibility to modify all the data in the web app.
-6. Fully accessible and SEO optimized web app as per Google Lighthouse Report.
+4. Custom-designed components for blog posts, dropdowns, and pagination
+5. Content management by integrating the web app with Strapi, to give the flexibility to modify all the data in the web app
+6. Images & videos hosted at Cloudinary for fast delivery via CDN
+7. Fully accessible and SEO optimized web app as per Google Lighthouse Report
 
 ## Demo
 
