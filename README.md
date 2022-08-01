@@ -1,10 +1,7 @@
 <p align="center">
-  <div align="center>
     <a href="https://www.nybcouncil.com/" target="_blank">
-    <img src="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/frontend/src/assets/images/icon-logo.png" alt="awesome container company logo" style="height: 60px;" />
-  </a>
-    <h1 style="text-align: center;">National Youth Bike Council</h1>
-  </div>
+      <img src="https://raw.githubusercontent.com/5hraddha/misc/master/images/nybc-logo.png" alt="awesome container company logo" width=600 />
+    </a>
   <p align="center">
     <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" height=20 alt="react">
     <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" height=20  alt="javascript">
@@ -28,6 +25,11 @@
 5. Content management by integrating the web app with Strapi, to give flexibility to modify all the data in the web app.
 6. Fully accessible and SEO optimized web app as per Google Lighthouse Report.
 
+## Demo
+
+https://user-images.githubusercontent.com/27571141/182199455-e4224f63-e552-4b84-8de9-73c1f6a89b93.mp4
+
+
 ## Technologies and Standards Used for Frontend
 
 1. HTML (Hyper Text Markup Language)
@@ -44,6 +46,6 @@
 
 You can view the product specification document [here](https://www.figma.com/file/lAAoLQ3sEBThfQT61JXwZB/National-Youth-Bike-Council?node-id=52%3A585)
 
-## Live Demo
+## Live Webapp
 
 Visit the live website - [here](https://www.nybcouncil.com/).
