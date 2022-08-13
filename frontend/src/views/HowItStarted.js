@@ -18,7 +18,7 @@ function HowItStarted({ startingCrewMembers = [], onCardClick }) {
     api.getHowItStartedViewTextContents()
       .then(({ data }) => setHowItStartedViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);

@@ -20,7 +20,7 @@ function CouncilBlog() {
     api.getCouncilBlogPost(blogTitle)
       .then(({ data }) => setBlogPost(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the blogs from the server.");
         console.log(err);
       });
   }, [blogTitle]);

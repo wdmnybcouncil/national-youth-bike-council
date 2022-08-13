@@ -26,7 +26,7 @@ function Projects() {
     api.getProjectsViewTextContents()
       .then(({ data }) => setProjectsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
 
@@ -36,7 +36,7 @@ function Projects() {
         setPostsToShow(data);
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the projects from the server.");
         console.log(err);
       });
   }, []);

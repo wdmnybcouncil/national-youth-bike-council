@@ -21,7 +21,7 @@ function WhereAreWe() {
     api.getPlaceMarkers()
       .then(({ data }) => setPlaceMarkers(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
 
@@ -29,7 +29,7 @@ function WhereAreWe() {
     api.getWhereAreWeViewTextContents()
       .then(response => setWhereAreWeViewTextContent(response.data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);

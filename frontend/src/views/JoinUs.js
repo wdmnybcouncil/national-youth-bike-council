@@ -22,7 +22,7 @@ function JoinUs() {
     api.getJoinUsViewTextContents()
       .then(({ data }) => setJoinUsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);
@@ -32,7 +32,7 @@ function JoinUs() {
     api.getJoinUsBenefits()
       .then(({ data }) => setJoinUsBenefits(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);
@@ -42,7 +42,7 @@ function JoinUs() {
     api.getJoinUsRoles()
       .then(({ data }) => setJoinUsRoles(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);
@@ -55,7 +55,7 @@ function JoinUs() {
         setFaqsToShow(data);
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);

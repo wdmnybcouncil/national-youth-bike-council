@@ -28,7 +28,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
     api.getHomeViewTextContents()
       .then(({ data }) => setHomeViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);

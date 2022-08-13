@@ -19,7 +19,7 @@ function LiabilityTerms() {
     api.getLiabilityTermTextContents()
       .then(({ data }) => setLiabilityTermsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);
@@ -29,7 +29,7 @@ function LiabilityTerms() {
     api.getAgreementCodesList()
       .then(({ data }) => setCodesList(data[0].attributes.section_codes_list))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log("Uh-oh! Error occurred while fetching the data from the server.");
         console.log(err);
       });
   }, []);
