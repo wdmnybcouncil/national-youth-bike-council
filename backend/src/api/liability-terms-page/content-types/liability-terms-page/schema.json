@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "liability_terms_pages",
+  "info": {
+    "singularName": "liability-terms-page",
+    "pluralName": "liability-terms-pages",
+    "displayName": "LiabilityTermsPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext",
+      "required": true
+    },
+    "section_codes_list": {
+      "type": "json",
+      "required": true
+    }
+  }
+}
