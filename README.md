@@ -30,7 +30,6 @@
 
 https://user-images.githubusercontent.com/27571141/182199455-e4224f63-e552-4b84-8de9-73c1f6a89b93.mp4
 
-
 ## Technologies and Standards Used for Frontend
 
 1. HTML (Hyper Text Markup Language)
@@ -49,4 +48,5 @@ You can view the product specification document [here](https://www.figma.com/fil
 
 ## Live Webapp
 
-Visit the live website - [here](https://www.nybcouncil.com/).
+Visit the live website - [here](https://www.nybcouncil.com/).  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7aab023b-2047-4b1c-9abd-719755ca9d2a/deploy-status)](https://app.netlify.com/sites/nybc/deploys)
