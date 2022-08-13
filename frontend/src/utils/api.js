@@ -626,11 +626,10 @@ class Api {
   }
 }
 
-// const BASE_URL =
-//   process.env.NODE_ENV === 'production'
-//     ? 'https://nybc-strapi.herokuapp.com/api'
-//     : 'http://localhost:1337/api';
-const BASE_URL = 'https://nybc-strapi.herokuapp.com/api';
+const BASE_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://nybc-strapi.herokuapp.com/api'
+    : 'http://localhost:1337/api';
 
 export default new Api({
   baseUrl: BASE_URL,

@@ -24,6 +24,7 @@ import CouncilBlogs from "./views/CouncilBlogs";
 import CouncilBlog from "./views/CouncilBlog";
 import ResourcesSafety from "./views/ResourcesSafety";
 import JoinUs from "./views/JoinUs";
+import LiabilityTerms from "./views/LiabilityTerms";
 
 import api from "./utils/api";
 
@@ -222,6 +223,7 @@ function App() {
             <Route path="resources-safety" element={<ResourcesSafety />} />
             <Route path="join-us" element={<JoinUs />} />
             <Route path="join-the-council" element={<JoinUs />} />
+            <Route path="waiver-liability-terms" element={<LiabilityTerms />} />
           </Route>
         </Routes>
       </div>
