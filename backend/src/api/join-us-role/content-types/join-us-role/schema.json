@@ -4,7 +4,8 @@
   "info": {
     "singularName": "join-us-role",
     "pluralName": "join-us-roles",
-    "displayName": "JoinUsRole"
+    "displayName": "JoinUsRole",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -17,6 +18,12 @@
     },
     "role_description": {
       "type": "richtext",
+      "required": true
+    },
+    "role_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image",
       "required": true
     }
   }
