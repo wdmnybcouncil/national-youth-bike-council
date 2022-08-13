@@ -1,5 +1,6 @@
 import React from "react";
 import Section from "../components/Section";
+import DescriptionCard from "../components/DescriptionCard";
 import FilterButton from "../components/FilterButton";
 import Accordion from "../components/Accordion";
 import api from "../utils/api";
@@ -117,19 +118,14 @@ function JoinUs() {
                     </Section.Text>
                   )
                   : null}
-                <div className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-x-20 xl:justify-start">
+                <div className="mt-12 flex flex-wrap justify-center gap-12 lg:gap-x-20 xl:justify-start">
                   {(joinUsRoles.length)
-                    ? (
-                      joinUsRoles.map((section) => (
-                        <div key={section.attributes.role_title} className="w-full max-w-xs rounded-lg bg-gray-100 p-4">
-                          <h3 className="mb-4 w-full max-w-4xl border-b border-skin-primary pb-1 font-balgin text-xl tracking-wider text-skin-primary">
-                            {" "}
-                            {section.attributes.role_title}
-                          </h3>
-                          <Section.Text>{section.attributes.role_description}</Section.Text>
-                        </div>
-                      ))
-                    )
+                    ? joinUsRoles.map((section) =>
+                      <DescriptionCard
+                        key={section.attributes.role_title}
+                        heading={section.attributes.role_title}
+                        text={section.attributes.role_description}
+                        image={section.attributes.role_image.image_file.data.attributes.url} />)
                     : null}
                 </div>
               </Section>
@@ -147,12 +143,12 @@ function JoinUs() {
                 <div className="mt-8 flex flex-wrap justify-center gap-6 lg:gap-x-20 xl:justify-start">
                   {(joinUsBenefits.length)
                     ? (
-                      joinUsBenefits.map((section) => (
-                        <div key={section.attributes.role_title} className="w-full max-w-xs rounded-lg bg-gray-100 p-4">
-                          <h3 className="w-full max-w-4xl border-b border-skin-primary pb-1 font-balgin text-xl tracking-wider text-skin-primary"> {section.attributes.role_title}</h3>
-                          <Section.Text>{section.attributes.role_benefits}</Section.Text>
-                        </div>
-                      ))
+                      joinUsBenefits.map((section) =>
+                        <DescriptionCard
+                          key={section.attributes.role_title}
+                          heading={section.attributes.role_title}
+                          text={section.attributes.role_benefits} />
+                      )
                     )
                     : null}
                 </div>

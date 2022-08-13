@@ -563,6 +563,11 @@ class Api {
   getJoinUsRoles = () => {
     const query = qs.stringify({
       sort: ['id'],
+      populate: {
+        "role_image": {
+          populate: ["image_file"],
+        }
+      },
     });
 
     return fetch(`${this._baseUrl}/join-us-roles?${query}`, {
@@ -588,12 +593,44 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get the liability terms for the Liability Terms view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getLiabilityTermTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/liability-terms-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get the agreement code for the Liability Terms view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getAgreementCodesList = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      fields: ['section_codes_list'],
+    });
+
+    return fetch(`${this._baseUrl}/liability-terms-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
-const BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://nybc-strapi.herokuapp.com/api'
-    : 'http://localhost:1337/api';
+// const BASE_URL =
+//   process.env.NODE_ENV === 'production'
+//     ? 'https://nybc-strapi.herokuapp.com/api'
+//     : 'http://localhost:1337/api';
+const BASE_URL = 'https://nybc-strapi.herokuapp.com/api';
 
 export default new Api({
   baseUrl: BASE_URL,
