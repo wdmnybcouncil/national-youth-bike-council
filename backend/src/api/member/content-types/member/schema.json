@@ -30,12 +30,12 @@
       "required": true
     },
     "profile_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "location": {
       "type": "string",
@@ -47,6 +47,11 @@
     },
     "story_in_detail": {
       "type": "richtext"
+    },
+    "designation": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
     }
   }
 }
