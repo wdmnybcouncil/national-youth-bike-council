@@ -28,7 +28,7 @@ function Advisors({ advisorMembers = [], onCardClick }) {
 
   const renderAdvisorMemberCards = () =>
     advisorMembers.map((member) => {
-      const { first_name, last_name, profile_image, roles, location, story_in_detail } = member.attributes;
+      const { first_name, last_name, profile_image, designation, location, story_in_detail } = member.attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name}`,
@@ -39,7 +39,7 @@ function Advisors({ advisorMembers = [], onCardClick }) {
         <ProfileCard key={`${first_name}-${last_name}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${first_name} ${last_name}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${first_name} ${last_name}`}</ProfileCard.Title>
-          <ProfileCard.Subtitle>{roles[0]}</ProfileCard.Subtitle>
+          <ProfileCard.Subtitle>{designation}</ProfileCard.Subtitle>
           <ProfileCard.Location>{location}</ProfileCard.Location>
         </ProfileCard>
       );

@@ -67,7 +67,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
 
   const renderMemberCards = () =>
     homeViewMembers.map((member) => {
-      const { first_name, last_name, profile_image, story_in_brief, story_in_detail } = member.attributes;
+      const { first_name, last_name, profile_image, designation, story_in_brief, story_in_detail } = member.attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name.substring(0, 1)}.`,
@@ -78,7 +78,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
         <ProfileCard key={`${first_name}-${last_name}`} className="xs:min-w-72 mx-auto w-64 lg:w-full" onCardClick={onCardClick} userProfile={userProfile}>
           <ProfileCard.Img src={img} alt={`${first_name} ${last_name}'s profile`} className="object-cover object-center" />
           <ProfileCard.Title>{`${first_name} ${last_name.substring(0, 1)}.`}</ProfileCard.Title>
-          <ProfileCard.Subtitle>Council Member</ProfileCard.Subtitle>
+          <ProfileCard.Subtitle>{designation}</ProfileCard.Subtitle>
           <ProfileCard.Text>{story_in_brief}</ProfileCard.Text>
         </ProfileCard>
       );
