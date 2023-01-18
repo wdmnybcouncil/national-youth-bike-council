@@ -173,6 +173,7 @@ class Api {
    */
   getSponsers = () => {
     const query = qs.stringify({
+      sort: ['priority'],
       populate: {
         "sponsor_logo": {
           populate: ["image_file"],
