@@ -51,43 +51,18 @@ function App() {
   //                                          API Calls                                            //
   // ********************************************************************************************* //
   React.useEffect(() => {
-    api.getFoundingMembers()
-      .then(members => setStartingCrewMembers(members.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
-
-    api.getCouncilMembers()
-      .then(members => setCouncilMembers(members.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
-
-    api.getAlumniMembers()
-      .then(members => setAlumniMembers(members.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
-
-    api.getAdvisorMembers()
-      .then(members => setAdvisorMembers(members.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
-
-    api.getBoardMembers()
-      .then(members => setBoardMembers(members.data))
-      .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
-        console.log(err);
-      });
-
-    api.getHomeViewMembers()
-      .then(members => setHomeViewMembers(members.data))
+    api.getAllMembers()
+      .then(({ data }) => {
+        setStartingCrewMembers(data.filter(member => member.attributes.roles.includes('Co-Founder')));
+        setCouncilMembers(data.filter(member => member.attributes.roles.includes('Council Member')));
+        setAlumniMembers(data.filter(member => member.attributes.roles.includes('Alumni')));
+        setAdvisorMembers(data.filter(member => member.attributes.roles.includes('Advisor')));
+        setBoardMembers(data.filter(member => member.attributes.roles.includes('Board Member')));
+        setHomeViewMembers(data.filter(member =>
+          member.attributes.first_name === 'Zoe'
+          || member.attributes.first_name === 'Lot'
+          || member.attributes.first_name === 'Luly'));
+      })
       .catch(err => {
         console.log("Uh-oh! Error occurred while fetching the members data from the server.");
         console.log(err);
