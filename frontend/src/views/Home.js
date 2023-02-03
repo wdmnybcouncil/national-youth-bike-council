@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from 'framer-motion';
 import Section from "../components/Section";
 import CTALink from "../components/CTALink";
+import PageLink from "../components/PageLink";
 import ProfileCard from "../components/ProfileCard";
 import AnimatedHeroTitle from "../components/AnimatedHeroTitle";
 import headerImage from "../assets/images/home/nybc-header.png";
@@ -57,7 +58,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
         key={alternate_text}
         src={image_file.data.attributes.url}
         alt={alternate_text}
-        className="max-h-20 max-w-[250px] object-cover object-center"
+        className="max-h-20 max-w-[250px] w-full object-cover object-center"
         variants={partnersImagesAnimationVariants}
         initial="hidden"
         whileInView="visible"
@@ -161,7 +162,19 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
                 }
               </div>
               <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
-                {sponsors.length ? renderImages(sponsors) : null}
+                {(sponsors.length)
+                  ? (
+                    (sponsors.length > 8)
+                      ?
+                      <>
+                        {renderImages(sponsors.slice(0, 8))}
+                        <PageLink type="internal" className="mt-4" linkTo="sponsorships">
+                          Show More →
+                        </PageLink>
+                      </>
+                      : renderImages(sponsors)
+                  )
+                  : null}
               </div>
             </Section>
 
@@ -172,9 +185,10 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
               </Section.Heading>
               <div className="flex flex-wrap gap-6">{homeViewMembers.length ? renderMemberCards() : null}</div>
             </Section>
-          </div>
+          </div >
         )
-        : null}
+        : null
+      }
     </>
   );
 }
