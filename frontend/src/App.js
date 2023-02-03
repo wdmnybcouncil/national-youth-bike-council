@@ -53,11 +53,11 @@ function App() {
   React.useEffect(() => {
     api.getAllMembers()
       .then(({ data }) => {
-        setStartingCrewMembers(data.filter(member => member.attributes.roles.includes('Co-Founder')));
-        setCouncilMembers(data.filter(member => member.attributes.roles.includes('Council Member')));
-        setAlumniMembers(data.filter(member => member.attributes.roles.includes('Alumni')));
-        setAdvisorMembers(data.filter(member => member.attributes.roles.includes('Advisor')));
-        setBoardMembers(data.filter(member => member.attributes.roles.includes('Board Member')));
+        setStartingCrewMembers(data.filter(member => member.attributes.rolesnew.includes('Co-Founder')));
+        setCouncilMembers(data.filter(member => member.attributes.rolesnew.includes('Council Member')));
+        setAlumniMembers(data.filter(member => member.attributes.rolesnew.includes('Alumni')));
+        setAdvisorMembers(data.filter(member => member.attributes.rolesnew.includes('Advisor')));
+        setBoardMembers(data.filter(member => member.attributes.rolesnew.includes('Board Member')));
         setHomeViewMembers(data.filter(member =>
           member.attributes.first_name === 'Zoe'
           || member.attributes.first_name === 'Lot'
