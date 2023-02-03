@@ -68,6 +68,7 @@ class Api {
    */
   getPartners = () => {
     const query = qs.stringify({
+      sort: ['priority'],
       populate: {
         "partner_logo": {
           populate: ["image_file"],
