@@ -58,7 +58,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
         key={alternate_text}
         src={image_file.data.attributes.url}
         alt={alternate_text}
-        className="max-h-20 max-w-[250px] w-full object-cover object-center"
+        className="max-h-20 max-w-[250px] object-cover object-center"
         variants={partnersImagesAnimationVariants}
         initial="hidden"
         whileInView="visible"
