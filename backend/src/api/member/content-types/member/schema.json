@@ -52,6 +52,18 @@
       "type": "string",
       "required": true,
       "minLength": 2
+    },
+    "rolesnew": {
+      "type": "customField",
+      "options": [
+        "Alumni",
+        "Advisor",
+        "Co-Founder",
+        "Council Member",
+        "Board Member"
+      ],
+      "required": true,
+      "customField": "plugin::multi-select.multi-select"
     }
   }
 }
