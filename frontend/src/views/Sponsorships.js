@@ -46,7 +46,7 @@ function Sponsorships({ sponsors, partners }) {
       key={alternate_text}
       src={image_file.data.attributes.url}
       alt={alternate_text}
-      className="max-h-28 max-w-full object-cover object-center"
+      className="max-h-24 max-w-full object-cover object-center max-h"
       variants={partnersImagesAnimationVariants}
       initial="hidden"
       whileInView="visible"
