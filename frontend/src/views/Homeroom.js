@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "../components/Section";
-import api from "../utils/api";
 
 /**
  * The **Homeroom** component renders the educational material of the council.
