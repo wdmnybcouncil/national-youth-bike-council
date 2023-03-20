@@ -25,13 +25,15 @@ import CouncilBlog from "./views/CouncilBlog";
 import ResourcesSafety from "./views/ResourcesSafety";
 import JoinUs from "./views/JoinUs";
 import LiabilityTerms from "./views/LiabilityTerms";
+import Homeroom from "./views/Homeroom";
+import ImpactReports from "./views/ImpactReports";
 
 import api from "./utils/api";
 
 /**
  * The main React **App** component.
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function App() {
@@ -196,6 +198,8 @@ function App() {
             <Route path="council-blogs" element={<CouncilBlogs />} />
             <Route path="council-blogs/:blogTitle" element={<CouncilBlog />} />
             <Route path="resources-safety" element={<ResourcesSafety />} />
+            <Route path="homeroom" element={<Homeroom />} />
+            <Route path="impact-reports" element={<ImpactReports />} />
             <Route path="join-us" element={<JoinUs />} />
             <Route path="join-the-council" element={<JoinUs />} />
             <Route path="waiver-liability-terms" element={<LiabilityTerms />} />

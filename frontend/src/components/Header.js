@@ -86,7 +86,9 @@ function Header() {
               <Dropdown.Item type="external" linkTo="https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link">Newsletter</Dropdown.Item>
             </Dropdown>
             <Dropdown label="Resources">
-              <Dropdown.Item type="internal" linkTo="/resources-safety">Resources & Safety</Dropdown.Item>
+              <Dropdown.Item type="internal" linkTo="/resources-safety">Safety</Dropdown.Item>
+              <Dropdown.Item type="internal" linkTo="/homeroom">Homeroom</Dropdown.Item>
+              <Dropdown.Item type="internal" linkTo="/impact-reports">Impact Reports</Dropdown.Item>
             </Dropdown>
             <CTALink type="internal" linkTo="/join-us" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
               Join us

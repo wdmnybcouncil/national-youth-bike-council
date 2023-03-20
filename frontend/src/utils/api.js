@@ -501,6 +501,17 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  getImpactReports = () => {
+    const query = qs.stringify({
+      populate: '*',
+    });
+
+    return fetch(`${this._baseUrl}/impact-reports?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =
