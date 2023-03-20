@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "impact_reports",
+  "info": {
+    "singularName": "impact-report",
+    "pluralName": "impact-reports",
+    "displayName": "ImpactReport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pdf": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "report_date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}
