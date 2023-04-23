@@ -2,7 +2,7 @@
   "name": "backend",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A Strapi application serving backend server for NYBC",
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.5.3",
-    "@strapi/plugin-users-permissions": "4.5.3",
+    "@strapi/plugin-users-permissions": "^4.9.2",
     "@strapi/provider-upload-cloudinary": "^4.5.3",
-    "@strapi/strapi": "4.5.3",
+    "@strapi/strapi": "^4.9.2",
     "@strapi/utils": "^4.5.3",
     "better-sqlite3": "7.4.6",
     "pg": "^8.7.3",
@@ -22,7 +22,7 @@
     "strapi-plugin-multi-select": "^1.1.0"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Shraddha - https://github.com/5hraddha"
   },
   "strapi": {
     "uuid": "e55e620c-d1b3-4e8c-9a43-85acc181606f"
