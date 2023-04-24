@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { usePagination, DOTS } from "../hooks/usePagination";
+import PropTypes from 'prop-types';
+import { usePagination, DOTS } from '../hooks/usePagination';
 
 /**
  * The **Pagination** component implements pagination in the webpage
@@ -37,9 +36,8 @@ function Pagination(props) {
     <ul className={`mt-6 flex w-full list-none justify-center ${className}`}>
       <li
         key="previous"
-        className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full bg-skin-fill-card-accent text-center text-sm leading-5 text-skin-accent transition hover:cursor-pointer hover:bg-skin-fill-accent hover:text-skin-muted focus:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted sm:h-12 sm:w-12 sm:text-lg sm:font-semibold ${
-          currentPage === 1 && `pointer-events-none bg-gray-100 text-gray-400`
-        }`}
+        className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full bg-skin-fill-card-accent text-center text-sm leading-5 text-skin-accent transition hover:cursor-pointer hover:bg-skin-fill-accent hover:text-skin-muted focus:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted sm:h-12 sm:w-12 sm:text-lg sm:font-semibold ${currentPage === 1 && `pointer-events-none bg-gray-100 text-gray-400`
+          }`}
         onClick={onPrevious}
       >
         &#60;
@@ -60,9 +58,8 @@ function Pagination(props) {
         return (
           <li
             key={pageNumber}
-            className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full px-1 text-center text-sm font-semibold leading-5 hover:cursor-pointer hover:bg-skin-fill-card-accent hover:text-skin-accent focus:cursor-pointer focus:bg-skin-fill-card-accent focus:text-skin-accent sm:h-10 sm:w-10 sm:px-3 ${
-              pageNumber === currentPage ? `bg-skin-fill-accent text-skin-muted` : `text-skin-primary`
-            }`}
+            className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full px-1 text-center text-sm font-semibold leading-5 hover:cursor-pointer hover:bg-skin-fill-card-accent hover:text-skin-accent focus:cursor-pointer focus:bg-skin-fill-card-accent focus:text-skin-accent sm:h-10 sm:w-10 sm:px-3 ${pageNumber === currentPage ? `bg-skin-fill-accent text-skin-muted` : `text-skin-primary`
+              }`}
             onClick={() => onPageChange(pageNumber)}
           >
             {pageNumber}
@@ -72,9 +69,8 @@ function Pagination(props) {
 
       <li
         key="next"
-        className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full bg-skin-fill-card-accent text-center text-sm leading-5 text-skin-accent transition hover:cursor-pointer hover:bg-skin-fill-accent hover:text-skin-muted focus:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted sm:h-12 sm:w-12 sm:text-lg sm:font-semibold ${
-          currentPage === lastPage && `pointer-events-none bg-gray-100 text-gray-400`
-        }`}
+        className={`my-auto mx-1 box-border flex h-[24px] w-[24px] items-center justify-center rounded-full bg-skin-fill-card-accent text-center text-sm leading-5 text-skin-accent transition hover:cursor-pointer hover:bg-skin-fill-accent hover:text-skin-muted focus:cursor-pointer focus:bg-skin-fill-accent focus:text-skin-muted sm:h-12 sm:w-12 sm:text-lg sm:font-semibold ${currentPage === lastPage && `pointer-events-none bg-gray-100 text-gray-400`
+          }`}
         onClick={onNext}
       >
         &#62;
@@ -92,7 +88,7 @@ const propTypes = {
   className: PropTypes.any,
 };
 
-Pagination.displayName = "Pagination";
+Pagination.displayName = 'Pagination';
 Pagination.propTypes = propTypes;
 
 export default Pagination;

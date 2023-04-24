@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
-import PostTitle from "./PostTitle";
-import PostSubtitle from "./PostSubtitle";
-import PostText from "./PostText";
-import PostImg from "./PostImg";
-import { postAnimationVariants } from "../../utils/animationVariants";
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import PostTitle from './PostTitle';
+import PostSubtitle from './PostSubtitle';
+import PostText from './PostText';
+import PostImg from './PostImg';
+import { postAnimationVariants } from '../../utils/animationVariants';
 
 /**
  * The **Post** component renders a media coverage or blog post in the webpage
@@ -32,7 +31,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-Post.displayName = "Post";
+Post.displayName = 'Post';
 Post.propTypes = propTypes;
 
 export default Object.assign(Post, {

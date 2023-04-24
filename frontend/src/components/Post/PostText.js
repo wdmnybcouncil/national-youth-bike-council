@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 /**
  * The **PostText** component renders a text for post in the webpage
@@ -16,7 +15,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-PostText.displayName = "PostText";
+PostText.displayName = 'PostText';
 PostText.propTypes = propTypes;
 
 export default PostText;

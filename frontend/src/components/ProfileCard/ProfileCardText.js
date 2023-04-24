@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 
 /**
  * The **ProfileCardText** component renders the text for user profile card in the webpage
@@ -22,7 +21,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-ProfileCardText.displayName = "ProfileCardText";
+ProfileCardText.displayName = 'ProfileCardText';
 ProfileCardText.propTypes = propTypes;
 
 export default ProfileCardText;

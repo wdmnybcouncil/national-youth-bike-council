@@ -1,6 +1,5 @@
-import React from "react";
-import Section from "../components/Section";
-import PageLink from "../components/PageLink";
+import Section from '../components/Section';
+import PageLink from '../components/PageLink';
 
 function PageNotFound() {
   return (
@@ -23,6 +22,6 @@ function PageNotFound() {
   );
 }
 
-PageNotFound.displayName = "PageNotFound";
+PageNotFound.displayName = 'PageNotFound';
 
 export default PageNotFound;

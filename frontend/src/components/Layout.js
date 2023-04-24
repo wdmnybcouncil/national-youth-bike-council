@@ -1,10 +1,10 @@
-import { Helmet } from "react-helmet-async";
-import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+import { Helmet } from 'react-helmet-async';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
-// Import data to pass on to the components
-import data from "../constants/data";
+// Import footer data to pass on to the components
+import data from '../constants/data';
 
 /**
  * The **Layout** component renders the implementation details of every page in the web app.
@@ -60,6 +60,6 @@ function Layout() {
   );
 }
 
-Layout.displayName = "Layout";
+Layout.displayName = 'Layout';
 
 export default Layout;

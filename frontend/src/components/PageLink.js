@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 /**
  * The **PageLink** component renders links in the webpage
@@ -8,15 +7,15 @@ import { Link } from "react-router-dom";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function PageLink({ type, linkTo, className = "", children }) {
-  if (type === "internal") {
+function PageLink({ type, linkTo, className = '', children }) {
+  if (type === 'internal') {
     return (
       <Link to={linkTo} className={`gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90 ${className}`}>
         {children}
       </Link>
     );
   }
-  if (type === "external") {
+  if (type === 'external') {
     return (
       <a
         href={linkTo}
@@ -36,7 +35,7 @@ const propTypes = {
   /**
    * Defines the type of the link: whether it is linking to an external page or internal page
    */
-  type: PropTypes.oneOf(["external", "internal"]).isRequired,
+  type: PropTypes.oneOf(['external', 'internal']).isRequired,
   /**
    * Sets the url where the PageLink should point to when clicked
    */
@@ -48,7 +47,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-PageLink.displayName = "PageLink";
+PageLink.displayName = 'PageLink';
 PageLink.propTypes = propTypes;
 
 export default PageLink;

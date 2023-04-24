@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
-import Section from "../components/Section";
-import { partnersImagesAnimationVariants } from "../utils/animationVariants";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import Section from '../components/Section';
+import { partnersImagesAnimationVariants } from '../utils/animationVariants';
+import api from '../utils/api';
 
 /**
  * The **Sponsorships** component renders the view that all the partners, grants, sponsorships and awards of the council.
@@ -12,14 +12,14 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Sponsorships({ sponsors, partners }) {
-  const [sponsorshipsViewTextContent, setSponsorshipsViewTextContent] = React.useState([]);
+  const [sponsorshipsViewTextContent, setSponsorshipsViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getSponsorshipsViewTextContents()
       .then(({ data }) => setSponsorshipsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
@@ -29,6 +29,7 @@ function Sponsorships({ sponsors, partners }) {
       if (!name) {
         return null;
       }
+      // If there is no logo, render name
       return (
         <motion.p
           key={name}
@@ -95,7 +96,7 @@ const propTypes = {
   partners: PropTypes.array.isRequired,
 };
 
-Sponsorships.displayName = "Sponsorships";
+Sponsorships.displayName = 'Sponsorships';
 Sponsorships.propTypes = propTypes;
 
 export default Sponsorships;

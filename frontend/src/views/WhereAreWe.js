@@ -1,9 +1,9 @@
-import React from "react";
-import ReactTooltip from "react-tooltip";
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
-import Section from "../components/Section";
-import geoUrl from "../constants/usa-map";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import Section from '../components/Section';
+import geoUrl from '../constants/usa-map';
+import api from '../utils/api';
 
 /**
  * The **WhereAreWe** component renders the view that shows the places where the council is present.
@@ -12,24 +12,24 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function WhereAreWe() {
-  const [content, setContent] = React.useState("");
-  const [placeMarkers, setPlaceMarkers] = React.useState([]);
-  const [whereAreWeViewTextContent, setWhereAreWeViewTextContent] = React.useState([]);
+  const [content, setContent] = useState('');
+  const [placeMarkers, setPlaceMarkers] = useState([]);
+  const [whereAreWeViewTextContent, setWhereAreWeViewTextContent] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Get all the places to be shown on the USA map
     api.getPlaceMarkers()
       .then(({ data }) => setPlaceMarkers(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
     // Get the text contents of the page
     api.getWhereAreWeViewTextContents()
-      .then(response => setWhereAreWeViewTextContent(response.data))
+      .then(({ data }) => setWhereAreWeViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
@@ -79,6 +79,6 @@ function WhereAreWe() {
   );
 }
 
-WhereAreWe.displayName = "WhereAreWe";
+WhereAreWe.displayName = 'WhereAreWe';
 
 export default WhereAreWe;

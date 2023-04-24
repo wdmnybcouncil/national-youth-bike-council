@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **ListItemItem** component renders each item in the unordered ListItem on the page.
@@ -15,7 +14,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-ListItem.displayName = "ListItem";
+ListItem.displayName = 'ListItem';
 ListItem.propTypes = propTypes;
 
 export default ListItem;

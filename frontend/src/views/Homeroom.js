@@ -1,5 +1,5 @@
-import React from "react";
-import Section from "../components/Section";
+import React from 'react';
+import Section from '../components/Section';
 
 /**
  * The **Homeroom** component renders the educational material of the council.
@@ -17,6 +17,6 @@ function Homeroom() {
   );
 }
 
-Homeroom.displayName = "Homeroom";
+Homeroom.displayName = 'Homeroom';
 
 export default Homeroom;

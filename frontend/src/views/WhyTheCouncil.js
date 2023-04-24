@@ -1,6 +1,6 @@
-import React from "react";
-import Section from "../components/Section";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import Section from '../components/Section';
+import api from '../utils/api';
 
 /**
  * The **WhyTheCouncil** component renders the `Why The Council` view of the website.
@@ -9,21 +9,21 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function WhyTheCouncil() {
-  const [whyTheCouncilViewTextContent, setWhyTheCouncilViewTextContent] = React.useState([]);
+  const [whyTheCouncilViewTextContent, setWhyTheCouncilViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getWhyTheCouncilViewTextContents()
       .then(({ data }) => setWhyTheCouncilViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
 
   const renderSections = () =>
-    whyTheCouncilViewTextContent.map((section) => {
-      const { section_heading, section_text, section_hashtags, section_image } = section.attributes;
+    whyTheCouncilViewTextContent.map(({ attributes }) => {
+      const { section_heading, section_text, section_hashtags, section_image } = attributes;
       return (
         // Sections - Community, Health, Education, Leadership
         <Section key={section_heading}>
@@ -78,6 +78,6 @@ function WhyTheCouncil() {
   );
 }
 
-WhyTheCouncil.displayName = "WhyTheCouncil";
+WhyTheCouncil.displayName = 'WhyTheCouncil';
 
 export default WhyTheCouncil;

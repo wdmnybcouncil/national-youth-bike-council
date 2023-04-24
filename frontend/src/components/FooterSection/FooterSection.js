@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import FooterHeader from "./FooterHeader";
+import PropTypes from 'prop-types';
+import FooterHeader from './FooterHeader';
 
 /**
  * The **FooterSection** component renders a section in the footer
@@ -19,7 +18,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-FooterSection.displayName = "FooterSection";
+FooterSection.displayName = 'FooterSection';
 FooterSection.propTypes = propTypes;
 
 export default Object.assign(FooterSection, {

@@ -1,19 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import Section from "../components/Section";
-import CTALink from "../components/CTALink";
-import PageLink from "../components/PageLink";
-import ProfileCard from "../components/ProfileCard";
-import AnimatedHeroTitle from "../components/AnimatedHeroTitle";
-import headerImage from "../assets/images/home/nybc-header.png";
-import btnArrow from "../assets/images/btn-arrow.svg";
+import Section from '../components/Section';
+import CTALink from '../components/CTALink';
+import PageLink from '../components/PageLink';
+import ProfileCard from '../components/ProfileCard';
+import AnimatedHeroTitle from '../components/AnimatedHeroTitle';
+import headerImage from '../assets/images/home/nybc-header.png';
+import btnArrow from '../assets/images/btn-arrow.svg';
 import {
   heroImageAnimationVariants,
   sectionAnimationVariants,
   partnersImagesAnimationVariants,
-} from "../utils/animationVariants";
-import api from "../utils/api";
+} from '../utils/animationVariants';
+import api from '../utils/api';
 
 /**
  * The **Home** component renders the view for the home route.
@@ -22,21 +22,21 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
-  const [homeViewTextContent, setHomeViewTextContent] = React.useState([]);
+  const [homeViewTextContent, setHomeViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getHomeViewTextContents()
       .then(({ data }) => setHomeViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
 
   const renderImages = (arr) => {
-    return arr.map((item) => {
-      const { sponsor_logo, sponsor_name } = item.attributes;
+    return arr.map(({ attributes }) => {
+      const { sponsor_logo, sponsor_name } = attributes;
       if (!sponsor_logo) {
         if (!sponsor_name) {
           return null;
@@ -67,8 +67,8 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
   };
 
   const renderMemberCards = () =>
-    homeViewMembers.map((member) => {
-      const { first_name, last_name, profile_image, designation, story_in_brief, story_in_detail } = member.attributes;
+    homeViewMembers.map(({ attributes }) => {
+      const { first_name, last_name, profile_image, designation, story_in_brief, story_in_detail } = attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name.substring(0, 1)}.`,
@@ -199,7 +199,7 @@ const propTypes = {
   onCardClick: PropTypes.func.isRequired,
 };
 
-Home.displayName = "Home";
+Home.displayName = 'Home';
 Home.propTypes = propTypes;
 
 export default Home;

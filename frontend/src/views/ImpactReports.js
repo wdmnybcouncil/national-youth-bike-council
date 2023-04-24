@@ -20,20 +20,19 @@ function ImpactReports() {
         setImpactReports(data);
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the reports data from the server.');
         console.log(err);
       });
   }, []);
 
   const renderImpactReportLinks = (reports) =>
     reports.map(report => {
-      const { pdf, report_date } = report.attributes;
-      const reportName = `${report_date.slice(0, 5)} Impact Report`;
+      const { pdf, report_date, report_name, report_image } = report.attributes;
       const reportLink = pdf.data[0].attributes.url;
 
       return (
-        <PageLink type="external" className="mt-4" linkTo={reportLink}>
-          {reportName}
+        <PageLink key={report_name} type="external" className="mt-4" linkTo={reportLink}>
+          {report_name}
         </PageLink>
       )
     });

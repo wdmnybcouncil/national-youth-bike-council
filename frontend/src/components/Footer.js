@@ -1,15 +1,14 @@
-import React from "react";
-import Logo from "./Logo";
-import MailTo from "./MailTo";
-import FooterSection from "./FooterSection";
-import PageLink from "./PageLink";
-import CTALink from "../components/CTALink";
-import logoIcon from "../assets/images/icon-logo.png";
+import Logo from './Logo';
+import MailTo from './MailTo';
+import FooterSection from './FooterSection';
+import PageLink from './PageLink';
+import CTALink from '../components/CTALink';
+import logoIcon from '../assets/images/icon-logo.png';
 
 function Footer({ footer }) {
   const renderFooterLinks = (links) => {
     return links.map((link) => {
-      if (link.title === "Donate") {
+      if (link.title === 'Donate') {
         return (
           <CTALink key={link.title} type={link.type} linkTo={link.url}>
             {link.title}

@@ -1,12 +1,12 @@
-import React from "react";
-import Logo from "./Logo";
-import CTALink from "./CTALink";
-import Nav from "./Nav";
-import Dropdown from "./DropDown";
-import { useOnClickOutside } from "../hooks/useOnClickOutside";
-import CurrentMenuStateContext from "../contexts/CurrentMenuStateContext";
-import btnArrow from "../assets/images/btn-arrow.svg";
-import logoIcon from "../assets/images/icon-logo.png";
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Logo from './Logo';
+import CTALink from './CTALink';
+import Nav from './Nav';
+import Dropdown from './DropDown';
+import { useOnClickOutside } from '../hooks/useOnClickOutside';
+import CurrentMenuStateContext from '../contexts/CurrentMenuStateContext';
+import btnArrow from '../assets/images/btn-arrow.svg';
+import logoIcon from '../assets/images/icon-logo.png';
 
 
 /**
@@ -16,19 +16,11 @@ import logoIcon from "../assets/images/icon-logo.png";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
-
-  // Close the menu when user cliocks outside the menu
-  const ref = React.useRef();
-  useOnClickOutside(
-    ref,
-    React.useCallback(() => setIsMenuOpen(false), [])
-  );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // Close the menu on window resize
-  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-  React.useEffect(() => {
+  useEffect(() => {
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
     }
@@ -38,10 +30,18 @@ function Header() {
     }
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMenuOpen(false);
   }, [windowWidth]);
 
+  // Close the menu when user cliocks outside the menu
+  const ref = useRef();
+  useOnClickOutside(
+    ref,
+    useCallback(() => setIsMenuOpen(false), [])
+  );
+
+  const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
@@ -101,6 +101,6 @@ function Header() {
   );
 }
 
-Header.displayName = "Header";
+Header.displayName = 'Header';
 
 export default Header;

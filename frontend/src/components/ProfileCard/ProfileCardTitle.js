@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **ProfileCardTitle** component renders a title for user profile card in the webpage
@@ -15,7 +14,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-ProfileCardTitle.displayName = "ProfileCardTitle";
+ProfileCardTitle.displayName = 'ProfileCardTitle';
 ProfileCardTitle.propTypes = propTypes;
 
 export default ProfileCardTitle;

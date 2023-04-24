@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **PostTitle** component renders a title for post in the webpage
@@ -19,7 +18,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-PostTitle.displayName = "PostTitle";
+PostTitle.displayName = 'PostTitle';
 PostTitle.propTypes = propTypes;
 
 export default PostTitle;

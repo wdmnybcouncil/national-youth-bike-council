@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **SectionImg** component renders the image of a section in the webpage.
@@ -18,7 +17,7 @@ const propTypes = {
   className: PropTypes.string,
 };
 
-SectionImg.displayName = "SectionImg";
+SectionImg.displayName = 'SectionImg';
 SectionImg.propTypes = propTypes;
 
 export default SectionImg;

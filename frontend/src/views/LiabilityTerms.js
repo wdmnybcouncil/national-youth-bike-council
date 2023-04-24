@@ -1,6 +1,7 @@
-import React from "react";
-import Section from "../components/Section";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import Section from '../components/Section';
+import api from '../utils/api';
+import { getRandomArrayItem } from '../utils/commonUtils';
 
 /**
  * The **LiabilityTerms** component renders the liability terms of the council.
@@ -9,23 +10,23 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function LiabilityTerms() {
-  const [liabilityTermsViewTextContent, setLiabilityTermsViewTextContent] = React.useState([]);
-  const [codesList, setCodesList] = React.useState([]);
-  const [agreementCode, setAgreementCode] = React.useState('Check the checkbox above & click on button to generate code');
-  const [hasUserReadTerms, setHasUserReadTerms] = React.useState(false);
+  const [liabilityTermsViewTextContent, setLiabilityTermsViewTextContent] = useState([]);
+  const [codesList, setCodesList] = useState([]);
+  const [agreementCode, setAgreementCode] = useState('Check the checkbox above & click on button to generate code');
+  const [hasUserReadTerms, setHasUserReadTerms] = useState(false);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getLiabilityTermTextContents()
       .then(({ data }) => setLiabilityTermsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
 
   // Get the list of agreement codes
-  React.useEffect(() => {
+  useEffect(() => {
     api.getAgreementCodesList()
       .then(({ data }) => setCodesList(data[0].attributes.section_codes_list))
       .catch(err => {
@@ -35,16 +36,11 @@ function LiabilityTerms() {
   }, []);
 
   // Reset the agreement code text
-  React.useEffect(() => {
+  useEffect(() => {
     if (!hasUserReadTerms) {
       setAgreementCode('Check the checkbox above & click on button to generate code');
     }
   }, [hasUserReadTerms]);
-
-  const getRandomArrayItem = (arr) => {
-    const randomIndex = Math.floor(Math.random() * arr.length);
-    return arr[randomIndex];
-  }
 
   const handleButtonClick = () => setAgreementCode(getRandomArrayItem(codesList));
 

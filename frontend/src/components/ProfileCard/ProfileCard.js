@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ProfileCardTitle from "./ProfileCardTitle";
-import ProfileCardSubtitle from "./ProfileCardSubtitle";
-import ProfileCardText from "./ProfileCardText";
-import ProfileCardImg from "./ProfileCardImg";
-import ProfileCardLocation from "./ProfileCardLocation";
+import PropTypes from 'prop-types';
+import ProfileCardTitle from './ProfileCardTitle';
+import ProfileCardSubtitle from './ProfileCardSubtitle';
+import ProfileCardText from './ProfileCardText';
+import ProfileCardImg from './ProfileCardImg';
+import ProfileCardLocation from './ProfileCardLocation';
 
 /**
  * The **ProfileCard** component renders a card for user profile in the webpage
@@ -12,7 +11,7 @@ import ProfileCardLocation from "./ProfileCardLocation";
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function ProfileCard({ className = "", onCardClick, userProfile, children }) {
+function ProfileCard({ className = '', onCardClick, userProfile, children }) {
   const handleCardClick = () => onCardClick(userProfile);
 
   return (
@@ -32,7 +31,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-ProfileCard.displayName = "ProfileCard";
+ProfileCard.displayName = 'ProfileCard';
 ProfileCard.protoTypes = propTypes;
 
 export default Object.assign(ProfileCard, {

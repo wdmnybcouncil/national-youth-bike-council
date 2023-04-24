@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import CurrentMenuStateContext from "../../contexts/CurrentMenuStateContext";
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import CurrentMenuStateContext from '../../contexts/CurrentMenuStateContext';
 
 /**
  * The **DropdownItem** component renders each item in the Dropdown.
@@ -10,11 +10,11 @@ import CurrentMenuStateContext from "../../contexts/CurrentMenuStateContext";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function DropdownItem({ type, linkTo, children }) {
-  const setIsMenuOpen = React.useContext(CurrentMenuStateContext);
+  const setIsMenuOpen = useContext(CurrentMenuStateContext);
 
   const handleDropdownItemClick = () => setIsMenuOpen(false);
 
-  if (type === "internal") {
+  if (type === 'internal') {
     return (
       <Link
         to={linkTo}
@@ -25,7 +25,7 @@ function DropdownItem({ type, linkTo, children }) {
       </Link>
     );
   }
-  if (type === "external") {
+  if (type === 'external') {
     return (
       <a
         href={linkTo}
@@ -44,7 +44,7 @@ const propTypes = {
   /**
    * Defines the type of the link: whether it is linking to an external page or internal page
    */
-  type: PropTypes.oneOf(["external", "internal"]).isRequired,
+  type: PropTypes.oneOf(['external', 'internal']).isRequired,
   /**
    * Sets the url where the DropdownItem should point to when clicked
    */
@@ -55,7 +55,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-DropdownItem.displayName = "DropdownItem";
+DropdownItem.displayName = 'DropdownItem';
 DropdownItem.propTypes = propTypes;
 
 export default DropdownItem;

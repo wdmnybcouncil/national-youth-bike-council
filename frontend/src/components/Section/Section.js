@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
-import SectionHeading from "./SectionHeading";
-import SectionText from "./SectionText";
-import SectionTags from "./SectionTags";
-import SectionImg from "./SectionImg";
-import { sectionAnimationVariants } from "../../utils/animationVariants";
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import SectionHeading from './SectionHeading';
+import SectionText from './SectionText';
+import SectionTags from './SectionTags';
+import SectionImg from './SectionImg';
+import { sectionAnimationVariants } from '../../utils/animationVariants';
 
 /**
  * The **Section** component renders a section in the webpage
@@ -30,7 +29,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-Section.displayName = "Section";
+Section.displayName = 'Section';
 Section.propTypes = propTypes;
 
 export default Object.assign(Section, {

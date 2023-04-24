@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **SectionTags** component renders the tags of a section in the webpage.
@@ -8,7 +7,6 @@ import PropTypes from "prop-types";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function SectionTags({ children }) {
-  // return <p className="rounded-md bg-gray-50 px-2 py-4 text-sm italic leading-6 tracking-wide text-skin-primary">{children}</p>;
   return (
     <div className="flex flex-wrap gap-2">
       {children.map((item) => (
@@ -22,7 +20,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-SectionTags.displayName = "SectionTags";
+SectionTags.displayName = 'SectionTags';
 SectionTags.propTypes = propTypes;
 
 export default SectionTags;

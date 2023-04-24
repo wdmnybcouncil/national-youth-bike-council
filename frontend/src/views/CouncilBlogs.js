@@ -1,10 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Section from "../components/Section";
-import FilterButton from "../components/FilterButton";
-import Post from "../components/Post/Post";
-import Pagination from "../components/Pagination";
-import api from "../utils/api";
+import { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import Section from '../components/Section';
+import FilterButton from '../components/FilterButton';
+import Post from '../components/Post/Post';
+import Pagination from '../components/Pagination';
+import api from '../utils/api';
+import { formatDate } from '../utils/commonUtils';
 
 /**
  * The **CouncilBlogs** component renders the view that shows all the council blog posts.
@@ -13,20 +14,20 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function CouncilBlogs() {
-  const [councilBlogsViewTextContent, setCouncilBlogsViewTextContent] = React.useState([]);
-  const [councilBlogPosts, setCouncilBlogPosts] = React.useState([]);
+  const [councilBlogsViewTextContent, setCouncilBlogsViewTextContent] = useState([]);
+  const [councilBlogPosts, setCouncilBlogPosts] = useState([]);
 
   //Settings for Filtering Posts
-  const [postsToShow, setPostsToShow] = React.useState(councilBlogPosts);
-  const [selectedFilterCategory, setSelectedFilterCategory] = React.useState("All");
-  const filterTagsForPosts = ["All", ...new Set(councilBlogPosts.map((_) => _.attributes.post_category))];
+  const [postsToShow, setPostsToShow] = useState(councilBlogPosts);
+  const [selectedFilterCategory, setSelectedFilterCategory] = useState('All');
+  const filterTagsForPosts = ['All', ...new Set(councilBlogPosts.map((_) => _.attributes.post_category))];
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getCouncilBlogsViewTextContents()
       .then(({ data }) => setCouncilBlogsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
@@ -36,18 +37,16 @@ function CouncilBlogs() {
         setPostsToShow(data);
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the blogs from the server.');
         console.log(err);
       });
   }, []);
 
   const handleFilterPosts = (selectedCategory) => {
     let newPostsToShow;
-    if (selectedCategory !== "All") {
-      newPostsToShow = councilBlogPosts.filter((_) => _.attributes.post_category === selectedCategory);
-    } else {
-      newPostsToShow = councilBlogPosts;
-    }
+    newPostsToShow = (selectedCategory !== 'All')
+      ? councilBlogPosts.filter((_) => _.attributes.post_category === selectedCategory)
+      : councilBlogPosts;
     setSelectedFilterCategory(selectedCategory);
     setPostsToShow(newPostsToShow);
     setCurrentPage(1);
@@ -55,9 +54,9 @@ function CouncilBlogs() {
 
   //Settings for Pagination
   let pageSize = 3;
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const currentViewPosts = React.useMemo(() => {
+  const currentViewPosts = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return postsToShow.slice(firstPageIndex, lastPageIndex);
@@ -70,16 +69,9 @@ function CouncilBlogs() {
     ));
   };
 
-  const renderDate = (dateString) => {
-    const dateParts = dateString.split('-');
-    const newDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
-    const dateFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    return newDate.toLocaleDateString('en-us', dateFormatOptions);
-  }
-
   const renderPosts = (posts) =>
-    posts.map((post) => {
-      const { post_title, post_date, post_author, post_text_brief, post_cover_image } = post.attributes;
+    posts.map(({ attributes }) => {
+      const { post_title, post_date, post_author, post_text_brief, post_cover_image } = attributes;
       const { image_file, alternate_text } = post_cover_image;
 
       return (
@@ -89,7 +81,7 @@ function CouncilBlogs() {
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{post_title}</Post.Title>
-            <Post.Subtitle>{`${post_date ? renderDate(post_date) : ''} ${post_author ? `| ${post_author}` : ``}`}</Post.Subtitle>
+            <Post.Subtitle>{`${post_date ? formatDate(post_date) : ''} ${post_author ? `| ${post_author}` : ``}`}</Post.Subtitle>
             <Post.Text>{post_text_brief}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">
               <Link to={`/council-blogs/${post_title}`} className="mt-4 gap-2 flex underline underline-offset-4 transition-all hover:decoration-skin-accent hover:opacity-90">
@@ -121,6 +113,6 @@ function CouncilBlogs() {
   );
 }
 
-CouncilBlogs.displayName = "CouncilBlogs";
+CouncilBlogs.displayName = 'CouncilBlogs';
 
 export default CouncilBlogs;

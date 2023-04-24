@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "../components/Section";
-import ProfileCard from "../components/ProfileCard";
-import CTALink from "../components/CTALink";
-import btnArrow from "../assets/images/btn-arrow.svg";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Section from '../components/Section';
+import ProfileCard from '../components/ProfileCard';
+import CTALink from '../components/CTALink';
+import btnArrow from '../assets/images/btn-arrow.svg';
+import api from '../utils/api';
 
 /**
  * The **Advisors** component renders the view that tells about the role of advisors in the council.
@@ -13,22 +13,22 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Advisors({ advisorMembers = [], onCardClick }) {
-  const [advisorsViewTextContent, setAdvisorsViewTextContent] = React.useState([]);
+  const [advisorsViewTextContent, setAdvisorsViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getAdvisorsViewTextContents()
       .then(({ data }) => setAdvisorsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the advisors data from the server.');
         console.log(err);
       });
   }, []);
 
 
   const renderAdvisorMemberCards = () =>
-    advisorMembers.map((member) => {
-      const { first_name, last_name, profile_image, designation, location, story_in_detail } = member.attributes;
+    advisorMembers.map(({ attributes }) => {
+      const { first_name, last_name, profile_image, designation, location, story_in_detail } = attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name}`,
@@ -115,7 +115,7 @@ const propTypes = {
   onCardClick: PropTypes.func.isRequired,
 };
 
-Advisors.displayName = "Advisors";
+Advisors.displayName = 'Advisors';
 Advisors.propTypes = propTypes;
 
 export default Advisors;

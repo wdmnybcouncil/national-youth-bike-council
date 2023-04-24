@@ -1,9 +1,10 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Section from "../components/Section";
-import twitterIcon from "../assets/images/social/icon-twitter.svg";
-import facebookIcon from "../assets/images/social/icon-facebook.svg";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Section from '../components/Section';
+import twitterIcon from '../assets/images/social/icon-twitter.svg';
+import facebookIcon from '../assets/images/social/icon-facebook.svg';
+import api from '../utils/api';
+import { formatDate, getTwitterHref, getFacebookHref } from '../utils/commonUtils';
 
 /**
  * The **CouncilBlog** component renders the view that a specific blog post.
@@ -14,35 +15,16 @@ import api from "../utils/api";
 function CouncilBlog() {
   const { blogTitle } = useParams();
   const navigate = useNavigate();
-  const [blogPost, setBlogPost] = React.useState([]);
+  const [blogPost, setBlogPost] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     api.getCouncilBlogPost(blogTitle)
       .then(({ data }) => setBlogPost(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the blogs from the server.");
+        console.log('Uh-oh! Error occurred while fetching the blogs from the server.');
         console.log(err);
       });
   }, [blogTitle]);
-
-  const renderDate = (dateString) => {
-    const dateParts = dateString.split('-');
-    const newDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
-    const dateFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    return newDate.toLocaleDateString('en-us', dateFormatOptions);
-  }
-
-  const getTwitterHref = () => {
-    const tweetContent = `${blogTitle} ${window.location.href} @National_ybc #nybc #national_youth_bike_council`;
-    const urlEncodedMsg = encodeURIComponent(tweetContent);
-    return `https://twitter.com/intent/tweet?text=${urlEncodedMsg}`;
-  }
-
-  const getFacebookHref = () => {
-    const facebookPostContent = `${window.location.href}`;
-    const urlEncodedMsg = encodeURIComponent(facebookPostContent);
-    return `https://www.facebook.com/sharer/sharer.php?u=${urlEncodedMsg}`;
-  }
 
   const handleBackButtonClick = () => {
     if (window.history.state && window.history.state.idx > 0) {
@@ -70,7 +52,7 @@ function CouncilBlog() {
                 <div className="flex flex-col gap-4">
                   <Section.Text className="text-sm">
                     {
-                      `${blogPost[0].attributes.post_date ? renderDate(blogPost[0].attributes.post_date) : ''} ${blogPost[0].attributes.post_author ? `| ${blogPost[0].attributes.post_author}` : ``}`}
+                      `${blogPost[0].attributes.post_date ? formatDate(blogPost[0].attributes.post_date) : ''} ${blogPost[0].attributes.post_author ? `| ${blogPost[0].attributes.post_author}` : ``}`}
                   </Section.Text>
                   {
                     (blogPost[0].attributes.post_tags.length)
@@ -86,14 +68,14 @@ function CouncilBlog() {
                     <div className="flex gap-4">
                       <a
                         className="w-8 h-8 rounded-full bg-skin-accent flex justify-center items-center hover:opacity-80 transition-all"
-                        href={getTwitterHref()}
+                        href={getTwitterHref(blogTitle, window.location.href)}
                         target="_blank"
                         rel="noreferrer" >
                         <img src={twitterIcon} alt="share on twitter" className="h-4 w-4" />
                       </a>
                       <a
                         className="w-8 h-8 rounded-full bg-skin-accent flex justify-center items-center hover:opacity-80 transition-all"
-                        href={getFacebookHref()}
+                        href={getFacebookHref(window.location.href)}
                         target="_blank"
                         rel="noreferrer" >
                         <img src={facebookIcon} alt="share on facebook" className="h-4 w-4" />
@@ -111,6 +93,6 @@ function CouncilBlog() {
   );
 }
 
-CouncilBlog.displayName = "CouncilBlog";
+CouncilBlog.displayName = 'CouncilBlog';
 
 export default CouncilBlog;

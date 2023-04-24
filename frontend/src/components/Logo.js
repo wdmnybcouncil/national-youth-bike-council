@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 /**
  * The **Logo** component renders the logo of the website.
@@ -31,7 +30,7 @@ const propTypes = {
   logoAlt: PropTypes.string.isRequired,
 };
 
-Logo.displayName = "Logo";
+Logo.displayName = 'Logo';
 Logo.protoTypes = propTypes;
 
 export default Logo;

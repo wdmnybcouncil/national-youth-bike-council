@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 /**
  * The **CTALink** component renders any call to action link on the page.
@@ -9,8 +8,8 @@ import { Link } from "react-router-dom";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 
-function CTALink({ type, linkTo, className = "", children }) {
-  if (type === "internal") {
+function CTALink({ type, linkTo, className = '', children }) {
+  if (type === 'internal') {
     return (
       <Link
         to={linkTo}
@@ -20,7 +19,7 @@ function CTALink({ type, linkTo, className = "", children }) {
       </Link>
     );
   }
-  if (type === "external") {
+  if (type === 'external') {
     return (
       <a
         href={linkTo}
@@ -38,7 +37,7 @@ const propTypes = {
   /**
    * Defines the type of the link: whether it is linking to an external page or internal page
    */
-  type: PropTypes.oneOf(["external", "internal"]).isRequired,
+  type: PropTypes.oneOf(['external', 'internal']).isRequired,
   /**
    * Sets the url where the CTALink should point to when clicked
    */
@@ -50,7 +49,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-CTALink.displayName = "CTALink";
+CTALink.displayName = 'CTALink';
 CTALink.propTypes = propTypes;
 
 export default CTALink;

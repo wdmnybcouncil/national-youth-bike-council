@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { motion, AnimatePresence } from "framer-motion";
+import PropTypes from 'prop-types';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   heroLetterContainerAnimationVariants,
   heroLetterAnimationVariants,
-} from "../utils/animationVariants";
+} from '../utils/animationVariants';
 
 function AnimatedHeroTitle({ children }) {
   return (
@@ -44,7 +43,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 }
 
-AnimatedHeroTitle.displayName = "AnimatedHeroTitle";
+AnimatedHeroTitle.displayName = 'AnimatedHeroTitle';
 AnimatedHeroTitle.propTypes = propTypes;
 
 export default AnimatedHeroTitle;

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "../components/Section";
-import ProfileCard from "../components/ProfileCard";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Section from '../components/Section';
+import ProfileCard from '../components/ProfileCard';
+import api from '../utils/api';
 
 /**
  * The **HowItStarted** component renders the view that tells how the council was started.
@@ -11,21 +11,21 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function HowItStarted({ startingCrewMembers = [], onCardClick }) {
-  const [howItStartedViewTextContent, setHowItStartedViewTextContent] = React.useState([]);
+  const [howItStartedViewTextContent, setHowItStartedViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getHowItStartedViewTextContents()
       .then(({ data }) => setHowItStartedViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
 
   const renderMembersCards = () =>
-    startingCrewMembers.map((member) => {
-      const { first_name, last_name, profile_image, story_in_detail } = member.attributes;
+    startingCrewMembers.map(({ attributes }) => {
+      const { first_name, last_name, profile_image, story_in_detail } = attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name.substring(0, 1)}.`,
@@ -94,7 +94,7 @@ const propTypes = {
   onCardClick: PropTypes.func.isRequired,
 };
 
-HowItStarted.displayName = "HowItStarted";
+HowItStarted.displayName = 'HowItStarted';
 HowItStarted.propTypes = propTypes;
 
 export default HowItStarted;

@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
-import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+import { motion } from 'framer-motion';
 import {
   modalBackdropAnimationVariants,
   modalAnimationVariants,
-} from "../../utils/animationVariants";
+} from '../../utils/animationVariants';
 
 /**
  * The **Modal** component renders a modal in the website
@@ -52,7 +51,7 @@ const propTypes = {
   userProfile: PropTypes.object.isRequired,
 };
 
-Modal.displayName = "Modal";
+Modal.displayName = 'Modal';
 Modal.protoTypes = propTypes;
 
 export default Modal;

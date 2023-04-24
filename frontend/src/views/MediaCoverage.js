@@ -1,10 +1,11 @@
-import React from "react";
-import Section from "../components/Section";
-import FilterButton from "../components/FilterButton";
-import Post from "../components/Post/Post";
-import PageLink from "../components/PageLink";
-import Pagination from "../components/Pagination";
-import api from "../utils/api";
+import { useState, useEffect, useMemo } from 'react';
+import Section from '../components/Section';
+import FilterButton from '../components/FilterButton';
+import Post from '../components/Post/Post';
+import PageLink from '../components/PageLink';
+import Pagination from '../components/Pagination';
+import api from '../utils/api';
+import { formatDate } from '../utils/commonUtils';
 
 /**
  * The **MediaCoverage** component renders the view that shows all the media coverage posts.
@@ -13,20 +14,20 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function MediaCoverage() {
-  const [mediaCoverageViewTextContent, setMediaCoverageViewTextContent] = React.useState([]);
-  const [mediaCoveragePosts, setMediaCoveragePosts] = React.useState([]);
+  const [mediaCoverageViewTextContent, setMediaCoverageViewTextContent] = useState([]);
+  const [mediaCoveragePosts, setMediaCoveragePosts] = useState([]);
 
   //Settings for Filtering Posts
-  const [postsToShow, setPostsToShow] = React.useState([]);
-  const [selectedFilterCategory, setSelectedFilterCategory] = React.useState("All");
-  const filterTagsForPosts = ["All", ...new Set(mediaCoveragePosts.map((_) => _.attributes.post_category))];
+  const [postsToShow, setPostsToShow] = useState([]);
+  const [selectedFilterCategory, setSelectedFilterCategory] = useState('All');
+  const filterTagsForPosts = ['All', ...new Set(mediaCoveragePosts.map((_) => _.attributes.post_category))];
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getMediaCoverageViewTextContents()
       .then(({ data }) => setMediaCoverageViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
@@ -43,11 +44,9 @@ function MediaCoverage() {
 
   const handleFilterPosts = (selectedCategory) => {
     let newPostsToShow;
-    if (selectedCategory !== "All") {
-      newPostsToShow = mediaCoveragePosts.filter((_) => _.attributes.post_category === selectedCategory);
-    } else {
-      newPostsToShow = mediaCoveragePosts;
-    }
+    newPostsToShow = (selectedCategory !== 'All')
+      ? mediaCoveragePosts.filter((_) => _.attributes.post_category === selectedCategory)
+      : mediaCoveragePosts;
     setSelectedFilterCategory(selectedCategory);
     setPostsToShow(newPostsToShow);
     setCurrentPage(1);
@@ -55,9 +54,9 @@ function MediaCoverage() {
 
   //Settings for Pagination
   let pageSize = 3;
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const currentViewPosts = React.useMemo(() => {
+  const currentViewPosts = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return postsToShow.slice(firstPageIndex, lastPageIndex);
@@ -92,16 +91,9 @@ function MediaCoverage() {
     );
   };
 
-  const renderDate = (dateString) => {
-    const dateParts = dateString.split('-');
-    const newDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
-    const dateFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-    return newDate.toLocaleDateString('en-us', dateFormatOptions);
-  }
-
   const renderPosts = (posts) =>
-    posts.map((post) => {
-      const { post_title, post_date, post_text, post_image, post_links } = post.attributes;
+    posts.map(({ attributes }) => {
+      const { post_title, post_date, post_text, post_image, post_links } = attributes;
       const { image_file, alternate_text } = post_image;
       return (
         <Post key={post_title}>
@@ -110,7 +102,7 @@ function MediaCoverage() {
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{post_title}</Post.Title>
-            <Post.Subtitle>{post_date ? renderDate(post_date) : ''}</Post.Subtitle>
+            <Post.Subtitle>{post_date ? formatDate(post_date) : ''}</Post.Subtitle>
             <Post.Text>{post_text}</Post.Text>
             <div className="flex flex-wrap justify-center gap-8 lg:justify-start">{renderPostLinks(post_links)}</div>
           </div>
@@ -138,6 +130,6 @@ function MediaCoverage() {
   );
 }
 
-MediaCoverage.displayName = "MediaCoverage";
+MediaCoverage.displayName = 'MediaCoverage';
 
 export default MediaCoverage;

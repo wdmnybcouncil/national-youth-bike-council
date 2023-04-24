@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import DropdownItem from "./DropdownItem";
-import { useOnClickOutside } from "../../hooks/useOnClickOutside";
+import { useState, useRef, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import DropdownItem from './DropdownItem';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 
 /**
  * The **Dropdown** component renders each dropdown in the navigation menu.
@@ -10,13 +10,13 @@ import { useOnClickOutside } from "../../hooks/useOnClickOutside";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Dropdown({ label, children }) {
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const handleDropdownClick = () => setIsDropdownOpen(!isDropdownOpen);
 
-  const ref = React.useRef();
+  const ref = useRef();
   useOnClickOutside(
     ref,
-    React.useCallback(() => setIsDropdownOpen(false), [])
+    useCallback(() => setIsDropdownOpen(false), [])
   );
 
   return (
@@ -55,7 +55,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-Dropdown.displayName = "Dropdown";
+Dropdown.displayName = 'Dropdown';
 Dropdown.propTypes = propTypes;
 
 export default Object.assign(Dropdown, {

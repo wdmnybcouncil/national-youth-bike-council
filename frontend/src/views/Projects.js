@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Section from "../components/Section";
-import FilterButton from "../components/FilterButton";
-import Post from "../components/Post/Post";
-import Pagination from "../components/Pagination";
-import api from "../utils/api";
+import { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import Section from '../components/Section';
+import FilterButton from '../components/FilterButton';
+import Post from '../components/Post/Post';
+import Pagination from '../components/Pagination';
+import api from '../utils/api';
 
 /**
  * The **Projects** component renders the view that shows all the projects posts.
@@ -13,20 +13,20 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Projects() {
-  const [projectsViewTextContent, setProjectsViewTextContent] = React.useState([]);
-  const [projectsPosts, setProjectsPosts] = React.useState([]);
+  const [projectsViewTextContent, setProjectsViewTextContent] = useState([]);
+  const [projectsPosts, setProjectsPosts] = useState([]);
 
   //Settings for Filtering Posts
-  const [postsToShow, setPostsToShow] = React.useState(projectsPosts);
-  const [selectedFilterCategory, setSelectedFilterCategory] = React.useState("All");
-  const filterTagsForPosts = ["All", ...new Set(projectsPosts.map((_) => _.attributes.project_category))];
+  const [postsToShow, setPostsToShow] = useState(projectsPosts);
+  const [selectedFilterCategory, setSelectedFilterCategory] = useState('All');
+  const filterTagsForPosts = ['All', ...new Set(projectsPosts.map((_) => _.attributes.project_category))];
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getProjectsViewTextContents()
       .then(({ data }) => setProjectsViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
@@ -36,18 +36,16 @@ function Projects() {
         setPostsToShow(data);
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the projects from the server.");
+        console.log('Uh-oh! Error occurred while fetching the projects from the server.');
         console.log(err);
       });
   }, []);
 
   const handleFilterPosts = (selectedCategory) => {
     let newPostsToShow;
-    if (selectedCategory !== "All") {
-      newPostsToShow = projectsPosts.filter((_) => _.attributes.project_category === selectedCategory);
-    } else {
-      newPostsToShow = projectsPosts;
-    }
+    newPostsToShow = (selectedCategory !== 'All')
+      ? projectsPosts.filter((_) => _.attributes.project_category === selectedCategory)
+      : projectsPosts;
     setSelectedFilterCategory(selectedCategory);
     setPostsToShow(newPostsToShow);
     setCurrentPage(1);
@@ -55,9 +53,9 @@ function Projects() {
 
   //Settings for Pagination
   let pageSize = 3;
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const currentViewPosts = React.useMemo(() => {
+  const currentViewPosts = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return postsToShow.slice(firstPageIndex, lastPageIndex);
@@ -72,8 +70,8 @@ function Projects() {
 
 
   const renderPosts = (posts) =>
-    posts.map((post) => {
-      const { project_title, project_status, project_announcement_brief, project_cover_image } = post.attributes;
+    posts.map(({ attributes }) => {
+      const { project_title, project_status, project_announcement_brief, project_cover_image } = attributes;
       const { image_file, alternate_text } = project_cover_image;
 
       return (
@@ -115,6 +113,6 @@ function Projects() {
   );
 }
 
-Projects.displayName = "Projects";
+Projects.displayName = 'Projects';
 
 export default Projects;

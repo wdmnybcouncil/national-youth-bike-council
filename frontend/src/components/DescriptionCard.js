@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "./Section";
-import logoImage from "../assets/images/icon-logo.png";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import Section from './Section';
+import logoImage from '../assets/images/icon-logo.png';
 
 /**
  * The **DescriptionCard** component renders a card for with description of different roles in the council.
@@ -10,7 +10,7 @@ import logoImage from "../assets/images/icon-logo.png";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function DescriptionCard({ heading, text, image = '' }) {
-  const [cardImg, setCardImg] = React.useState(logoImage);
+  const [cardImg, setCardImg] = useState(logoImage);
 
   return (
     <div className="group w-full max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center" onMouseEnter={() => setCardImg(image)} onMouseLeave={() => setCardImg(logoImage)}>
@@ -34,7 +34,7 @@ const propTypes = {
   image: PropTypes.string,
 };
 
-DescriptionCard.displayName = "DescriptionCard";
+DescriptionCard.displayName = 'DescriptionCard';
 DescriptionCard.protoTypes = propTypes;
 
 export default DescriptionCard;

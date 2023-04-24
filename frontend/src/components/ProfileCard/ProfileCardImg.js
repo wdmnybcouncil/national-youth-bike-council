@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **ProfileCardImg** component renders the profile image for user profile card in the webpage
@@ -23,7 +22,7 @@ const propTypes = {
   className: PropTypes.string,
 };
 
-ProfileCardImg.displayName = "ProfileCardImg";
+ProfileCardImg.displayName = 'ProfileCardImg';
 ProfileCardImg.propTypes = propTypes;
 
 export default ProfileCardImg;

@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **FooterHeader** component renders a heading in the footer
@@ -18,7 +17,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-FooterHeader.displayName = "FooterHeader";
+FooterHeader.displayName = 'FooterHeader';
 FooterHeader.propTypes = propTypes;
 
 export default FooterHeader;

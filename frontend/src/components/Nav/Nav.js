@@ -1,8 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import PropTypes from "prop-types";
-import NavItem from "./NavItem";
-import { navBarAnimationVariants } from "../../utils/animationVariants";
+import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
+import NavItem from './NavItem';
+import { navBarAnimationVariants } from '../../utils/animationVariants';
 
 function Nav({ isMenuOpen, children }) {
   return <motion.nav
@@ -25,7 +24,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-Nav.displayName = "Nav";
+Nav.displayName = 'Nav';
 Nav.propTypes = propTypes;
 
 export default Object.assign(Nav, {

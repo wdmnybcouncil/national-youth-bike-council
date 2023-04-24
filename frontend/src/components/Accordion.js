@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 
 /**
  * The **Accordion** component renders each Accordion in the page.
@@ -10,7 +10,7 @@ import rehypeRaw from "rehype-raw";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Accordion({ title, content }) {
-  const [isActive, setIsActive] = React.useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <div className="m-0 max-w-4xl overflow-hidden rounded-lg border hover:border-skin-accent">
@@ -23,7 +23,6 @@ function Accordion({ title, content }) {
           {isActive ? "-" : "+"}
         </p>
       </button>
-      {/* {isActive && <p className="p-4">{content}</p>} */}
       {isActive && (
         <ReactMarkdown linkTarget="_blank" rehypePlugins={[rehypeRaw]} className={`markdown p-4`}>
           {content}
@@ -38,7 +37,7 @@ const propTypes = {
   content: PropTypes.string.isRequired,
 };
 
-Accordion.displayName = "Accordion";
+Accordion.displayName = 'Accordion';
 Accordion.propTypes = propTypes;
 
 export default Object.assign(Accordion, {});

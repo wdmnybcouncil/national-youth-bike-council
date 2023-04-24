@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
-import CurrentMenuStateContext from "../../contexts/CurrentMenuStateContext";
+import { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import CurrentMenuStateContext from '../../contexts/CurrentMenuStateContext';
 
 /**
  * The **NavItem** component renders each item in the Nav component.
@@ -10,7 +10,7 @@ import CurrentMenuStateContext from "../../contexts/CurrentMenuStateContext";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function NavItem({ linkTo, children }) {
-  const setIsMenuOpen = React.useContext(CurrentMenuStateContext);
+  const setIsMenuOpen = useContext(CurrentMenuStateContext);
 
   const handleMenuItemClick = () => setIsMenuOpen(false);
 
@@ -36,7 +36,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-NavItem.displayName = "NavItem";
+NavItem.displayName = 'NavItem';
 NavItem.propTypes = propTypes;
 
 export default NavItem;

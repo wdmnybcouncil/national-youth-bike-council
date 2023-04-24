@@ -1,6 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ListItem from "./ListItem";
+import PropTypes from 'prop-types';
+import ListItem from './ListItem';
 
 /**
  * The **List** component renders unordered list on the page.
@@ -16,7 +15,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-List.displayName = "List";
+List.displayName = 'List';
 List.propTypes = propTypes;
 
 export default Object.assign(List, {

@@ -1,7 +1,7 @@
-import React from "react";
-import Section from "../components/Section";
-import CTALink from "../components/CTALink";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import Section from '../components/Section';
+import CTALink from '../components/CTALink';
+import api from '../utils/api';
 
 /**
  * The **ResourcesSafety** component renders the `Resources & Safety` view of the website.
@@ -10,20 +10,20 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function ResourcesSafety() {
-  const [resourcesSafetyViewTextContent, setResourcesSafetyViewTextContent] = React.useState([]);
+  const [resourcesSafetyViewTextContent, setResourcesSafetyViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getResourcesSafetyViewTextContents()
       .then(({ data }) => setResourcesSafetyViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
 
-  const renderSection = (section) => {
-    const { section_heading, section_text, section_image } = section.attributes;
+  const renderSection = ({ attributes }) => {
+    const { section_heading, section_text, section_image } = attributes;
     const { image_file, alternate_text } = section_image;
 
     return (
@@ -76,6 +76,6 @@ function ResourcesSafety() {
   );
 }
 
-ResourcesSafety.displayName = "ResourcesSafety";
+ResourcesSafety.displayName = 'ResourcesSafety';
 
 export default ResourcesSafety;

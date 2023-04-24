@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **SectionHeading** component renders the heading of a section in the webpage.
@@ -19,7 +18,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-SectionHeading.displayName = "SectionHeading";
+SectionHeading.displayName = 'SectionHeading';
 SectionHeading.propTypes = propTypes;
 
 export default SectionHeading;

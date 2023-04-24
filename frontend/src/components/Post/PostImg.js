@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **PostImg** component renders the image of a post in the webpage.
@@ -18,7 +17,7 @@ const propTypes = {
   className: PropTypes.string,
 };
 
-PostImg.displayName = "PostImg";
+PostImg.displayName = 'PostImg';
 PostImg.propTypes = propTypes;
 
 export default PostImg;

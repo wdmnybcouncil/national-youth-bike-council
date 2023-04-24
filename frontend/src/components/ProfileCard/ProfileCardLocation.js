@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * The **ProfileCardLocation** component renders the location for user profile card in the webpage
@@ -19,7 +18,7 @@ const propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-ProfileCardLocation.displayName = "ProfileCardLocation";
+ProfileCardLocation.displayName = 'ProfileCardLocation';
 ProfileCardLocation.propTypes = propTypes;
 
 export default ProfileCardLocation;

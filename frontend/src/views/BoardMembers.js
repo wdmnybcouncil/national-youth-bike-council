@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "../components/Section";
-import ProfileCard from "../components/ProfileCard";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Section from '../components/Section';
+import ProfileCard from '../components/ProfileCard';
+import api from '../utils/api';
 
 /**
  * The **BoardMembers** component renders the view that lists all the board members of the council.
@@ -11,21 +11,21 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function BoardMembers({ boardMembers = [], onCardClick }) {
-  const [boardMembersViewTextContent, setBoardMembersViewTextContent] = React.useState([]);
+  const [boardMembersViewTextContent, setBoardMembersViewTextContent] = useState([]);
 
   // Get the text contents of the page
-  React.useEffect(() => {
+  useEffect(() => {
     api.getBoardMembersViewTextContents()
       .then(({ data }) => setBoardMembersViewTextContent(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the board members data from the server.');
         console.log(err);
       });
   }, []);
 
   const renderBoardMemberCards = () =>
-    boardMembers.map((member) => {
-      const { first_name, last_name, profile_image, designation, location, story_in_detail } = member.attributes;
+    boardMembers.map(({ attributes }) => {
+      const { first_name, last_name, profile_image, designation, location, story_in_detail } = attributes;
       const img = profile_image.data.attributes.url;
       const userProfile = {
         userName: `${first_name} ${last_name.substring(0, 1)}.`,
@@ -98,7 +98,7 @@ const propTypes = {
   onCardClick: PropTypes.func.isRequired,
 };
 
-BoardMembers.displayName = "BoardMembers";
+BoardMembers.displayName = 'BoardMembers';
 BoardMembers.propTypes = propTypes;
 
 export default BoardMembers;

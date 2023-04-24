@@ -1,9 +1,10 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Section from "../components/Section";
-import twitterIcon from "../assets/images/social/icon-twitter.svg";
-import facebookIcon from "../assets/images/social/icon-facebook.svg";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Section from '../components/Section';
+import twitterIcon from '../assets/images/social/icon-twitter.svg';
+import facebookIcon from '../assets/images/social/icon-facebook.svg';
+import api from '../utils/api';
+import { getTwitterHref, getFacebookHref } from '../utils/commonUtils';
 
 /**
  * The **Project** component renders the view that a specific project post.
@@ -14,28 +15,16 @@ import api from "../utils/api";
 function Project() {
   const { projectTitle } = useParams();
   const navigate = useNavigate();
-  const [projectPost, setProjectPost] = React.useState([]);
+  const [projectPost, setProjectPost] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     api.getProjectPost(projectTitle)
       .then(({ data }) => setProjectPost(data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, [projectTitle]);
-
-  const getTwitterHref = () => {
-    const tweetContent = `${projectTitle} ${window.location.href} @National_ybc #nybc #national_youth_bike_council`;
-    const urlEncodedMsg = encodeURIComponent(tweetContent);
-    return `https://twitter.com/intent/tweet?text=${urlEncodedMsg}`;
-  }
-
-  const getFacebookHref = () => {
-    const facebookPostContent = `${window.location.href}`;
-    const urlEncodedMsg = encodeURIComponent(facebookPostContent);
-    return `https://www.facebook.com/sharer/sharer.php?u=${urlEncodedMsg}`;
-  }
 
   const handleBackButtonClick = () => {
     if (window.history.state && window.history.state.idx > 0) {
@@ -73,14 +62,14 @@ function Project() {
                     <div className="flex gap-4">
                       <a
                         className="w-8 h-8 rounded-full bg-skin-accent flex justify-center items-center hover:opacity-80 transition-all"
-                        href={getTwitterHref()}
+                        href={getTwitterHref(projectTitle, window.location.href)}
                         target="_blank"
                         rel="noreferrer" >
                         <img src={twitterIcon} alt="share on twitter" className="h-4 w-4" />
                       </a>
                       <a
                         className="w-8 h-8 rounded-full bg-skin-accent flex justify-center items-center hover:opacity-80 transition-all"
-                        href={getFacebookHref()}
+                        href={getFacebookHref(window.location.href)}
                         target="_blank"
                         rel="noreferrer" >
                         <img src={facebookIcon} alt="share on facebook" className="h-4 w-4" />
@@ -98,6 +87,6 @@ function Project() {
   );
 }
 
-Project.displayName = "Project";
+Project.displayName = 'Project';
 
 export default Project;
