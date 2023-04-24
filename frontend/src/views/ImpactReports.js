@@ -27,7 +27,7 @@ function ImpactReports() {
 
   const renderImpactReportLinks = (reports) =>
     reports.map(report => {
-      const { pdf, report_date, report_name, report_image } = report.attributes;
+      const { pdf, report_name } = report.attributes;
       const reportLink = pdf.data[0].attributes.url;
 
       return (
