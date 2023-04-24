@@ -23,6 +23,21 @@
     "report_date": {
       "type": "date",
       "required": true
+    },
+    "report_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "report_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

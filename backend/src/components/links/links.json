@@ -2,7 +2,8 @@
   "collectionName": "components_links_links",
   "info": {
     "displayName": "links",
-    "icon": "link"
+    "icon": "link",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,13 @@
     },
     "video": {
       "type": "string"
+    },
+    "pdf": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

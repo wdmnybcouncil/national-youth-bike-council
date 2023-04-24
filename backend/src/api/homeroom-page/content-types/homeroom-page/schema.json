@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homeroom_pages",
+  "info": {
+    "singularName": "homeroom-page",
+    "pluralName": "homeroom-pages",
+    "displayName": "HomeroomPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

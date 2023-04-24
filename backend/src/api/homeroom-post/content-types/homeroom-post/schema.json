@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homeroom_posts",
+  "info": {
+    "singularName": "homeroom-post",
+    "pluralName": "homeroom-posts",
+    "displayName": "HomeroomPost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post_title": {
+      "type": "string",
+      "required": true
+    },
+    "post_date": {
+      "type": "date"
+    },
+    "post_author": {
+      "type": "string"
+    },
+    "post_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image",
+      "required": true
+    },
+    "post_links": {
+      "type": "component",
+      "repeatable": false,
+      "component": "links.links",
+      "required": true
+    },
+    "post_text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
