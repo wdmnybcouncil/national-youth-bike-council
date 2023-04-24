@@ -512,6 +512,41 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the text contents to show on the Homeroom view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getHomeroomViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/homeroom-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the posts related to Homeroom view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getHomeroomPosts = () => {
+    const query = qs.stringify({
+      sort: ['post_title', 'createdAt:desc'],
+      populate: [
+        "post_image.image_file",
+        "post_links",
+        "post_links.pdf"
+      ],
+    });
+
+    return fetch(`${this._baseUrl}/homeroom-posts?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =
