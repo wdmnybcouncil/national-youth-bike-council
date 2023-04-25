@@ -10,7 +10,7 @@ import PageLink from '../components/PageLink';
 function ImpactReportCard({ className = '', imageSrc = '', heading, reportName, reportLink }) {
   return (
     <article
-      className={`group relative mt-24 flex max-w-sm flex-col items-center gap-1 rounded-2xl border border-transparent bg-skin-fill-card-accent p-6 transition hover:cursor-pointer hover:border-skin-accent lg:p-8 ${className}`}
+      className={`group relative mt-28 flex max-w-sm flex-col items-center gap-1 rounded-2xl border border-transparent bg-skin-fill-card-accent p-6 transition hover:cursor-pointer hover:border-skin-accent lg:p-8 ${className}`}
     >
       <img
         src={imageSrc}

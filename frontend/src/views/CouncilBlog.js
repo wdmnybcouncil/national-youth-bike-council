@@ -55,7 +55,7 @@ function CouncilBlog() {
                       `${blogPost[0].attributes.post_date ? formatDate(blogPost[0].attributes.post_date) : ''} ${blogPost[0].attributes.post_author ? `| ${blogPost[0].attributes.post_author}` : ``}`}
                   </Section.Text>
                   {
-                    (blogPost[0].attributes.post_tags.length)
+                    (blogPost[0].attributes.post_tags?.length)
                       ? (<Section.Tags>{blogPost[0].attributes.post_tags}</Section.Tags>)
                       : null
                   }

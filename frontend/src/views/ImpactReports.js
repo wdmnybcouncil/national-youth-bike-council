@@ -51,12 +51,12 @@ function ImpactReports() {
           <div className="my-8" aria-label="resources page">
             <Section>
               <Section.Heading>{impactReportsViewTextContent[0].attributes.section_heading}</Section.Heading>
-              <Section.Text>{impactReportsViewTextContent[0].attributes.section_text}</Section.Text>
+              {impactReportsViewTextContent[0].attributes.section_text.length > 0
+                ? <Section.Text>{impactReportsViewTextContent[0].attributes.section_text}</Section.Text>
+                : null}
               {impactReports.length > 0
                 ? renderImpactReportCards(impactReports)
-                : (
-                  <Section.Text>No reports to show yet!</Section.Text>
-                )}
+                : <Section.Text>No reports to show yet!</Section.Text>}
             </Section>
           </div>
         )
