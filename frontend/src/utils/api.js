@@ -502,17 +502,6 @@ class Api {
       .then(this._checkResponseStatus);
   }
 
-  getImpactReports = () => {
-    const query = qs.stringify({
-      populate: '*',
-    });
-
-    return fetch(`${this._baseUrl}/impact-reports?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
-
   /**
    * Get all the text contents to show on the Homeroom view.
    * @return {Promise} The Promise of the Fetch API call.
@@ -578,6 +567,36 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/ybs-steering-committee-members?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the text contents to show on the ImpactReports view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getImpactReportsViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this._baseUrl}/impact-report-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the Impact Reports.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getImpactReports = () => {
+    const query = qs.stringify({
+      populate: '*',
+    });
+
+    return fetch(`${this._baseUrl}/impact-reports?${query}`, {
       headers: this._headers
     })
       .then(this._checkResponseStatus);

@@ -56,7 +56,7 @@ function Home({ homeViewMembers = [], sponsors = [], onCardClick }) {
       const { alternate_text, image_file } = sponsor_logo;
       return <motion.img
         key={alternate_text}
-        src={image_file.data.attributes.url}
+        src={image_file.data?.attributes.url}
         alt={alternate_text}
         className="max-h-20 max-w-[250px] object-cover object-center"
         variants={partnersImagesAnimationVariants}

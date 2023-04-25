@@ -1,7 +1,8 @@
-import React from "react";
-import Section from "../components/Section";
-import PageLink from "../components/PageLink";
-import api from "../utils/api";
+import { useState, useEffect } from 'react';
+import Section from '../components/Section';
+import ImpactReportCard from '../components/ImpactReportCard';
+import api from '../utils/api';
+import { getYearFromDateString, getMonthFromDateString } from '../utils/commonUtils';
 
 /**
  * The **ImpactReports** component renders the annual impact reports of the council.
@@ -10,47 +11,61 @@ import api from "../utils/api";
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function ImpactReports() {
-  const [impactReports, setImpactReports] = React.useState([]);
+  const [impactReportsViewTextContent, setImpactReportsViewTextContent] = useState([]);
+  const [impactReports, setImpactReports] = useState([]);
 
-  // Get all the impact reports
-  React.useEffect(() => {
+
+  useEffect(() => {
+    // Get the text contents of the page
+    api.getImpactReportsViewTextContents()
+      .then(({ data }) => setImpactReportsViewTextContent(data))
+      .catch(err => {
+        console.log('Uh-oh! Error occurred while fetching the reports data from the server.');
+        console.log(err);
+      });
+
+    // Get all the impact reports
     api.getImpactReports()
-      .then(({ data }) => {
-        console.log(data);
-        setImpactReports(data);
-      })
+      .then(({ data }) => setImpactReports(data))
       .catch(err => {
         console.log('Uh-oh! Error occurred while fetching the reports data from the server.');
         console.log(err);
       });
   }, []);
 
-  const renderImpactReportLinks = (reports) =>
+  const renderImpactReportCards = (reports) =>
     reports.map(report => {
-      const { pdf, report_name } = report.attributes;
+      const { pdf, report_name, report_date, report_image } = report.attributes;
       const reportLink = pdf.data[0].attributes.url;
+      const cardHeading = `${getYearFromDateString(report_date)} ${getMonthFromDateString(report_date)}`
 
       return (
-        <PageLink key={report_name} type="external" className="mt-4" linkTo={reportLink}>
-          {report_name}
-        </PageLink>
+        <ImpactReportCard key={report_name} imageSrc={report_image.data.attributes.url} heading={cardHeading} reportName={report_name} reportLink={reportLink} />
       )
     });
 
   return (
-    <div className="my-8" aria-label="resources page">
-      <Section>
-        <Section.Heading>Impact Reports</Section.Heading>
-        {impactReports.length > 0
-          ? renderImpactReportLinks(impactReports)
-          : (
-            <Section.Text>No reports to show yet!</Section.Text>
-          )}
-      </Section>
-    </div>
+    <>
+      {impactReportsViewTextContent.length
+        ? (
+          <div className="my-8" aria-label="resources page">
+            <Section>
+              <Section.Heading>{impactReportsViewTextContent[0].attributes.section_heading}</Section.Heading>
+              <Section.Text>{impactReportsViewTextContent[0].attributes.section_text}</Section.Text>
+              {impactReports.length > 0
+                ? renderImpactReportCards(impactReports)
+                : (
+                  <Section.Text>No reports to show yet!</Section.Text>
+                )}
+            </Section>
+          </div>
+        )
+        : null
+      }
+    </>
   );
 }
 
-ImpactReports.displayName = "ImpactReports";
+ImpactReports.displayName = 'ImpactReports';
 
 export default ImpactReports;
