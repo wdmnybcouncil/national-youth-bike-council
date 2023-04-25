@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "impact_report_pages",
+  "info": {
+    "singularName": "impact-report-page",
+    "pluralName": "impact-report-pages",
+    "displayName": "ImpactReportPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    }
+  }
+}
