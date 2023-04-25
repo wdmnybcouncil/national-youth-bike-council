@@ -547,6 +547,41 @@ class Api {
     })
       .then(this._checkResponseStatus);
   }
+
+  /**
+   * Get all the text contents to show on the YbsSteeringCommittee view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getSteeringCommitteeViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: {
+        "section_image": {
+          populate: ["image_file"],
+        }
+      },
+    });
+
+    return fetch(`${this._baseUrl}/ybs-steering-committee-pages?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
+
+  /**
+   * Get all the members of the YbsSteeringCommittee.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getSteeringCommitteeMembers = () => {
+    const query = qs.stringify({
+      populate: '*',
+    });
+
+    return fetch(`${this._baseUrl}/ybs-steering-committee-members?${query}`, {
+      headers: this._headers
+    })
+      .then(this._checkResponseStatus);
+  }
 }
 
 const BASE_URL =
