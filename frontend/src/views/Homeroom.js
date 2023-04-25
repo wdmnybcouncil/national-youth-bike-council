@@ -120,7 +120,7 @@ function Homeroom() {
 
   return (
     <>
-      {homeroomPosts.length
+      {homeroomViewTextContent.length
         ? (
           <div className="my-8" aria-label="media coverage page">
             <Section>
@@ -130,9 +130,14 @@ function Homeroom() {
               <Section.Text>
                 {homeroomViewTextContent[0].attributes.section_description}
               </Section.Text>
-              <div className="mt-6 mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
-              <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
-              <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
+              {homeroomPosts.length
+                ? (
+                  <>
+                    <div className="mt-6 mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
+                    <div className="flex flex-col gap-10">{renderPosts(currentViewPosts)}</div>
+                    <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
+                  </>
+                ) : null}
             </Section>
           </div>
         )
