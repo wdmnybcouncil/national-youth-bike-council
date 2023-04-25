@@ -92,7 +92,7 @@ function JoinUs() {
       const { faq_title, faq_list } = attributes;
       return (
         <div key={faq_title} className="flex flex-col gap-4">
-          <h3 className="mb-4 w-full max-w-4xl border-b border-skin-primary pb-1 font-balgin text-xl tracking-wider text-skin-primary"> {faq_title}</h3>
+          <h3 className="mb-4 w-full max-w-4xl border-b border-skin-primary pb-1 font-kaleko font-bold tracking-wide text-xl text-skin-primary"> {faq_title}</h3>
           <div>{renderFaqs(faq_list)}</div>
         </div>
       );

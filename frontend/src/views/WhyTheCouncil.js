@@ -56,7 +56,7 @@ function WhyTheCouncil() {
             {/* Section # 1 - Why the National Youth Bike Council? */}
             <section className="mb-10 w-full bg-skin-fill-card-accent text-skin-base">
               <div className="mx-auto max-w-screen-xl px-8 py-6 md:px-10">
-                <h2 className="mb-4 w-full font-balgin text-2xl capitalize tracking-wider text-skin-accent md:pb-2 md:text-4xl">In Two Sentences</h2>
+                <h2 className="mb-4 w-full font-kaleko font-bold tracking-wide text-2xl capitalize text-skin-accent md:pb-2 md:text-4xl">In Two Sentences</h2>
                 <p className="max-w-3xl">
                   <span className="font-semibold">Community, Health, Education</span> and <span className="font-semibold">Leadership</span> is the second way to say{" "}
                   <span className="font-semibold">“National Youth Bike Council”</span>. Young people within the council have the opportunity to develop hard skills,

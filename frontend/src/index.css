@@ -7,10 +7,10 @@
 /* Add the custom font for headings */
 @layer base {
   @font-face {
-    font-family: "Balgin Black";
+    font-family: "Kaleko 105 Round";
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/fonts/Balgin-Black.ttf") format("truetype");
+    src: url("./assets/fonts/Kaleko-105-Round-Bold.otf") format("OpenType");
   }
 }
 

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
  */
 function PostTitle({ children }) {
   return (
-    <h3 className="relative mb-1 w-full border-b border-skin-accent pb-1 text-center font-balgin text-xl tracking-wider md:text-2xl lg:text-left">
+    <h3 className="relative mb-1 w-full border-b border-skin-accent pb-1 text-center font-kaleko font-bold tracking-wide text-xl md:text-2xl lg:text-left">
       {children}
     </h3>
   );

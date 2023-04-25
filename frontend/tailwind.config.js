@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["'Livvic'", defaultTheme.fontFamily.sans],
-        balgin: "'Balgin Black'",
+        kaleko: "'Kaleko 105 Round'",
       },
       colors: {
         skin: {

@@ -40,7 +40,7 @@ function Footer({ footer }) {
         <div className="flex flex-col gap-2 xs:gap-0">
           <div className="flex flex-col gap-4 xs:flex-row xs:items-center md:items-start">
             <Logo linkTo="/" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
-            <h2 className="font-semibold uppercase">{footer[0].heading}</h2>
+            <h2 className="font-kaleko font-bold tracking-wide uppercase">{footer[0].heading}</h2>
           </div>
           <div className="flex flex-col gap-1 xs:pl-16 lg:pl-20">
             <p>Email us at -</p>

@@ -31,7 +31,7 @@ function Modal({ isOpen, onClose, userProfile }) {
         variants={modalAnimationVariants}>
         <div className="flex flex-col items-center justify-center gap-4">
           <img src={userImg} alt={userName} className="h-40 w-40 max-w-full rounded-full border-4 border-skin-accent" />
-          <h3 className="text-center font-balgin text-2xl font-semibold capitalize leading-8 tracking-wider text-skin-primary md:text-4xl">{userName}</h3>
+          <h3 className="text-center font-kaleko font-bold tracking-wide text-2xl capitalize leading-8 text-skin-primary md:text-4xl">{userName}</h3>
         </div>
         <div className="relative before:absolute before:top-0 before:-left-5 before:h-4 before:w-4 before:bg-[url('./assets/images/icon-quotes.svg')] before:bg-contain before:bg-no-repeat">
           <ReactMarkdown className="markdown">{userStory}</ReactMarkdown>

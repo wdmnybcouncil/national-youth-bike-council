@@ -9,7 +9,7 @@ function AnimatedHeroTitle({ children }) {
   return (
     <AnimatePresence>
       <motion.h1
-        className="relative inline-block w-full max-w-screen-md break-words text-center font-balgin text-4xl tracking-wider text-transparent drop-shadow sm:text-left lg:text-6xl"
+        className="relative inline-block w-full max-w-screen-md break-words text-center font-kaleko font-bold tracking-wide text-4xl text-transparent drop-shadow sm:text-left lg:text-6xl"
         variants={heroLetterContainerAnimationVariants}
         initial="hidden"
         whileInView="visible"

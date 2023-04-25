@@ -20,7 +20,7 @@ function DescriptionCard({ heading, text, image = '' }) {
           alt={heading}
           className="-mt-12 h-16 w-16 max-w-full rounded-full border-2 border-skin-accent object-center object-cover transition-all group-hover:scale-125" />
       }
-      <h3 className="mt-4 mb-4 w-full max-w-4xl text-center border-b border-skin-primary pb-1 font-balgin text-xl tracking-wider text-skin-primary transition-all">
+      <h3 className="mt-4 mb-4 w-full max-w-4xl text-center border-b border-skin-primary pb-1 font-kaleko font-bold tracking-wide text-xl text-skin-primary transition-all">
         {heading}
       </h3>
       <Section.Text>{text}</Section.Text>
