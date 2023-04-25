@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ybs_steering_committee_pages",
+  "info": {
+    "singularName": "ybs-steering-committee-page",
+    "pluralName": "ybs-steering-committee-pages",
+    "displayName": "YbsSteeringCommitteePage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    },
+    "section_image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ybs_steering_committee_members",
+  "info": {
+    "singularName": "ybs-steering-committee-member",
+    "pluralName": "ybs-steering-committee-members",
+    "displayName": "YbsSteeringCommitteeMember",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "middle_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "profile_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "default": "USA",
+      "required": true,
+      "minLength": 1
+    },
+    "story_in_brief": {
+      "type": "richtext"
+    },
+    "story_in_detail": {
+      "type": "richtext"
+    },
+    "designation": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    }
+  }
+}
