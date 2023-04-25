@@ -27,6 +27,7 @@ import JoinUs from "./views/JoinUs";
 import LiabilityTerms from "./views/LiabilityTerms";
 import Homeroom from "./views/Homeroom";
 import ImpactReports from "./views/ImpactReports";
+import YbsSteeringCommittee from "./views/YbsSteeringCommittee";
 
 import api from "./utils/api";
 
@@ -167,6 +168,10 @@ function App() {
     partners,
   };
 
+  const propsForYbsSteeringCommitteeView = {
+    onCardClick: handleProfileCardClick,
+  }
+
   // ********************************************************************************************* //
   //                       Return different views of the application                               //
   // ********************************************************************************************* //
@@ -191,6 +196,7 @@ function App() {
             <Route path="council-members" element={<CouncilMembers {...propsForCouncilMembersView} />} />
             <Route path="advisors" element={<Advisors {...propsForAdvisorsView} />} />
             <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
+            <Route path="ybs-steering-committee" element={<YbsSteeringCommittee {...propsForYbsSteeringCommitteeView} />} />
             <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:projectTitle" element={<Project />} />

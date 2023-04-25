@@ -77,6 +77,7 @@ function Header() {
               <Dropdown.Item type="internal" linkTo="/council-members">Council Members</Dropdown.Item>
               <Dropdown.Item type="internal" linkTo="/advisors">Advisors</Dropdown.Item>
               <Dropdown.Item type="internal" linkTo="/board-members">Board Members</Dropdown.Item>
+              <Dropdown.Item type="internal" linkTo="/ybs-steering-committee">YBS Steering Committee</Dropdown.Item>
               <Dropdown.Item type="internal" linkTo="/sponsorships">Partners & Sponsorships</Dropdown.Item>
             </Dropdown>
             <Nav.Item linkTo="/projects">Projects</Nav.Item>
