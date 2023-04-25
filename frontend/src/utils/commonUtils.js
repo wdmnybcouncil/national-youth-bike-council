@@ -17,7 +17,7 @@ const getMonthFromDateString = (dateString) => {
   const dateParts = dateString.split('-');
   const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
-  return monthNames[parseInt(dateParts[1])];
+  return monthNames[parseInt(dateParts[1] - 1)];
 }
 
 // Get random item from the array
