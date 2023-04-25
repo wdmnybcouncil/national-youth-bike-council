@@ -36,7 +36,8 @@
     "location": {
       "type": "string",
       "default": "USA",
-      "minLength": 1
+      "minLength": 1,
+      "required": true
     },
     "story_in_brief": {
       "type": "richtext"
