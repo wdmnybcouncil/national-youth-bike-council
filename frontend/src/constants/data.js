@@ -39,6 +39,11 @@ const data = {
           type: "internal",
           url: "/why-the-council",
         },
+        {
+          title: "Youth Bike Summit",
+          type: "external",
+          url: "https://youthbikesummit.org/",
+        },
       ],
     },
     {
