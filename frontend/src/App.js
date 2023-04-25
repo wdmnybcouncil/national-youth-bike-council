@@ -1,35 +1,35 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 
 // Import components
-import Modal from "./components/Modal";
-import Layout from "./components/Layout";
+import Modal from './components/Modal';
+import Layout from './components/Layout';
 
 // Import views
-import Home from "./views/Home";
-import PageNotFound from "./views/PageNotFound";
-import HowItStarted from "./views/HowItStarted";
-import WhereAreWe from "./views/WhereAreWe";
-import WhyTheCouncil from "./views/WhyTheCouncil";
-import CouncilMembers from "./views/CouncilMembers";
-import Advisors from "./views/Advisors";
-import BoardMembers from "./views/BoardMembers";
-import Sponsorships from "./views/Sponsorships";
-import Projects from "./views/Projects";
-import Project from "./views/Project";
-import MediaCoverage from "./views/MediaCoverage";
-import CouncilBlogs from "./views/CouncilBlogs";
-import CouncilBlog from "./views/CouncilBlog";
-import ResourcesSafety from "./views/ResourcesSafety";
-import JoinUs from "./views/JoinUs";
-import LiabilityTerms from "./views/LiabilityTerms";
-import Homeroom from "./views/Homeroom";
-import ImpactReports from "./views/ImpactReports";
-import YbsSteeringCommittee from "./views/YbsSteeringCommittee";
+import Home from './views/Home';
+import PageNotFound from './views/PageNotFound';
+import HowItStarted from './views/HowItStarted';
+import WhereAreWe from './views/WhereAreWe';
+import WhyTheCouncil from './views/WhyTheCouncil';
+import CouncilMembers from './views/CouncilMembers';
+import Advisors from './views/Advisors';
+import BoardMembers from './views/BoardMembers';
+import Sponsorships from './views/Sponsorships';
+import Projects from './views/Projects';
+import Project from './views/Project';
+import MediaCoverage from './views/MediaCoverage';
+import CouncilBlogs from './views/CouncilBlogs';
+import CouncilBlog from './views/CouncilBlog';
+import ResourcesSafety from './views/ResourcesSafety';
+import JoinUs from './views/JoinUs';
+import LiabilityTerms from './views/LiabilityTerms';
+import Homeroom from './views/Homeroom';
+import ImpactReports from './views/ImpactReports';
+import YbsSteeringCommittee from './views/YbsSteeringCommittee';
 
-import api from "./utils/api";
+import api from './utils/api';
 
 /**
  * The main React **App** component.
@@ -39,21 +39,21 @@ import api from "./utils/api";
  */
 function App() {
   // Component States
-  const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
-  const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [startingCrewMembers, setStartingCrewMembers] = React.useState([]);
-  const [councilMembers, setCouncilMembers] = React.useState([]);
-  const [alumniMembers, setAlumniMembers] = React.useState([]);
-  const [advisorMembers, setAdvisorMembers] = React.useState([]);
-  const [boardMembers, setBoardMembers] = React.useState([]);
-  const [homeViewMembers, setHomeViewMembers] = React.useState([]);
-  const [sponsors, setSponsors] = React.useState([]);
-  const [partners, setPartners] = React.useState([]);
+  const [selectedUserProfile, setSelectedUserProfile] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [startingCrewMembers, setStartingCrewMembers] = useState([]);
+  const [councilMembers, setCouncilMembers] = useState([]);
+  const [alumniMembers, setAlumniMembers] = useState([]);
+  const [advisorMembers, setAdvisorMembers] = useState([]);
+  const [boardMembers, setBoardMembers] = useState([]);
+  const [homeViewMembers, setHomeViewMembers] = useState([]);
+  const [sponsors, setSponsors] = useState([]);
+  const [partners, setPartners] = useState([]);
 
   // ********************************************************************************************* //
   //                                          API Calls                                            //
   // ********************************************************************************************* //
-  React.useEffect(() => {
+  useEffect(() => {
     api.getAllMembers()
       .then(({ data }) => {
         setStartingCrewMembers(data.filter(member => member.attributes.roles.includes('Co-Founder')));
@@ -67,21 +67,21 @@ function App() {
           || member.attributes.first_name === 'Luly'));
       })
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
     api.getSponsers()
       .then(sponsors => setSponsors(sponsors.data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
 
     api.getPartners()
       .then(partners => setPartners(partners.data))
       .catch(err => {
-        console.log("Uh-oh! Error occurred while fetching the members data from the server.");
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
   }, []);
@@ -89,27 +89,27 @@ function App() {
   // ********************************************************************************************* //
   //                 Handle mouse click or Esc key down event on Modal                             //
   // ********************************************************************************************* //
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickClose = (e) => {
-      if (e.target.classList.contains("modal_opened")) {
+      if (e.target.classList.contains('modal_opened')) {
         handleModalClose();
       }
     };
 
     const handleEscClose = (e) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         handleModalClose();
       }
     };
 
     if (isModalOpen) {
-      document.addEventListener("click", handleClickClose);
-      document.addEventListener("keydown", handleEscClose);
+      document.addEventListener('click', handleClickClose);
+      document.addEventListener('keydown', handleEscClose);
     }
 
     return () => {
-      document.removeEventListener("click", handleClickClose);
-      document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener('click', handleClickClose);
+      document.removeEventListener('keydown', handleEscClose);
     };
   }, [isModalOpen]);
 
