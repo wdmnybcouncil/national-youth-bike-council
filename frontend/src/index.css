@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Livvic:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,10 +7,10 @@
 /* Add the custom font for headings */
 @layer base {
   @font-face {
-    font-family: "Kaleko 105 Round";
+    font-family: 'Kaleko 105 Round';
     font-weight: 400;
     font-display: swap;
-    src: url("./assets/fonts/Kaleko-105-Round-Bold.otf") format("OpenType");
+    src: url('./assets/fonts/Kaleko-105-Round-Bold.otf') format('OpenType');
   }
 }
 
@@ -42,12 +42,12 @@
 .markdown a {
   display: inline-block;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .markdown a:hover {
   border-bottom: 1px solid rgba(245, 128, 32, 1);
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .markdown ol {
@@ -64,7 +64,7 @@
   list-style-type: disc;
 }
 
-.markdown ul>li::marker {
+.markdown ul > li::marker {
   color: rgba(245, 128, 32, 1);
 }
 

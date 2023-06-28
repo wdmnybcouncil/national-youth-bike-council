@@ -1,8 +1,8 @@
 /**
- * This module takes care of all the requests made to the Strapi REST API - 
+ * This module takes care of all the requests made to the Strapi REST API -
  * @module Api
  */
-import qs from "qs";
+import qs from 'qs';
 
 /** Class representing all the API related requests */
 class Api {
@@ -20,12 +20,9 @@ class Api {
    * @param {Object} response The response of the Fetch API call.
    * @return {Object} If the response was successful, returns the JSON else a Promise object with a given reason.
    */
-  _checkResponseStatus = response => {
-    return (response.ok)
-      ? response.json()
-      : Promise.reject(`Error Code: ${response.status} | Error Message: ${response.statusText}`);
-  }
-
+  _checkResponseStatus = (response) => {
+    return response.ok ? response.json() : Promise.reject(`Error Code: ${response.status} | Error Message: ${response.statusText}`);
+  };
 
   /**
    * Get all the members of the council.
@@ -37,10 +34,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/members?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the sponsers of the council.
@@ -50,17 +46,16 @@ class Api {
     const query = qs.stringify({
       sort: ['priority'],
       populate: {
-        "sponsor_logo": {
-          populate: ["image_file"],
-        }
+        sponsor_logo: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/sponsorships?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the partners of the council.
@@ -70,17 +65,16 @@ class Api {
     const query = qs.stringify({
       sort: ['priority'],
       populate: {
-        "partner_logo": {
-          populate: ["image_file"],
-        }
+        partner_logo: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/partners?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Home view.
@@ -90,37 +84,35 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/home-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
- * Get all the text contents to show on the How It Started view.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get all the text contents to show on the How It Started view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getHowItStartedViewTextContents = () => {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/how-it-started-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Where Are We view.
@@ -132,10 +124,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/where-are-we-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the place markers to show on the USA map.
@@ -143,11 +134,9 @@ class Api {
    */
   getPlaceMarkers = () => {
     return fetch(`${this._baseUrl}/map-place-markers`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
-
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Why The Council view.
@@ -157,17 +146,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/why-the-council-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Council Members view.
@@ -179,10 +167,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/council-members-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Advisors view.
@@ -192,17 +179,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/advisors-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Board Members view.
@@ -212,17 +198,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/board-members-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Sponsorships view.
@@ -234,10 +219,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/sponsorships-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Media Coverage view.
@@ -249,10 +233,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/media-coverage-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the posts related to media coverage.
@@ -261,17 +244,13 @@ class Api {
   getMediaCoveragePosts = () => {
     const query = qs.stringify({
       sort: ['post_category:desc', 'createdAt:desc'],
-      populate: [
-        "post_image.image_file",
-        "post_links"
-      ],
+      populate: ['post_image.image_file', 'post_links'],
     });
 
     return fetch(`${this._baseUrl}/media-coverage-posts?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Council Blogs view.
@@ -283,10 +262,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/council-blog-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the posts related to council blogs.
@@ -295,53 +273,46 @@ class Api {
   getCouncilBlogPosts = () => {
     const query = qs.stringify({
       sort: ['post_category:desc', 'createdAt:desc'],
-      populate: [
-        "post_cover_image.image_file",
-      ],
+      populate: ['post_cover_image.image_file'],
     });
 
     return fetch(`${this._baseUrl}/council-blog-posts?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
- * Get a single post from council blogs.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get a single post from council blogs.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getCouncilBlogPost = (blogTitle) => {
     const query = qs.stringify({
       filters: {
-        "post_title": {
+        post_title: {
           $eq: blogTitle,
         },
       },
-      populate: [
-        "post_cover_image.image_file",
-      ],
+      populate: ['post_cover_image.image_file'],
     });
 
     return fetch(`${this._baseUrl}/council-blog-posts?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
- * Get all the text contents to show on the Projects view.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get all the text contents to show on the Projects view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getProjectsViewTextContents = () => {
     const query = qs.stringify({
       sort: ['id'],
     });
 
     return fetch(`${this._baseUrl}/projects-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the posts related to projects.
@@ -350,38 +321,32 @@ class Api {
   getProjectsPosts = () => {
     const query = qs.stringify({
       sort: ['project_category:desc', 'createdAt:desc'],
-      populate: [
-        "project_cover_image.image_file",
-      ],
+      populate: ['project_cover_image.image_file'],
     });
 
     return fetch(`${this._baseUrl}/projects?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
- * Get a single post from projects.
- * @return {Promise} The Promise of the Fetch API call.
- */
+   * Get a single post from projects.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
   getProjectPost = (projectTitle) => {
     const query = qs.stringify({
       filters: {
-        "project_title": {
+        project_title: {
           $eq: projectTitle,
         },
       },
-      populate: [
-        "project_cover_image.image_file",
-      ],
+      populate: ['project_cover_image.image_file'],
     });
 
     return fetch(`${this._baseUrl}/projects?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Resources Safety view.
@@ -391,17 +356,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/resources-safety-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Join Us view.
@@ -413,10 +377,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/join-us-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the benefits of joining the council to show on the Join Us view.
@@ -428,10 +391,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/join-us-benefits?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the roles in the council to show on the Join Us view.
@@ -441,17 +403,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "role_image": {
-          populate: ["image_file"],
-        }
+        role_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/join-us-roles?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the faqs to show on the Join Us view.
@@ -460,16 +421,13 @@ class Api {
   getFaqs = () => {
     const query = qs.stringify({
       sort: ['id'],
-      populate: [
-        "faq_list",
-      ],
+      populate: ['faq_list'],
     });
 
     return fetch(`${this._baseUrl}/faqs?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get the liability terms for the Liability Terms view.
@@ -481,10 +439,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/liability-terms-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get the agreement code for the Liability Terms view.
@@ -497,10 +454,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/liability-terms-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the Homeroom view.
@@ -512,10 +468,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/homeroom-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the posts related to Homeroom view.
@@ -524,18 +479,13 @@ class Api {
   getHomeroomPosts = () => {
     const query = qs.stringify({
       sort: ['post_title', 'createdAt:desc'],
-      populate: [
-        "post_image.image_file",
-        "post_links",
-        "post_links.pdf"
-      ],
+      populate: ['post_image.image_file', 'post_links', 'post_links.pdf'],
     });
 
     return fetch(`${this._baseUrl}/homeroom-posts?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the YbsSteeringCommittee view.
@@ -545,17 +495,16 @@ class Api {
     const query = qs.stringify({
       sort: ['id'],
       populate: {
-        "section_image": {
-          populate: ["image_file"],
-        }
+        section_image: {
+          populate: ['image_file'],
+        },
       },
     });
 
     return fetch(`${this._baseUrl}/ybs-steering-committee-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the members of the YbsSteeringCommittee.
@@ -567,10 +516,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/ybs-steering-committee-members?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the text contents to show on the ImpactReports view.
@@ -582,10 +530,9 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/impact-report-pages?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 
   /**
    * Get all the Impact Reports.
@@ -597,20 +544,16 @@ class Api {
     });
 
     return fetch(`${this._baseUrl}/impact-reports?${query}`, {
-      headers: this._headers
-    })
-      .then(this._checkResponseStatus);
-  }
+      headers: this._headers,
+    }).then(this._checkResponseStatus);
+  };
 }
 
-const BASE_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://nybc-strapi.herokuapp.com/api'
-    : 'http://localhost:1337/api';
+const BASE_URL = import.meta.env.PROD ? 'https://nybc-strapi.herokuapp.com/api' : 'http://localhost:1337/api';
 
 export default new Api({
   baseUrl: BASE_URL,
   headers: {
-    authorization: `Bearer ${process.env.REACT_APP_STRAPI_API_TOKEN}`,
-  }
+    authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
+  },
 });
