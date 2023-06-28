@@ -6,14 +6,18 @@ import { VitePWA } from 'vite-plugin-pwa';
 const PWAConfig = {
   registerType: 'autoUpdate',
   workbox: {
-    globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+    globPatterns: ["**/*"],
   },
+  includeAssets: [
+    "**/*",
+  ],
   manifest: {
     short_name: 'National Youth Bike Council',
     name: 'National Youth Bike Council | Community for youth empowerment',
     description:
       'A youth-led non-profit biking council that creates a space for peers to feel empowered and have the tools, leadership skills, and youth role models necessary to be leaders in their own community.',
     start_url: '/',
+    scope: '/',
     display: 'standalone',
     theme_color: '#3f5b74',
     background_color: '#ffffff',

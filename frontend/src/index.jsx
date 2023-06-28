@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
+import { registerSW } from 'virtual:pwa-register';
+
+registerSW({ immediate: true });
 
 ReactDOM.render(
   <React.StrictMode>
