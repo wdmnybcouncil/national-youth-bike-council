@@ -13,7 +13,7 @@ function CTALink({ type, linkTo, className = '', children }) {
     return (
       <Link
         to={linkTo}
-        className={`focus:ring-offset-0.5 inline-block max-w-fit transform rounded-full bg-skin-button-accent px-6 py-2 text-sm uppercase tracking-wide text-skin-muted drop-shadow-md transition hover:-translate-y-0.5 hover:bg-skin-button-accent-hover focus:outline-none focus:ring-1 focus:ring-white lg:text-base ${className}`}
+        className={`focus:ring-offset-0.5 inline-block max-w-fit transform rounded-full bg-skin-button-accent px-4 py-2 text-sm uppercase tracking-wide text-skin-muted drop-shadow-md transition hover:-translate-y-0.5 hover:bg-skin-button-accent-hover focus:outline-none focus:ring-1 focus:ring-white lg:text-base ${className}`}
       >
         {children}
       </Link>
@@ -25,7 +25,7 @@ function CTALink({ type, linkTo, className = '', children }) {
         href={linkTo}
         target="_blank"
         rel="noreferrer"
-        className={`focus:ring-offset-0.5 inline-block max-w-fit transform rounded-full bg-skin-button-accent px-6 py-2 text-sm uppercase tracking-wide text-skin-muted drop-shadow-md transition hover:-translate-y-0.5 hover:bg-skin-button-accent-hover focus:outline-none focus:ring-1 focus:ring-white lg:text-base ${className}`}
+        className={`focus:ring-offset-0.5 inline-block max-w-fit transform rounded-full bg-skin-button-accent px-4 py-2 text-sm uppercase tracking-wide text-skin-muted drop-shadow-md transition hover:-translate-y-0.5 hover:bg-skin-button-accent-hover focus:outline-none focus:ring-1 focus:ring-white lg:text-base ${className}`}
       >
         {children}
       </a>

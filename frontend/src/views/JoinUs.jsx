@@ -3,6 +3,7 @@ import Section from '../components/Section';
 import DescriptionCard from '../components/DescriptionCard';
 import FilterButton from '../components/FilterButton';
 import Accordion from '../components/Accordion';
+import CTALink from '../components/CTALink';
 import api from '../utils/api';
 
 /**
@@ -135,16 +136,23 @@ function JoinUs() {
                 : null}
             </div>
           </Section>
-          {/* Section # 3 - Frequently Asked Questions */}
+          {/* Section # 3 - Join The Efforts */}
+          <Section>
+            <Section.Heading>{joinUsViewTextContent[3].attributes.section_heading}</Section.Heading>
+            {joinUsViewTextContent[3].attributes.section_text ? <Section.Text>{joinUsViewTextContent[3].attributes.section_text}</Section.Text> : null}
+            <CTALink
+              type="external"
+              linkTo="https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link"
+              className="mt-4 self-center xs:self-start"
+            >
+              Join the Efforts
+            </CTALink>
+          </Section>
+          {/* Section # 4 - Frequently Asked Questions */}
           <Section>
             <Section.Heading>{joinUsViewTextContent[2].attributes.section_heading}</Section.Heading>
             <div className="mb-10 flex flex-wrap items-center justify-center gap-4 md:mb-14 md:justify-start">{renderFilterButtons()}</div>
             <div className="flex flex-col gap-6">{renderFaqSections(faqsToShow)}</div>
-          </Section>
-          {/* Section # 4 - Join The Efforts */}
-          <Section>
-            <Section.Heading>{joinUsViewTextContent[3].attributes.section_heading}</Section.Heading>
-            {joinUsViewTextContent[3].attributes.section_text ? <Section.Text>{joinUsViewTextContent[3].attributes.section_text}</Section.Text> : null}
           </Section>
         </div>
       ) : null}
