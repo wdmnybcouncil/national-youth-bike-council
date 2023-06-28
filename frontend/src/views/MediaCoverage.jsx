@@ -74,7 +74,7 @@ function MediaCoverage() {
       <>
         {social_media_post && (
           <PageLink type="external" className="mt-4" linkTo={social_media_post}>
-            Post
+            Media Post
           </PageLink>
         )}
         {article && (

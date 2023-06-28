@@ -72,13 +72,13 @@ function Homeroom() {
   };
 
   const renderPostLinks = ({ social_media_post, article, video, pdf }) => {
-    const pdfLink = pdf.data.attributes.url;
-    const pdfName = pdf.data.attributes.name.split('.')[0];
+    const pdfLink = pdf.data?.attributes.url;
+    const pdfName = pdf.data?.attributes.name.split('.')[0];
     return (
       <>
         {social_media_post && (
           <PageLink type="external" className="mt-4" linkTo={social_media_post}>
-            Post
+            Media Post
           </PageLink>
         )}
         {article && (
@@ -113,7 +113,7 @@ function Homeroom() {
             <Post.Title>{post_title}</Post.Title>
             <Post.Subtitle>{post_date ? formatDate(post_date) : ''}</Post.Subtitle>
             <Post.Text>{post_text}</Post.Text>
-            <div className="flex flex-wrap justify-center gap-8 lg:justify-start">{renderPostLinks(post_links)}</div>
+            {post_links && <div className="flex flex-wrap justify-center gap-8 lg:justify-start">{renderPostLinks(post_links)}</div>}
           </div>
         </Post>
       );

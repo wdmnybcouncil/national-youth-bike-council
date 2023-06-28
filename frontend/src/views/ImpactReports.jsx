@@ -37,7 +37,7 @@ function ImpactReports() {
   const renderImpactReportCards = (reports) =>
     reports.map((report) => {
       const { pdf, report_name, report_date, report_image } = report.attributes;
-      const reportLink = pdf.data[0].attributes.url;
+      const reportLink = pdf.data[0]?.attributes.url;
       const cardHeading = `${getYearFromDateString(report_date)} ${getMonthFromDateString(report_date)}`;
 
       return (
