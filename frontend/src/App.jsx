@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
@@ -73,7 +73,7 @@ function App() {
 
     api
       .getSponsers()
-      .then((sponsors) => setSponsors(sponsors.data))
+      .then((sponsorsData) => setSponsors(sponsorsData.data))
       .catch((err) => {
         console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
@@ -81,7 +81,7 @@ function App() {
 
     api
       .getPartners()
-      .then((partners) => setPartners(partners.data))
+      .then((partnersData) => setPartners(partnersData.data))
       .catch((err) => {
         console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
@@ -91,6 +91,11 @@ function App() {
   // ********************************************************************************************* //
   //                 Handle mouse click or Esc key down event on Modal                             //
   // ********************************************************************************************* //
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedUserProfile({});
+  };
+
   useEffect(() => {
     const handleClickClose = (e) => {
       if (e.target.classList.contains('modal_opened')) {
@@ -114,11 +119,6 @@ function App() {
       document.removeEventListener('keydown', handleEscClose);
     };
   }, [isModalOpen]);
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-    setSelectedUserProfile({});
-  };
 
   // ********************************************************************************************* //
   //                              Handle all the events on the web page                            //
@@ -181,7 +181,7 @@ function App() {
   return (
     <HelmetProvider>
       <div className="flex h-screen flex-col">
-        <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
+        <AnimatePresence initial={false} exitBeforeEnter onExitComplete={() => null}>
           {isModalOpen && <Modal {...propsForModal} />}
         </AnimatePresence>
         <Routes>
