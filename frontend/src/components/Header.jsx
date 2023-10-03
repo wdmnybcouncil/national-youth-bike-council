@@ -33,7 +33,7 @@ function Header() {
     setIsMenuOpen(false);
   }, [windowWidth]);
 
-  // Close the menu when user cliocks outside the menu
+  // Close the menu when user clicks outside the menu
   const ref = useRef();
   useOnClickOutside(
     ref,
@@ -41,6 +41,85 @@ function Header() {
   );
 
   const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
+
+  const aboutUsMenu = [
+    {
+      text: 'How It Started',
+      type: 'internal',
+      linkTo: '/how-it-started',
+    },
+    {
+      text: 'Where Are We',
+      type: 'internal',
+      linkTo: '/where-are-we',
+    },
+    {
+      text: 'Why The Council',
+      type: 'internal',
+      linkTo: '/why-the-council',
+    },
+    {
+      text: 'Council Members',
+      type: 'internal',
+      linkTo: '/council-members',
+    },
+    {
+      text: 'Advisors',
+      type: 'internal',
+      linkTo: '/advisors',
+    },
+    {
+      text: 'Board Members',
+      type: 'internal',
+      linkTo: '/board-members',
+    },
+    {
+      text: 'YBS Steering Committee',
+      type: 'internal',
+      linkTo: '/ybs-steering-committee',
+    },
+    {
+      text: 'Partners & Sponsorships',
+      type: 'internal',
+      linkTo: '/sponsorships',
+    },
+  ];
+
+  const councilPressMenu = [
+    {
+      text: 'Media Coverage',
+      type: 'internal',
+      linkTo: '/media-coverage',
+    },
+    {
+      text: 'Council Blogs',
+      type: 'internal',
+      linkTo: '/council-blogs',
+    },
+    {
+      text: 'Newsletter',
+      type: 'external',
+      linkTo: 'https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link',
+    },
+  ];
+
+  const resourcesMenu = [
+    {
+      text: 'Safety',
+      type: 'internal',
+      linkTo: '/resources-safety',
+    },
+    {
+      text: 'Homeroom',
+      type: 'internal',
+      linkTo: '/homeroom',
+    },
+    {
+      text: 'Impact Reports',
+      type: 'internal',
+      linkTo: '/impact-reports',
+    },
+  ];
 
   return (
     <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
@@ -69,56 +148,26 @@ function Header() {
         <CurrentMenuStateContext.Provider value={setIsMenuOpen}>
           <Nav isMenuOpen={isMenuOpen}>
             <Dropdown label="About Us">
-              <Dropdown.Item type="internal" linkTo="/how-it-started">
-                How It Started
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/where-are-we">
-                Where Are We
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/why-the-council">
-                Why The Council
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/council-members">
-                Council Members
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/advisors">
-                Advisors
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/board-members">
-                Board Members
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/ybs-steering-committee">
-                YBS Steering Committee
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/sponsorships">
-                Partners & Sponsorships
-              </Dropdown.Item>
+              {aboutUsMenu.map(({ text, type, linkTo }) => (
+                <Dropdown.Item type={type} linkTo={linkTo}>
+                  {text}
+                </Dropdown.Item>
+              ))}
             </Dropdown>
             <Nav.Item linkTo="/projects">Projects</Nav.Item>
             <Dropdown label="Council Press">
-              <Dropdown.Item type="internal" linkTo="/media-coverage">
-                Media Coverage
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/council-blogs">
-                Council Blogs
-              </Dropdown.Item>
-              <Dropdown.Item
-                type="external"
-                linkTo="https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link"
-              >
-                Newsletter
-              </Dropdown.Item>
+              {councilPressMenu.map(({ text, type, linkTo }) => (
+                <Dropdown.Item type={type} linkTo={linkTo}>
+                  {text}
+                </Dropdown.Item>
+              ))}
             </Dropdown>
             <Dropdown label="Resources">
-              <Dropdown.Item type="internal" linkTo="/resources-safety">
-                Safety
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/homeroom">
-                Homeroom
-              </Dropdown.Item>
-              <Dropdown.Item type="internal" linkTo="/impact-reports">
-                Impact Reports
-              </Dropdown.Item>
+              {resourcesMenu.map(({ text, type, linkTo }) => (
+                <Dropdown.Item type={type} linkTo={linkTo}>
+                  {text}
+                </Dropdown.Item>
+              ))}
             </Dropdown>
             <CTALink type="internal" linkTo="/join-us" className="ml-2 mt-2 lg:mt-0 lg:ml-4">
               Join us
