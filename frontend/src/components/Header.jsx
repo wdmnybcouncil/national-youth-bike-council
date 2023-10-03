@@ -1,20 +1,51 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+
 import Logo from './Logo';
 import CTALink from './CTALink';
 import Nav from './Nav';
 import Dropdown from './DropDown';
+
 import { useOnClickOutside } from '../hooks/useOnClickOutside';
 import CurrentMenuStateContext from '../contexts/CurrentMenuStateContext';
 import btnArrow from '../assets/images/btn-arrow.svg';
 import logoIcon from '../assets/images/icon-logo.png';
 
 /**
- * The **Header** component renders the header of the website.
- *
- * @version 1.0.0
- * @author [Shraddha](https://github.com/5hraddha)
+ * WebsiteLink describes data for a link in the website
+ * @typedef WebsiteLink
+ * @property {string} title title of the link
+ * @property {'internal' | 'external'} type type of the link - internal or external
+ * @property {string} url the actual url of the link
  */
-function Header() {
+
+/**
+ * WebsiteHeaderData describes data for different sections of the website's header
+ * @typedef WebsiteHeaderData
+ * @property {WebsiteLink[]} aboutUsMenu menu data for the About Us section
+ * @property {WebsiteLink[]} councilPressMenu menu data for the Council Press section
+ * @property {WebsiteLink[]} resourcesMenu menu data for the Resources section
+ */
+
+/**
+ * @typedef Props
+ * @prop {WebsiteHeaderData} data
+ */
+
+/**
+ * A header component optimized for mobile devices, providing a seamless user experience, with options for branding, logos, and menu items.
+ * @component
+ * @param {Props} props
+ * @returns {React.ReactElement} The Header.
+ *
+ * @version 2.0.0
+ * @author [Shraddha](https://github.com/5hraddha)
+ *
+ * @example
+ * <Header />
+ */
+function Header({ data }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -40,93 +71,17 @@ function Header() {
     useCallback(() => setIsMenuOpen(false), []),
   );
 
+  /**
+   * Toggles the menu open state.
+   */
   const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
-
-  const aboutUsMenu = [
-    {
-      text: 'How It Started',
-      type: 'internal',
-      linkTo: '/how-it-started',
-    },
-    {
-      text: 'Where Are We',
-      type: 'internal',
-      linkTo: '/where-are-we',
-    },
-    {
-      text: 'Why The Council',
-      type: 'internal',
-      linkTo: '/why-the-council',
-    },
-    {
-      text: 'Council Members',
-      type: 'internal',
-      linkTo: '/council-members',
-    },
-    {
-      text: 'Advisors',
-      type: 'internal',
-      linkTo: '/advisors',
-    },
-    {
-      text: 'Board Members',
-      type: 'internal',
-      linkTo: '/board-members',
-    },
-    {
-      text: 'YBS Steering Committee',
-      type: 'internal',
-      linkTo: '/ybs-steering-committee',
-    },
-    {
-      text: 'Partners & Sponsorships',
-      type: 'internal',
-      linkTo: '/sponsorships',
-    },
-  ];
-
-  const councilPressMenu = [
-    {
-      text: 'Media Coverage',
-      type: 'internal',
-      linkTo: '/media-coverage',
-    },
-    {
-      text: 'Council Blogs',
-      type: 'internal',
-      linkTo: '/council-blogs',
-    },
-    {
-      text: 'Newsletter',
-      type: 'external',
-      linkTo: 'https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link',
-    },
-  ];
-
-  const resourcesMenu = [
-    {
-      text: 'Safety',
-      type: 'internal',
-      linkTo: '/resources-safety',
-    },
-    {
-      text: 'Homeroom',
-      type: 'internal',
-      linkTo: '/homeroom',
-    },
-    {
-      text: 'Impact Reports',
-      type: 'internal',
-      linkTo: '/impact-reports',
-    },
-  ];
 
   return (
     <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
-      <div className="mx-auto flex max-w-screen-xl flex-col px-8 py-6 md:px-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className={clsx('mx-auto flex max-w-screen-xl flex-col px-8 py-6', 'md:px-10', 'lg:flex-row lg:items-center lg:justify-between')}>
         <div className="flex flex-row items-center justify-between">
           <Logo linkTo="/" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
-          <button className="focus:shadow-outline rounded-lg focus:outline-none lg:hidden" onClick={handleMenuClick} aria-label="hamburger">
+          <button className={clsx('focus:shadow-outline rounded-lg focus:outline-none', 'lg:hidden')} onClick={handleMenuClick} aria-label="hamburger">
             <svg fill="currentColor" viewBox="0 0 20 20" className="h-8 w-8">
               {!isMenuOpen && (
                 <path
@@ -148,24 +103,24 @@ function Header() {
         <CurrentMenuStateContext.Provider value={setIsMenuOpen}>
           <Nav isMenuOpen={isMenuOpen}>
             <Dropdown label="About Us">
-              {aboutUsMenu.map(({ text, type, linkTo }) => (
-                <Dropdown.Item type={type} linkTo={linkTo}>
-                  {text}
+              {data.aboutUsMenu.map(({ title, type, url }) => (
+                <Dropdown.Item key={title} type={type} linkTo={url}>
+                  {title}
                 </Dropdown.Item>
               ))}
             </Dropdown>
             <Nav.Item linkTo="/projects">Projects</Nav.Item>
             <Dropdown label="Council Press">
-              {councilPressMenu.map(({ text, type, linkTo }) => (
-                <Dropdown.Item type={type} linkTo={linkTo}>
-                  {text}
+              {data.councilPressMenu.map(({ title, type, url }) => (
+                <Dropdown.Item key={title} type={type} linkTo={url}>
+                  {title}
                 </Dropdown.Item>
               ))}
             </Dropdown>
             <Dropdown label="Resources">
-              {resourcesMenu.map(({ text, type, linkTo }) => (
-                <Dropdown.Item type={type} linkTo={linkTo}>
-                  {text}
+              {data.resourcesMenu.map(({ title, type, url }) => (
+                <Dropdown.Item key={title} type={type} linkTo={url}>
+                  {title}
                 </Dropdown.Item>
               ))}
             </Dropdown>
@@ -180,6 +135,14 @@ function Header() {
   );
 }
 
+const propTypes = {
+  /**
+   * @type {WebsiteHeaderData} The header menu names and links to navigate to.
+   */
+  data: PropTypes.object.isRequired,
+};
+
 Header.displayName = 'Header';
+Header.protoTypes = propTypes;
 
 export default Header;

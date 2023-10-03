@@ -13,7 +13,7 @@ import data from '../constants/data';
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Layout() {
-  const { footer } = data;
+  const { header, footer } = data;
 
   return (
     <>
@@ -53,7 +53,7 @@ function Layout() {
         />
         <meta property="og:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
       </Helmet>
-      <Header />
+      <Header data={header} />
       <main className="flex-grow">
         <Outlet />
       </main>

@@ -6,7 +6,109 @@ import twitterIcon from '../assets/images/social/icon-twitter.svg';
 import facebookIcon from '../assets/images/social/icon-facebook.svg';
 import youtubeIcon from '../assets/images/social/icon-youtube.svg';
 
+/**
+ * WebsiteLink describes data for a link in the website
+ * @typedef WebsiteLink
+ * @property {string} title title of the link
+ * @property {'internal' | 'external'} type type of the link - internal or external
+ * @property {string} url the actual url of the link
+ */
+
+/**
+ * WebsiteHeaderData describes data for different sections of the website's header
+ * @typedef WebsiteHeaderData
+ * @property {WebsiteLink[]} aboutUsMenu menu data for the About Us section
+ * @property {WebsiteLink[]} councilPressMenu menu data for the Council Press section
+ * @property {WebsiteLink[]} resourcesMenu menu data for the Resources section
+ */
+
+/**
+ * WebsiteStaticData describes data for different static sections of websites
+ * @typedef WebsiteStaticData
+ * @property {WebsiteHeaderData} header header menu data
+ * @property {object[]} footer header menu data
+ */
+
+/** @type WebsiteStaticData */
 const data = {
+  header: {
+    aboutUsMenu: [
+      {
+        title: 'How It Started',
+        type: 'internal',
+        url: '/how-it-started',
+      },
+      {
+        title: 'Where Are We',
+        type: 'internal',
+        url: '/where-are-we',
+      },
+      {
+        title: 'Why The Council',
+        type: 'internal',
+        url: '/why-the-council',
+      },
+      {
+        title: 'Council Members',
+        type: 'internal',
+        url: '/council-members',
+      },
+      {
+        title: 'Advisors',
+        type: 'internal',
+        url: '/advisors',
+      },
+      {
+        title: 'Board Members',
+        type: 'internal',
+        url: '/board-members',
+      },
+      {
+        title: 'YBS Steering Committee',
+        type: 'internal',
+        url: '/ybs-steering-committee',
+      },
+      {
+        title: 'Partners & Sponsorships',
+        type: 'internal',
+        url: '/sponsorships',
+      },
+    ],
+    councilPressMenu: [
+      {
+        title: 'Media Coverage',
+        type: 'internal',
+        url: '/media-coverage',
+      },
+      {
+        title: 'Council Blogs',
+        type: 'internal',
+        url: '/council-blogs',
+      },
+      {
+        title: 'Newsletter',
+        type: 'external',
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfCLjXlghaJvNn8ijeqImKdB6KO1Mtx4bcfxqJRhns3xpxw6w/viewform?usp=sf_link',
+      },
+    ],
+    resourcesMenu: [
+      {
+        title: 'Safety',
+        type: 'internal',
+        url: '/resources-safety',
+      },
+      {
+        title: 'Homeroom',
+        type: 'internal',
+        url: '/homeroom',
+      },
+      {
+        title: 'Impact Reports',
+        type: 'internal',
+        url: '/impact-reports',
+      },
+    ],
+  },
   //have to do
   footer: [
     {

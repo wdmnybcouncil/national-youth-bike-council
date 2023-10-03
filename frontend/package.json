@@ -7,7 +7,10 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.1",
     "@testing-library/user-event": "^12.5.0",
+    "better-docs": "^2.7.2",
+    "clsx": "^2.0.0",
     "framer-motion": "^6.4.1",
+    "jsdoc": "^4.0.2",
     "qs": "^6.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -23,7 +26,8 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "format": "npx prettier --write ./src/*"
+    "format": "npx prettier --write ./src/*",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +50,8 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.1",
     "autoprefixer": "^10.4.7",
-    "prettier": "^2.6.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.5",
     "tailwindcss": "^3.0.24",
     "vite": "^4.3.9",
     "vite-plugin-pwa": "^0.16.4",
