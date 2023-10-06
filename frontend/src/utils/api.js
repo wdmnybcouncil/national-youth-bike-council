@@ -32,6 +32,21 @@ class Api {
     response.ok ? response.json() : Promise.reject(`Error Code: ${response.status} | Error Message: ${response.statusText}`);
 
   /**
+   * Get all the header menus to show on the Header Navigation.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getHeaderMenus = () => {
+    const query = qs.stringify({
+      sort: ['order'],
+      populate: ['navigation_links'],
+    });
+
+    return fetch(`${this.#baseUrl}/website-headers?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
    * Get all the members of the council.
    * @return {Promise} The Promise of the Fetch API call.
    */

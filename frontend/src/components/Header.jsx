@@ -11,6 +11,7 @@ import { useOnClickOutside } from '../hooks/useOnClickOutside';
 import CurrentMenuStateContext from '../contexts/CurrentMenuStateContext';
 import btnArrow from '../assets/images/btn-arrow.svg';
 import logoIcon from '../assets/images/icon-logo.png';
+import api from '../utils/api';
 
 /**
  * WebsiteLink describes data for a link in the website
@@ -48,6 +49,21 @@ import logoIcon from '../assets/images/icon-logo.png';
 function Header({ data }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [menus, setMenus] = useState([]);
+
+  // Get the menu links for the Header
+  useEffect(() => {
+    api
+      .getHeaderMenus()
+      .then(({ data }) => {
+        setMenus(data);
+        // console.log(data);
+      })
+      .catch((err) => {
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
+        console.log(err);
+      });
+  }, []);
 
   // Close the menu on window resize
   useEffect(() => {
@@ -76,6 +92,32 @@ function Header({ data }) {
    */
   const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
 
+  /**
+   * Renders the list of menus in the header.
+   */
+  const renderMenus = () =>
+    menus.map((menu) => {
+      const { title, navigation_links } = menu.attributes;
+      // If there is no menu links to display, render nothing
+      if (navigation_links.length === 0) return null;
+      // If there are more than one menu links to display, render the sub menus
+      if (navigation_links.length > 1) {
+        return (
+          <Dropdown label={title}>
+            {navigation_links.map(({ link_title, type_of_link, link_url }) => (
+              <Dropdown.Item key={link_title} type={type_of_link} linkTo={link_url}>
+                {link_title}
+              </Dropdown.Item>
+            ))}
+          </Dropdown>
+        );
+      } else {
+        // If there are just one menu links to display, render that alone
+        const { link_title, link_url } = navigation_links[0];
+        return <Nav.Item linkTo={link_url}>{link_title}</Nav.Item>;
+      }
+    });
+
   return (
     <header ref={ref} className="w-full bg-skin-fill-primary text-skin-muted">
       <div className={clsx('mx-auto flex max-w-screen-xl flex-col px-8 py-6', 'md:px-10', 'lg:flex-row lg:items-center lg:justify-between')}>
@@ -102,28 +144,7 @@ function Header({ data }) {
         </div>
         <CurrentMenuStateContext.Provider value={setIsMenuOpen}>
           <Nav isMenuOpen={isMenuOpen}>
-            <Dropdown label="About Us">
-              {data.aboutUsMenu.map(({ title, type, url }) => (
-                <Dropdown.Item key={title} type={type} linkTo={url}>
-                  {title}
-                </Dropdown.Item>
-              ))}
-            </Dropdown>
-            <Nav.Item linkTo="/projects">Projects</Nav.Item>
-            <Dropdown label="Council Press">
-              {data.councilPressMenu.map(({ title, type, url }) => (
-                <Dropdown.Item key={title} type={type} linkTo={url}>
-                  {title}
-                </Dropdown.Item>
-              ))}
-            </Dropdown>
-            <Dropdown label="Resources">
-              {data.resourcesMenu.map(({ title, type, url }) => (
-                <Dropdown.Item key={title} type={type} linkTo={url}>
-                  {title}
-                </Dropdown.Item>
-              ))}
-            </Dropdown>
+            {menus.length > 0 ? renderMenus() : null}
             <CTALink type="internal" linkTo="/join-us" className={clsx('ml-2 mt-2', 'lg:mt-0 lg:ml-4')}>
               Join us
               <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />

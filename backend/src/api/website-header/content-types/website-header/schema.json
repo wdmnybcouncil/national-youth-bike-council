@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_headers",
+  "info": {
+    "singularName": "website-header",
+    "pluralName": "website-headers",
+    "displayName": "WebsiteHeader",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navigation_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.navigation"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}
