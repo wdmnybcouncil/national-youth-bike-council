@@ -1,4 +1,9 @@
 module.exports = {
+  ecmaFeatures: {
+    modules: true,
+    spread: true,
+    restParams: true,
+  },
   env: {
     browser: true,
     es2021: true,
@@ -9,15 +14,14 @@ module.exports = {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
+      files: ['./src/**/*.js'],
     },
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: {},
+  rules: {
+    'react/jsx-props-no-spreading': 'off',
+  },
 };

@@ -6,11 +6,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 const PWAConfig = {
   registerType: 'autoUpdate',
   workbox: {
-    globPatterns: ["**/*"],
+    globPatterns: ['**/*'],
   },
-  includeAssets: [
-    "**/*",
-  ],
+  includeAssets: ['**/*'],
   manifest: {
     short_name: 'National Youth Bike Council',
     name: 'National Youth Bike Council | Community for youth empowerment',
@@ -688,23 +686,17 @@ const PWAConfig = {
       },
     ],
   },
-}
+};
 
-export default defineConfig(() => {
-  return {
-    define: {
-      'process.env': {},
-    },
-    server: {
-      open: true,
-    },
-    build: {
-      outDir: 'build',
-    },
-    plugins: [
-      react(),
-      svgr({ svgrOptions: { icon: true } }),
-      VitePWA(PWAConfig),
-    ],
-  };
-});
+export default defineConfig(() => ({
+  define: {
+    'process.env': {},
+  },
+  server: {
+    open: true,
+  },
+  build: {
+    outDir: 'build',
+  },
+  plugins: [react(), svgr({ svgrOptions: { icon: true } }), VitePWA(PWAConfig)],
+}));

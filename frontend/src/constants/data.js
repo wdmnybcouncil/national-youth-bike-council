@@ -109,7 +109,7 @@ const data = {
       },
     ],
   },
-  //have to do
+  // have to do
   footer: [
     {
       heading: 'National Youth Bike Council',

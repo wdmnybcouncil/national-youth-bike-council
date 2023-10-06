@@ -124,7 +124,7 @@ function Header({ data }) {
                 </Dropdown.Item>
               ))}
             </Dropdown>
-            <CTALink type="internal" linkTo="/join-us" className={clsx("ml-2 mt-2", 'lg:mt-0 lg:ml-4')}>
+            <CTALink type="internal" linkTo="/join-us" className={clsx('ml-2 mt-2', 'lg:mt-0 lg:ml-4')}>
               Join us
               <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
             </CTALink>

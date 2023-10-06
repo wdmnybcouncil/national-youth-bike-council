@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
@@ -39,21 +39,21 @@ import api from './utils/api';
  */
 function App() {
   // Component States
-  const [selectedUserProfile, setSelectedUserProfile] = useState({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [startingCrewMembers, setStartingCrewMembers] = useState([]);
-  const [councilMembers, setCouncilMembers] = useState([]);
-  const [alumniMembers, setAlumniMembers] = useState([]);
-  const [advisorMembers, setAdvisorMembers] = useState([]);
-  const [boardMembers, setBoardMembers] = useState([]);
-  const [homeViewMembers, setHomeViewMembers] = useState([]);
-  const [sponsors, setSponsors] = useState([]);
-  const [partners, setPartners] = useState([]);
+  const [selectedUserProfile, setSelectedUserProfile] = React.useState({});
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [startingCrewMembers, setStartingCrewMembers] = React.useState([]);
+  const [councilMembers, setCouncilMembers] = React.useState([]);
+  const [alumniMembers, setAlumniMembers] = React.useState([]);
+  const [advisorMembers, setAdvisorMembers] = React.useState([]);
+  const [boardMembers, setBoardMembers] = React.useState([]);
+  const [homeViewMembers, setHomeViewMembers] = React.useState([]);
+  const [sponsors, setSponsors] = React.useState([]);
+  const [partners, setPartners] = React.useState([]);
 
   // ********************************************************************************************* //
   //                                          API Calls                                            //
   // ********************************************************************************************* //
-  useEffect(() => {
+  React.useEffect(() => {
     api
       .getAllMembers()
       .then(({ data }) => {
@@ -96,7 +96,7 @@ function App() {
     setSelectedUserProfile({});
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleClickClose = (e) => {
       if (e.target.classList.contains('modal_opened')) {
         handleModalClose();

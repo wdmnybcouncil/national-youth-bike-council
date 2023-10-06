@@ -1,6 +1,6 @@
 {
   "name": "national-youth-bike-council",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@tailwindcss/forms": "^0.5.2",
@@ -26,8 +26,8 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint ./src/* --fix --max-warnings=0",
-    "format": "npx prettier --write ./src/*",
+    "lint": "eslint \"./src/*.{js,jsx}\"",
+    "format": "npx prettier --write \"./src/*\"",
     "docs": "jsdoc -c jsdoc.conf.json",
     "prepare": "cd ../ && husky install ./frontend/.husky"
   },
@@ -69,7 +69,7 @@
     "vite-plugin-svgr": "^3.2.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*./src/*.js": "eslint --cache --fix",
     "*./src/*": "prettier --write"
   }
 }
