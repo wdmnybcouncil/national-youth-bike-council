@@ -43,7 +43,7 @@ function WhereAreWe() {
           <Section>
             <Section.Heading>{whereAreWeViewTextContent[0].attributes.section_heading}</Section.Heading>
             <div className="flex items-center justify-center">
-              <ComposableMap projection="geoAlbers" projectionConfig={{ scale: 1000 }} className="max-h-[700px] max-w-full">
+              <ComposableMap projection="geoAlbers" projectionConfig={{ scale: 1000 }} style={{ width: '100%' }} className="max-h-[700px] max-w-full">
                 <Geographies geography={geoUrl}>
                   {({ geographies }) =>
                     geographies.map((geo) => (
