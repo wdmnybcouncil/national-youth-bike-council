@@ -25,6 +25,18 @@ export interface ImageImage extends Schema.Component {
   };
 }
 
+export interface LinkLink extends Schema.Component {
+  collectionName: 'components_link_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+    image: Attribute.Component<'image.image'>;
+  };
+}
+
 export interface LinksLinks extends Schema.Component {
   collectionName: 'components_links_links';
   info: {
@@ -45,6 +57,7 @@ declare module '@strapi/types' {
     export interface Components {
       'accordion.accordion': AccordionAccordion;
       'image.image': ImageImage;
+      'link.link': LinkLink;
       'links.links': LinksLinks;
     }
   }

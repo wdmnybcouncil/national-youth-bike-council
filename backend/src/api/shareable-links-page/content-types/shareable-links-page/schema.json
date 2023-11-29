@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shareable_links_pages",
+  "info": {
+    "singularName": "shareable-links-page",
+    "pluralName": "shareable-links-pages",
+    "displayName": "ShareableLinksPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_title": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    }
+  }
+}

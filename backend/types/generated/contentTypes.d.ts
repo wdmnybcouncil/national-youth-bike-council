@@ -1476,6 +1476,68 @@ export interface ApiResourcesSafetyPageResourcesSafetyPage
   };
 }
 
+export interface ApiShareableLinkShareableLink extends Schema.CollectionType {
+  collectionName: 'shareable_links';
+  info: {
+    singularName: 'shareable-link';
+    pluralName: 'shareable-links';
+    displayName: 'ShareableLink';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    section_title: Attribute.String;
+    section_links: Attribute.Component<'link.link', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shareable-link.shareable-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shareable-link.shareable-link',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiShareableLinksPageShareableLinksPage
+  extends Schema.CollectionType {
+  collectionName: 'shareable_links_pages';
+  info: {
+    singularName: 'shareable-links-page';
+    pluralName: 'shareable-links-pages';
+    displayName: 'ShareableLinksPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    section_title: Attribute.String & Attribute.Required;
+    section_text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shareable-links-page.shareable-links-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shareable-links-page.shareable-links-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSponsorshipSponsorship extends Schema.CollectionType {
   collectionName: 'sponsorships';
   info: {
@@ -1879,6 +1941,8 @@ declare module '@strapi/types' {
       'api::project.project': ApiProjectProject;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'api::resources-safety-page.resources-safety-page': ApiResourcesSafetyPageResourcesSafetyPage;
+      'api::shareable-link.shareable-link': ApiShareableLinkShareableLink;
+      'api::shareable-links-page.shareable-links-page': ApiShareableLinksPageShareableLinksPage;
       'api::sponsorship.sponsorship': ApiSponsorshipSponsorship;
       'api::sponsorships-page.sponsorships-page': ApiSponsorshipsPageSponsorshipsPage;
       'api::website-footer.website-footer': ApiWebsiteFooterWebsiteFooter;
