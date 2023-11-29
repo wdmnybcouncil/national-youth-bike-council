@@ -602,6 +602,35 @@ class Api {
       headers: this.#headers,
     }).then(this.#checkResponseStatus);
   };
+
+  /**
+   * Get all the text contents to show on the Shareable Links view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getShareableLinksViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this.#baseUrl}/shareable-links-pages?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
+   * Get all the links in the Shareable Link view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getShareableLinks = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: ['section_links', 'section_links.image', 'section_links.image.image_file'],
+    });
+
+    return fetch(`${this.#baseUrl}/shareable-links?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
 }
 
 const BASE_URL = import.meta.env.PROD ? 'https://nybc-strapi.herokuapp.com/api' : 'http://localhost:1337/api';

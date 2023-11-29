@@ -28,6 +28,7 @@ import LiabilityTerms from './views/LiabilityTerms';
 import Homeroom from './views/Homeroom';
 import ImpactReports from './views/ImpactReports';
 import YbsSteeringCommittee from './views/YbsSteeringCommittee';
+import ShareableLinks from './views/ShareableLinks';
 
 import api from './utils/api';
 
@@ -207,6 +208,7 @@ function App() {
             <Route path="join-us" element={<JoinUs />} />
             <Route path="join-the-council" element={<JoinUs />} />
             <Route path="waiver-liability-terms" element={<LiabilityTerms />} />
+            <Route path="links" element={<ShareableLinks />} />
           </Route>
         </Routes>
       </div>
