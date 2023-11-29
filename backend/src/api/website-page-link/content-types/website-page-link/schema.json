@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_page_links",
+  "info": {
+    "singularName": "website-page-link",
+    "pluralName": "website-page-links",
+    "displayName": "WebsitePageLink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link_title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type_of_link": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "external"
+      ],
+      "required": true,
+      "default": "internal"
+    },
+    "link_url": {
+      "type": "string",
+      "required": true
+    },
+    "website_header": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::website-header.website-header",
+      "inversedBy": "website_page_links"
+    },
+    "website_footer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::website-footer.website-footer",
+      "inversedBy": "website_page_links"
+    }
+  }
+}

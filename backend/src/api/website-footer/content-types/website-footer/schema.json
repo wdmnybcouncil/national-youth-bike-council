@@ -1,29 +1,30 @@
 {
   "kind": "collectionType",
-  "collectionName": "website_headers",
+  "collectionName": "website_footers",
   "info": {
-    "singularName": "website-header",
-    "pluralName": "website-headers",
-    "displayName": "WebsiteHeader",
+    "singularName": "website-footer",
+    "pluralName": "website-footers",
+    "displayName": "WebsiteFooter",
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
-    },
-    "order": {
-      "type": "integer"
+      "required": true,
+      "unique": true
     },
     "website_page_links": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::website-page-link.website-page-link",
-      "mappedBy": "website_header"
+      "mappedBy": "website_footer"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

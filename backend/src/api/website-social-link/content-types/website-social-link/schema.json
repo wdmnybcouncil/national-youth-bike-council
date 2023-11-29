@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "website_social_links",
+  "info": {
+    "singularName": "website-social-link",
+    "pluralName": "website-social-links",
+    "displayName": "WebsiteSocialLink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link_title": {
+      "type": "string",
+      "required": true
+    },
+    "link_url": {
+      "type": "string",
+      "required": true
+    },
+    "link_icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "image.image"
+    }
+  }
+}
