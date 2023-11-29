@@ -3,9 +3,6 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
-// Import footer data to pass on to the components
-import data from '../constants/data';
-
 /**
  * The **Layout** component renders the implementation details of every page in the web app.
  *
@@ -13,8 +10,6 @@ import data from '../constants/data';
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function Layout() {
-  const { header, footer } = data;
-
   return (
     <>
       <Helmet>
@@ -53,11 +48,11 @@ function Layout() {
         />
         <meta property="og:image" content="https://raw.githubusercontent.com/5hraddha/national-youth-bike-council/main/src/assets/images/nybc-seo-image.png" />
       </Helmet>
-      <Header data={header} />
+      <Header />
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer footer={footer} />
+      <Footer />
     </>
   );
 }

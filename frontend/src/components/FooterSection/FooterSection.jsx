@@ -15,7 +15,7 @@ const propTypes = {
   /**
    * Sets the content of the FooterSection
    */
-  children: PropTypes.any.isRequired,
+  children: PropTypes.any,
 };
 
 FooterSection.displayName = 'FooterSection';

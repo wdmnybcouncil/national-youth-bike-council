@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 
 import Logo from './Logo';
 import CTALink from './CTALink';
@@ -30,14 +29,8 @@ import api from '../utils/api';
  */
 
 /**
- * @typedef Props
- * @prop {WebsiteHeaderData} data
- */
-
-/**
  * A header component optimized for mobile devices, providing a seamless user experience, with options for branding, logos, and menu items.
  * @component
- * @param {Props} props
  * @returns {React.ReactElement} The Header.
  *
  * @version 2.0.0
@@ -46,7 +39,7 @@ import api from '../utils/api';
  * @example
  * <Header />
  */
-function Header({ data }) {
+function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [menus, setMenus] = useState([]);
@@ -55,10 +48,7 @@ function Header({ data }) {
   useEffect(() => {
     api
       .getHeaderMenus()
-      .then(({ data }) => {
-        setMenus(data);
-        // console.log(data);
-      })
+      .then(({ data }) => setMenus(data))
       .catch((err) => {
         console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
@@ -97,24 +87,34 @@ function Header({ data }) {
    */
   const renderMenus = () =>
     menus.map((menu) => {
-      const { title, navigation_links } = menu.attributes;
+      const {
+        title,
+        website_page_links: { data: website_page_links },
+      } = menu.attributes;
       // If there is no menu links to display, render nothing
-      if (navigation_links.length === 0) return null;
+      if (website_page_links.length === 0) return null;
       // If there are more than one menu links to display, render the sub menus
-      if (navigation_links.length > 1) {
+      if (website_page_links.length > 1) {
         return (
-          <Dropdown label={title}>
-            {navigation_links.map(({ link_title, type_of_link, link_url }) => (
-              <Dropdown.Item key={link_title} type={type_of_link} linkTo={link_url}>
-                {link_title}
-              </Dropdown.Item>
-            ))}
+          <Dropdown key={title} label={title}>
+            {website_page_links.map((website_page_link) => {
+              const { link_title, type_of_link, link_url } = website_page_link.attributes;
+              return (
+                <Dropdown.Item key={link_title} type={type_of_link} linkTo={link_url}>
+                  {link_title}
+                </Dropdown.Item>
+              );
+            })}
           </Dropdown>
         );
       } else {
         // If there are just one menu links to display, render that alone
-        const { link_title, link_url } = navigation_links[0];
-        return <Nav.Item linkTo={link_url}>{link_title}</Nav.Item>;
+        const { link_title, link_url } = website_page_links[0].attributes;
+        return (
+          <Nav.Item key={link_title} linkTo={link_url}>
+            {link_title}
+          </Nav.Item>
+        );
       }
     });
 
@@ -145,7 +145,7 @@ function Header({ data }) {
         <CurrentMenuStateContext.Provider value={setIsMenuOpen}>
           <Nav isMenuOpen={isMenuOpen}>
             {menus.length > 0 ? renderMenus() : null}
-            <CTALink type="internal" linkTo="/join-us" className={clsx('ml-2 mt-2', 'lg:mt-0 lg:ml-4')}>
+            <CTALink key="join-us" type="internal" linkTo="/join-us" className={clsx('ml-2 mt-2', 'lg:mt-0 lg:ml-4')}>
               Join us
               <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
             </CTALink>
@@ -156,14 +156,6 @@ function Header({ data }) {
   );
 }
 
-const propTypes = {
-  /**
-   * @type {WebsiteHeaderData} The header menu names and links to navigate to.
-   */
-  data: PropTypes.object.isRequired,
-};
-
 Header.displayName = 'Header';
-Header.protoTypes = propTypes;
 
 export default Header;

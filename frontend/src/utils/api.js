@@ -38,10 +38,44 @@ class Api {
   getHeaderMenus = () => {
     const query = qs.stringify({
       sort: ['order'],
-      populate: ['navigation_links'],
+      populate: ['website_page_links'],
     });
 
     return fetch(`${this.#baseUrl}/website-headers?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
+   * Get all the footer menus to show on the Footer Navigation.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getFooterMenus = () => {
+    const query = qs.stringify({
+      sort: ['order'],
+      populate: ['website_page_links'],
+    });
+
+    return fetch(`${this.#baseUrl}/website-footers?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
+   * Get all the social links of the website.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getSocialMediaLinks = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: {
+        link_icon: {
+          populate: ['image_file'],
+        },
+      },
+    });
+
+    return fetch(`${this.#baseUrl}/website-social-links?${query}`, {
       headers: this.#headers,
     }).then(this.#checkResponseStatus);
   };
