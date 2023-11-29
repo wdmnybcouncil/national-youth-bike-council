@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+
 import Section from '../components/Section';
-import twitterIcon from '../assets/images/social/icon-twitter.svg';
-import facebookIcon from '../assets/images/social/icon-facebook.svg';
-import api from '../utils/api';
+
 import { formatDate, getTwitterHref, getFacebookHref } from '../utils/commonUtils';
+import api from '../utils/api';
 
 /**
  * The **CouncilBlog** component renders the view that a specific blog post.
+ * @returns {React.ReactElement} The CouncilBlog.
  *
- * @version 1.0.0
+ * @version 2.0.0
  * @author [Shraddha](https://github.com/5hraddha)
+ *
+ * @example
+ * <CouncilBlog />
  */
 function CouncilBlog() {
   const { blogTitle } = useParams();
   const navigate = useNavigate();
   const [blogPost, setBlogPost] = useState([]);
+  const [socialLinks, setSocialLinks] = useState([]);
 
   useEffect(() => {
     api
@@ -27,6 +32,17 @@ function CouncilBlog() {
       });
   }, [blogTitle]);
 
+  // Get the social platforms links for the Footer
+  useEffect(() => {
+    api
+      .getSocialMediaLinks()
+      .then(({ data }) => setSocialLinks(data))
+      .catch((err) => {
+        console.log('Uh-oh! Error occurred while fetching the data from the server.');
+        console.log(err);
+      });
+  }, []);
+
   const handleBackButtonClick = () => {
     if (window.history.state && window.history.state.idx > 0) {
       navigate(-1);
@@ -34,6 +50,8 @@ function CouncilBlog() {
       navigate('/council-blogs', { replace: true });
     }
   };
+
+  const getSocialMediaIcon = (title) => socialLinks.filter((link) => link.attributes.link_title.toLowerCase() === title)[0];
 
   return (
     <>
@@ -70,7 +88,9 @@ function CouncilBlog() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={twitterIcon} alt="share on twitter" className="h-4 w-4" />
+                      {socialLinks.length ? (
+                        <img src={getSocialMediaIcon('x').attributes.link_icon.image_file.data.attributes.url} alt="share on X" className="h-4 w-4" />
+                      ) : null}
                     </a>
                     <a
                       className="w-8 h-8 rounded-full bg-skin-accent flex justify-center items-center hover:opacity-80 transition-all"
@@ -78,7 +98,13 @@ function CouncilBlog() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img src={facebookIcon} alt="share on facebook" className="h-4 w-4" />
+                      {socialLinks.length ? (
+                        <img
+                          src={getSocialMediaIcon('facebook').attributes.link_icon.image_file.data.attributes.url}
+                          alt="share on facebook"
+                          className="h-4 w-4"
+                        />
+                      ) : null}
                     </a>
                   </div>
                 </div>

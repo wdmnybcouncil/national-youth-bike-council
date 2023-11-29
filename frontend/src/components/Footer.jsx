@@ -35,7 +35,7 @@ function Footer() {
       });
   }, []);
 
-  // Get the menu links for the Footer
+  // Get the social platforms links for the Footer
   useEffect(() => {
     api
       .getSocialMediaLinks()
