@@ -1375,6 +1375,67 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
   };
 }
 
+export interface ApiPartnersPagePartnersPage extends Schema.CollectionType {
+  collectionName: 'partners_pages';
+  info: {
+    singularName: 'partners-page';
+    pluralName: 'partners-pages';
+    displayName: 'PartnersPage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    section_heading: Attribute.String & Attribute.Required;
+    section_text: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partners-page.partners-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partners-page.partners-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPartnersTierPartnersTier extends Schema.CollectionType {
+  collectionName: 'partners_tiers';
+  info: {
+    singularName: 'partners-tier';
+    pluralName: 'partners-tiers';
+    displayName: 'PartnersTier';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    faq_list: Attribute.Component<'accordion.accordion', true> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partners-tier.partners-tier',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partners-tier.partners-tier',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1938,6 +1999,8 @@ declare module '@strapi/types' {
       'api::media-coverage-post.media-coverage-post': ApiMediaCoveragePostMediaCoveragePost;
       'api::member.member': ApiMemberMember;
       'api::partner.partner': ApiPartnerPartner;
+      'api::partners-page.partners-page': ApiPartnersPagePartnersPage;
+      'api::partners-tier.partners-tier': ApiPartnersTierPartnersTier;
       'api::project.project': ApiProjectProject;
       'api::projects-page.projects-page': ApiProjectsPageProjectsPage;
       'api::resources-safety-page.resources-safety-page': ApiResourcesSafetyPageResourcesSafetyPage;

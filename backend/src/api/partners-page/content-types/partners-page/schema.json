@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners_pages",
+  "info": {
+    "singularName": "partners-page",
+    "pluralName": "partners-pages",
+    "displayName": "PartnersPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section_heading": {
+      "type": "string",
+      "required": true
+    },
+    "section_text": {
+      "type": "richtext"
+    }
+  }
+}
