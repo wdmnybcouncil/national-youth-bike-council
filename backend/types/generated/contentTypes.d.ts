@@ -1184,6 +1184,38 @@ export interface ApiLiabilityTermsPageLiabilityTermsPage
   };
 }
 
+export interface ApiLogosListPageLogosListPage extends Schema.CollectionType {
+  collectionName: 'logos_list_pages';
+  info: {
+    singularName: 'logos-list-page';
+    pluralName: 'logos-list-pages';
+    displayName: 'LogosListPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    section_heading: Attribute.String & Attribute.Required;
+    section_text: Attribute.RichText;
+    logos: Attribute.Component<'image.image', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::logos-list-page.logos-list-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::logos-list-page.logos-list-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiMapPlaceMarkerMapPlaceMarker extends Schema.CollectionType {
   collectionName: 'map_place_markers';
   info: {
@@ -1996,6 +2028,7 @@ declare module '@strapi/types' {
       'api::join-us-page.join-us-page': ApiJoinUsPageJoinUsPage;
       'api::join-us-role.join-us-role': ApiJoinUsRoleJoinUsRole;
       'api::liability-terms-page.liability-terms-page': ApiLiabilityTermsPageLiabilityTermsPage;
+      'api::logos-list-page.logos-list-page': ApiLogosListPageLogosListPage;
       'api::map-place-marker.map-place-marker': ApiMapPlaceMarkerMapPlaceMarker;
       'api::media-coverage-page.media-coverage-page': ApiMediaCoveragePageMediaCoveragePage;
       'api::media-coverage-post.media-coverage-post': ApiMediaCoveragePostMediaCoveragePost;
