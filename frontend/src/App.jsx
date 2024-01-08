@@ -17,6 +17,7 @@ import CouncilMembers from './views/CouncilMembers';
 import Advisors from './views/Advisors';
 import BoardMembers from './views/BoardMembers';
 import Sponsorships from './views/Sponsorships';
+import Partners from './views/Partners';
 import Projects from './views/Projects';
 import Project from './views/Project';
 import MediaCoverage from './views/MediaCoverage';
@@ -35,7 +36,7 @@ import api from './utils/api';
 /**
  * The main React **App** component.
  *
- * @version 1.1.0
+ * @version 2.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
 function App() {
@@ -168,6 +169,9 @@ function App() {
 
   const propsForSponsorshipsView = {
     sponsors,
+  };
+
+  const propsForPartnersView = {
     partners,
   };
 
@@ -197,6 +201,7 @@ function App() {
             <Route path="board-members" element={<BoardMembers {...propsForBoardMembersView} />} />
             <Route path="ybs-steering-committee" element={<YbsSteeringCommittee {...propsForYbsSteeringCommitteeView} />} />
             <Route path="sponsorships" element={<Sponsorships {...propsForSponsorshipsView} />} />
+            <Route path="partners" element={<Partners {...propsForPartnersView} />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:projectTitle" element={<Project />} />
             <Route path="media-coverage" element={<MediaCoverage />} />

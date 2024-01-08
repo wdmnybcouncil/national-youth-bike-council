@@ -279,6 +279,35 @@ class Api {
   };
 
   /**
+   * Get all the text contents to show on the Partners view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getPartnersViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+    });
+
+    return fetch(`${this.#baseUrl}/partners-pages?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
+   * Get all the faqs to show on the Join Us view.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getPartnersTierInfo = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: ['faq_list'],
+    });
+
+    return fetch(`${this.#baseUrl}/partners-tiers?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
+
+  /**
    * Get all the text contents to show on the Media Coverage view.
    * @return {Promise} The Promise of the Fetch API call.
    */

@@ -6,12 +6,12 @@ import { partnersImagesAnimationVariants } from '../utils/animationVariants';
 import api from '../utils/api';
 
 /**
- * The **Sponsorships** component renders the view that all the partners, grants, sponsorships and awards of the council.
+ * The **Sponsorships** component renders the view that all the grants, sponsorships and awards of the council.
  *
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function Sponsorships({ sponsors, partners }) {
+function Sponsorships({ sponsors }) {
   const [sponsorshipsViewTextContent, setSponsorshipsViewTextContent] = useState([]);
 
   // Get the text contents of the page
@@ -62,20 +62,8 @@ function Sponsorships({ sponsors, partners }) {
   return (
     <>
       {sponsorshipsViewTextContent.length ? (
-        <div className="my-8" aria-label="sponsorships and partners page">
-          {/* Section # 1 - Partner */}
-          <Section>
-            <Section.Heading>{sponsorshipsViewTextContent[0].attributes.section_heading}</Section.Heading>
-            <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
-              {partners.length
-                ? partners.map((partner) => {
-                    const { partner_logo, partner_name } = partner.attributes;
-                    return renderImage(partner_logo, partner_name);
-                  })
-                : null}
-            </div>
-          </Section>
-          {/* Section # 2 - Grants - Sponsorships - Awards */}
+        <div className="my-8" aria-label="sponsorships page">
+          {/* Section # 1 - Grants - Sponsorships - Awards */}
           <Section>
             <Section.Heading>{sponsorshipsViewTextContent[1].attributes.section_heading}</Section.Heading>
             <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
@@ -95,7 +83,6 @@ function Sponsorships({ sponsors, partners }) {
 
 const propTypes = {
   sponsors: PropTypes.array.isRequired,
-  partners: PropTypes.array.isRequired,
 };
 
 Sponsorships.displayName = 'Sponsorships';
