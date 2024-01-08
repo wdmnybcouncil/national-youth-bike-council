@@ -69,16 +69,15 @@ function CouncilBlogs() {
     ));
   };
 
-  const renderPosts = (posts) => {
-    console.log(posts);
-    return posts.map(({ attributes }) => {
+  const renderPosts = (posts) =>
+    posts.map(({ attributes }) => {
       const { post_title, post_date, post_author, post_text_brief, post_cover_image } = attributes;
       const { image_file, alternate_text } = post_cover_image;
 
       return (
         <Post key={post_title}>
           <div className="col-span-2 place-self-center lg:row-auto">
-            <Post.Img src={image_file.data.attributes?.url} alt={alternate_text} className="object-cover object-center" />
+            {image_file.data ? <Post.Img src={image_file.data?.attributes?.url} alt={alternate_text} className="object-cover object-center" /> : null}
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{post_title}</Post.Title>
@@ -96,7 +95,6 @@ function CouncilBlogs() {
         </Post>
       );
     });
-  };
 
   return (
     <>

@@ -76,7 +76,7 @@ function Projects() {
       return (
         <Post key={project_title}>
           <div className="col-span-2 place-self-center lg:row-auto">
-            <Post.Img src={image_file.data.attributes.url} alt={alternate_text} className="object-cover object-center" />
+            {image_file.data ? <Post.Img src={image_file.data.attributes.url} alt={alternate_text} className="object-cover object-center" /> : null}
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{project_title}</Post.Title>
