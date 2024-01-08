@@ -69,8 +69,9 @@ function CouncilBlogs() {
     ));
   };
 
-  const renderPosts = (posts) =>
-    posts.map(({ attributes }) => {
+  const renderPosts = (posts) => {
+    console.log(posts);
+    return posts.map(({ attributes }) => {
       const { post_title, post_date, post_author, post_text_brief, post_cover_image } = attributes;
       const { image_file, alternate_text } = post_cover_image;
 
@@ -95,6 +96,7 @@ function CouncilBlogs() {
         </Post>
       );
     });
+  };
 
   return (
     <>
