@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import FilterButton from '../components/FilterButton';
 import Accordion from '../components/Accordion';
+import DescriptionCard from '../components/DescriptionCard';
 
 import { partnersImagesAnimationVariants } from '../utils/animationVariants';
 import api from '../utils/api';
@@ -17,6 +18,7 @@ import api from '../utils/api';
  */
 function Partners({ partners }) {
   const [partnersViewTextContent, setPartnersViewTextContent] = useState([]);
+  const partnersWithTestimonials = partners.filter((_) => _.attributes.testimonial_text);
   const [faqs, setFaqs] = useState([]);
 
   //Settings for Filtering Faqs
@@ -146,6 +148,17 @@ function Partners({ partners }) {
           <Section>
             <Section.Heading>{partnersViewTextContent[3].attributes.section_heading}</Section.Heading>
             {partnersViewTextContent[3].attributes.section_text ? <Section.Text>{partnersViewTextContent[3].attributes.section_text}</Section.Text> : null}
+            <ul className="mb-8 w-full flex gap-6 lg:gap-x-20 justify-start items-start overflow-x-scroll">
+              {partnersWithTestimonials.length
+                ? partnersWithTestimonials.map((partner) => (
+                    <DescriptionCard
+                      key={partner.attributes.testimonial_title}
+                      heading={partner.attributes.testimonial_title}
+                      text={partner.attributes.testimonial_text}
+                    />
+                  ))
+                : null}
+            </ul>
           </Section>
         </div>
       ) : null}

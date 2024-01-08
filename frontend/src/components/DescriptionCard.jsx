@@ -14,7 +14,7 @@ function DescriptionCard({ heading, text, image = '' }) {
 
   return (
     <div
-      className="group w-full max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center"
+      className="group min-w-[320px] max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center"
       onMouseEnter={() => setCardImg(image)}
       onMouseLeave={() => setCardImg(logoImage)}
     >
@@ -25,7 +25,7 @@ function DescriptionCard({ heading, text, image = '' }) {
           className="-mt-12 h-16 w-16 max-w-full rounded-full border-2 border-skin-accent object-center object-cover transition-all group-hover:scale-125"
         />
       )}
-      <h3 className="mt-4 mb-4 w-full max-w-4xl text-center border-b border-skin-primary pb-1 font-kaleko font-bold tracking-wide text-xl text-skin-primary transition-all">
+      <h3 className="mt-4 mb-4 w-full text-center border-b border-skin-primary pb-1 font-kaleko font-bold tracking-wide text-xl text-skin-primary transition-all">
         {heading}
       </h3>
       <Section.Text>{text}</Section.Text>
