@@ -30,6 +30,7 @@ import Homeroom from './views/Homeroom';
 import ImpactReports from './views/ImpactReports';
 import YbsSteeringCommittee from './views/YbsSteeringCommittee';
 import ShareableLinks from './views/ShareableLinks';
+import LogosList from './views/LogosList';
 
 import api from './utils/api';
 
@@ -214,6 +215,7 @@ function App() {
             <Route path="join-the-council" element={<JoinUs />} />
             <Route path="waiver-liability-terms" element={<LiabilityTerms />} />
             <Route path="links" element={<ShareableLinks />} />
+            <Route path="logos" element={<LogosList />} />
           </Route>
         </Routes>
       </div>

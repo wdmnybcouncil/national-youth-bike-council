@@ -660,6 +660,21 @@ class Api {
       headers: this.#headers,
     }).then(this.#checkResponseStatus);
   };
+
+  /**
+   * Get all the logos of the council.
+   * @return {Promise} The Promise of the Fetch API call.
+   */
+  getLogosViewTextContents = () => {
+    const query = qs.stringify({
+      sort: ['id'],
+      populate: ['logos', 'logos.image_file'],
+    });
+
+    return fetch(`${this.#baseUrl}/logos-list-pages?${query}`, {
+      headers: this.#headers,
+    }).then(this.#checkResponseStatus);
+  };
 }
 
 const BASE_URL = import.meta.env.PROD ? 'https://nybc-strapi.herokuapp.com/api' : 'http://localhost:1337/api';

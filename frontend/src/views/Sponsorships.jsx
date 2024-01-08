@@ -65,7 +65,7 @@ function Sponsorships({ sponsors }) {
         <div className="my-8" aria-label="sponsorships page">
           {/* Section # 1 - Grants - Sponsorships - Awards */}
           <Section>
-            <Section.Heading>{sponsorshipsViewTextContent[1].attributes.section_heading}</Section.Heading>
+            <Section.Heading>{sponsorshipsViewTextContent[0].attributes.section_heading}</Section.Heading>
             <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
               {sponsors.length
                 ? sponsors.map((sponsor) => {
