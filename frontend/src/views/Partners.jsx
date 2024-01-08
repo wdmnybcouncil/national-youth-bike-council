@@ -160,6 +160,14 @@ function Partners({ partners }) {
                 : null}
             </ul>
           </Section>
+          {/* Section # 5 - Give Lively dontaion widget */}
+          <Section>
+            <Section.Heading>{partnersViewTextContent[4].attributes.section_heading}</Section.Heading>
+            {partnersViewTextContent[4].attributes.section_text ? <Section.Text>{partnersViewTextContent[4].attributes.section_text}</Section.Text> : null}
+            <div className="mx-auto w-full max-w-2xl">
+              <div id="give-lively-widget" className="gl-simple-donation-widget"></div>
+            </div>
+          </Section>
         </div>
       ) : null}
     </>
