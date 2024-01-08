@@ -1358,6 +1358,8 @@ export interface ApiPartnerPartner extends Schema.CollectionType {
     partner_name: Attribute.String;
     partner_logo: Attribute.Component<'image.image'>;
     priority: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    testimonial_text: Attribute.RichText;
+    testimonial_title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

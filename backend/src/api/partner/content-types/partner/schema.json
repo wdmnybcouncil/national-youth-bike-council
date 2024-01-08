@@ -24,6 +24,12 @@
       "type": "integer",
       "required": true,
       "unique": true
+    },
+    "testimonial_text": {
+      "type": "richtext"
+    },
+    "testimonial_title": {
+      "type": "string"
     }
   }
 }
