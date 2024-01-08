@@ -77,7 +77,7 @@ function CouncilBlogs() {
       return (
         <Post key={post_title}>
           <div className="col-span-2 place-self-center lg:row-auto">
-            <Post.Img src={image_file.data.attributes.url} alt={alternate_text} className="object-cover object-center" />
+            <Post.Img src={image_file.data.attributes?.url} alt={alternate_text} className="object-cover object-center" />
           </div>
           <div className="col-span-2 mx-auto flex max-w-2xl flex-col gap-1">
             <Post.Title>{post_title}</Post.Title>
@@ -101,7 +101,7 @@ function CouncilBlogs() {
       {councilBlogsViewTextContent.length ? (
         <div className="my-8" aria-label="council blogs">
           <Section>
-            <Section.Heading>{councilBlogsViewTextContent[0].attributes.section_heading}</Section.Heading>
+            <Section.Heading>{councilBlogsViewTextContent[0]?.attributes?.section_heading}</Section.Heading>
             <div className="mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
             <div className="flex flex-col gap-10">{currentViewPosts.length ? renderPosts(currentViewPosts) : null}</div>
             <Pagination currentPage={currentPage} totalCount={postsToShow.length} pageSize={pageSize} onPageChange={(page) => setCurrentPage(page)} />
