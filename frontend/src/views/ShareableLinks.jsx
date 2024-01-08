@@ -139,10 +139,12 @@ function ShareableLinks() {
             <Section>
               {/* Heading of the page */}
               <Section.Heading>{shareableLinksViewTextContent[0].attributes.section_title}</Section.Heading>
-              {/* Description of the page, if any */}
-              <Section.Text>{shareableLinksViewTextContent[0].attributes.section_text}</Section.Text>
               {/* Social Media Icons */}
               <div className="flex gap-4 justify-center">{socialLinks.length > 0 ? renderSocialLinks(socialLinks) : null}</div>
+              {/* Description of the page, if any */}
+              <div className="mt-2 mx-2 px-4">
+                <Section.Text>{shareableLinksViewTextContent[0].attributes.section_text}</Section.Text>
+              </div>
               {/* List of page links to share */}
               {shareableLinks.length > 0 ? renderLinks() : null}
               {/* Copy the link input */}
