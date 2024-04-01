@@ -9,15 +9,11 @@ import logoImage from '../assets/images/icon-logo.png';
  * @version 1.0.0
  * @author [Shraddha](https://github.com/5hraddha)
  */
-function DescriptionCard({ heading, text, image = '' }) {
-  const [cardImg, setCardImg] = useState(logoImage);
+function DescriptionCard({ heading, text, enableAnimation = false, image = '' }) {
+  const [cardImg, setCardImg] = useState(enableAnimation ? logoImage : image);
 
-  return (
-    <div
-      className="group min-w-[320px] max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center"
-      onMouseEnter={() => setCardImg(image)}
-      onMouseLeave={() => setCardImg(logoImage)}
-    >
+  const renderCardContent = () => (
+    <>
       {image && (
         <img
           src={cardImg}
@@ -29,7 +25,23 @@ function DescriptionCard({ heading, text, image = '' }) {
         {heading}
       </h3>
       <Section.Text>{text}</Section.Text>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {enableAnimation ? (
+        <div
+          className="group min-w-[320px] max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center"
+          onMouseEnter={() => setCardImg(image)}
+          onMouseLeave={() => setCardImg(logoImage)}
+        >
+          {renderCardContent()}
+        </div>
+      ) : (
+        <div className="group min-w-[320px] max-w-xs rounded-lg bg-gray-100 p-4 flex flex-col justify-center items-center"> {renderCardContent()}</div>
+      )}
+    </>
   );
 }
 
@@ -37,6 +49,7 @@ const propTypes = {
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   image: PropTypes.string,
+  enableAnimation: PropTypes.bool,
 };
 
 DescriptionCard.displayName = 'DescriptionCard';

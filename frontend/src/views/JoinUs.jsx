@@ -119,6 +119,7 @@ function JoinUs() {
                       heading={section.attributes.role_title}
                       text={section.attributes.role_description}
                       image={section.attributes.role_image?.image_file.data.attributes.url}
+                      enableAnimation={true}
                     />
                   ))
                 : null}
