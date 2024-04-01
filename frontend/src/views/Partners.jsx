@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 
@@ -6,6 +6,7 @@ import Section from '../components/Section';
 import FilterButton from '../components/FilterButton';
 import Accordion from '../components/Accordion';
 import DescriptionCard from '../components/DescriptionCard';
+import Pagination from '../components/Pagination';
 
 import { partnersImagesAnimationVariants } from '../utils/animationVariants';
 import api from '../utils/api';
@@ -25,6 +26,14 @@ function Partners({ partners }) {
   const [faqsToShow, setFaqsToShow] = useState(faqs);
   const [selectedFilterCategory, setSelectedFilterCategory] = useState('All');
   const filterTagsForFaqs = ['All', ...new Set(faqs.map((_) => _.attributes.title))];
+
+  // Settings for paginating partners
+  const [partnersToShow, setPartnersToShow] = useState(partners);
+
+  // Set all the partners to show
+  useEffect(() => {
+    setPartnersToShow(partners);
+  }, [partners]);
 
   // Get the text contents of the page
   useEffect(() => {
@@ -51,7 +60,7 @@ function Partners({ partners }) {
       });
   }, []);
 
-  // Handle the filtering logic for the selected actegory
+  // FAQS: Handle the filtering logic for the selected actegory
   const handleFilterFaqs = (selectedCategory) => {
     let newFaqsToShow;
     newFaqsToShow = selectedCategory !== 'All' ? faqs.filter((_) => _.attributes.title === selectedCategory) : faqs;
@@ -80,6 +89,16 @@ function Partners({ partners }) {
       );
     });
   };
+
+  // Partners: Settings for Pagination
+  let partnersPageSize = 9;
+  const [currentPartnersPage, setCurrentPartnersPage] = useState(1);
+
+  const currentViewPartners = useMemo(() => {
+    const firstPageIndex = (currentPartnersPage - 1) * partnersPageSize;
+    const lastPageIndex = firstPageIndex + partnersPageSize;
+    return partnersToShow.slice(firstPageIndex, lastPageIndex);
+  }, [currentPartnersPage, partnersToShow, partnersPageSize]);
 
   const renderImage = (logo, name) => {
     if (!logo) {
@@ -131,20 +150,7 @@ function Partners({ partners }) {
             <div className="mt-4 mb-4 flex flex-wrap items-center justify-center gap-4 md:justify-start">{renderFilterButtons()}</div>
             <div className="flex flex-col gap-6">{renderFaqSections(faqsToShow)}</div>
           </Section>
-          {/* Section # 3 - Our Partners */}
-          <Section>
-            <Section.Heading>{partnersViewTextContent[2].attributes.section_heading}</Section.Heading>
-            {partnersViewTextContent[2].attributes.section_text ? <Section.Text>{partnersViewTextContent[2].attributes.section_text}</Section.Text> : null}
-            <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
-              {partners.length
-                ? partners.map((partner) => {
-                    const { partner_logo, partner_name } = partner.attributes;
-                    return renderImage(partner_logo, partner_name);
-                  })
-                : null}
-            </div>
-          </Section>
-          {/* Section # 4 - Testimonials */}
+          {/* Section # 3 - Testimonials */}
           <Section>
             <Section.Heading>{partnersViewTextContent[3].attributes.section_heading}</Section.Heading>
             {partnersViewTextContent[3].attributes.section_text ? <Section.Text>{partnersViewTextContent[3].attributes.section_text}</Section.Text> : null}
@@ -155,10 +161,30 @@ function Partners({ partners }) {
                       key={partner.attributes.testimonial_title}
                       heading={partner.attributes.testimonial_title}
                       text={partner.attributes.testimonial_text}
+                      // image={partner.attributes.partner_logo?.image_file.data.attributes.url || ''}
                     />
                   ))
                 : null}
             </ul>
+          </Section>
+          {/* Section # 4 - Our Partners */}
+          <Section>
+            <Section.Heading>{partnersViewTextContent[2].attributes.section_heading}</Section.Heading>
+            {partnersViewTextContent[2].attributes.section_text ? <Section.Text>{partnersViewTextContent[2].attributes.section_text}</Section.Text> : null}
+            <div className="mt-6 grid grid-cols-1 place-items-center gap-14 sm:grid-cols-2 md:grid-cols-3">
+              {currentViewPartners.length
+                ? currentViewPartners.map((partner) => {
+                    const { partner_logo, partner_name } = partner.attributes;
+                    return renderImage(partner_logo, partner_name);
+                  })
+                : null}
+            </div>
+            <Pagination
+              currentPage={currentPartnersPage}
+              totalCount={partnersToShow.length}
+              pageSize={partnersPageSize}
+              onPageChange={(page) => setCurrentPartnersPage(page)}
+            />
           </Section>
           {/* Section # 5 - Give Lively dontaion widget */}
           <Section>
