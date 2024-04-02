@@ -24,7 +24,7 @@ function Partners({ partners }) {
 
   //Settings for Filtering Faqs
   const [faqsToShow, setFaqsToShow] = useState(faqs);
-  const [selectedFilterCategory, setSelectedFilterCategory] = useState('All');
+  const [selectedFilterCategory, setSelectedFilterCategory] = useState('Advocate Membership');
   const filterTagsForFaqs = ['All', ...new Set(faqs.map((_) => _.attributes.title))];
 
   // Settings for paginating partners
@@ -50,14 +50,17 @@ function Partners({ partners }) {
   useEffect(() => {
     api
       .getPartnersTierInfo()
-      .then(({ data }) => {
-        setFaqs(data);
-        setFaqsToShow(data);
-      })
+      .then(({ data }) => setFaqs(data))
       .catch((err) => {
         console.log('Uh-oh! Error occurred while fetching the data from the server.');
         console.log(err);
       });
+  }, []);
+
+  // Show 'Advocate Membership' as the default selected option
+  useEffect(() => {
+    setSelectedFilterCategory('Advocate Membership');
+    setFaqsToShow(faqs.filter((_) => _.attributes.title === 'Advocate Membership'));
   }, []);
 
   // FAQS: Handle the filtering logic for the selected actegory
