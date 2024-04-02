@@ -49,11 +49,6 @@
       "type": "string",
       "required": true,
       "minLength": 2
-    },
-    "member_is_active": {
-      "type": "boolean",
-      "default": true,
-      "required": true
     }
   }
 }

@@ -1358,9 +1358,6 @@ export interface ApiMemberMember extends Schema.CollectionType {
         'plugin::multi-select.multi-select',
         ['Alumni', 'Advisor', 'Co-Founder', 'Council Member', 'Board Member']
       >;
-    member_is_active: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1950,9 +1947,6 @@ export interface ApiYbsSteeringCommitteeMemberYbsSteeringCommitteeMember
       Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
-    member_is_active: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

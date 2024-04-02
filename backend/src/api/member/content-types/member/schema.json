@@ -61,11 +61,6 @@
       ],
       "required": true,
       "customField": "plugin::multi-select.multi-select"
-    },
-    "member_is_active": {
-      "type": "boolean",
-      "default": true,
-      "required": true
     }
   }
 }
