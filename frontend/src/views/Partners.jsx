@@ -61,7 +61,7 @@ function Partners({ partners }) {
   useEffect(() => {
     setSelectedFilterCategory('Advocate Membership');
     setFaqsToShow(faqs.filter((_) => _.attributes.title === 'Advocate Membership'));
-  }, []);
+  }, [faqs]);
 
   // FAQS: Handle the filtering logic for the selected actegory
   const handleFilterFaqs = (selectedCategory) => {
