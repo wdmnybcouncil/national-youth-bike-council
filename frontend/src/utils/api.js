@@ -87,6 +87,11 @@ class Api {
   getAllMembers = () => {
     const query = qs.stringify({
       populate: '*',
+      filters: {
+        member_is_active: {
+          $eq: true,
+        },
+      },
     });
 
     return fetch(`${this.#baseUrl}/members?${query}`, {
