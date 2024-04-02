@@ -602,6 +602,11 @@ class Api {
   getSteeringCommitteeMembers = () => {
     const query = qs.stringify({
       populate: '*',
+      filters: {
+        member_is_active: {
+          $eq: true,
+        },
+      },
     });
 
     return fetch(`${this.#baseUrl}/ybs-steering-committee-members?${query}`, {

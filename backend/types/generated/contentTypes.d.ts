@@ -1950,6 +1950,9 @@ export interface ApiYbsSteeringCommitteeMemberYbsSteeringCommitteeMember
       Attribute.SetMinMaxLength<{
         minLength: 2;
       }>;
+    member_is_active: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
