@@ -63,8 +63,12 @@ function App() {
         setStartingCrewMembers(data.filter((member) => member.attributes.roles.includes('Co-Founder')));
         setCouncilMembers(data.filter((member) => member.attributes.roles.includes('Council Member')));
         setAlumniMembers(data.filter((member) => member.attributes.roles.includes('Alumni')));
-        setAdvisorMembers(data.filter((member) => member.attributes.roles.includes('Advisor')));
-        setBoardMembers(data.filter((member) => member.attributes.roles.includes('Board Member')));
+        setAdvisorMembers(
+          data.filter(
+            (member) => member.attributes.roles.includes('Advisor') && member.attributes.first_name !== 'Dhruti' && member.attributes.first_name !== 'Terri',
+          ),
+        );
+        setBoardMembers(data.filter((member) => member.attributes.roles.includes('Board Member') && member.attributes.first_name !== 'Lavanya'));
         setHomeViewMembers(
           data.filter((member) => member.attributes.first_name === 'Zoe' || member.attributes.first_name === 'Lot' || member.attributes.first_name === 'Luly'),
         );
